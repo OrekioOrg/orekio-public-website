@@ -22,7 +22,7 @@ const PLANS = [
   },
   {
     name: "Praticien",
-    price: "29 €",
+    price: "39,99 €",
     period: "par mois",
     description: "Pour un praticien qui suit ses patients au long cours.",
     features: [
