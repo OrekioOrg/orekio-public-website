@@ -30,6 +30,12 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+const LEGAL_LINKS = [
+  { href: "/mentions-legales", label: "Mentions légales" },
+  { href: "/confidentialite", label: "Confidentialité" },
+  { href: "/cgu", label: "CGU" },
+] as const;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -102,9 +108,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               l&apos;application ne les interprète jamais, n&apos;émet aucune alerte et
               ne pose aucun diagnostic.
             </p>
-            <p className="mt-4 font-mono text-[11px] text-on-surface-variant">
-              © {new Date().getFullYear()} Orekio
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] text-on-surface-variant">
+              <span>© {new Date().getFullYear()} Orekio</span>
+              {LEGAL_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="underline hover:text-on-surface-strong"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </footer>
       </body>
