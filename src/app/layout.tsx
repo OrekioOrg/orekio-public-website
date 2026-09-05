@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "@/base-path";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -40,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="mx-auto flex h-[58px] max-w-6xl items-center justify-between px-6">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/brand/orekio-symbole-nav.svg"
+                src={`${basePath}/brand/orekio-symbole-nav.svg`}
                 alt="Orekio"
                 width={28}
                 height={28}
@@ -74,7 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <div className="flex flex-col gap-8 md:flex-row md:justify-between">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/brand/orekio-symbole-mono-teal.svg"
+                  src={`${basePath}/brand/orekio-symbole-mono-teal.svg`}
                   alt="Orekio"
                   width={24}
                   height={24}

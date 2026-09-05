@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
-
-const repoName = "orekio-public-website";
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+import { basePath } from "./src/base-path";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -10,8 +8,8 @@ const nextConfig: NextConfig = {
   },
   // GitHub Pages serves this project from /orekio-public-website/
   // (no custom domain configured), so every asset/link needs that prefix.
-  basePath: isGithubActions ? `/${repoName}` : "",
-  assetPrefix: isGithubActions ? `/${repoName}/` : "",
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : "",
 };
 
 export default nextConfig;

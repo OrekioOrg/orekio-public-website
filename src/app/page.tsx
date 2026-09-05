@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "@/base-path";
 
 const HIGHLIGHTS = [
   {
@@ -58,7 +59,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center md:justify-end">
             <Image
-              src="/brand/orekio-symbole.svg"
+              src={`${basePath}/brand/orekio-symbole.svg`}
               alt=""
               width={200}
               height={200}
