@@ -1,69 +1,43 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { notFound } from "next/navigation";
+import { hasLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
+import { SegmentText } from "@/components/segment-text";
 
-export const metadata: Metadata = {
-  title: "Tarifs — Orekio",
-  description:
-    "Choisissez l'offre Orekio adaptée à votre pratique : praticien seul ou cabinet.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = getDictionary(lang).pricing;
+  return { title: dict.pageTitle, description: dict.metaDescription };
+}
 
-const PLANS = [
-  {
-    name: "Découverte",
-    price: "Gratuit",
-    period: "pendant 30 jours",
-    description: "Pour tester Orekio avec quelques patients avant de s'engager.",
-    features: [
-      "Jusqu'à 5 patients",
-      "Tous les modules thérapeutiques",
-      "Application mobile patient incluse",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "Praticien",
-    price: "39,99 €",
-    period: "par mois",
-    description: "Pour un praticien qui suit ses patients au long cours.",
-    features: [
-      "Patients illimités",
-      "Tous les modules thérapeutiques",
-      "Historique complet et export",
-      "Support par email",
-    ],
-    highlighted: true,
-  },
-  {
-    name: "Cabinet",
-    price: "Sur devis",
-    period: "plusieurs praticiens",
-    description: "Pour un cabinet ou une structure avec plusieurs praticiens.",
-    features: [
-      "Tout Praticien, pour chaque membre",
-      "Gestion des accès par l'administrateur",
-      "Accompagnement au déploiement",
-    ],
-    highlighted: false,
-  },
-] as const;
+export default async function TarifsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = getDictionary(lang).pricing;
 
-export default function TarifsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
-        Tarifs
+        {dict.eyebrow}
       </p>
       <h1 className="mt-4 text-[32px] font-medium text-on-surface-strong">
-        Une offre par pratique
+        {dict.heading}
       </h1>
       <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
-        Chaque offre donne accès à l&apos;ensemble des modules thérapeutiques.
-        Ce qui change, c&apos;est le nombre de patients suivis et
-        l&apos;accompagnement autour.
+        {dict.description}
       </p>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {PLANS.map((plan) => (
+        {dict.plans.map((plan) => (
           <div
             key={plan.name}
             className={`flex flex-col rounded-lg border p-8 ${
@@ -100,22 +74,19 @@ export default function TarifsPage() {
             <button
               type="button"
               disabled
-              title="Le paiement en ligne arrive bientôt"
+              title={dict.subscribeButtonTitle}
               className="mt-8 cursor-not-allowed rounded-lg bg-primary/40 px-6 py-3 text-[15px] font-medium text-on-primary"
             >
-              S&apos;abonner (bientôt)
+              {dict.subscribeButton}
             </button>
           </div>
         ))}
       </div>
 
       <p className="mt-10 max-w-2xl text-[14px] leading-relaxed text-on-surface-variant">
-        L&apos;abonnement en ligne n&apos;est pas encore ouvert : le paiement
-        sécurisé arrive prochainement. En attendant,{" "}
-        <Link href="/contact" className="text-secondary underline">
-          contactez-nous
-        </Link>{" "}
-        pour être averti de l&apos;ouverture ou pour un accès anticipé.
+        {dict.footerNote.map((segment, index) => (
+          <SegmentText key={index} segment={segment} />
+        ))}
       </p>
     </div>
   );
