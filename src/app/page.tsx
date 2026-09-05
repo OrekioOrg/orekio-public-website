@@ -1,69 +1,118 @@
+import Link from "next/link";
 import Image from "next/image";
+
+const HIGHLIGHTS = [
+  {
+    title: "Agenda du sommeil",
+    description:
+      "Le patient note ses nuits, le praticien relit l'historique en consultation.",
+  },
+  {
+    title: "Échelles cliniques validées",
+    description: "PHQ-9, GAD-7, EPDS et d'autres, fidèles à leur version validée.",
+  },
+  {
+    title: "Plan de sécurité",
+    description:
+      "Un plan de crise construit avec le patient, disponible à tout moment.",
+  },
+  {
+    title: "Colonnes de Beck, roue des émotions...",
+    description:
+      "Plus de 30 modules thérapeutiques débloqués progressivement par le praticien.",
+  },
+] as const;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="bg-primary-container">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
+              Carnet de bord numérique
+            </p>
+            <h1 className="mt-4 text-[32px] font-medium leading-[1.15] text-on-primary-container md:text-[42px]">
+              L&apos;accompagnement thérapeutique, entre les séances
+            </h1>
+            <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-on-surface">
+              Orekio relie le praticien et son patient entre les consultations.
+              Le praticien débloque des outils au fil du suivi, le patient les
+              utilise sur son téléphone. Rien n&apos;est interprété, tout reste
+              disponible pour la prochaine séance.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/tarifs"
+                className="rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
+              >
+                S&apos;abonner à Orekio
+              </Link>
+              <Link
+                href="/fonctionnalites"
+                className="rounded-lg border border-outline px-6 py-3 text-[15px] font-medium text-on-surface-strong transition-colors hover:bg-surface"
+              >
+                Découvrir les fonctionnalités
+              </Link>
+            </div>
+          </div>
+          <div className="flex justify-center md:justify-end">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/brand/orekio-symbole.svg"
+              alt=""
+              width={200}
+              height={200}
+              className="h-40 w-40 md:h-56 md:w-56"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="text-[26px] font-medium text-on-surface-strong">
+          Un outil pensé pour le suivi, pas pour le diagnostic
+        </h2>
+        <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
+          Orekio est un carnet de bord numérique : les données du patient
+          restent brutes, sans interprétation ni alerte automatique. Le
+          praticien garde la main sur ce qu&apos;il débloque, et sur ce qu&apos;il en
+          fait en consultation.
+        </p>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {HIGHLIGHTS.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-lg border border-outline bg-surface p-6"
+            >
+              <h3 className="text-[16px] font-medium text-on-surface-strong">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-on-surface-variant">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-ink">
+        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
+          <h2 className="text-[26px] font-medium text-on-ink">
+            Prêt à essayer Orekio avec vos patients&nbsp;?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-on-ink/80">
+            Choisissez une offre et retrouvez votre armoire thérapeutique dès
+            aujourd&apos;hui.
+          </p>
+          <Link
+            href="/tarifs"
+            className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
+          >
+            Voir les tarifs
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
