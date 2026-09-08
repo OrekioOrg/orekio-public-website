@@ -10,6 +10,7 @@ import {
   getAllArticleParams,
 } from "@/blog";
 import { JsonLd } from "@/components/json-ld";
+import { ShareButtons } from "@/components/share-buttons";
 import { blogPostingSchema, breadcrumbSchema } from "@/structured-data";
 import { absoluteUrl } from "@/site";
 
@@ -112,6 +113,9 @@ export default async function ArticlePage({
               </time>
             </p>
           ) : null}
+          <div className="mt-6">
+            <ShareButtons url={url} title={article.title} labels={dict} />
+          </div>
         </header>
 
         <div
@@ -120,13 +124,14 @@ export default async function ArticlePage({
         />
       </article>
 
-      <div className="mt-14 border-t border-outline pt-8">
+      <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-outline pt-8">
         <Link
           href={`/${lang}/blog`}
           className="text-[14px] font-medium text-primary hover:underline"
         >
           ← {dict.allArticles}
         </Link>
+        <ShareButtons url={url} title={article.title} labels={dict} />
       </div>
     </div>
   );

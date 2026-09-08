@@ -221,6 +221,15 @@ export const fr = {
     updatedOn: "Mis à jour le",
     backToList: "Tous les articles",
     allArticles: "Tous les articles",
+    share: "Partager",
+    shareNative: "Partager…",
+    shareCopy: "Copier le lien",
+    shareCopied: "Lien copié",
+    shareX: "Partager sur X",
+    shareLinkedin: "Partager sur LinkedIn",
+    shareEmail: "Partager par e-mail",
+    shareBluesky: "Partager sur Bluesky",
+    shareEmailSubject: "Article Orekio : ",
   },
 
   mentionsLegales: {
