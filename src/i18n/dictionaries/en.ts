@@ -228,9 +228,6 @@ export const en: Dictionary = {
     shareCopied: "Link copied",
     shareX: "Share on X",
     shareLinkedin: "Share on LinkedIn",
-    shareEmail: "Share by email",
-    shareBluesky: "Share on Bluesky",
-    shareEmailSubject: "Orekio article: ",
   },
 
   mentionsLegales: {
