@@ -214,10 +214,6 @@ export const en: Dictionary = {
     pageTitle: "Blog",
     metaDescription:
       "The Orekio blog: practical notes on therapeutic follow-up between sessions, clinical scales, CBT tools, and supporting patients.",
-    eyebrow: "Blog",
-    heading: "Notes on follow-up between sessions",
-    intro:
-      "Short articles about the tools Orekio provides — sleep diary, validated scales, safety plan — and how to fit them into a practice.",
     empty: "The first articles are coming soon.",
     readMore: "Read the article →",
     readingTime: "min read",
