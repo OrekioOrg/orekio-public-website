@@ -4,6 +4,8 @@ import { basePath } from "@/base-path";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
+import { softwareApplicationSchema } from "@/structured-data";
 
 export default async function Home({
   params,
@@ -13,10 +15,12 @@ export default async function Home({
   const { lang: rawLang } = await params;
   if (!hasLocale(rawLang)) notFound();
   const lang: Locale = rawLang;
-  const dict = getDictionary(lang).home;
+  const fullDict = getDictionary(lang);
+  const dict = fullDict.home;
 
   return (
     <>
+      <JsonLd data={softwareApplicationSchema(lang, fullDict)} />
       <section className="bg-primary-container">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>

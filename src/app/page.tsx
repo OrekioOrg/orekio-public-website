@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { basePath } from "@/base-path";
 import { defaultLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+
+// "/" only redirects to /fr — point every signal at the real page so the
+// root URL's authority lands on the French home page rather than a stub.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `/${defaultLocale}`,
+    languages: {
+      fr: "/fr",
+      en: "/en",
+      "x-default": `/${defaultLocale}`,
+    },
+  },
+};
 
 // "/" has no locale of its own. A static export can't redirect at the
 // server/host level (no middleware, no redirects config), so this uses a

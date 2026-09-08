@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/seo";
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,12 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang).about;
-  return { title: dict.pageTitle, description: dict.metaDescription };
+  return pageMetadata({
+    lang,
+    suffix: "/a-propos",
+    title: dict.pageTitle,
+    description: dict.metaDescription,
+  });
 }
 
 export default async function AProposPage({

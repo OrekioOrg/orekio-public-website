@@ -7,6 +7,9 @@ import { locales, hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { SetHtmlLang } from "@/components/set-html-lang";
+import { JsonLd } from "@/components/json-ld";
+import { organizationSchema, websiteSchema } from "@/structured-data";
+import { pageMetadata } from "@/seo";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -21,11 +24,18 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
   return {
+    ...pageMetadata({
+      lang,
+      suffix: "",
+      title: dict.meta.title,
+      description: dict.meta.description,
+    }),
+    // The locale home page keeps a title template for its child pages;
+    // pageMetadata only sets a plain string title.
     title: {
       default: dict.meta.title,
       template: `%s — Orekio`,
     },
-    description: dict.meta.description,
   };
 }
 
@@ -57,6 +67,7 @@ export default async function LangLayout({
   return (
     <>
       <SetHtmlLang lang={lang} />
+      <JsonLd data={[organizationSchema(dict), websiteSchema(lang, dict)]} />
       <header className="bg-ink text-on-ink">
         <div className="mx-auto flex h-[58px] max-w-6xl items-center justify-between gap-6 px-6">
           <Link href={`/${lang}`} className="flex items-center gap-3">
