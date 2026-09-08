@@ -21,6 +21,8 @@ export const en: Dictionary = {
     blog: "Blog",
     contact: "Contact",
     subscribe: "Subscribe",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
 
   footer: {

@@ -6,6 +6,7 @@ import { basePath } from "@/base-path";
 import { locales, hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { MobileMenu } from "@/components/mobile-menu";
 import { SetHtmlLang } from "@/components/set-html-lang";
 import { JsonLd } from "@/components/json-ld";
 import { organizationSchema, websiteSchema } from "@/structured-data";
@@ -69,7 +70,7 @@ export default async function LangLayout({
     <>
       <SetHtmlLang lang={lang} />
       <JsonLd data={[organizationSchema(dict), websiteSchema(lang, dict)]} />
-      <header className="bg-ink text-on-ink">
+      <header className="relative bg-ink text-on-ink">
         <div className="mx-auto flex h-[58px] max-w-6xl items-center justify-between gap-6 px-6">
           <Link href={`/${lang}`} className="flex items-center gap-3">
             <Image
@@ -95,10 +96,17 @@ export default async function LangLayout({
             <LanguageSwitcher current={lang} />
             <Link
               href={`/${lang}/tarifs`}
-              className="rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
+              className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 md:inline-block"
             >
               {dict.nav.subscribe}
             </Link>
+            <MobileMenu
+              navLinks={navLinks}
+              subscribeHref={`/${lang}/tarifs`}
+              subscribeLabel={dict.nav.subscribe}
+              openLabel={dict.nav.openMenu}
+              closeLabel={dict.nav.closeMenu}
+            />
           </div>
         </div>
       </header>

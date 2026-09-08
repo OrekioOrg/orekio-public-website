@@ -20,6 +20,8 @@ export const fr = {
     blog: "Blog",
     contact: "Contact",
     subscribe: "S'abonner",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
   },
 
   footer: {
