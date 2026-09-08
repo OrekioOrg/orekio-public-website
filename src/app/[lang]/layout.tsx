@@ -55,6 +55,7 @@ export default async function LangLayout({
     { href: `/${lang}/fonctionnalites`, label: dict.nav.features },
     { href: `/${lang}/tarifs`, label: dict.nav.pricing },
     { href: `/${lang}/a-propos`, label: dict.nav.about },
+    { href: `/${lang}/blog`, label: dict.nav.blog },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
 

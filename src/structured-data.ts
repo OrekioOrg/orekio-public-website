@@ -64,6 +64,34 @@ export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
   };
 }
 
+/** BlogPosting node for a single article. */
+export function blogPostingSchema(input: {
+  url: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+  image?: string;
+  inLanguage: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${input.url}#article`,
+    mainEntityOfPage: input.url,
+    url: input.url,
+    headline: input.headline,
+    description: input.description,
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
+    inLanguage: input.inLanguage,
+    image: input.image ? [`${SITE_URL}${input.image}`] : [`${SITE_URL}/og.png`],
+    author: { "@type": "Person", name: input.authorName ?? SITE_NAME },
+    publisher: { "@id": ORG_ID },
+  };
+}
+
 /**
  * BreadcrumbList for an interior page. `trail` is ordered from the locale
  * home down to the current page.

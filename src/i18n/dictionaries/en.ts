@@ -18,6 +18,7 @@ export const en: Dictionary = {
     features: "Features",
     pricing: "Pricing",
     about: "About",
+    blog: "Blog",
     contact: "Contact",
     subscribe: "Subscribe",
   },
@@ -207,6 +208,24 @@ export const en: Dictionary = {
     description:
       "The contact form is coming soon. In the meantime, write to us directly:",
     email: "contact@orekio.app",
+  },
+
+  blog: {
+    pageTitle: "Blog",
+    metaDescription:
+      "The Orekio blog: practical notes on therapeutic follow-up between sessions, clinical scales, CBT tools, and supporting patients.",
+    eyebrow: "Blog",
+    heading: "Notes on follow-up between sessions",
+    intro:
+      "Short articles about the tools Orekio provides — sleep diary, validated scales, safety plan — and how to fit them into a practice.",
+    empty: "The first articles are coming soon.",
+    readMore: "Read the article →",
+    readingTime: "min read",
+    by: "By",
+    publishedOn: "Published",
+    updatedOn: "Updated",
+    backToList: "All articles",
+    allArticles: "All articles",
   },
 
   mentionsLegales: {

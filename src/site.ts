@@ -40,6 +40,7 @@ export const routeSuffixes = [
   "/fonctionnalites",
   "/tarifs",
   "/a-propos",
+  "/blog",
   "/contact",
   "/mentions-legales",
   "/confidentialite",
