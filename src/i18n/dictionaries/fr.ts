@@ -213,10 +213,6 @@ export const fr = {
     pageTitle: "Blog",
     metaDescription:
       "Le blog d'Orekio : repères pratiques sur le suivi thérapeutique entre les séances, les échelles cliniques, les outils de TCC et l'accompagnement des patients.",
-    eyebrow: "Blog",
-    heading: "Repères pour le suivi entre les séances",
-    intro:
-      "Des articles courts sur les outils qu'Orekio met à disposition — agenda du sommeil, échelles validées, plan de sécurité — et sur la manière de les intégrer à une pratique.",
     empty: "Les premiers articles arrivent bientôt.",
     readMore: "Lire l’article →",
     readingTime: "min de lecture",

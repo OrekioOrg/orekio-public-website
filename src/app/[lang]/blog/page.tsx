@@ -50,15 +50,9 @@ export default async function BlogIndexPage({
           { name: dict.pageTitle, url: absoluteUrl(lang, "/blog") },
         ])}
       />
-      <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
-        {dict.eyebrow}
-      </p>
-      <h1 className="mt-4 text-[32px] font-medium text-on-surface-strong">
-        {dict.heading}
+      <h1 className="text-[32px] font-medium text-on-surface-strong">
+        {dict.pageTitle}
       </h1>
-      <p className="mt-4 text-[16px] leading-relaxed text-on-surface">
-        {dict.intro}
-      </p>
 
       {articles.length === 0 ? (
         <p className="mt-12 text-[15px] text-on-surface-variant">{dict.empty}</p>

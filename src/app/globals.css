@@ -87,7 +87,8 @@ body {
 .prose {
   color: var(--color-on-surface);
   font-size: 17px;
-  line-height: 1.7;
+  font-weight: 300;
+  line-height: 1.6;
 }
 .prose > * + * {
   margin-top: 1.25em;
@@ -105,13 +106,14 @@ body {
   font-weight: 500;
   color: var(--color-on-surface-strong);
 }
+/* Charte : lien = #2E9E96, souligné au survol uniquement. */
 .prose a {
-  color: var(--color-primary);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  color: var(--color-secondary);
+  text-decoration: none;
 }
 .prose a:hover {
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .prose strong {
   color: var(--color-on-surface-strong);
