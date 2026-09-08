@@ -222,6 +222,15 @@ export const en: Dictionary = {
     updatedOn: "Updated",
     backToList: "All articles",
     allArticles: "All articles",
+    share: "Share",
+    shareNative: "Share…",
+    shareCopy: "Copy link",
+    shareCopied: "Link copied",
+    shareX: "Share on X",
+    shareLinkedin: "Share on LinkedIn",
+    shareEmail: "Share by email",
+    shareBluesky: "Share on Bluesky",
+    shareEmailSubject: "Orekio article: ",
   },
 
   mentionsLegales: {
