@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Outfit, IBM_Plex_Mono } from "next/font/google";
-import { SITE_NAME, SITE_URL } from "@/site";
+import {
+  BING_SITE_VERIFICATION,
+  GOOGLE_SITE_VERIFICATION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -75,9 +80,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Replace with the token from Google Search Console once the property is
-  // verified (Settings › Ownership verification › HTML tag).
-  // verification: { google: "REPLACE_WITH_TOKEN" },
+  // Tokens live in src/site.ts. Emits <meta> tags only when a token is set.
+  verification: {
+    ...(GOOGLE_SITE_VERIFICATION ? { google: GOOGLE_SITE_VERIFICATION } : {}),
+    ...(BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": BING_SITE_VERIFICATION } }
+      : {}),
+  },
 };
 
 // The true root layout: only <html>/<body>, fonts, and global CSS live

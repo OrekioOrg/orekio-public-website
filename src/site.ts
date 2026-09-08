@@ -9,6 +9,14 @@ export const SITE_URL = "https://orekio.fr";
 
 export const SITE_NAME = "Orekio";
 
+// Search-engine ownership-verification tokens. Paste the value from the
+// "HTML tag" verification method (just the content="..." part, not the
+// whole <meta> tag). Leave empty to emit nothing.
+//   Google Search Console → Add property → URL prefix → HTML tag
+//   Bing Webmaster Tools  → Add site → HTML Meta Tag  (or "Import from GSC")
+export const GOOGLE_SITE_VERIFICATION = "";
+export const BING_SITE_VERIFICATION = "";
+
 // hreflang codes emitted for each locale. Kept as bare language codes
 // (Google matches "fr" to all French-speaking regions); x-default points
 // at the French version, which is also where "/" redirects.
