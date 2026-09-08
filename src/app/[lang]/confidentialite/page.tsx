@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LegalPage } from "@/components/legal-page";
+import { pageMetadata } from "@/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,14 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang).confidentialite;
-  return { title: dict.pageTitle, description: dict.metaDescription };
+  return pageMetadata({
+    lang,
+    suffix: "/confidentialite",
+    title: dict.pageTitle,
+    description: dict.metaDescription,
+    // Placeholder draft (bracketed content); flip to indexable once finalised.
+    index: false,
+  });
 }
 
 export default async function ConfidentialitePage({

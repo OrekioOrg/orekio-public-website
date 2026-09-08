@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SegmentText } from "@/components/segment-text";
+import { pageMetadata } from "@/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,12 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang).pricing;
-  return { title: dict.pageTitle, description: dict.metaDescription };
+  return pageMetadata({
+    lang,
+    suffix: "/tarifs",
+    title: dict.pageTitle,
+    description: dict.metaDescription,
+  });
 }
 
 export default async function TarifsPage({
