@@ -452,7 +452,7 @@ export const en: Dictionary = {
         heading: "How to request deletion",
         lines: [
           [
-            "In the Orekio mobile app, open the Profile tab, go to the \u201cMy data\u201d section, then tap \u201cDelete my account and data\u201d and confirm. Deletion is immediate and permanent.",
+            "In the Orekio mobile app, open the Profile tab, then Settings. In the \u201cMy data\u201d section, tap \u201cDelete my account and data\u201d and confirm. Deletion is immediate and permanent.",
           ],
           [
             "If you no longer have access to the app, email ",

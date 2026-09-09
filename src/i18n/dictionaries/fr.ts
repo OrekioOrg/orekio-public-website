@@ -451,7 +451,7 @@ export const fr = {
         heading: "Comment demander la suppression",
         lines: [
           [
-            "Dans l'application mobile Orekio, ouvrez l'onglet Profil, section « Mes données », puis appuyez sur « Supprimer mon compte et mes données » et confirmez. La suppression est immédiate et définitive.",
+            "Dans l'application mobile Orekio, ouvrez l'onglet Profil, puis Réglages. Dans la section « Mes données », appuyez sur « Supprimer mon compte et mes données » et confirmez. La suppression est immédiate et définitive.",
           ],
           [
             "Si vous n'avez plus accès à l'application, écrivez à ",
