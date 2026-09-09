@@ -229,9 +229,6 @@ export const fr = {
     shareCopied: "Lien copié",
     shareX: "Partager sur X",
     shareLinkedin: "Partager sur LinkedIn",
-    shareEmail: "Partager par e-mail",
-    shareBluesky: "Partager sur Bluesky",
-    shareEmailSubject: "Article Orekio : ",
   },
 
   mentionsLegales: {
