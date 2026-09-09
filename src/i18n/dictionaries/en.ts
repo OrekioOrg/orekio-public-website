@@ -32,6 +32,7 @@ export const en: Dictionary = {
     legalNotice: "Legal notice",
     privacy: "Privacy",
     terms: "Terms",
+    accountDeletion: "Account deletion",
   },
 
   home: {
@@ -438,4 +439,49 @@ export const en: Dictionary = {
       },
     ],
   },
+  accountDeletion: {
+    pageTitle: "Account deletion",
+    metaDescription:
+      "How to delete your Orekio account and all associated data.",
+    eyebrow: "Account deletion",
+    heading: "Delete your Orekio account and data",
+    noticeBox:
+      "You can delete your Orekio account and all associated data at any time, from the mobile app or by email. This page explains how, and what happens to your data.",
+    sections: [
+      {
+        heading: "How to request deletion",
+        lines: [
+          [
+            "In the Orekio mobile app, open the Profile tab, go to the \u201cMy data\u201d section, then tap \u201cDelete my account and data\u201d and confirm. Deletion is immediate and permanent.",
+          ],
+          [
+            "If you no longer have access to the app, email ",
+            email,
+            " from the address linked to your account. Requests are handled within 30 days.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Data that is deleted",
+        lines: [
+          ["Your account and identity (email, name, first name, alias)."],
+          [
+            "All your entries: mood, sleep, questionnaires, safety plan, exercises and personal notes.",
+          ],
+          ["Your unlocked modules, reminders and settings."],
+          ["The link with your practitioner and the notes concerning you."],
+          ["All data stored on your device."],
+        ] as Segment[][],
+      },
+      {
+        heading: "Data that is retained",
+        lines: [
+          [
+            "A technical record showing that a deletion took place (date and type of operation, with no health content) is kept in our audit log for up to 10 years, to comply with our legal obligations relating to the hosting of health data. No other data is retained after deletion.",
+          ],
+        ] as Segment[][],
+      },
+    ],
+  },
+
 };

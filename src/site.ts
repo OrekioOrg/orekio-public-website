@@ -46,6 +46,7 @@ export const routeSuffixes = [
   "/mentions-legales",
   "/confidentialite",
   "/cgu",
+  "/account-deletion",
 ] as const;
 
 export type RouteSuffix = (typeof routeSuffixes)[number];
