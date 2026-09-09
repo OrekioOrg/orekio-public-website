@@ -130,6 +130,7 @@ export default async function RootLayout({
     { href: `/${lang}/mentions-legales`, label: dict.footer.legalNotice },
     { href: `/${lang}/confidentialite`, label: dict.footer.privacy },
     { href: `/${lang}/cgu`, label: dict.footer.terms },
+    { href: `/${lang}/account-deletion`, label: dict.footer.accountDeletion },
   ];
 
   return (

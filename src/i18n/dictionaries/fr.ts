@@ -31,6 +31,7 @@ export const fr = {
     legalNotice: "Mentions légales",
     privacy: "Confidentialité",
     terms: "CGU",
+    accountDeletion: "Suppression de compte",
   },
 
   home: {
@@ -437,6 +438,51 @@ export const fr = {
       },
     ],
   },
+  accountDeletion: {
+    pageTitle: "Suppression de compte",
+    metaDescription:
+      "Comment supprimer votre compte Orekio et l'ensemble des données associées.",
+    eyebrow: "Suppression de compte",
+    heading: "Supprimer votre compte Orekio et vos données",
+    noticeBox:
+      "Vous pouvez supprimer votre compte Orekio et toutes les données associées à tout moment, depuis l'application mobile ou par e-mail. Cette page décrit la procédure et le devenir de vos données.",
+    sections: [
+      {
+        heading: "Comment demander la suppression",
+        lines: [
+          [
+            "Dans l'application mobile Orekio, ouvrez l'onglet Profil, section « Mes données », puis appuyez sur « Supprimer mon compte et mes données » et confirmez. La suppression est immédiate et définitive.",
+          ],
+          [
+            "Si vous n'avez plus accès à l'application, écrivez à ",
+            email,
+            " depuis l'adresse e-mail associée à votre compte. Les demandes sont traitées sous 30 jours.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Données supprimées",
+        lines: [
+          ["Votre compte et votre identité (e-mail, nom, prénom, alias)."],
+          [
+            "Toutes vos saisies : humeur, sommeil, questionnaires, plan de sécurité, exercices et notes personnelles.",
+          ],
+          ["Vos modules débloqués, vos rappels et vos paramètres."],
+          ["Le lien avec votre praticien et les notes vous concernant."],
+          ["Toutes les données enregistrées sur votre appareil."],
+        ] as Segment[][],
+      },
+      {
+        heading: "Données conservées",
+        lines: [
+          [
+            "Une trace technique attestant qu'une suppression a eu lieu (date et nature de l'opération, sans aucun contenu de santé) est conservée dans notre journal d'audit pendant 10 ans au maximum, au titre de nos obligations légales liées à l'hébergement de données de santé. Aucune autre donnée n'est conservée après la suppression.",
+          ],
+        ] as Segment[][],
+      },
+    ],
+  },
+
 };
 
 export type Dictionary = typeof fr;
