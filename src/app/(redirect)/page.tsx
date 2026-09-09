@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 // <meta http-equiv="refresh"> — honored without JavaScript, including by
 // most crawlers — with a visible fallback link for the rare case it isn't.
 // The <meta> tag renders outside <head> here; React 19 hoists it there
-// automatically (this file is nested inside app/layout.tsx's <body>, which
-// is the actual root <html>/<head>/<body> — see that file for why).
+// automatically (this file is nested inside app/(redirect)/layout.tsx's
+// <body>, which is this route's root <html>/<head>/<body>).
 export default function RootPage() {
   const dict = getDictionary(defaultLocale);
 

@@ -211,6 +211,13 @@ export const fr = {
     email: "contact@orekio.app",
   },
 
+  notFound: {
+    metaTitle: "Page introuvable",
+    heading: "Cette page n'existe pas",
+    body: "Le lien est peut-être cassé, ou la page a été déplacée.",
+    cta: "Retour à l'accueil",
+  },
+
   blog: {
     pageTitle: "Blog",
     metaDescription:

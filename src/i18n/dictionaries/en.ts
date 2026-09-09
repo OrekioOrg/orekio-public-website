@@ -212,6 +212,13 @@ export const en: Dictionary = {
     email: "contact@orekio.app",
   },
 
+  notFound: {
+    metaTitle: "Page not found",
+    heading: "This page doesn't exist",
+    body: "The link may be broken, or the page may have been moved.",
+    cta: "Back to home",
+  },
+
   blog: {
     pageTitle: "Blog",
     metaDescription:
