@@ -1,5 +1,5 @@
 import type { Segment } from "../segment";
-import type { Dictionary } from "./fr";
+import type { Dictionary, PlanId } from "./fr";
 
 const email: Segment = {
   href: "mailto:contact@orekio.app",
@@ -137,6 +137,7 @@ export const en: Dictionary = {
       "Every plan gives access to the full set of therapeutic modules. What changes is the number of patients you follow, and the support around it.",
     plans: [
       {
+        id: "decouverte" as PlanId,
         name: "Discovery",
         price: "Free",
         period: "for 30 days",
@@ -150,6 +151,7 @@ export const en: Dictionary = {
         highlighted: false,
       },
       {
+        id: "praticien" as PlanId,
         name: "Practitioner",
         price: "€39.99",
         period: "per month",
@@ -164,6 +166,7 @@ export const en: Dictionary = {
         highlighted: true,
       },
       {
+        id: "cabinet" as PlanId,
         name: "Clinic",
         price: "Custom quote",
         period: "multiple practitioners",
@@ -177,12 +180,14 @@ export const en: Dictionary = {
         highlighted: false,
       },
     ],
-    subscribeButton: "Subscribe (coming soon)",
+    subscribeButton: "Subscribe",
+    subscribeButtonComingSoon: "Subscribe (coming soon)",
     subscribeButtonTitle: "Online payment is coming soon",
+    quoteButton: "Contact us",
     footerNote: [
-      "Online subscription isn't open yet: secure payment is coming soon. In the meantime, ",
+      "Online payment is secured by Stripe. Have a question before you commit? ",
       { href: "/en/contact", text: "contact us" },
-      " to be notified when it opens, or for early access.",
+      ".",
     ] as Segment[],
   },
 

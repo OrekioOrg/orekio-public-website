@@ -1,5 +1,10 @@
 import type { Segment } from "../segment";
 
+// Stable per-plan key for the /tarifs cards, independent of the (localized)
+// display name — used to look up each plan's Stripe Payment Link.
+// See src/stripe.ts.
+export type PlanId = "decouverte" | "praticien" | "cabinet";
+
 const email: Segment = {
   href: "mailto:contact@orekio.app",
   text: "contact@orekio.app",
@@ -136,6 +141,7 @@ export const fr = {
       "Chaque offre donne accès à l'ensemble des modules thérapeutiques. Ce qui change, c'est le nombre de patients suivis et l'accompagnement autour.",
     plans: [
       {
+        id: "decouverte" as PlanId,
         name: "Découverte",
         price: "Gratuit",
         period: "pendant 30 jours",
@@ -149,6 +155,7 @@ export const fr = {
         highlighted: false,
       },
       {
+        id: "praticien" as PlanId,
         name: "Praticien",
         price: "39,99 €",
         period: "par mois",
@@ -162,6 +169,7 @@ export const fr = {
         highlighted: true,
       },
       {
+        id: "cabinet" as PlanId,
         name: "Cabinet",
         price: "Sur devis",
         period: "plusieurs praticiens",
@@ -175,12 +183,14 @@ export const fr = {
         highlighted: false,
       },
     ],
-    subscribeButton: "S'abonner (bientôt)",
+    subscribeButton: "S'abonner",
+    subscribeButtonComingSoon: "S'abonner (bientôt)",
     subscribeButtonTitle: "Le paiement en ligne arrive bientôt",
+    quoteButton: "Nous contacter",
     footerNote: [
-      "L'abonnement en ligne n'est pas encore ouvert : le paiement sécurisé arrive prochainement. En attendant, ",
+      "Le paiement en ligne est sécurisé par Stripe. Une question avant de vous engager ? ",
       { href: "/fr/contact", text: "contactez-nous" },
-      " pour être averti de l'ouverture ou pour un accès anticipé.",
+      ".",
     ] as Segment[],
   },
 

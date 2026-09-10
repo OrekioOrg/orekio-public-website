@@ -74,6 +74,13 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        env:
+          # Stripe Payment Link for the "Praticien" plan on /tarifs (see
+          # src/stripe.ts). Not a secret — set it as a repository variable
+          # under Settings → Secrets and variables → Actions → Variables.
+          # Left unset, the pricing page falls back to its "coming soon"
+          # button.
+          NEXT_PUBLIC_STRIPE_PAYMENT_LINK_PRATICIEN: ${{ vars.NEXT_PUBLIC_STRIPE_PAYMENT_LINK_PRATICIEN }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
