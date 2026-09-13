@@ -1,6 +1,6 @@
 ---
 title: "The sleep diary: what it's for between two appointments"
-description: "What a daily sleep diary brings to therapeutic follow-up, how to introduce it with a patient, and what Orekio does with it — without ever interpreting it."
+description: "What a daily sleep diary brings to therapeutic follow-up, how to introduce it with a patient, and what Orekio does with it: display it, and leave the reading to the practitioner."
 date: "2026-09-08"
 updated: "2026-09-08"
 author: "The Orekio team"
@@ -8,7 +8,7 @@ tags: ["sleep diary", "follow-up", "CBT for insomnia"]
 draft: false
 ---
 
-The sleep diary is one of the simplest tools to set up in a follow-up, and one of the most useful for the session that comes after. It asks the patient for only one or two minutes a day, and it gives the practitioner a concrete picture of what happened between two appointments — where memory alone is unreliable.
+The sleep diary is one of the simplest tools to set up in a follow-up, and one of the most useful for the appointment that comes after. It asks the patient for only one or two minutes a day, and it gives the practitioner a concrete picture of what happened between two appointments, where memory alone stays approximate.
 
 ## What it records
 
@@ -28,14 +28,14 @@ Filled in retrospectively, in the waiting room, the diary loses most of its valu
 
 For many patients, the act of writing already changes their relationship with sleep: attention shifts from a diffuse feeling ("I slept badly") to a finer observation ("I woke up once, around 4 a.m., and fell back asleep").
 
-## What Orekio does with it — and doesn't
+## What Orekio does with it, and what stays with the practitioner
 
 In Orekio, the sleep diary is a module the practitioner unlocks when they judge it relevant. The patient fills it in from their phone. At the next appointment, the practitioner finds the full history.
 
-Orekio **does not interpret** this data. The app shows no "sleep score", triggers no alert if a night is short, does not compare records to a norm. What is displayed is a neutral history: times, durations, the patient's own words. The clinical reading — phase shift, sleep hygiene, whether a specific treatment is indicated — remains entirely with the practitioner.
+Orekio **displays** this data, and stops there. What appears on screen is a neutral history: times, durations, the patient's own words. The "sleep score", the alert on a short night, the comparison to a norm are all gestures that belong to the practitioner. The clinical reading rests entirely with them: phase shift, sleep hygiene, whether a specific treatment is indicated.
 
-This is a deliberate distinction: Orekio holds the status of a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. Its role is to make information available, not to draw conclusions.
+This is a deliberate distinction: Orekio is designed as a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. Its role is to make information available; drawing conclusions belongs to the practitioner.
 
 ## In practice
 
-To introduce the diary with a patient, it is often enough to explain that it is not a test but a support for the next session, and that a few lines a day are enough. The first weeks serve as a baseline; the rest lets you track the effect of the adjustments decided in session.
+To introduce the diary with a patient, it is often enough to explain that it is a support for the next appointment rather than a test, and that a few lines a day are enough. The first weeks serve as a baseline; the rest lets you track the effect of the adjustments decided in the appointment.

@@ -1,6 +1,6 @@
 ---
 title: "La roue des émotions : à quoi elle sert en thérapie"
-description: "La roue des émotions aide à nommer et différencier ce que l'on ressent. Ses variantes, son intérêt clinique, et la façon dont Orekio la met à disposition du patient entre les séances."
+description: "La roue des émotions aide à nommer et différencier ce que l'on ressent. Ses variantes, son intérêt clinique, et la façon dont Orekio la met à disposition du patient entre les rendez-vous."
 date: "2026-09-08"
 updated: "2026-09-08"
 author: "L'équipe Orekio"
@@ -12,7 +12,7 @@ La roue des émotions est un support visuel qui aide à mettre un mot précis su
 
 ## Ce qu'elle apporte
 
-Nommer une émotion avec justesse — ce qu'on appelle parfois la *granularité émotionnelle* — est associé à une meilleure régulation. La roue est particulièrement utile :
+Nommer une émotion avec justesse, ce qu'on appelle parfois la *granularité émotionnelle*, est associé à une meilleure régulation. La roue est particulièrement utile :
 
 - quand le vocabulaire émotionnel est pauvre ou indifférencié (« stressé », « énervé » pour tout) ;
 - avec des adolescents, ou des personnes présentant une alexithymie ;
@@ -21,13 +21,13 @@ Nommer une émotion avec justesse — ce qu'on appelle parfois la *granularité 
 
 ## Ses variantes
 
-Plusieurs modèles coexistent : la roue de Plutchik (huit émotions primaires, avec intensités et combinaisons), la *Geneva Emotion Wheel*, ou la « roue des sentiments » popularisée par Gloria Willcox, organisée en trois cercles concentriques. Aucune n'est « la » bonne version : ce sont des cartes, pas des instruments de mesure. Il n'y a ni score, ni interprétation automatique.
+Plusieurs modèles coexistent : la roue de Plutchik (huit émotions primaires, avec intensités et combinaisons), la *Geneva Emotion Wheel*, ou la « roue des sentiments » popularisée par Gloria Willcox, organisée en trois cercles concentriques. Ces modèles se valent : ce sont des cartes, à lire comme telles plutôt que comme des instruments de mesure. Le patient y choisit un mot, et ce mot reste tel quel.
 
-## Ce qu'Orekio en fait — et ne fait pas
+## Ce qu'Orekio en fait, et ce qui reste au praticien
 
-Dans Orekio, la roue des émotions est un module que le praticien débloque quand il le juge pertinent. Entre les séances, le patient s'en sert pour noter ce qu'il ressent dans une situation donnée, avec le mot le plus juste possible. À la consultation suivante, le praticien retrouve ces relevés tels quels.
+Dans Orekio, la roue des émotions est un module que le praticien débloque quand il le juge pertinent. Entre les rendez-vous, le patient s'en sert pour noter ce qu'il ressent dans une situation donnée, avec le mot le plus juste possible. À la consultation suivante, le praticien retrouve ces relevés tels quels.
 
-Orekio **n'analyse pas** ces entrées : pas de synthèse automatique de l'humeur, pas d'alerte, pas de courbe interprétée. L'application restitue les mots du patient et le contexte qu'il a noté. Comme pour les autres modules, c'est cohérent avec le statut de carnet de bord numérique, hors du champ des dispositifs médicaux (voir [À propos](/fr/a-propos)).
+Orekio **restitue** ces entrées : les mots du patient, et le contexte qu'il a noté. La synthèse de l'humeur, l'alerte et la courbe interprétée appartiennent au praticien. Comme pour les autres modules, c'est cohérent avec le statut de carnet de bord numérique, hors du champ des dispositifs médicaux (voir [À propos](/fr/a-propos)).
 
 ## En pratique
 

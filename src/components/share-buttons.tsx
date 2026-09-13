@@ -80,7 +80,7 @@ export function ShareButtons({ url, title, labels }: Props) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      /* clipboard blocked — no-op */
+      /* clipboard blocked, no-op */
     }
   }
 
@@ -88,7 +88,7 @@ export function ShareButtons({ url, title, labels }: Props) {
     try {
       await navigator.share({ title, url });
     } catch {
-      /* user cancelled — no-op */
+      /* user cancelled, no-op */
     }
   }
 

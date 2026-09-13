@@ -57,7 +57,16 @@ export default async function FonctionnalitesPage({
                   className="flex items-start gap-2 text-[15px] text-on-surface"
                 >
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  {module}
+                  <span>
+                    {module}
+                    {/* Six modules ouverts a l'ouverture, revus de bout en bout ;
+                        le reste est construit mais s'ouvre au fil des mois. */}
+                    {dict.openAtLaunch.includes(module) ? (
+                      <span className="ml-2 rounded-full bg-primary-container px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.05em] text-primary">
+                        {dict.openBadge}
+                      </span>
+                    ) : null}
+                  </span>
                 </li>
               ))}
             </ul>

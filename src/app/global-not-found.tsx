@@ -7,7 +7,7 @@ import "./globals.css";
 // Global 404 for any URL that matches no route. Next bypasses the layouts
 // when rendering this, so it must return the whole <html> document itself
 // (see next.config.ts for why a layout + not-found.tsx can't cover it).
-// Unmatched URLs have no locale, so this falls back to the default one —
+// Unmatched URLs have no locale, so this falls back to the default one,
 // the same locale "/" redirects to.
 const dict = getDictionary(defaultLocale).notFound;
 

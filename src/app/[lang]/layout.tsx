@@ -35,8 +35,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 // lives under the [lang] segment, it can set <html lang> to the real locale
 // at build time (the "/" redirect stub has its own minimal root layout in
 // app/(redirect)). Site-wide metadata defaults that every locale route
-// inherits — metadataBase, OG image, Twitter card, robots, search-console
-// verification — live in generateMetadata below; per-page canonical +
+// inherits: metadataBase, OG image, Twitter card, robots, search-console
+// verification, live in generateMetadata below; per-page canonical +
 // hreflang + title come from each page's own generateMetadata (see src/seo.ts).
 
 export function generateStaticParams() {
@@ -63,13 +63,14 @@ export async function generateMetadata({
     // pageMetadata only sets a plain string title.
     title: {
       default: dict.meta.title,
-      template: `%s — Orekio`,
+      template: `%s - Orekio`,
     },
     applicationName: SITE_NAME,
     category: "health",
     keywords: [
       "Orekio",
       "carnet de bord numérique",
+      "armoire thérapeutique",
       "suivi thérapeutique",
       "agenda du sommeil",
       "échelles cliniques",
@@ -163,15 +164,17 @@ export default async function RootLayout({
             </nav>
             <div className="flex items-center gap-4">
               <LanguageSwitcher current={lang} />
+              {/* Rien ne se vend avant l'HDS et la SAS : l'appel unique du site
+                  capte l'interet, il ne mene pas a une offre. */}
               <Link
-                href={`/${lang}/tarifs`}
+                href={`/${lang}/contact`}
                 className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 md:inline-block"
               >
                 {dict.nav.subscribe}
               </Link>
               <MobileMenu
                 navLinks={navLinks}
-                subscribeHref={`/${lang}/tarifs`}
+                subscribeHref={`/${lang}/contact`}
                 subscribeLabel={dict.nav.subscribe}
                 openLabel={dict.nav.openMenu}
                 closeLabel={dict.nav.closeMenu}

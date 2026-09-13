@@ -13,7 +13,7 @@ export const OG_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Orekio — carnet de bord numérique pour le suivi thérapeutique",
+  alt: "Orekio, l'armoire thérapeutique numérique pour le suivi entre les consultations",
 };
 
 interface ArticleMeta {
@@ -27,7 +27,7 @@ interface PageMetaInput {
   lang: Locale;
   /** Path after "/<lang>", e.g. "/tarifs". "" for the locale home page. */
   suffix?: string;
-  /** Raw page title (without the "— Orekio" suffix; the layout template adds it). */
+  /** Raw page title (without the "- Orekio" suffix; the layout template adds it). */
   title: string;
   description: string;
   /** Set false for thin/placeholder pages that shouldn't rank (legal drafts). */
@@ -79,7 +79,7 @@ export function pageMetadata({
   availableLocales,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(lang, suffix);
-  const ogTitle = suffix === "" ? title : `${title} — ${SITE_NAME}`;
+  const ogTitle = suffix === "" ? title : `${title} - ${SITE_NAME}`;
   const ogImage = image
     ? { url: image, width: 1200, height: 630, alt: title }
     : OG_IMAGE;

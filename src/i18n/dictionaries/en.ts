@@ -9,9 +9,9 @@ const email: Segment = {
 
 export const en: Dictionary = {
   meta: {
-    title: "Orekio — Therapeutic support, between sessions",
+    title: "Orekio, therapeutic support between appointments",
     description:
-      "Orekio connects practitioners and their patients between appointments: sleep diary, validated clinical scales, safety plan, and more. A digital care journal, not a medical device.",
+      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, six modules at launch and around thirty on the way. A digital care journal: Orekio displays, the practitioner interprets.",
   },
 
   nav: {
@@ -20,40 +20,40 @@ export const en: Dictionary = {
     about: "About",
     blog: "Blog",
     contact: "Contact",
-    subscribe: "Subscribe",
+    subscribe: "Waiting list",
     openMenu: "Open menu",
     closeMenu: "Close menu",
   },
 
   footer: {
-    tagline: "Orekio — Digital care journal",
+    tagline: "Orekio, your digital therapeutic toolkit",
     disclaimer:
-      "Orekio is a digital care journal, not a medical device within the meaning of Regulation (EU) 2017/745. The data shown is raw: the app never interprets it, never triggers an alert, and never makes a diagnosis.",
+      "Orekio is a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. The data shown stays raw: interpretation, alerts and diagnosis all rest with the practitioner.",
     legalNotice: "Legal notice",
     privacy: "Privacy",
     terms: "Terms",
   },
 
   home: {
-    eyebrow: "Digital care journal",
-    title: "Therapeutic support, between sessions",
+    eyebrow: "Your digital therapeutic toolkit",
+    title: "Therapeutic support, between appointments",
     description:
-      "Orekio connects the practitioner and their patient between appointments. The practitioner unlocks tools as the follow-up progresses, the patient uses them on their phone. Nothing is interpreted — everything stays available for the next session.",
-    ctaSubscribe: "Subscribe to Orekio",
+      "Your patient notes on their phone day by day, and you find it all again from your web workspace. Dated, precise records, exactly as they entered them: observation, rather than a memory pieced together in the waiting room. You adjust the follow-up according to your own clinical assessment.",
+    ctaSubscribe: "Join the waiting list",
     ctaFeatures: "Discover the features",
-    section2Title: "A tool built for follow-up, not for diagnosis",
+    section2Title: "Follow-up on the patient side, clinical reading on the practitioner side",
     section2Description:
-      "Orekio is a digital care journal: patient data stays raw, with no interpretation or automatic alert. The practitioner stays in control of what they unlock, and of what they do with it in session.",
+      "Orekio is a digital care journal for mental health professionals, nurses, advanced practice nurses, psychiatrists, physicians, psychologists: patient data stays raw, exactly as they entered it. The practitioner stays in control of what they unlock, and of the reading they make of it in the appointment.",
     highlights: [
       {
         title: "Sleep diary",
         description:
-          "The patient logs their nights, the practitioner reviews the history in session.",
+          "The patient logs their nights, the practitioner reviews the history in the appointment.",
       },
       {
         title: "Validated clinical scales",
         description:
-          "PHQ-9, GAD-7, EPDS and others, faithful to their validated version.",
+          "The PHQ-9 today, faithful to its validated version. Others will follow as their rights are secured.",
       },
       {
         title: "Safety plan",
@@ -63,23 +63,50 @@ export const en: Dictionary = {
       {
         title: "Beck's columns, the wheel of emotions...",
         description:
-          "Over 30 therapeutic modules, unlocked progressively by the practitioner.",
+          "Six modules open from day one. Around thirty more, already built, open over the coming months.",
       },
     ],
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      "Choose a plan and get your therapeutic toolkit back today.",
-    ctaSectionButton: "See pricing",
+      "A 60-day trial with no credit card, and a founders' price reserved for the first 100. Join the waiting list.",
+    ctaSectionButton: "Join the waiting list",
+    apps: {
+      title: "Two apps, one follow-up",
+      description:
+        "Orekio comes as two apps that talk to each other. You work from your computer, your patient from their phone. The subscription is yours: for them, the app is free.",
+      cards: [
+        {
+          title: "Your web workspace, on desktop",
+          description:
+            "You invite your patients, unlock the tools one at a time, and review what they entered during the appointment. Nothing to install, everything runs in your browser.",
+        },
+        {
+          title: "Your patient's mobile app",
+          description:
+            "They find the tools you opened for them and fill them in day by day, even offline. They get access on your invitation, free of charge.",
+        },
+      ],
+    },
   },
 
   features: {
     pageTitle: "Features",
     metaDescription:
-      "Over 30 therapeutic modules: sleep diary, validated clinical scales, safety plan, wheel of emotions, and more.",
+      "Six modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, wheel of emotions, Beck's columns, and more.",
     eyebrow: "Features",
-    heading: "Over 30 therapeutic modules",
+    heading: "Six modules at launch, around thirty on the way",
     description:
-      "The practitioner unlocks tools session by session, at their own pace. Every module shows raw data: Orekio never interprets it, never triggers an alert, and never makes a diagnosis.",
+      "Six modules are open from day one, reviewed end to end. Around thirty more, already built, open over the coming months. You unlock each tool from your web workspace, appointment by appointment and at your own pace; your patient finds it on their phone. Every module shows raw data: Orekio displays it, you interpret it.",
+    openBadge: "at launch",
+    openAtLaunch: [
+      "Sleep diary",
+      "Mood tracking",
+      "PHQ-9 (depression)",
+      "Beck's columns",
+      "Safety plan",
+      "Wheel of emotions",
+      "Breathing techniques",
+    ],
     categories: [
       {
         title: "Day-to-day tracking",
@@ -95,12 +122,7 @@ export const en: Dictionary = {
         title: "Validated clinical scales",
         modules: [
           "PHQ-9 (depression)",
-          "GAD-7 (anxiety)",
-          "EPDS (postnatal depression)",
-          "BSL-23",
-          "RCADS",
-          "ASRS",
-          "SNAP-IV",
+          "GAD-7 (anxiety), coming next",
         ],
       },
       {
@@ -129,59 +151,64 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      "Choose the Orekio plan that fits your practice: solo practitioner or clinic.",
+      "60-day trial, no credit card, then €29 per month excl. VAT. Founders: €19 per month excl. VAT for life, 100 seats. Patient app always free.",
     eyebrow: "Pricing",
-    heading: "One plan per practice",
+    heading: "A 60-day trial, then one price",
     description:
-      "Every plan gives access to the full set of therapeutic modules. What changes is the number of patients you follow, and the support around it.",
+      "60-day trial, no credit card. Then €29 per month excl. VAT, or €24 per month excl. VAT billed yearly. Founders: €19 per month excl. VAT for life, 100 seats. One month free for every colleague you refer, and one for you. Unlimited patients, patient app always free.",
     plans: [
       {
-        name: "Discovery",
+        name: "Trial",
         price: "Free",
-        period: "for 30 days",
+        period: "60 days, no credit card",
         description:
-          "To try Orekio with a few patients before committing.",
+          "Long enough for a real follow-up: a history, entries between appointments, a shared review.",
         features: [
-          "Up to 5 patients",
-          "All therapeutic modules",
-          "Patient mobile app included",
+          "Practitioner web workspace",
+          "Unlimited patients",
+          "All open modules",
+          "Free mobile app for your patients",
         ],
         highlighted: false,
       },
       {
-        name: "Practitioner",
-        price: "€39.99",
-        period: "per month",
+        name: "Founders",
+        price: "€19 excl. VAT",
+        period: "per month, locked for life",
         description:
-          "For a practitioner following patients over the long term.",
+          "For those who subscribe during their trial. 100 seats, direct access to the team and the roadmap.",
         features: [
-          "Unlimited patients",
-          "All therapeutic modules",
-          "Full history and export",
-          "Email support",
+          "Everything in Practitioner, for life",
+          "Price guaranteed while the subscription stays active",
+          "A direct channel to the team",
+          "The roadmap ahead of everyone else",
         ],
         highlighted: true,
       },
       {
-        name: "Clinic",
-        price: "Custom quote",
-        period: "multiple practitioners",
+        name: "Practitioner",
+        price: "€29 excl. VAT",
+        period: "per month, no commitment",
         description:
-          "For a clinic or organization with several practitioners.",
+          "Or €24 per month excl. VAT billed yearly in advance, two months free.",
         features: [
-          "Everything in Practitioner, for each member",
-          "Admin-managed access",
-          "Rollout support",
+          "Practitioner web workspace",
+          "Unlimited patients",
+          "All open modules",
+          "Free mobile app for your patients",
+          "Full history and export",
+          "Email support",
+          "One month free per referred colleague, and one for you",
         ],
         highlighted: false,
       },
     ],
-    subscribeButton: "Subscribe (coming soon)",
-    subscribeButtonTitle: "Online payment is coming soon",
+    subscribeButton: "Join the waiting list",
+    subscribeButtonTitle: "During the beta, every account is opened by hand",
     footerNote: [
-      "Online subscription isn't open yet: secure payment is coming soon. In the meantime, ",
-      { href: "/en/contact", text: "contact us" },
-      " to be notified when it opens, or for early access.",
+      "Prices exclude VAT (20% added). During the beta, sign-up goes through a waiting list and every account is opened by hand. A practice with several practitioners? ",
+      { href: "/en/contact", text: "Write to us" },
+      ", a per-seat plan is on its way.",
     ] as Segment[],
   },
 
@@ -190,39 +217,39 @@ export const en: Dictionary = {
     metaDescription:
       "Orekio is a digital care journal supporting the relationship between a practitioner and their patient, between appointments.",
     eyebrow: "About",
-    heading: "What Orekio is, and what it isn't",
+    heading: "What Orekio does, and what it leaves to the practitioner",
     paragraph1:
-      "Orekio supports the relationship between a therapist (advanced practice nurse, psychiatrist, psychologist…) and their patient, in the interval between two appointments. The practitioner invites their patient by email, then progressively unlocks tools as the follow-up goes on: sleep diary, clinical scales, safety plan, and around thirty other modules.",
+      "Orekio supports the relationship between a mental health professional (nurse, advanced practice nurse, psychiatrist, physician, psychologist…) and their patient, in the interval between two appointments. The practitioner invites their patient by email, then progressively unlocks tools as the follow-up goes on: sleep diary, clinical scales, safety plan, and around thirty other modules.",
     paragraph2:
-      "The patient uses them from their phone. What they enter stays available for the next session: Orekio only ever displays the data back, never interprets it.",
-    boxTitle: "A care journal, not a medical device",
+      "The patient uses them from their phone. What they enter stays available for the next appointment: Orekio displays the data back as it is, and the clinical reading belongs to the practitioner. Orekio is built by a team pairing an advanced practice nurse in psychiatry with a developer.",
+    boxTitle: "A digital care journal, outside the scope of medical devices",
     boxText:
-      "Orekio holds the status of a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. No data entered is interpreted by the application: no automatic alert, no clinical label, no comparison to a norm. What's displayed is always a raw figure or a neutral history, leaving the clinical reading up to the practitioner.",
+      "Orekio is designed as a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. The application limits itself to displaying: what appears on screen is always a raw figure or a neutral history. Alerts, clinical labels and comparison to a norm all rest with the practitioner, and so does the whole clinical reading.",
     paragraph3:
-      "The health data entered into Orekio falls under Article 9 of the GDPR. It is processed with the patient's explicit consent, and a certified health-data hosting provider (HDS in France) is planned before any large-scale commercialization.",
+      "The health data entered into Orekio falls under Article 9 of the GDPR. It is processed with the patient's explicit consent, and a certified health-data hosting provider (HDS in France) is planned before commercial launch.",
   },
 
   contact: {
     pageTitle: "Contact",
     metaDescription: "Contact the Orekio team for any question or a demo.",
     eyebrow: "Contact",
-    heading: "A question, a demo?",
+    heading: "A question, a demo, or keen to be among the first?",
     description:
-      "The contact form is coming soon. In the meantime, write to us directly:",
+      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally.",
     email: "contact@orekio.app",
   },
 
   notFound: {
     metaTitle: "Page not found",
-    heading: "This page doesn't exist",
-    body: "The link may be broken, or the page may have been moved.",
+    heading: "Page not found",
+    body: "The link may point to a page that has moved. Home will put you back on track.",
     cta: "Back to home",
   },
 
   blog: {
     pageTitle: "Blog",
     metaDescription:
-      "The Orekio blog: practical notes on therapeutic follow-up between sessions, clinical scales, CBT tools, and supporting patients.",
+      "The Orekio blog: practical notes on therapeutic follow-up between appointments, clinical scales, CBT tools, and supporting patients.",
     empty: "The first articles are coming soon.",
     readMore: "Read the article →",
     readingTime: "min read",
@@ -250,7 +277,7 @@ export const en: Dictionary = {
       {
         heading: "Website publisher",
         lines: [
-          ["[Legal company name] — [legal form, e.g. SAS, sole trader…]"],
+          ["[Legal company name], [legal form, e.g. SAS, sole trader…]"],
           ["[Registered office address]"],
           ["[Company registration number]"],
           ["Share capital: [amount]"],
@@ -264,7 +291,7 @@ export const en: Dictionary = {
           ["[Host name]"],
           ["[Host address]"],
           [
-            "The health data processed by Orekio is intended to be hosted with a provider certified as a Health Data Host (HDS in France) under Article L.1111-8 of the French Public Health Code, before any large-scale commercialization (see the ",
+            "The health data processed by Orekio is intended to be hosted with a provider certified as a Health Data Host (HDS in France) under Article L.1111-8 of the French Public Health Code, before commercial launch (see the ",
             { href: "/en/a-propos", text: "About" },
             " page).",
           ],
@@ -304,7 +331,7 @@ export const en: Dictionary = {
         heading: "Data controller",
         lines: [
           [
-            "[Legal company name], as data controller, carries out the data processing described below. For any question, contact: [DPO or GDPR contact] — ",
+            "[Legal company name], as data controller, carries out the data processing described below. For any question, contact: [DPO or GDPR contact], ",
             email,
             ".",
           ],
@@ -322,7 +349,7 @@ export const en: Dictionary = {
         heading: "Purposes and legal basis",
         lines: [
           [
-            "Follow-up data is processed on the basis of the patient's explicit consent (Article 9.2.a of the GDPR), for the sole purpose of facilitating the therapeutic follow-up between the patient and their practitioner. Orekio does not interpret or clinically analyze this data: it is shown back to the practitioner raw.",
+            "Follow-up data is processed on the basis of the patient's explicit consent (Article 9.2.a of the GDPR), for the sole purpose of facilitating the therapeutic follow-up between the patient and their practitioner. This data is shown back to the practitioner raw, and the clinical analysis is theirs to make.",
           ],
         ] as Segment[][],
       },
@@ -364,7 +391,7 @@ export const en: Dictionary = {
     eyebrow: "Terms",
     heading: "Terms of use",
     noticeBox:
-      "This page is a draft structure, to be drafted and validated by a legal professional before the service opens to the public — particularly the liability and termination sections, given the sensitive nature of the data processed.",
+      "This page is a draft structure, to be drafted and validated by a legal professional before the service opens to the public, particularly the liability and termination sections, given the sensitive nature of the data processed.",
     sections: [
       {
         heading: "1. Purpose",
@@ -390,7 +417,7 @@ export const en: Dictionary = {
         heading: "3. User obligations",
         lines: [
           [
-            "The practitioner agrees to use Orekio only as part of genuine therapeutic follow-up and with their patient's consent. The patient agrees to provide truthful information. [To be completed: fair use of the service, credential security, prohibition of misuse.]",
+            "The practitioner agrees to use Orekio solely as part of genuine therapeutic follow-up and with their patient's consent. The patient agrees to provide truthful information. [To be completed: fair use of the service, credential security, prohibition of misuse.]",
           ],
         ] as Segment[][],
       },
@@ -406,7 +433,7 @@ export const en: Dictionary = {
         heading: "5. Liability",
         lines: [
           [
-            "Orekio displays the data entered without interpreting it and does not substitute for any medical advice. [To be completed: limitations of liability, service availability, force majeure.]",
+            "Orekio displays the data entered as it is and does not substitute for any medical advice. [To be completed: limitations of liability, service availability, force majeure.]",
           ],
         ] as Segment[][],
       },

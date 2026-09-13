@@ -4,7 +4,7 @@
  * Tokens repris de la charte graphique Orekio (docs/charte-graphique.md,
  * schéma clair). Seule une petite partie du système est nécessaire ici :
  * ce site vitrine n'a pas de mode sombre, pas de mode ado, pas de registre
- * clinique (nuit, crise) — juste l'identité de marque.
+ * clinique (nuit, crise), juste l'identité de marque.
  */
 :root {
   --color-primary: #1a6b63;
@@ -82,7 +82,7 @@ body {
 
 /*
  * Long-form article body (blog). Rendered from Markdown, so styling has to
- * target bare tags. Kept deliberately small — no typography plugin.
+ * target bare tags. Kept deliberately small, no typography plugin.
  */
 .prose {
   color: var(--color-on-surface);

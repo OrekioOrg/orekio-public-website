@@ -11,7 +11,7 @@ import { getArticles, getArticleLocales } from "@/blog";
 // Static routes (keyed on the French URL) + every published blog article,
 // each with xhtml:link alternates for the locales it actually exists in so
 // Google pairs the fr/en versions. Placeholder legal pages are excluded
-// (they're noindex) — see src/site.ts.
+// (they're noindex), see src/site.ts.
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 

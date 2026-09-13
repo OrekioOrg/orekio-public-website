@@ -35,7 +35,7 @@ export const ogLocaleByLocale: Record<Locale, string> = {
 // Every indexable route below the locale segment, as the path suffix that
 // follows "/<lang>". "" is the locale home page. Slugs are French for both
 // locales by design (e.g. /en/fonctionnalites). Keep this list in sync with
-// the app/[lang] route folders — the sitemap is generated from it.
+// the app/[lang] route folders, the sitemap is generated from it.
 export const routeSuffixes = [
   "",
   "/fonctionnalites",
