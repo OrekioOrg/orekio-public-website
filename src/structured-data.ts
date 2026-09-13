@@ -35,7 +35,7 @@ export function websiteSchema(lang: Locale, dict: Dictionary) {
 }
 
 /**
- * SoftwareApplication node for the home page — lets Google understand
+ * SoftwareApplication node for the home page, lets Google understand
  * Orekio is a product, with its category, platform and pricing tiers.
  */
 export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {

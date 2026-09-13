@@ -35,7 +35,7 @@ export default async function Home({
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href={`/${lang}/tarifs`}
+                href={`/${lang}/contact`}
                 className="rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
               >
                 {dict.ctaSubscribe}
@@ -58,6 +58,33 @@ export default async function Home({
               priority
             />
           </div>
+        </div>
+      </section>
+
+      {/* Orekio est un outil double : un espace web pour le praticien, une app
+          mobile pour le patient. Rien ne le disait sur le site, au point qu'on
+          pouvait le prendre pour une simple application patient. */}
+      <section className="mx-auto max-w-6xl px-6 pt-20">
+        <h2 className="text-[26px] font-medium text-on-surface-strong">
+          {dict.apps.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
+          {dict.apps.description}
+        </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {dict.apps.cards.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-lg border border-outline bg-surface p-6"
+            >
+              <h3 className="text-[16px] font-medium text-on-surface-strong">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-on-surface-variant">
+                {card.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -94,7 +121,7 @@ export default async function Home({
             {dict.ctaSectionDescription}
           </p>
           <Link
-            href={`/${lang}/tarifs`}
+            href={`/${lang}/contact`}
             className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
           >
             {dict.ctaSectionButton}

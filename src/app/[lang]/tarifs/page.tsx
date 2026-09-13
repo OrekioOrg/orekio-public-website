@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -77,14 +78,13 @@ export default async function TarifsPage({
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              disabled
+            <Link
+              href={`/${lang}/contact`}
               title={dict.subscribeButtonTitle}
-              className="mt-8 cursor-not-allowed rounded-lg bg-primary/40 px-6 py-3 text-[15px] font-medium text-on-primary"
+              className="mt-8 rounded-lg bg-primary px-6 py-3 text-center text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
             >
               {dict.subscribeButton}
-            </button>
+            </Link>
           </div>
         ))}
       </div>
