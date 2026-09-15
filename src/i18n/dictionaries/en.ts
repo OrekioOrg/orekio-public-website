@@ -100,7 +100,7 @@ export const en: Dictionary = {
   features: {
     pageTitle: "Features",
     metaDescription:
-      "Six modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, wheel of emotions, Beck's columns, and more.",
+      "Six modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
     eyebrow: "Features",
     heading: "Six modules at launch, around thirty on the way",
     description:
@@ -108,49 +108,57 @@ export const en: Dictionary = {
     openBadge: "at launch",
     openAtLaunch: [
       "Sleep diary",
-      "Mood tracking",
+      "Daily log",
       "PHQ-9 (depression)",
-      "Beck's columns",
+      "Beck's thought records",
       "Safety plan",
-      "Wheel of emotions",
-      "Breathing techniques",
+      "Naming what I feel",
+      "Breathing",
     ],
     categories: [
       {
-        title: "Day-to-day tracking",
+        title: "Practise",
         modules: [
-          "Sleep diary",
-          "Mood tracking",
-          "Craving journal",
-          "Chronobiology tracking",
-          "Medication adherence",
+          "Beck's thought records",
+          "Graded exposure",
+          "Behavioural activation",
+          "Mental imagery",
+          "Decisional balance",
+          "Motivational balance",
         ],
       },
       {
-        title: "Validated clinical scales",
+        title: "Observe",
+        modules: [
+          "Sleep diary",
+          "Daily log",
+          "Rhythms",
+          "Medication intake",
+          "Side effects",
+          "Craving journal",
+        ],
+      },
+      {
+        title: "Understand",
+        modules: [
+          "Psychoeducation sheets",
+          "Naming what I feel",
+        ],
+      },
+      {
+        title: "Answer",
         modules: [
           "PHQ-9 (depression)",
           "GAD-7 (anxiety), coming next",
         ],
       },
       {
-        title: "Cognitive behavioral therapy",
-        modules: [
-          "Beck's columns",
-          "Decisional balance",
-          "Behavioral activation",
-          "Graded exposure",
-          "Cognitive distortions",
-        ],
-      },
-      {
-        title: "Crisis management and regulation",
+        title: "Hold on",
         modules: [
           "Safety plan",
-          "Wheel of emotions",
-          "Breathing techniques",
-          "Grounding techniques",
           "Distress tolerance",
+          "Grounding",
+          "Breathing",
         ],
       },
     ],
