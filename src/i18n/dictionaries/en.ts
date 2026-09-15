@@ -28,7 +28,7 @@ export const en: Dictionary = {
   footer: {
     tagline: "Orekio, your digital therapeutic toolkit",
     disclaimer:
-      "Orekio is a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. The data shown stays raw: interpretation, alerts and diagnosis all rest with the practitioner.",
+      "Orekio is designed as a digital logbook, not as a medical device. Data is displayed as entered: its interpretation, like any clinical decision, rests with the practitioner.",
     legalNotice: "Legal notice",
     privacy: "Privacy",
     terms: "Terms",
@@ -37,54 +37,61 @@ export const en: Dictionary = {
 
   home: {
     eyebrow: "Your digital therapeutic toolkit",
-    title: "Therapeutic support, between appointments",
+    title: "The consultation continues between appointments, on your patient's phone.",
     description:
-      "Your patient notes on their phone day by day, and you find it all again from your web workspace. Dated, precise records, exactly as they entered them: observation, rather than a memory pieced together in the waiting room. You adjust the follow-up according to your own clinical assessment.",
+      "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them between appointments, and you go over them together in consultation.",
     ctaSubscribe: "Join the waiting list",
-    ctaFeatures: "Discover the features",
-    section2Title: "Follow-up on the patient side, clinical reading on the practitioner side",
+    ctaFeatures: "See the tools",
+    section2Title: "Between appointments, the work continues.",
     section2Description:
-      "Orekio is a digital care journal for mental health professionals, nurses, advanced practice nurses, psychiatrists, physicians, psychologists: patient data stays raw, exactly as they entered it. The practitioner stays in control of what they unlock, and of the reading they make of it in the appointment.",
+      "Orekio is built for psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners. Your patient practises, reads, answers, writes. You find everything in your space, dated and exactly as they wrote it. The clinical reading remains yours.",
     highlights: [
       {
-        title: "Sleep diary",
+        title: "Practise",
         description:
-          "The patient logs their nights, the practitioner reviews the history in the appointment.",
+          "Beck's thought records, graded exposure, behavioural activation, mental imagery, decisional and motivational balances. The in-depth work, between appointments.",
       },
       {
-        title: "Validated clinical scales",
+        title: "Observe",
         description:
-          "The PHQ-9 today, faithful to its validated version. Others will follow as their rights are secured.",
+          "Sleep diary, daily log, rhythms, medication intake, side effects. What happened, day after day, as they noted it.",
       },
       {
-        title: "Safety plan",
+        title: "Understand",
         description:
-          "A crisis plan built together with the patient, available at any time.",
+          "Psychoeducation sheets, naming what I feel. What you explain in consultation, to reread at home.",
       },
       {
-        title: "Beck's columns, the wheel of emotions...",
+        title: "Answer",
         description:
-          "Six modules open from day one. Around thirty more, already built, open over the coming months.",
+          "Validated scales: the PHQ-9 today, word for word its validated version. A score, never an interpretation.",
+      },
+      {
+        title: "Hold on",
+        description:
+          "Safety plan, distress tolerance, grounding, breathing, craving journal. Tools for hard moments, prepared together, within reach.",
       },
     ],
+    highlightsNote:
+      "Six modules open at launch, some thirty already built, opening over the coming months.",
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      "A 60-day trial with no credit card, and a founders' price reserved for the first 100. Join the waiting list.",
+      "60-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
     ctaSectionButton: "Join the waiting list",
     apps: {
-      title: "Two apps, one follow-up",
+      title: "Two apps, one shared space",
       description:
-        "Orekio comes as two apps that talk to each other. You work from your computer, your patient from their phone. The subscription is yours: for them, the app is free.",
+        "You work from your computer, your patient from their phone. One subscription, yours: the app is free for your patients.",
       cards: [
         {
-          title: "Your web workspace, on desktop",
+          title: "Your practitioner space, on the web",
           description:
-            "You invite your patients, unlock the tools one at a time, and review what they entered during the appointment. Nothing to install, everything runs in your browser.",
+            "You invite your patients, open the tools one by one, and go over their entries in consultation. Nothing to install.",
         },
         {
-          title: "Your patient's mobile app",
+          title: "Your patient's app, on their phone",
           description:
-            "They find the tools you opened for them and fill them in day by day, even offline. They get access on your invitation, free of charge.",
+            "They find the tools you have opened and fill them in day by day, even offline. By your invitation, free of charge.",
         },
       ],
     },

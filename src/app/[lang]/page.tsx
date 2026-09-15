@@ -95,11 +95,13 @@ export default async function Home({
         <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
           {dict.section2Description}
         </p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        {/* Cinq cartes sur deux colonnes : la cinquieme, seule sur sa rangee, se
+            centre a la largeur d'une colonne (2 + 2 + 1). Une colonne sur mobile. */}
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {dict.highlights.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg border border-outline bg-surface p-6"
+              className="w-full rounded-lg border border-outline bg-surface p-6 sm:w-[calc(50%-0.75rem)]"
             >
               <h3 className="text-[16px] font-medium text-on-surface-strong">
                 {item.title}
@@ -110,6 +112,9 @@ export default async function Home({
             </div>
           ))}
         </div>
+        <p className="mt-6 text-[14px] leading-relaxed text-on-surface-variant">
+          {dict.highlightsNote}
+        </p>
       </section>
 
       <section className="bg-ink">
