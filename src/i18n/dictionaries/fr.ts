@@ -27,7 +27,7 @@ export const fr = {
   footer: {
     tagline: "Orekio, l'armoire thérapeutique numérique",
     disclaimer:
-      "Orekio est un carnet de bord numérique, hors du champ du règlement (UE) 2017/745 relatif aux dispositifs médicaux. Les données affichées restent brutes : leur interprétation, l'alerte et le diagnostic relèvent du praticien.",
+      "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. Les données sont affichées telles quelles : leur interprétation, comme toute décision clinique, relève du praticien.",
     legalNotice: "Mentions légales",
     privacy: "Confidentialité",
     terms: "CGU",
@@ -36,54 +36,61 @@ export const fr = {
 
   home: {
     eyebrow: "Votre armoire thérapeutique numérique",
-    title: "L'accompagnement thérapeutique, entre les rendez-vous",
+    title: "La consultation continue entre deux rendez-vous, sur le téléphone de votre patient.",
     description:
-      "Le patient note sur son téléphone au fil des jours, vous retrouvez tout depuis votre espace web. Des relevés datés et précis, exactement tels qu'il les a saisis : de l'observation, plutôt qu'un souvenir reconstitué en salle d'attente. Vous ajustez le suivi selon votre évaluation clinique.",
+      "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient les utilise entre deux rendez-vous, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Rejoindre la liste d'attente",
-    ctaFeatures: "Découvrir les fonctionnalités",
-    section2Title: "Le suivi côté patient, la lecture clinique côté praticien",
+    ctaFeatures: "Voir les outils",
+    section2Title: "Entre deux rendez-vous, le travail continue.",
     section2Description:
-      "Orekio est un carnet de bord numérique pour les professionnels de santé mentale, infirmiers, IPA, psychiatres, médecins, psychologues : les données du patient restent brutes, telles qu'il les a saisies. Le praticien garde la main sur ce qu'il débloque, et sur la lecture qu'il en fait en consultation.",
+      "Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Votre patient s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. La lecture clinique reste la vôtre.",
     highlights: [
       {
-        title: "Agenda du sommeil",
+        title: "S'exercer",
         description:
-          "Le patient note ses nuits, le praticien relit l'historique en consultation.",
+          "Colonnes de Beck, exposition graduée, activation comportementale, imagerie mentale, balances décisionnelle et motivationnelle. Le travail de fond, entre deux rendez-vous.",
       },
       {
-        title: "Échelles cliniques validées",
+        title: "Observer",
         description:
-          "Le PHQ-9 aujourd'hui, fidèle à sa version validée en français. D'autres suivront, à mesure que leurs droits sont acquis.",
+          "Agenda du sommeil, suivi quotidien, rythmes, prise du traitement, effets indésirables, journal de craving. Ce qui s'est passé, jour après jour, tel qu'il l'a noté.",
       },
       {
-        title: "Plan de sécurité",
+        title: "Comprendre",
         description:
-          "Un plan de crise construit avec le patient, disponible à tout moment.",
+          "Fiches de psychoéducation, nommer ce que je ressens. Ce que vous lui expliquez en consultation, à relire chez lui.",
       },
       {
-        title: "Colonnes de Beck, roue des émotions...",
+        title: "Répondre",
         description:
-          "Six modules ouverts dès le premier jour. Une trentaine d'autres, déjà construits, s'ouvrent au fil des mois.",
+          "Échelles validées : le PHQ-9 aujourd'hui, fidèle mot pour mot à sa version française. Un score, jamais une interprétation.",
+      },
+      {
+        title: "Tenir",
+        description:
+          "Plan de sécurité, tolérance à la détresse, ancrage, respiration. Les outils des moments difficiles, préparés ensemble, à portée de main.",
       },
     ],
+    highlightsNote:
+      "Six modules ouverts au lancement, une trentaine construits, ouverts au fil des mois.",
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      "Essai de 60 jours sans carte bancaire, et un tarif fondateurs réservé aux 100 premiers. Rejoignez la liste d'attente.",
+      "60 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
     ctaSectionButton: "Rejoindre la liste d'attente",
     apps: {
-      title: "Deux applications, un seul suivi",
+      title: "Deux applications, un même espace",
       description:
-        "Orekio se compose de deux applications qui se parlent. Vous travaillez depuis votre ordinateur, votre patient depuis son téléphone. L'abonnement est le vôtre : pour lui, l'application est gratuite.",
+        "Vous travaillez depuis votre ordinateur, votre patient depuis son téléphone. Un seul abonnement, le vôtre : l'application est gratuite pour vos patients.",
       cards: [
         {
-          title: "Votre espace web, sur ordinateur",
+          title: "Votre espace praticien, sur le web",
           description:
-            "Vous invitez vos patients, vous débloquez les outils un à un, et vous relisez leurs saisies en consultation. Rien à installer, tout passe par votre navigateur.",
+            "Vous invitez vos patients, vous ouvrez les outils un à un, vous relisez leurs saisies en consultation. Rien à installer.",
         },
         {
-          title: "L'application mobile de votre patient",
+          title: "L'application de votre patient, sur son téléphone",
           description:
-            "Il y retrouve les outils que vous lui avez ouverts et les remplit au fil des jours, même hors connexion. Il y accède sur votre invitation, gratuitement.",
+            "Il y retrouve les outils que vous avez ouverts et les remplit au fil des jours, même sans connexion. Sur votre invitation, gratuitement.",
         },
       ],
     },
