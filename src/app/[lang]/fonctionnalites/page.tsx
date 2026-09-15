@@ -41,11 +41,13 @@ export default async function FonctionnalitesPage({
         {dict.description}
       </p>
 
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
+      {/* Cinq familles sur deux colonnes, la cinquieme centree (2 + 2 + 1),
+          comme les cinq cartes de l'accueil. */}
+      <div className="mt-12 flex flex-wrap justify-center gap-8">
         {dict.categories.map((category) => (
           <div
             key={category.title}
-            className="rounded-lg border border-outline bg-surface p-6"
+            className="w-full rounded-lg border border-outline bg-surface p-6 md:w-[calc(50%-1rem)]"
           >
             <h2 className="text-[18px] font-medium text-on-surface-strong">
               {category.title}

@@ -92,7 +92,7 @@ export const fr = {
   features: {
     pageTitle: "Fonctionnalités",
     metaDescription:
-      "Six modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, roue des émotions, colonnes de Beck, et plus.",
+      "Six modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
     eyebrow: "Fonctionnalités",
     heading: "Six modules dès l'ouverture, une trentaine en chemin",
     description:
@@ -100,49 +100,57 @@ export const fr = {
     openBadge: "dès l'ouverture",
     openAtLaunch: [
       "Agenda du sommeil",
-      "Suivi de l'humeur",
+      "Suivi quotidien",
       "PHQ-9 (dépression)",
       "Colonnes de Beck",
       "Plan de sécurité",
-      "Roue des émotions",
-      "Techniques de respiration",
+      "Nommer ce que je ressens",
+      "Respiration",
     ],
     categories: [
       {
-        title: "Suivi au quotidien",
+        title: "S'exercer",
         modules: [
-          "Agenda du sommeil",
-          "Suivi de l'humeur",
-          "Journal des envies (craving)",
-          "Suivi de chronobiologie",
-          "Observance médicamenteuse",
+          "Colonnes de Beck",
+          "Exposition graduée",
+          "Activation comportementale",
+          "Imagerie mentale",
+          "Balance décisionnelle",
+          "Balance motivationnelle",
         ],
       },
       {
-        title: "Échelles cliniques validées",
+        title: "Observer",
+        modules: [
+          "Agenda du sommeil",
+          "Suivi quotidien",
+          "Rythmes",
+          "Prise du traitement",
+          "Effets indésirables",
+          "Journal de craving",
+        ],
+      },
+      {
+        title: "Comprendre",
+        modules: [
+          "Fiches de psychoéducation",
+          "Nommer ce que je ressens",
+        ],
+      },
+      {
+        title: "Répondre",
         modules: [
           "PHQ-9 (dépression)",
           "GAD-7 (anxiété), prochainement",
         ],
       },
       {
-        title: "Thérapies cognitivo-comportementales",
-        modules: [
-          "Colonnes de Beck",
-          "Balance décisionnelle",
-          "Activation comportementale",
-          "Exposition graduée",
-          "Distorsions cognitives",
-        ],
-      },
-      {
-        title: "Gestion de crise et régulation",
+        title: "Tenir",
         modules: [
           "Plan de sécurité",
-          "Roue des émotions",
-          "Techniques de respiration",
-          "Ancrage (grounding)",
           "Tolérance à la détresse",
+          "Ancrage",
+          "Respiration",
         ],
       },
     ],
