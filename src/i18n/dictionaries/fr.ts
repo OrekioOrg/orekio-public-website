@@ -53,7 +53,7 @@ export const fr = {
       {
         title: "Observer",
         description:
-          "Agenda du sommeil, suivi quotidien, rythmes, prise du traitement, effets indésirables. Ce qui s'est passé, jour après jour, tel qu'il l'a noté.",
+          "Agenda du sommeil, suivi quotidien, rythmes, prise du traitement, effets indésirables, journal de craving. Ce qui s'est passé, jour après jour, tel qu'il l'a noté.",
       },
       {
         title: "Comprendre",
@@ -68,7 +68,7 @@ export const fr = {
       {
         title: "Tenir",
         description:
-          "Plan de sécurité, tolérance à la détresse, ancrage, respiration, journal de craving. Les outils des moments difficiles, préparés ensemble, à portée de main.",
+          "Plan de sécurité, tolérance à la détresse, ancrage, respiration. Les outils des moments difficiles, préparés ensemble, à portée de main.",
       },
     ],
     highlightsNote:

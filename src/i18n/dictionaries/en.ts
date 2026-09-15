@@ -54,7 +54,7 @@ export const en: Dictionary = {
       {
         title: "Observe",
         description:
-          "Sleep diary, daily log, rhythms, medication intake, side effects. What happened, day after day, as they noted it.",
+          "Sleep diary, daily log, rhythms, medication intake, side effects, craving journal. What happened, day after day, as they noted it.",
       },
       {
         title: "Understand",
@@ -69,7 +69,7 @@ export const en: Dictionary = {
       {
         title: "Hold on",
         description:
-          "Safety plan, distress tolerance, grounding, breathing, craving journal. Tools for hard moments, prepared together, within reach.",
+          "Safety plan, distress tolerance, grounding, breathing. Tools for hard moments, prepared together, within reach.",
       },
     ],
     highlightsNote:
