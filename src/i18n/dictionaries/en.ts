@@ -263,16 +263,18 @@ export const en: Dictionary = {
     metaDescription:
       "Orekio is a digital care journal supporting the relationship between a practitioner and their patient, between appointments.",
     eyebrow: "About",
-    heading: "What Orekio does, and what it leaves to the practitioner",
+    heading: "Orekio was born in consultation.",
     paragraph1:
-      "Orekio supports the relationship between a mental health professional (nurse, advanced practice nurse, psychiatrist, physician, psychologist…) and their patient, in the interval between two appointments. The practitioner invites their patient by email, then progressively unlocks tools as the follow-up goes on: sleep diary, clinical scales, safety plan, and around thirty other modules.",
+      "Every practitioner knows the scene. An exercise sheet handed over at the end of an appointment, a photocopied sleep diary, a questionnaire to bring back. At the next appointment, the sheet stayed in a drawer, or comes back half filled in, and what happened is rebuilt from memory. Orekio started there: take what you already hand to your patients on paper, put it on their phone, and find it again in consultation, dated and exactly as it was written.",
     paragraph2:
-      "The patient uses them from their phone. What they enter stays available for the next appointment: Orekio displays the data back as it is, and the clinical reading belongs to the practitioner. Orekio is built by a team pairing an advanced practice nurse in psychiatry with a developer.",
-    boxTitle: "A digital care journal, outside the scope of medical devices",
-    boxText:
-      "Orekio is designed as a digital care journal, outside the scope of Regulation (EU) 2017/745 on medical devices. The application limits itself to displaying: what appears on screen is always a raw figure or a neutral history. Alerts, clinical labels and comparison to a norm all rest with the practitioner, and so does the whole clinical reading.",
+      "You invite your patient by email, then open the tools one by one, appointment after appointment: sleep diary, Beck's thought records, PHQ-9, safety plan, and some thirty other modules. They use them from their phone, even offline. What they write waits for you at the next appointment, as it is. Orekio shows it, the clinical reading remains yours.",
     paragraph3:
-      "The health data entered into Orekio falls under Article 9 of the GDPR. It is processed with the patient's explicit consent, and a certified health-data hosting provider (HDS in France) is planned before commercial launch.",
+      "Orekio is built by two people: an advanced practice nurse in psychiatry, who makes the clinical choices, and a developer, who builds the product. Orekio sells no data and shows no advertising.",
+    boxTitle: "A logbook, not a medical device",
+    boxText:
+      "Orekio is designed as a digital logbook, not as a medical device. The app only displays: a raw figure, a neutral history, a score without interpretation. No threshold, no signal, no comparison to a norm. The clinical reading belongs to you.",
+    paragraph4:
+      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. They reach you only with the patient's permission, which they can withdraw, and they can request the export or erasure of their data at any time. Certified health data hosting (HDS) is planned before commercial opening.",
   },
 
   contact: {

@@ -273,16 +273,18 @@ export const fr = {
     metaDescription:
       "Orekio est un carnet de bord numérique qui accompagne la relation entre un praticien et son patient, entre les consultations.",
     eyebrow: "À propos",
-    heading: "Ce qu'Orekio fait, et ce qu'il laisse au praticien",
+    heading: "Orekio est né en consultation.",
     paragraph1:
-      "Orekio accompagne la relation entre un professionnel de santé mentale (infirmier, infirmier en pratique avancée, psychiatre, médecin, psychologue…) et son patient, dans l'intervalle entre deux consultations. Le praticien invite son patient par email, puis débloque progressivement des outils au fil du suivi : agenda du sommeil, échelles cliniques, plan de sécurité, et une trentaine d'autres modules.",
+      "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : reprendre ce que vous confiez déjà à vos patients sur papier, le mettre sur leur téléphone, et le retrouver en consultation, daté et tel qu'il a été écrit.",
     paragraph2:
-      "Le patient les utilise depuis son téléphone. Ce qu'il saisit reste disponible pour le prochain rendez-vous : Orekio restitue les données telles quelles, leur lecture clinique appartient au praticien. Orekio est conçu par une équipe qui associe un infirmier en pratique avancée en psychiatrie et un développeur.",
-    boxTitle: "Un carnet de bord numérique, hors du champ du dispositif médical",
-    boxText:
-      "Orekio est conçu comme un carnet de bord numérique, hors du champ du règlement (UE) 2017/745 relatif aux dispositifs médicaux. L'application se limite à afficher : ce qui apparaît à l'écran est toujours un chiffre brut ou un historique neutre. L'alerte, le label clinique et la comparaison à une norme relèvent du praticien, à qui revient toute la lecture clinique.",
+      "Vous invitez votre patient par email, puis vous ouvrez les outils un à un, au fil des rendez-vous : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et une trentaine d'autres modules. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste la vôtre.",
     paragraph3:
-      "Les données de santé saisies dans Orekio relèvent de l'article 9 du RGPD. Elles sont traitées avec le consentement explicite du patient, et un hébergement agréé données de santé (HDS) est prévu avant l'ouverture commerciale.",
+      "Orekio est conçu par deux personnes : un infirmier en pratique avancée en psychiatrie, qui porte les choix cliniques, et un développeur, qui porte le produit. Orekio ne vend aucune donnée et n'affiche aucune publicité.",
+    boxTitle: "Un carnet de bord, pas un dispositif médical",
+    boxText:
+      "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
+    paragraph4:
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Elles ne vous sont transmises qu'avec l'autorisation du patient, qui peut la retirer et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
   },
 
   contact: {
