@@ -24,7 +24,10 @@ export default async function Home({
       <section className="bg-primary-container">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
+            {/* Sur l'accueil, le surtitre porte le concept (l'armoire) : il prend
+                la taille et la couleur d'un enonce, pas celles d'un libelle de
+                section comme sur les autres pages. */}
+            <p className="font-mono text-[15px] uppercase tracking-[0.12em] text-primary md:text-[17px]">
               {dict.eyebrow}
             </p>
             <h1 className="mt-4 text-[32px] font-medium leading-[1.15] text-on-primary-container md:text-[42px]">
