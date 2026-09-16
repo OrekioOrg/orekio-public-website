@@ -265,7 +265,7 @@ export const en: Dictionary = {
     eyebrow: "About",
     heading: "Orekio was born in consultation.",
     paragraph1:
-      "Every practitioner knows the scene. An exercise sheet handed over at the end of an appointment, a photocopied sleep diary, a questionnaire to bring back. At the next appointment, the sheet stayed in a drawer, or comes back half filled in, and what happened is rebuilt from memory. Orekio started there: the tools you already hand to your patients on paper move to their phone, and you find them again in consultation, dated and exactly as they were filled in.",
+      "Every practitioner knows the scene. An exercise sheet handed over at the end of an appointment, a photocopied sleep diary, a questionnaire to bring back. At the next appointment, the sheet stayed in a drawer, or comes back half filled in, and what happened is rebuilt from memory. Orekio started there: putting the everyday tools of psychiatry and psychology on the patient's phone. They use them between two appointments, and you go over them together at the next appointment, in private practice as in hospital.",
     paragraph2:
       "You invite your patient by email, then open access to the tools one by one, as the consultation requires: sleep diary, Beck's thought records, PHQ-9, safety plan, and some thirty other modules. They use them from their phone, even offline. What they write waits for you at the next appointment, as it is. Orekio shows it, the clinical reading remains yours.",
     paragraph3:

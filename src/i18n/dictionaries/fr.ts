@@ -275,7 +275,7 @@ export const fr = {
     eyebrow: "À propos",
     heading: "Orekio est né en consultation.",
     paragraph1:
-      "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : les outils que vous remettez déjà sur papier à vos patients passent sur leur téléphone, et vous les retrouvez en consultation, datés et tels qu'ils ont été remplis.",
+      "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : mettre sur le téléphone du patient les outils courants de la psychiatrie et de la psychologie. Il les utilise entre deux rendez-vous, et vous les relisez avec lui au rendez-vous suivant, en libéral comme à l'hôpital.",
     paragraph2:
       "Vous invitez votre patient par email, puis vous ouvrez l'accès aux outils un à un, selon les besoins de la consultation : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et une trentaine d'autres modules. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste vôtre.",
     paragraph3:
