@@ -42,4 +42,4 @@ A first administration, at the start of care, gives a baseline. Many practitione
 ## Sources
 
 - Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-613. [https://doi.org/10.1046/j.1525-1497.2001.016009606.x](https://doi.org/10.1046/j.1525-1497.2001.016009606.x)
-- French translation for France of the PHQ-9: phqscreeners.com (Pfizer). [https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf](https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf) <!-- to be checked at the source -->
+- French translation for France of the PHQ-9: phqscreeners.com (Pfizer). [https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf](https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf) <!-- checked at the source on 16 September 2026 -->

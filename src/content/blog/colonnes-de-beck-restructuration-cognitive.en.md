@@ -38,5 +38,5 @@ Two to four records a week are often enough at first. The goal is regularity rat
 
 ## Sources
 
-- Beck AT, Rush AJ, Shaw BF, Emery G. Cognitive Therapy of Depression. New York: Guilford Press; 1979. <!-- to be checked at the source -->
-- Greenberger D, Padesky CA. Mind Over Mood: Change How You Feel by Changing the Way You Think. 2nd ed. New York: Guilford Press; 2016. <!-- to be checked at the source -->
+- Beck AT, Rush AJ, Shaw BF, Emery G. Cognitive Therapy of Depression. New York: Guilford Press; 1979. <!-- checked at the source on 16 September 2026 -->
+- Greenberger D, Padesky CA. Mind Over Mood: Change How You Feel by Changing the Way You Think. 2nd ed. New York: Guilford Press; 2016. <!-- checked at the source on 16 September 2026 -->

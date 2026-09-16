@@ -38,5 +38,5 @@ Deux à quatre relevés par semaine suffisent souvent au début. L'objectif tien
 
 ## Sources
 
-- Beck AT, Rush AJ, Shaw BF, Emery G. Cognitive Therapy of Depression. New York : Guilford Press ; 1979. <!-- à vérifier à la source -->
-- Greenberger D, Padesky CA. Mind Over Mood: Change How You Feel by Changing the Way You Think. 2e éd. New York : Guilford Press ; 2016. <!-- à vérifier à la source -->
+- Beck AT, Rush AJ, Shaw BF, Emery G. Cognitive Therapy of Depression. New York : Guilford Press ; 1979. <!-- vérifié à la source le 16 septembre 2026 -->
+- Greenberger D, Padesky CA. Mind Over Mood: Change How You Feel by Changing the Way You Think. 2e éd. New York : Guilford Press ; 2016. <!-- vérifié à la source le 16 septembre 2026 -->
