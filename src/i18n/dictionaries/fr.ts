@@ -512,6 +512,7 @@ export const fr = {
             { href: "/fr/confidentialite", text: "politique de confidentialité" },
             ".",
           ],
+          ["Orekio ne vend aucune donnée et n'affiche aucune publicité."],
         ] as Segment[][],
       },
       {
