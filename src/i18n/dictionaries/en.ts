@@ -73,7 +73,7 @@ export const en: Dictionary = {
       },
     ],
     highlightsNote:
-      "Six modules open at launch, some thirty already built, opening over the coming months.",
+      "Six modules from day one, some thirty already built, opening over the coming months.",
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
       "60-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
@@ -102,66 +102,92 @@ export const en: Dictionary = {
     metaDescription:
       "Six modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
     eyebrow: "Features",
-    heading: "Six modules at launch, around thirty on the way",
+    heading: "What you can hand over to your patient.",
     description:
-      "Six modules are open from day one, reviewed end to end. Around thirty more, already built, open over the coming months. You unlock each tool from your web workspace, appointment by appointment and at your own pace; your patient finds it on their phone. Every module shows raw data: Orekio displays it, you interpret it.",
-    openBadge: "at launch",
-    openAtLaunch: [
-      "Sleep diary",
-      "Daily log",
-      "PHQ-9 (depression)",
-      "Beck's thought records",
-      "Safety plan",
-      "Naming what I feel",
-      "Breathing",
-    ],
+      "You open each tool from your web space, consultation after consultation, at your own pace; your patient finds it on their phone. Tools marked \"from day one\" are available at launch. The others, already built, open over the coming months. Every module displays raw data: Orekio shows it, you interpret it.",
+    openBadge: "from day one",
     categories: [
       {
         title: "Practise",
+        tagline: "The in-depth work, between appointments.",
         modules: [
-          "Beck's thought records",
-          "Graded exposure",
-          "Behavioural activation",
-          "Mental imagery",
-          "Decisional balance",
-          "Motivational balance",
+          { name: "Beck's thought records", fromDayOne: true },
+          { name: "Graded exposure", fromDayOne: false },
+          { name: "Behavioural activation", fromDayOne: false },
+          { name: "Mental imagery reprocessing", fromDayOne: false },
+          { name: "Decisional balance", fromDayOne: false },
+          { name: "Motivational balance", fromDayOne: false },
         ],
       },
       {
         title: "Observe",
+        tagline: "What happened, day after day, as they noted it.",
         modules: [
-          "Sleep diary",
-          "Daily log",
-          "Rhythms",
-          "Medication intake",
-          "Side effects",
-          "Craving journal",
+          { name: "Sleep diary", fromDayOne: true },
+          { name: "Daily log", fromDayOne: true },
+          { name: "Rhythms and regularity", fromDayOne: false },
+          { name: "Medication intake", fromDayOne: false },
+          { name: "Side effects", fromDayOne: false },
+          { name: "Craving journal", fromDayOne: false },
         ],
       },
       {
         title: "Understand",
+        tagline: "What you explain in consultation, to reread at home.",
         modules: [
-          "Psychoeducation sheets",
-          "Naming what I feel",
+          { name: "Psychoeducation sheets", fromDayOne: false },
+          { name: "Naming what I feel", fromDayOne: true },
         ],
       },
       {
         title: "Answer",
+        tagline: "A score, never an interpretation.",
         modules: [
-          "PHQ-9 (depression)",
-          "GAD-7 (anxiety), coming next",
+          { name: "PHQ-9", fromDayOne: true },
+          { name: "GAD-7", fromDayOne: false },
         ],
       },
       {
         title: "Hold on",
+        tagline: "Tools for hard moments, prepared together, within reach.",
         modules: [
-          "Safety plan",
-          "Distress tolerance",
-          "Grounding",
-          "Breathing",
+          { name: "Safety plan", fromDayOne: true },
+          { name: "Distress tolerance", fromDayOne: false },
+          { name: "Grounding", fromDayOne: false },
+          { name: "Breathing", fromDayOne: true },
         ],
       },
     ],
+    around: {
+      title: "And around the modules",
+      cards: [
+        {
+          title: "Reminders",
+          description:
+            "You set days and a time for each tool. Your patient can shift or pause them, and you see what they did with them. Never conditioned on what they write.",
+        },
+        {
+          title: "Patient view and teen mode",
+          description:
+            "For each tool, the screen exactly as your patient sees it. Language adapted to teenagers, which you switch on.",
+        },
+        {
+          title: "Sources",
+          description:
+            "Every module cites the scientific references it draws on, checked at the source.",
+        },
+        {
+          title: "Offline",
+          description:
+            "Your patient writes without a network; everything syncs as soon as one is back.",
+        },
+        {
+          title: "The patient stays in control",
+          description:
+            "They grant sharing once; their entries then reach you continuously. They can withdraw that permission or erase their data whenever they wish. You can withdraw a tool at any time.",
+        },
+      ],
+    },
   },
 
   pricing: {
