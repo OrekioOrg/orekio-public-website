@@ -96,7 +96,7 @@ export const fr = {
         {
           title: "Votre espace praticien, sur le web",
           description:
-            "Vous invitez vos patients, vous ouvrez l'accès aux outils un à un, vous relisez leurs saisies en consultation. Rien à installer.",
+            "Vous invitez vos patients, vous ouvrez les outils un à un. Leurs saisies vous reviennent mises en page pour la consultation : courbes, historiques, scores, données. Lisible en un coup d'œil, sans rien interpréter à votre place. Rien à installer.",
         },
         {
           title: "L'application de votre patient, sur son téléphone",
