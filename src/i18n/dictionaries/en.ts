@@ -501,6 +501,7 @@ export const en: Dictionary = {
             { href: "/en/confidentialite", text: "privacy policy" },
             ".",
           ],
+          ["Orekio sells no data and shows no advertising."],
         ] as Segment[][],
       },
       {
