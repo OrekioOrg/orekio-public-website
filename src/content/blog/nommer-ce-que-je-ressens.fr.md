@@ -35,6 +35,6 @@ Le module se prête à un usage court et répété : quelques entrées par semai
 
 ## Sources
 
-- Willcox G. The Feeling Wheel: a tool for expanding awareness of emotions and increasing spontaneity and intimacy. Transactional Analysis Journal. 1982;12(4):274-276. [https://doi.org/10.1177/036215378201200411](https://doi.org/10.1177/036215378201200411) <!-- à vérifier à la source -->
-- Barrett LF, Gross J, Christensen TC, Benvenuto M. Knowing what you're feeling and knowing what to do about it: mapping the relation between emotion differentiation and emotion regulation. Cognition and Emotion. 2001;15(6):713-724. [https://doi.org/10.1080/02699930143000239](https://doi.org/10.1080/02699930143000239) <!-- à vérifier à la source -->
+- Willcox G. The Feeling Wheel: a tool for expanding awareness of emotions and increasing spontaneity and intimacy. Transactional Analysis Journal. 1982;12(4):274-276. [https://doi.org/10.1177/036215378201200411](https://doi.org/10.1177/036215378201200411) <!-- vérifié à la source le 16 septembre 2026 -->
+- Barrett LF, Gross J, Christensen TC, Benvenuto M. Knowing what you're feeling and knowing what to do about it: mapping the relation between emotion differentiation and emotion regulation. Cognition and Emotion. 2001;15(6):713-724. [https://doi.org/10.1080/02699930143000239](https://doi.org/10.1080/02699930143000239) <!-- vérifié à la source le 16 septembre 2026 -->
 - Dunning DL, Wright G, Bennett MP, Knight R, Nook EC, Dalgleish T. What role does emotional granularity play in adolescent depression and anxiety? A scoping review. J Adolesc. 2025;97(8):2033-2047. [https://doi.org/10.1002/jad.70028](https://doi.org/10.1002/jad.70028)

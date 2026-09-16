@@ -42,4 +42,4 @@ Une première passation, dès le début de la prise en charge, donne une ligne d
 ## Sources
 
 - Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-613. [https://doi.org/10.1046/j.1525-1497.2001.016009606.x](https://doi.org/10.1046/j.1525-1497.2001.016009606.x)
-- Traduction française pour la France du PHQ-9 : phqscreeners.com (Pfizer). [https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf](https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf) <!-- à vérifier à la source -->
+- Traduction française pour la France du PHQ-9 : phqscreeners.com (Pfizer). [https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf](https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ9_French%20for%20France.pdf) <!-- vérifié à la source le 16 septembre 2026 -->

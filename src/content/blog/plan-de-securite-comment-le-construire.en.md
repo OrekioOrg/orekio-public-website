@@ -49,7 +49,7 @@ The plan benefits from being reviewed: after a crisis, after a change in circums
 
 ## Sources
 
-- Stanley B, Brown GK. Safety Planning Intervention: a brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012;19(2):256-264. [https://doi.org/10.1016/j.cbpra.2011.01.001](https://doi.org/10.1016/j.cbpra.2011.01.001) <!-- to be checked at the source -->
+- Stanley B, Brown GK. Safety Planning Intervention: a brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012;19(2):256-264. [https://doi.org/10.1016/j.cbpra.2011.01.001](https://doi.org/10.1016/j.cbpra.2011.01.001) <!-- checked at the source on 16 September 2026 -->
 - Stanley B, Brown GK, Brenner LA, et al. Comparison of the Safety Planning Intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018;75(9):894-900. [https://doi.org/10.1001/jamapsychiatry.2018.1776](https://doi.org/10.1001/jamapsychiatry.2018.1776)
 - Rudd MD, Mandrusiak M, Joiner TE. The case against no-suicide contracts: the commitment to treatment statement as a practice alternative. J Clin Psychol. 2006;62(2):243-251. [https://doi.org/10.1002/jclp.20227](https://doi.org/10.1002/jclp.20227)
 - Nuij et al.: safety-plan-type interventions for suicide prevention, meta-analysis (British Journal of Psychiatry, 2021). [https://doi.org/10.1192/bjp.2021.50](https://doi.org/10.1192/bjp.2021.50)
