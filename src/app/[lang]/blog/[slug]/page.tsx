@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { hasLocale, type Locale } from "@/i18n/config";
+import { hasLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
 import {
@@ -9,13 +9,20 @@ import {
   getArticleLocales,
   getAllArticleParams,
 } from "@/blog";
+import { blogRedirects } from "@/blog-redirects";
+import { basePath } from "@/base-path";
 import { JsonLd } from "@/components/json-ld";
 import { ShareButtons } from "@/components/share-buttons";
 import { blogPostingSchema, breadcrumbSchema } from "@/structured-data";
 import { absoluteUrl } from "@/site";
 
 export function generateStaticParams() {
-  return getAllArticleParams();
+  const params = getAllArticleParams();
+  // Une page par locale a chaque ancienne adresse, qui renvoie vers la nouvelle.
+  for (const lang of locales) {
+    for (const from of Object.keys(blogRedirects)) params.push({ lang, slug: from });
+  }
+  return params;
 }
 
 function formatDate(iso: string, lang: Locale): string {
@@ -31,6 +38,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = await params;
   if (!hasLocale(lang)) return {};
+  const target = blogRedirects[slug];
+  if (target) {
+    // L'ancienne adresse ne s'indexe pas : toute son autorite va a la nouvelle.
+    return {
+      alternates: { canonical: `/${lang}/blog/${target}` },
+      robots: { index: false, follow: true },
+    };
+  }
   const article = getArticle(lang, slug);
   if (!article) return {};
   return pageMetadata({
@@ -57,6 +72,27 @@ export default async function ArticlePage({
   const { lang: rawLang, slug } = await params;
   if (!hasLocale(rawLang)) notFound();
   const lang: Locale = rawLang;
+
+  const target = blogRedirects[slug];
+  if (target) {
+    // Meme mecanisme que la racine du site (app/(redirect)) : un
+    // rafraichissement immediat, honore sans JavaScript, et un lien de repli.
+    const targetArticle = getArticle(lang, target);
+    const href = `/${lang}/blog/${target}`;
+    return (
+      <>
+        <meta httpEquiv="refresh" content={`0; url=${basePath}${href}`} />
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <p>
+            <Link href={href} className="text-[16px] font-medium text-primary hover:underline">
+              {targetArticle?.title ?? target}
+            </Link>
+          </p>
+        </div>
+      </>
+    );
+  }
+
   const article = getArticle(lang, slug);
   if (!article) notFound();
 
