@@ -5,6 +5,7 @@ import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
+import { CtaBanner } from "@/components/cta-banner";
 import { softwareApplicationSchema } from "@/structured-data";
 
 export default async function Home({
@@ -120,22 +121,12 @@ export default async function Home({
         </p>
       </section>
 
-      <section className="bg-ink">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
-          <h2 className="text-[26px] font-medium text-on-ink">
-            {dict.ctaSectionTitle}
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-on-ink/80">
-            {dict.ctaSectionDescription}
-          </p>
-          <Link
-            href={`/${lang}/contact`}
-            className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
-          >
-            {dict.ctaSectionButton}
-          </Link>
-        </div>
-      </section>
+      <CtaBanner
+        lang={lang}
+        title={dict.ctaSectionTitle}
+        description={dict.ctaSectionDescription}
+        buttonLabel={dict.ctaSectionButton}
+      />
     </>
   );
 }

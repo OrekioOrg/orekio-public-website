@@ -72,7 +72,7 @@ export const fr = {
       },
     ],
     highlightsNote:
-      "Six modules ouverts au lancement, une trentaine construits, ouverts au fil des mois.",
+      "Six modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
       "60 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
@@ -101,66 +101,92 @@ export const fr = {
     metaDescription:
       "Six modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
     eyebrow: "Fonctionnalités",
-    heading: "Six modules dès l'ouverture, une trentaine en chemin",
+    heading: "Ce que vous pouvez confier à votre patient.",
     description:
-      "Six modules sont ouverts dès le premier jour, revus de bout en bout. Une trentaine d'autres, déjà construits, s'ouvrent au fil des mois. Vous débloquez chaque outil depuis votre espace web, au fil des consultations et à votre rythme ; votre patient le retrouve sur son téléphone. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
+      "Vous ouvrez chaque outil depuis votre espace web, au fil des consultations et à votre rythme ; votre patient le retrouve sur son téléphone. Les outils marqués « dès l'ouverture » sont disponibles au lancement. Les autres, déjà construits, s'ouvrent au fil des mois. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
     openBadge: "dès l'ouverture",
-    openAtLaunch: [
-      "Agenda du sommeil",
-      "Suivi quotidien",
-      "PHQ-9 (dépression)",
-      "Colonnes de Beck",
-      "Plan de sécurité",
-      "Nommer ce que je ressens",
-      "Respiration",
-    ],
     categories: [
       {
         title: "S'exercer",
+        tagline: "Le travail de fond, entre deux rendez-vous.",
         modules: [
-          "Colonnes de Beck",
-          "Exposition graduée",
-          "Activation comportementale",
-          "Imagerie mentale",
-          "Balance décisionnelle",
-          "Balance motivationnelle",
+          { name: "Colonnes de Beck", fromDayOne: true },
+          { name: "Exposition graduée", fromDayOne: false },
+          { name: "Activation comportementale", fromDayOne: false },
+          { name: "Retraitement par imagerie mentale", fromDayOne: false },
+          { name: "Balance décisionnelle", fromDayOne: false },
+          { name: "Balance motivationnelle", fromDayOne: false },
         ],
       },
       {
         title: "Observer",
+        tagline: "Ce qui s'est passé, jour après jour, tel qu'il l'a noté.",
         modules: [
-          "Agenda du sommeil",
-          "Suivi quotidien",
-          "Rythmes",
-          "Prise du traitement",
-          "Effets indésirables",
-          "Journal de craving",
+          { name: "Agenda du sommeil", fromDayOne: true },
+          { name: "Suivi quotidien", fromDayOne: true },
+          { name: "Rythmes et régularité", fromDayOne: false },
+          { name: "Prise du traitement", fromDayOne: false },
+          { name: "Effets indésirables", fromDayOne: false },
+          { name: "Journal de craving", fromDayOne: false },
         ],
       },
       {
         title: "Comprendre",
+        tagline: "Ce que vous lui expliquez en consultation, à relire chez lui.",
         modules: [
-          "Fiches de psychoéducation",
-          "Nommer ce que je ressens",
+          { name: "Fiches de psychoéducation", fromDayOne: false },
+          { name: "Nommer ce que je ressens", fromDayOne: true },
         ],
       },
       {
         title: "Répondre",
+        tagline: "Un score, jamais une interprétation.",
         modules: [
-          "PHQ-9 (dépression)",
-          "GAD-7 (anxiété), prochainement",
+          { name: "PHQ-9", fromDayOne: true },
+          { name: "GAD-7", fromDayOne: false },
         ],
       },
       {
         title: "Tenir",
+        tagline: "Les outils des moments difficiles, préparés ensemble, à portée de main.",
         modules: [
-          "Plan de sécurité",
-          "Tolérance à la détresse",
-          "Ancrage",
-          "Respiration",
+          { name: "Plan de sécurité", fromDayOne: true },
+          { name: "Tolérance à la détresse", fromDayOne: false },
+          { name: "Ancrage", fromDayOne: false },
+          { name: "Respiration", fromDayOne: true },
         ],
       },
     ],
+    around: {
+      title: "Et autour des modules",
+      cards: [
+        {
+          title: "Rappels",
+          description:
+            "Vous posez des jours et une heure par outil. Votre patient peut les décaler ou les mettre en pause, et vous voyez ce qu'il en a fait. Jamais conditionnés à ce qu'il écrit.",
+        },
+        {
+          title: "Vue patient et mode ado",
+          description:
+            "Pour chaque outil, l'écran exactement tel que votre patient le voit. Un langage adapté aux adolescents, que vous activez.",
+        },
+        {
+          title: "Sources",
+          description:
+            "Chaque module cite les références scientifiques sur lesquelles il s'appuie, vérifiées à la source.",
+        },
+        {
+          title: "Hors connexion",
+          description:
+            "Votre patient saisit sans réseau ; tout se synchronise dès qu'il en retrouve un.",
+        },
+        {
+          title: "Le patient garde la main",
+          description:
+            "Il autorise le partage une fois ; ses saisies vous parviennent ensuite en continu. Il peut retirer cette autorisation ou effacer ses données quand il le souhaite. Vous pouvez retirer un outil à tout moment.",
+        },
+      ],
+    },
   },
 
   pricing: {
