@@ -298,6 +298,10 @@ export const en: Dictionary = {
     pageTitle: "Blog",
     metaDescription:
       "The Orekio blog: practical notes on therapeutic follow-up between appointments, clinical scales, CBT tools, and supporting patients.",
+    eyebrow: "Blog",
+    heading: "Tools, explained to the practitioners who hand them over.",
+    intro:
+      "Each article describes a tool, what the literature says about it, and what Orekio does with it. With sources.",
     empty: "The first articles are coming soon.",
     readMore: "Read the article →",
     readingTime: "min read",
