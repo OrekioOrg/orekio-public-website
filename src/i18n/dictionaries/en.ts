@@ -297,7 +297,7 @@ export const en: Dictionary = {
   blog: {
     pageTitle: "Blog",
     metaDescription:
-      "The Orekio blog: practical notes on therapeutic follow-up between appointments, clinical scales, CBT tools, and supporting patients.",
+      "The Orekio blog: tools explained to practitioners, what the literature says, and what Orekio does with them.",
     eyebrow: "Blog",
     heading: "Tools, explained to the practitioners who hand them over.",
     intro:

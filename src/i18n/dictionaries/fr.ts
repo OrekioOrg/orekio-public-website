@@ -308,7 +308,7 @@ export const fr = {
   blog: {
     pageTitle: "Blog",
     metaDescription:
-      "Le blog d'Orekio : repères pratiques sur le suivi thérapeutique entre les rendez-vous, les échelles cliniques, les outils de TCC et l'accompagnement des patients.",
+      "Le blog d'Orekio : des outils expliqués aux praticiens, ce qu'en dit la littérature et ce qu'Orekio en fait.",
     eyebrow: "Blog",
     heading: "Des outils, expliqués aux praticiens qui les confient.",
     intro:

@@ -14,7 +14,7 @@ Le plan de sécurité est un outil bref, structuré et construit à deux, destin
 
 Le plan de sécurité se distingue du « contrat de non-suicide ». Demander au patient de s'engager à ne pas faire de tentative de suicide n'a pas d'effet protecteur démontré, et peut fragiliser l'alliance (Rudd, Mandrusiak et Joiner, 2006). Le plan de sécurité procède autrement : plutôt qu'une promesse, il fournit une suite d'actions concrètes, hiérarchisées, à essayer quand la tension monte.
 
-La méthode est celle de la Safety Planning Intervention de Stanley et Brown (2012). Elle a été évaluée, associée à un suivi téléphonique, dans une cohorte de 1 640 patients passés aux urgences (Stanley et coll., 2018) ; l'effet mesuré porte sur les comportements suicidaires, pas sur les idées, et il n'est pas démontré pour un plan utilisé seul.
+La méthode est celle de la Safety Planning Intervention de Stanley et Brown (2012). Elle a été évaluée, associée à un accompagnement téléphonique, dans une cohorte de 1 640 patients passés aux urgences (Stanley et coll., 2018) ; l'effet mesuré porte sur les comportements suicidaires, pas sur les idées, et il n'est pas démontré pour un plan utilisé seul.
 
 ## Ses six étapes
 
