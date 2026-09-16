@@ -1,5 +1,16 @@
 import type { Segment } from "../segment";
 
+/** Une carte de la page Tarifs. `note` : paragraphe de fin d'essai, sur la carte Essai seulement. */
+export interface PricingPlan {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  note?: string;
+  highlighted: boolean;
+}
+
 const email: Segment = {
   href: "mailto:contact@orekio.app",
   text: "contact@orekio.app",
@@ -194,22 +205,21 @@ export const fr = {
     metaDescription:
       "Essai de 60 jours sans carte bancaire, puis 29 € HT par mois. Fondateurs : 19 € HT par mois à vie, 100 places. Application patient toujours gratuite.",
     eyebrow: "Tarifs",
-    heading: "Essai de 60 jours, puis un seul prix",
+    heading: "Un abonnement, tous vos patients.",
     description:
-      "Essai de 60 jours, sans carte bancaire. Puis 29 € HT par mois, ou 24 € HT par mois en annuel. Fondateurs : 19 € HT par mois à vie, 100 places. Un mois offert à chaque collègue parrainé, et un pour vous. Patients illimités, application patient toujours gratuite.",
+      "60 jours d'essai, sans carte bancaire. Ensuite, un seul abonnement : 29 € HT par mois sans engagement, ou 24 € HT par mois en annuel. Les 100 premiers inscrits gardent 19 € HT par mois à vie. Jamais de prix par patient.",
     plans: [
       {
         name: "Essai",
         price: "Gratuit",
         period: "60 jours, sans carte bancaire",
         description:
-          "Le temps d'un vrai suivi : un historique, des saisies entre les consultations, une relecture à deux.",
+          "Deux mois, c'est plusieurs rendez-vous : le temps de confier des outils à vos patients et d'en reparler ensemble.",
         features: [
-          "Espace web praticien",
-          "Patients illimités",
-          "Tous les modules ouverts",
-          "Application mobile gratuite pour vos patients",
+          "Le produit complet, sans restriction",
+          "Aucune carte demandée, rien à résilier",
         ],
+        note: "À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 30 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
         highlighted: false,
       },
       {
@@ -217,9 +227,8 @@ export const fr = {
         price: "19 € HT",
         period: "par mois, bloqué à vie",
         description:
-          "Pour qui souscrit pendant son essai. 100 places, un accès direct à l'équipe et à la feuille de route.",
+          "Pour les 100 premiers qui souscrivent pendant leur essai.",
         features: [
-          "Tout Praticien, à vie",
           "Tarif garanti tant que l'abonnement reste actif",
           "Un canal direct avec l'équipe",
           "La feuille de route en avant-première",
@@ -227,29 +236,35 @@ export const fr = {
         highlighted: true,
       },
       {
-        name: "Praticien",
+        name: "Abonnement",
         price: "29 € HT",
         period: "par mois, sans engagement",
         description:
           "Ou 24 € HT par mois en annuel payé d'avance, soit deux mois offerts.",
         features: [
-          "Espace web praticien",
-          "Patients illimités",
-          "Tous les modules ouverts",
-          "Application mobile gratuite pour vos patients",
-          "Historique complet et export",
-          "Support par email",
-          "Un mois offert par collègue parrainé, et un pour vous",
+          "Résiliable à tout moment",
+          "Parrainage : un mois offert pour vous et pour chaque collègue parrainé",
         ],
         highlighted: false,
       },
-    ],
+    ] as PricingPlan[],
+    included: {
+      title: "Inclus dans tous les cas",
+      items: [
+        "Espace web praticien",
+        "Application patient gratuite",
+        "Patients illimités",
+        "Tous les modules disponibles, sans supplément",
+        "Historique complet et export",
+        "Support par email",
+      ],
+    },
     subscribeButton: "Rejoindre la liste d'attente",
-    subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert à la main",
+    subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
     footerNote: [
-      "Prix hors taxes, TVA de 20 % en sus. Pendant la bêta, l'inscription passe par une liste d'attente et chaque compte est ouvert à la main. Vous êtes une structure avec plusieurs praticiens ? ",
+      "Prix hors taxes, TVA de 20 % en sus. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous êtes une structure avec plusieurs praticiens ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },
-      ", un plan par siège arrive.",
+      " : un plan Structure est en préparation.",
     ] as Segment[],
   },
 
