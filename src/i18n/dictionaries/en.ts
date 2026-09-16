@@ -86,7 +86,7 @@ export const en: Dictionary = {
         {
           title: "Your practitioner space, on the web",
           description:
-            "You invite your patients and open the tools one by one. Their entries come back to you laid out for the consultation: curves, histories, scores, data. Readable at a glance, with nothing interpreted for you. Nothing to install.",
+            "You invite your patients and open access to the tools one by one. Their entries come back to you laid out for the consultation: curves, histories, scores, data. Readable at a glance, with nothing interpreted for you. Nothing to install.",
         },
         {
           title: "Your patient's app, on their phone",
