@@ -195,22 +195,21 @@ export const en: Dictionary = {
     metaDescription:
       "60-day trial, no credit card, then €29 per month excl. VAT. Founders: €19 per month excl. VAT for life, 100 seats. Patient app always free.",
     eyebrow: "Pricing",
-    heading: "A 60-day trial, then one price",
+    heading: "One subscription, all your patients.",
     description:
-      "60-day trial, no credit card. Then €29 per month excl. VAT, or €24 per month excl. VAT billed yearly. Founders: €19 per month excl. VAT for life, 100 seats. One month free for every colleague you refer, and one for you. Unlimited patients, patient app always free.",
+      "60-day trial, no credit card. Then a single subscription: €29 excl. VAT per month with no commitment, or €24 excl. VAT per month billed annually. The first 100 subscribers keep €19 excl. VAT per month for life. Never a price per patient.",
     plans: [
       {
         name: "Trial",
         price: "Free",
         period: "60 days, no credit card",
         description:
-          "Long enough for a real follow-up: a history, entries between appointments, a shared review.",
+          "Two months is several appointments: time to hand tools to your patients and go over them together.",
         features: [
-          "Practitioner web workspace",
-          "Unlimited patients",
-          "All open modules",
-          "Free mobile app for your patients",
+          "The full product, no restrictions",
+          "No card requested, nothing to cancel",
         ],
+        note: "At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 30 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
         highlighted: false,
       },
       {
@@ -218,39 +217,44 @@ export const en: Dictionary = {
         price: "€19 excl. VAT",
         period: "per month, locked for life",
         description:
-          "For those who subscribe during their trial. 100 seats, direct access to the team and the roadmap.",
+          "For the first 100 who subscribe during their trial.",
         features: [
-          "Everything in Practitioner, for life",
-          "Price guaranteed while the subscription stays active",
+          "Rate guaranteed as long as the subscription stays active",
           "A direct channel to the team",
-          "The roadmap ahead of everyone else",
+          "The roadmap ahead of everyone",
         ],
         highlighted: true,
       },
       {
-        name: "Practitioner",
+        name: "Subscription",
         price: "€29 excl. VAT",
         period: "per month, no commitment",
         description:
-          "Or €24 per month excl. VAT billed yearly in advance, two months free.",
+          "Or €24 excl. VAT per month billed annually in advance, that is two months free.",
         features: [
-          "Practitioner web workspace",
-          "Unlimited patients",
-          "All open modules",
-          "Free mobile app for your patients",
-          "Full history and export",
-          "Email support",
-          "One month free per referred colleague, and one for you",
+          "Cancel at any time",
+          "Referral: one month free for you and for each colleague you refer",
         ],
         highlighted: false,
       },
     ],
+    included: {
+      title: "Included in every case",
+      items: [
+        "Practitioner web space",
+        "Free patient app",
+        "Unlimited patients",
+        "All available modules, no extra charge",
+        "Full history and export",
+        "Email support",
+      ],
+    },
     subscribeButton: "Join the waiting list",
-    subscribeButtonTitle: "During the beta, every account is opened by hand",
+    subscribeButtonTitle: "During the beta, each account is opened one by one",
     footerNote: [
-      "Prices exclude VAT (20% added). During the beta, sign-up goes through a waiting list and every account is opened by hand. A practice with several practitioners? ",
+      "Prices exclude VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice or organisation with several practitioners? ",
       { href: "/en/contact", text: "Write to us" },
-      ", a per-seat plan is on its way.",
+      ": an Organisation plan is in preparation.",
     ] as Segment[],
   },
 

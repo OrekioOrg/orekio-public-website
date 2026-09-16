@@ -78,6 +78,13 @@ export default async function TarifsPage({
                 </li>
               ))}
             </ul>
+            {/* Fin d'essai : ce qui arrive aux donnees si l'on ne souscrit pas.
+                Portee par la seule carte Essai, sous ses points, au-dessus du bouton. */}
+            {plan.note ? (
+              <p className="mt-4 text-[15px] leading-relaxed text-on-surface-variant">
+                {plan.note}
+              </p>
+            ) : null}
             <Link
               href={`/${lang}/contact`}
               title={dict.subscribeButtonTitle}
@@ -87,6 +94,26 @@ export default async function TarifsPage({
             </Link>
           </div>
         ))}
+      </div>
+
+      {/* Un seul produit : tout ce qui est commun aux trois cartes vit ici, une fois.
+          Une ligne separee par des points medians sur grand ecran, une liste sur mobile. */}
+      <div className="mt-10">
+        <h2 className="text-[16px] font-medium text-on-surface-strong">
+          {dict.included.title}
+        </h2>
+        <ul className="mt-3 flex flex-col gap-y-1 text-[15px] text-on-surface-variant md:flex-row md:flex-wrap md:items-center">
+          {dict.included.items.map((item, index) => (
+            <li key={item} className="flex items-center">
+              {item}
+              {index < dict.included.items.length - 1 ? (
+                <span aria-hidden="true" className="mx-3 hidden md:inline">
+                  ·
+                </span>
+              ) : null}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <p className="mt-10 max-w-2xl text-[14px] leading-relaxed text-on-surface-variant">
