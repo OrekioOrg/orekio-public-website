@@ -54,7 +54,7 @@ export const fr = {
     ctaFeatures: "Voir les outils",
     section2Title: "Entre deux rendez-vous, le travail continue.",
     section2Description:
-      "Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Votre patient s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. La lecture clinique reste la vôtre.",
+      "Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Votre patient s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. La lecture clinique reste vôtre.",
     highlights: [
       {
         title: "S'exercer",
@@ -96,7 +96,7 @@ export const fr = {
         {
           title: "Votre espace praticien, sur le web",
           description:
-            "Vous invitez vos patients, vous ouvrez les outils un à un, vous relisez leurs saisies en consultation. Rien à installer.",
+            "Vous invitez vos patients, vous ouvrez l'accès aux outils un à un, vous relisez leurs saisies en consultation. Rien à installer.",
         },
         {
           title: "L'application de votre patient, sur son téléphone",
@@ -275,9 +275,9 @@ export const fr = {
     eyebrow: "À propos",
     heading: "Orekio est né en consultation.",
     paragraph1:
-      "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : reprendre ce que vous confiez déjà à vos patients sur papier, le mettre sur leur téléphone, et le retrouver en consultation, daté et tel qu'il a été écrit.",
+      "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : les outils que vous remettez déjà sur papier à vos patients passent sur leur téléphone, et vous les retrouvez en consultation, datés et tels qu'ils ont été remplis.",
     paragraph2:
-      "Vous invitez votre patient par email, puis vous ouvrez les outils un à un, au fil des rendez-vous : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et une trentaine d'autres modules. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste la vôtre.",
+      "Vous invitez votre patient par email, puis vous ouvrez l'accès aux outils un à un, selon les besoins de la consultation : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et une trentaine d'autres modules. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste vôtre.",
     paragraph3:
       "Orekio est conçu par deux personnes : un infirmier en pratique avancée en psychiatrie, qui porte les choix cliniques, et un développeur, qui porte le produit. Orekio ne vend aucune donnée et n'affiche aucune publicité.",
     boxTitle: "Un carnet de bord, pas un dispositif médical",
