@@ -77,10 +77,10 @@ export const en: Dictionary = {
     screensCaption: "The patient app, with sample data",
     screens: {
       sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
-      tracking: "Daily tracking: today's entry, one slider per indicator.",
+      tracking: "Daily log: today's entry, one slider per indicator.",
       breathing: "Cardiac coherence breathing: the circle that guides each breath in.",
       practitioner:
-        "The practitioner space: a fictional patient's daily tracking over a year, one curve per indicator, as raw values.",
+        "The practitioner space: a fictional patient's daily log over a year, one curve per indicator, as raw values.",
       patientHome:
         "The patient app's home screen: what is planned today, then the tools the practitioner has opened, grouped by theme.",
     },
@@ -172,6 +172,124 @@ export const en: Dictionary = {
         ],
       },
     ],
+    gallery: {
+      eyebrow: "From day one",
+      title: "What your patient sees on their phone.",
+      description:
+        "One screen per tool, with sample data. The list grows with every new tool that opens.",
+      previous: "Previous screen",
+      next: "Next screen",
+      items: [
+        {
+          src: "galerie-sommeil.png",
+          name: "Sleep diary",
+          family: "Observe",
+          alt: "Sleep diary: the night's times on a 24-hour dial.",
+        },
+        {
+          src: "suivi-saisie.png",
+          name: "Daily log",
+          family: "Observe",
+          alt: "Daily log: today's entry, one slider per indicator.",
+        },
+        {
+          src: "galerie-beck.png",
+          name: "Beck's thought records",
+          family: "Practise",
+          alt: "Beck's thought records: the facts that support the thought, and those that contradict it.",
+        },
+        {
+          src: "galerie-emotions.png",
+          name: "Naming what I feel",
+          family: "Understand",
+          alt: "Naming what I feel: the eight families of emotions.",
+        },
+        {
+          src: "galerie-phq9.png",
+          name: "PHQ-9",
+          family: "Answer",
+          alt: "PHQ-9: one question and its four possible answers.",
+        },
+        {
+          src: "galerie-plan-securite.png",
+          name: "Safety plan",
+          family: "Hold on",
+          alt: "Safety plan: the people to contact, with a button to call.",
+        },
+        {
+          src: "respiration-coherence.png",
+          name: "Breathing",
+          family: "Hold on",
+          alt: "Cardiac coherence breathing: the circle that guides each breath in.",
+        },
+      ],
+    },
+    patientSide: {
+      eyebrow: "Patient side",
+      title: "Their phone, between appointments.",
+      description: "Two screens from the patient app, with sample data.",
+      items: [
+        {
+          src: "accueil-patient.png",
+          title: "Their space",
+          text: "What is planned today, then the tools you have opened, grouped by theme.",
+          alt: "The patient app's home screen: today's reminders, then the tools opened by the practitioner.",
+        },
+        {
+          src: "rappels.png",
+          title: "Their reminders",
+          text: "The days and time you have set. They can shift or pause them, never based on what they have entered.",
+          alt: "Daily log reminders: 7 pm every day, a second reminder paused.",
+        },
+      ],
+    },
+    practitionerSide: {
+      eyebrow: "Practitioner side",
+      title: "Your space, from one consultation to the next.",
+      description: "Five screens from the web space, with fictional patients.",
+      steps: [
+        {
+          src: "praticien-vue-ensemble.png",
+          height: 1000,
+          eyebrow: "Before the consultation",
+          title: "What the patient has entered, at a glance.",
+          text: "The modules used over the last four weeks, day by day, and what is left to open.",
+          alt: "A fictional patient's overview: her modules and the days she entered something.",
+        },
+        {
+          src: "praticien-armoire.png",
+          height: 1000,
+          eyebrow: "Choosing the tools",
+          title: "You open modules as consultations go.",
+          text: "Each tool opens once you have worked on it together, and can be withdrawn at any time.",
+          alt: "The list of modules opened for a fictional patient.",
+        },
+        {
+          src: "praticien-sommeil-donnees.png",
+          height: 990,
+          eyebrow: "Sleep diary",
+          title: "The nights, as they entered them.",
+          text: "The grid of nights, and the averages calculated over the period you choose.",
+          alt: "Sleep diary data: averages for the period and the grid of nights.",
+        },
+        {
+          src: "praticien-suivi-courbes.png",
+          height: 990,
+          eyebrow: "Daily log",
+          title: "Each indicator over a year, as raw values.",
+          text: "One curve per indicator, the range of values over the period and the number of days entered.",
+          alt: "The daily log over a year: one curve per indicator.",
+        },
+        {
+          src: "praticien-plan-securite.png",
+          height: 990,
+          eyebrow: "Safety plan",
+          title: "The plan, in the patient's own words.",
+          text: "Six steps, written with them and reviewed together in consultation.",
+          alt: "A fictional patient's safety plan, at the warning signs step.",
+        },
+      ],
+    },
     around: {
       title: "And around the modules",
       cards: [
