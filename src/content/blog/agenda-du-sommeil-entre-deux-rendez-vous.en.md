@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "the Orekio team"
 tags: ["sleep diary", "CBT for insomnia", "consultation"]
 draft: false
+cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"
 ---
 
 The sleep diary is one of the simplest tools to hand over to a patient, and one of the most useful for the consultation that follows. It asks them for one to two minutes each morning, and it gives you a concrete picture of the nights between two appointments, where memory alone stays approximate.

@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "l'équipe Orekio"
 tags: ["colonnes de Beck", "restructuration cognitive", "TCC"]
 draft: false
+cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"
 ---
 
 Les colonnes de Beck, aussi appelées relevé de pensées, sont l'un des outils centraux de la thérapie cognitivo-comportementale. Décrites par Aaron Beck et ses collègues en 1979, elles reposent sur un principe simple : quand une émotion forte survient, on note la situation, la pensée qui l'a accompagnée, puis on examine cette pensée plutôt que de la tenir pour un fait.

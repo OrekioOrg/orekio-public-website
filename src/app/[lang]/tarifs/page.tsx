@@ -32,6 +32,7 @@ export default async function TarifsPage({
   const dict = getDictionary(lang).pricing;
 
   return (
+    <>
     <div className="mx-auto max-w-6xl px-6 py-16">
       <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
         {dict.eyebrow}
@@ -43,31 +44,41 @@ export default async function TarifsPage({
         {dict.description}
       </p>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      {/* Les trois cartes partagent les mêmes rangées (grille parente + subgrid) :
+          nom, prix, description, liste et bouton tombent à la même hauteur d'une
+          carte à l'autre, quelle que soit la longueur des textes. */}
+      <div className="mt-12 grid gap-6 md:grid-cols-3 md:grid-rows-[auto_auto_auto_1fr_auto] md:gap-y-0">
         {dict.plans.map((plan) => (
           <div
             key={plan.name}
-            className={`flex flex-col rounded-lg border p-8 ${
+            className={`flex flex-col rounded-lg border p-8 md:row-span-5 md:grid md:grid-rows-subgrid ${
               plan.highlighted
                 ? "border-primary bg-primary-container"
                 : "border-outline bg-surface"
             }`}
           >
-            <h2 className="text-[18px] font-medium text-on-surface-strong">
+            <h2 className="flex flex-wrap items-center gap-3 text-[18px] font-medium text-on-surface-strong">
               {plan.name}
+              {plan.highlighted ? (
+                <span className="rounded-full bg-primary px-2.5 py-0.5 font-mono text-[11px] font-normal uppercase tracking-[0.06em] text-on-primary">
+                  {dict.highlightLabel}
+                </span>
+              ) : null}
             </h2>
+            {/* Prix et période sur deux lignes : les prix s'alignent entre cartes. */}
             <p className="mt-4">
-              <span className="text-[32px] font-medium text-on-surface-strong">
+              <span className="block text-[32px] font-medium leading-tight text-on-surface-strong">
                 {plan.price}
               </span>
-              <span className="ml-2 text-[14px] text-on-surface-variant">
+              <span className="mt-1 block text-[14px] text-on-surface-variant">
                 {plan.period}
               </span>
             </p>
             <p className="mt-3 text-[15px] leading-relaxed text-on-surface-variant">
               {plan.description}
             </p>
-            <ul className="mt-6 flex-1 space-y-3">
+            <div className="mt-6 flex flex-1 flex-col">
+            <ul className="flex-1 space-y-3">
               {plan.features.map((feature) => (
                 <li
                   key={feature}
@@ -85,6 +96,7 @@ export default async function TarifsPage({
                 {plan.note}
               </p>
             ) : null}
+            </div>
             <Link
               href={`/${lang}/contact`}
               title={dict.subscribeButtonTitle}
@@ -96,9 +108,14 @@ export default async function TarifsPage({
         ))}
       </div>
 
-      {/* Un seul produit : tout ce qui est commun aux trois cartes vit ici, une fois.
-          Une ligne separee par des points medians sur grand ecran, une liste sur mobile. */}
-      <div className="mt-10">
+    </div>
+
+    {/* Un seul produit : tout ce qui est commun aux trois cartes vit ici, une fois,
+        sur le fond teinté qui rythme la page. Une ligne separee par des points
+        medians sur grand ecran, une liste sur mobile. */}
+    <section className="bg-surface-container-low">
+    <div className="mx-auto max-w-6xl px-6 py-14">
+      <div>
         <h2 className="text-[16px] font-medium text-on-surface-strong">
           {dict.included.title}
         </h2>
@@ -122,5 +139,7 @@ export default async function TarifsPage({
         ))}
       </p>
     </div>
+    </section>
+    </>
   );
 }

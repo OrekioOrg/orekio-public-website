@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "l'équipe Orekio"
 tags: ["plan de sécurité", "prévention du suicide", "crise"]
 draft: false
+cover: "/blog/plan-de-securite-comment-le-construire.png"
 ---
 
 Le plan de sécurité est un outil bref, structuré et construit à deux, destiné aux personnes qui traversent ou risquent de traverser une crise suicidaire. Il se prépare à froid, pendant une consultation calme, dans les mots du patient, pour être disponible au moment où il en aura besoin.

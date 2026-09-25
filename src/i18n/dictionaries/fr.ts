@@ -392,6 +392,7 @@ export const fr = {
         "Support par email",
       ],
     },
+    highlightLabel: "Offre de lancement",
     subscribeButton: "Rejoindre la liste d'attente",
     subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
     footerNote: [

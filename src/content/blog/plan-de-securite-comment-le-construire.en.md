@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "the Orekio team"
 tags: ["safety plan", "suicide prevention", "crisis"]
 draft: false
+cover: "/blog/plan-de-securite-comment-le-construire.png"
 ---
 
 The safety plan is a brief, structured tool built by two, for people who are going through, or at risk of going through, a suicidal crisis. It is prepared calmly, during a quiet consultation, in the patient's words, so it is available when they need it.

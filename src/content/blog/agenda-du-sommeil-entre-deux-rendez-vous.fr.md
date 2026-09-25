@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "l'équipe Orekio"
 tags: ["agenda du sommeil", "TCC de l'insomnie", "consultation"]
 draft: false
+cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"
 ---
 
 L'agenda du sommeil est l'un des outils les plus simples à confier à un patient, et l'un des plus utiles pour la consultation qui suit. Il lui demande une à deux minutes chaque matin, et il vous donne une image concrète des nuits entre deux rendez-vous, là où la mémoire seule reste approximative.

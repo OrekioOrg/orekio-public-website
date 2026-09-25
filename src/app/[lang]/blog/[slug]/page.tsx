@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
@@ -152,6 +153,18 @@ export default async function ArticlePage({
           <div className="mt-6">
             <ShareButtons url={url} title={article.title} labels={dict} />
           </div>
+          {/* Couverture : l'écran réel du module dont parle l'article. Décorative,
+              le titre dit déjà tout, d'où l'alternative vide. */}
+          {article.cover ? (
+            <Image
+              src={`${basePath}${article.cover}`}
+              alt=""
+              width={1200}
+              height={630}
+              priority
+              className="mt-8 block h-auto w-full rounded-[10px]"
+            />
+          ) : null}
         </header>
 
         <div

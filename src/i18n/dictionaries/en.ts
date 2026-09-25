@@ -381,6 +381,7 @@ export const en: Dictionary = {
         "Email support",
       ],
     },
+    highlightLabel: "Launch offer",
     subscribeButton: "Join the waiting list",
     subscribeButtonTitle: "During the beta, each account is opened one by one",
     footerNote: [

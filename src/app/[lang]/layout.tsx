@@ -14,6 +14,7 @@ import {
 } from "@/site";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileMenu } from "@/components/mobile-menu";
+import { SiteNav } from "@/components/site-nav";
 import { JsonLd } from "@/components/json-ld";
 import { organizationSchema, websiteSchema } from "@/structured-data";
 import { pageMetadata } from "@/seo";
@@ -152,17 +153,7 @@ export default async function RootLayout({
               />
               <span className="text-[18px] font-normal">Orekio</span>
             </Link>
-            <nav className="hidden gap-8 md:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-[15px] text-on-ink/75 transition-colors hover:text-on-ink"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+            <SiteNav links={navLinks} />
             <div className="flex items-center gap-4">
               <LanguageSwitcher current={lang} />
               {/* Rien ne se vend avant l'HDS et la SAS : l'appel unique du site
