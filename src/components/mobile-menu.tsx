@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { isCurrent } from "@/components/site-nav";
 
 type NavLink = { href: string; label: string };
 
@@ -19,6 +21,7 @@ export function MobileMenu({
   closeLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="md:hidden">
@@ -64,16 +67,27 @@ export function MobileMenu({
           id="mobile-menu"
           className="absolute inset-x-0 top-[58px] z-50 flex flex-col gap-1 border-t border-on-ink/10 bg-ink px-6 py-4 text-on-ink"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-2 py-3 text-[16px] text-on-ink/75 transition-colors hover:bg-on-ink/5 hover:text-on-ink"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const current = isCurrent(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                aria-current={current ? "page" : undefined}
+                className={`flex items-center gap-3 rounded-lg px-2 py-3 text-[16px] transition-colors hover:bg-on-ink/5 hover:text-on-ink ${
+                  current ? "text-on-ink" : "text-on-ink/75"
+                }`}
+              >
+                {/* Page courante : un point teal devant le libellé. */}
+                <span
+                  aria-hidden="true"
+                  className={`h-1.5 w-1.5 shrink-0 rounded-full ${current ? "bg-accent" : "bg-transparent"}`}
+                />
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href={subscribeHref}
             onClick={() => setOpen(false)}

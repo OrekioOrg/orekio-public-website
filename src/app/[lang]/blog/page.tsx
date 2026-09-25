@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "@/base-path";
 import { notFound } from "next/navigation";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -43,7 +45,7 @@ export default async function BlogIndexPage({
   const articles = getArticles(lang);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
+    <div className="mx-auto max-w-4xl px-6 py-16">
       <JsonLd
         data={breadcrumbSchema([
           { name: "Orekio", url: absoluteUrl(lang) },
@@ -63,10 +65,26 @@ export default async function BlogIndexPage({
       {articles.length === 0 ? (
         <p className="mt-12 text-[15px] text-on-surface-variant">{dict.empty}</p>
       ) : (
-        <ul className="mt-12 space-y-10">
+        <ul className="mt-12 space-y-12">
           {articles.map((article) => (
             <li key={article.slug}>
-              <article>
+              {/* La couverture à gauche, le texte à droite ; empilés sur téléphone.
+                  Couverture décorative (le titre suit), d'où l'alternative vide. */}
+              <article className="grid gap-5 sm:grid-cols-[minmax(0,17rem)_1fr] sm:items-center sm:gap-8">
+                {article.cover ? (
+                  <Link href={`/${lang}/blog/${article.slug}`} tabIndex={-1} aria-hidden="true">
+                    <Image
+                      src={`${basePath}${article.cover}`}
+                      alt=""
+                      width={1200}
+                      height={630}
+                      className="block h-auto w-full rounded-[10px] transition-opacity hover:opacity-90"
+                    />
+                  </Link>
+                ) : (
+                  <span aria-hidden="true" />
+                )}
+                <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-on-surface-variant">
                   <time dateTime={article.date}>
                     {formatDate(article.date, lang)}
@@ -91,6 +109,7 @@ export default async function BlogIndexPage({
                 >
                   {dict.readMore}
                 </Link>
+                </div>
               </article>
             </li>
           ))}

@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "the Orekio team"
 tags: ["Beck's thought records", "cognitive restructuring", "CBT"]
 draft: false
+cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"
 ---
 
 Beck's thought records, also called thought records, are one of the central tools of cognitive behavioural therapy. Described by Aaron Beck and his colleagues in 1979, they rest on a simple principle: when a strong emotion arises, you note the situation, the thought that came with it, then examine that thought rather than treating it as a fact.

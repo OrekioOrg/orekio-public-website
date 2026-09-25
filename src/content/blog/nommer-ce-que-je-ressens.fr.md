@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "l'équipe Orekio"
 tags: ["nommer ce que je ressens", "régulation émotionnelle", "TCC"]
 draft: false
+cover: "/blog/nommer-ce-que-je-ressens.png"
 ---
 
 Mettre un mot précis sur ce que l'on ressent change la façon dont on peut travailler dessus. Passer de « je me sens mal » à « je me sens découragé » ou « je me sens humilié » ouvre des pistes différentes. Les roues des émotions sont des supports visuels conçus pour ça : quelques familles au centre, des nuances de plus en plus fines vers l'extérieur.

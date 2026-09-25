@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "l'équipe Orekio"
 tags: ["PHQ-9", "échelles cliniques", "dépression"]
 draft: false
+cover: "/blog/phq-9-questionnaire-score-interpretation.png"
 ---
 
 Le PHQ-9 (*Patient Health Questionnaire*, version à 9 items) est l'un des auto-questionnaires les plus utilisés pour explorer les symptômes dépressifs. Il est court, libre de droits, et disponible dans de nombreuses traductions. D'un rendez-vous à l'autre, il sert surtout de point de comparaison.

@@ -84,6 +84,21 @@ export const fr = {
     ],
     highlightsNote:
       "Six modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
+    screensCaption: "L'application patient, avec des données d'exemple",
+    screens: {
+      sleep:
+        "L'agenda du sommeil : la dernière nuit sur un cadran de 24 heures, puis les dix nuits précédentes.",
+      tracking: "Le suivi quotidien : la saisie du jour, un curseur par indicateur.",
+      breathing: "La respiration en cohérence cardiaque : la boule qui guide l'inspiration.",
+      practitioner:
+        "L'espace praticien : le suivi quotidien d'une patiente fictive sur un an, une courbe par indicateur, en valeurs brutes.",
+      patientHome:
+        "L'accueil de l'application patient : ce qui est prévu aujourd'hui, puis les outils ouverts par le praticien, rangés par thème.",
+    },
+    manifesto: {
+      eyebrow: "Ce qu'Orekio ne fera jamais",
+      text: "Les données sont affichées telles quelles. Leur interprétation, comme toute décision clinique, relève du praticien.",
+    },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
       "60 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
@@ -168,6 +183,124 @@ export const fr = {
         ],
       },
     ],
+    gallery: {
+      eyebrow: "Dès l'ouverture",
+      title: "Ce que votre patient voit sur son téléphone.",
+      description:
+        "Un écran par outil, avec des données d'exemple. La liste s'allonge à chaque nouvel outil ouvert.",
+      previous: "Écran précédent",
+      next: "Écran suivant",
+      items: [
+        {
+          src: "galerie-sommeil.png",
+          name: "Agenda du sommeil",
+          family: "Observer",
+          alt: "Agenda du sommeil : les horaires de la nuit sur un cadran de 24 heures.",
+        },
+        {
+          src: "suivi-saisie.png",
+          name: "Suivi quotidien",
+          family: "Observer",
+          alt: "Suivi quotidien : la saisie du jour, un curseur par indicateur.",
+        },
+        {
+          src: "galerie-beck.png",
+          name: "Colonnes de Beck",
+          family: "S'exercer",
+          alt: "Colonnes de Beck : les faits qui vont dans le sens de la pensée, et ceux qui la contredisent.",
+        },
+        {
+          src: "galerie-emotions.png",
+          name: "Nommer ce que je ressens",
+          family: "Comprendre",
+          alt: "Nommer ce que je ressens : les huit familles d'émotions.",
+        },
+        {
+          src: "galerie-phq9.png",
+          name: "PHQ-9",
+          family: "Répondre",
+          alt: "PHQ-9 : une question et ses quatre réponses possibles.",
+        },
+        {
+          src: "galerie-plan-securite.png",
+          name: "Plan de sécurité",
+          family: "Tenir",
+          alt: "Plan de sécurité : les proches à contacter, avec un bouton pour appeler.",
+        },
+        {
+          src: "respiration-coherence.png",
+          name: "Respiration",
+          family: "Tenir",
+          alt: "Respiration en cohérence cardiaque : la boule qui guide l'inspiration.",
+        },
+      ],
+    },
+    patientSide: {
+      eyebrow: "Côté patient",
+      title: "Son téléphone, entre deux rendez-vous.",
+      description: "Deux écrans de l'application patient, avec des données d'exemple.",
+      items: [
+        {
+          src: "accueil-patient.png",
+          title: "Son espace",
+          text: "Ce qui est prévu aujourd'hui, puis les outils que vous avez ouverts, rangés par thème.",
+          alt: "L'accueil de l'application patient : les rappels du jour, puis les outils ouverts par le praticien.",
+        },
+        {
+          src: "rappels.png",
+          title: "Ses rappels",
+          text: "Les jours et l'heure que vous avez posés. Il peut les décaler ou les mettre en pause, jamais en fonction de ce qu'il a noté.",
+          alt: "Les rappels du suivi quotidien : 19 h tous les jours, un second rappel en pause.",
+        },
+      ],
+    },
+    practitionerSide: {
+      eyebrow: "Côté praticien",
+      title: "Votre espace, d'une consultation à l'autre.",
+      description: "Cinq écrans de l'espace web, avec des patients fictifs.",
+      steps: [
+        {
+          src: "praticien-vue-ensemble.png",
+          height: 1000,
+          eyebrow: "Avant la consultation",
+          title: "Ce que le patient a noté, d'un coup d'œil.",
+          text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et ce qui reste à ouvrir.",
+          alt: "La vue d'ensemble d'une patiente fictive : ses modules et les jours où elle a noté quelque chose.",
+        },
+        {
+          src: "praticien-armoire.png",
+          height: 1000,
+          eyebrow: "Choisir les outils",
+          title: "Vous ouvrez les modules au fil des consultations.",
+          text: "Chaque outil s'ouvre une fois travaillé ensemble, et se retire à tout moment.",
+          alt: "La liste des modules ouverts pour une patiente fictive.",
+        },
+        {
+          src: "praticien-sommeil-donnees.png",
+          height: 990,
+          eyebrow: "Agenda du sommeil",
+          title: "Les nuits, telles qu'il les a notées.",
+          text: "La grille des nuits, et les moyennes calculées sur la période que vous choisissez.",
+          alt: "Les données de l'agenda du sommeil : moyennes de la période et grille des nuits.",
+        },
+        {
+          src: "praticien-suivi-courbes.png",
+          height: 990,
+          eyebrow: "Suivi quotidien",
+          title: "Chaque indicateur sur un an, en valeurs brutes.",
+          text: "Une courbe par indicateur, la plage des valeurs de la période et le nombre de jours notés.",
+          alt: "Le suivi quotidien sur un an : une courbe par indicateur.",
+        },
+        {
+          src: "praticien-plan-securite.png",
+          height: 990,
+          eyebrow: "Plan de sécurité",
+          title: "Le plan, dans les mots du patient.",
+          text: "Six étapes, rédigées avec lui et revues ensemble en consultation.",
+          alt: "Le plan de sécurité d'une patiente fictive, étape des signes avant-coureurs.",
+        },
+      ],
+    },
     around: {
       title: "Et autour des modules",
       cards: [
@@ -259,6 +392,7 @@ export const fr = {
         "Support par email",
       ],
     },
+    highlightLabel: "Offre de lancement",
     subscribeButton: "Rejoindre la liste d'attente",
     subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
     footerNote: [

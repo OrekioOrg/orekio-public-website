@@ -6,6 +6,7 @@ updated: "2026-09-16"
 author: "the Orekio team"
 tags: ["naming what I feel", "emotion regulation", "CBT"]
 draft: false
+cover: "/blog/nommer-ce-que-je-ressens.png"
 ---
 
 Putting a precise word on what you feel changes how you can work on it. Moving from "I feel bad" to "I feel discouraged" or "I feel humiliated" opens different paths. Emotion wheels are visual aids designed for that: a few families at the centre, finer and finer shades toward the outside.

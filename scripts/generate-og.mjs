@@ -2,10 +2,17 @@
 // Run manually when branding/tagline changes:  node scripts/generate-og.mjs
 // Committed as a static asset because GitHub Pages would serve a
 // code-generated opengraph-image route without a .png extension / MIME type.
+//
+// Charte : aplat vert profond (pas de dégradé), le symbole Orekio, le titre de
+// l'accueil mot pour mot. Vocabulaire : consultation, rendez-vous, jamais
+// « séance ». Aucun tiret long.
 import { ImageResponse } from "next/og.js";
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const box = (style, children) => ({ type: "div", props: { style, children } });
+
+const symbol = await readFile(new URL("../public/brand/orekio-symbole-nav.svg", import.meta.url));
+const symbolSrc = `data:image/svg+xml;base64,${symbol.toString("base64")}`;
 
 const res = new ImageResponse(
   box(
@@ -15,23 +22,23 @@ const res = new ImageResponse(
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      background: "linear-gradient(135deg, #123f3a 0%, #1a6b63 60%, #2e9e96 100%)",
-      color: "#ffffff",
+      background: "#123f3a",
+      color: "#fdfefe",
       padding: "80px",
       fontFamily: "sans-serif",
     },
     [
-      box({ display: "flex", alignItems: "center", gap: 28 }, [
-        box({ display: "flex", width: 72, height: 72, borderRadius: 20, background: "#6bc9bf" }, []),
-        box({ fontSize: 46, fontWeight: 700, letterSpacing: -1 }, "Orekio"),
+      box({ display: "flex", alignItems: "center", gap: 24 }, [
+        { type: "img", props: { src: symbolSrc, width: 76, height: 76 } },
+        box({ fontSize: 46, fontWeight: 500, letterSpacing: -1 }, "Orekio"),
       ]),
-      box({ display: "flex", flexDirection: "column", gap: 24 }, [
-        box({ fontSize: 66, fontWeight: 700, lineHeight: 1.1, maxWidth: 900 },
-          "L’accompagnement thérapeutique, entre les séances"),
-        box({ fontSize: 29, color: "#cfeae7", maxWidth: 900 },
-          "Agenda du sommeil, échelles cliniques validées, plan de sécurité — un carnet de bord numérique, pas un dispositif médical."),
+      box({ display: "flex", flexDirection: "column", gap: 28 }, [
+        box({ fontSize: 62, fontWeight: 600, lineHeight: 1.12, maxWidth: 980 },
+          "La consultation continue entre deux rendez-vous, sur le téléphone de votre patient."),
+        box({ fontSize: 28, color: "#cfeae7", maxWidth: 940 },
+          "Un carnet de bord numérique : Orekio affiche, le praticien interprète."),
       ]),
-      box({ fontSize: 26, opacity: 0.85 }, "orekio.fr"),
+      box({ display: "flex", alignItems: "center", gap: 14, fontSize: 26, color: "#6bc9bf" }, "orekio.fr"),
     ],
   ),
   { width: 1200, height: 630 },
