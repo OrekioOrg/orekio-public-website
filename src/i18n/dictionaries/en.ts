@@ -74,6 +74,20 @@ export const en: Dictionary = {
     ],
     highlightsNote:
       "Six modules from day one, some thirty already built, opening over the coming months.",
+    screensCaption: "The patient app, with sample data",
+    screens: {
+      sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
+      tracking: "Daily tracking: today's entry, one slider per indicator.",
+      breathing: "Cardiac coherence breathing: the circle that guides each breath in.",
+      practitioner:
+        "The practitioner space: a fictional patient's daily tracking over a year, one curve per indicator, as raw values.",
+      patientHome:
+        "The patient app's home screen: what is planned today, then the tools the practitioner has opened, grouped by theme.",
+    },
+    manifesto: {
+      eyebrow: "What Orekio will never do",
+      text: "Data is displayed as entered. Its interpretation, like any clinical decision, rests with the practitioner.",
+    },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
       "60-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",

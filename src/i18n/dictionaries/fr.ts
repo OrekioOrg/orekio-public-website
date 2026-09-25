@@ -84,6 +84,21 @@ export const fr = {
     ],
     highlightsNote:
       "Six modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
+    screensCaption: "L'application patient, avec des données d'exemple",
+    screens: {
+      sleep:
+        "L'agenda du sommeil : la dernière nuit sur un cadran de 24 heures, puis les dix nuits précédentes.",
+      tracking: "Le suivi quotidien : la saisie du jour, un curseur par indicateur.",
+      breathing: "La respiration en cohérence cardiaque : la boule qui guide l'inspiration.",
+      practitioner:
+        "L'espace praticien : le suivi quotidien d'une patiente fictive sur un an, une courbe par indicateur, en valeurs brutes.",
+      patientHome:
+        "L'accueil de l'application patient : ce qui est prévu aujourd'hui, puis les outils ouverts par le praticien, rangés par thème.",
+    },
+    manifesto: {
+      eyebrow: "Ce qu'Orekio ne fera jamais",
+      text: "Les données sont affichées telles quelles. Leur interprétation, comme toute décision clinique, relève du praticien.",
+    },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
       "60 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
