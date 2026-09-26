@@ -317,7 +317,7 @@ export const fr = {
         {
           title: "Sources",
           description:
-            "Chaque module cite les références scientifiques sur lesquelles il s'appuie, vérifiées à la source.",
+            "Chaque module cite les références scientifiques sur lesquelles il s'appuie.",
         },
         {
           title: "Hors connexion",
