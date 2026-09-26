@@ -49,10 +49,10 @@ export const fr = {
     eyebrow: "Votre armoire thérapeutique numérique",
     title: "Votre suivi continue entre deux rendez-vous.",
     description:
-      "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient les utilise entre deux rendez-vous, et vous en reparlez ensemble en consultation.",
+      "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Rejoindre la liste d'attente",
     ctaFeatures: "Voir les outils",
-    section2Title: "Entre deux rendez-vous, le travail continue.",
+    section2Title: "Le travail continue à la maison.",
     section2Description:
       "Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Votre patient s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. La lecture clinique reste vôtre.",
     highlights: [
