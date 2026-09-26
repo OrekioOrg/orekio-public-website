@@ -276,7 +276,7 @@ export const en: Dictionary = {
           src: "praticien-suivi-courbes.png",
           height: 990,
           eyebrow: "Daily log",
-          title: "Each indicator over a year, as raw values.",
+          title: "View each indicator over the period of your choice.",
           text: "One curve per indicator, the range of values over the period and the number of days entered.",
           alt: "The daily log over a year: one curve per indicator.",
         },
