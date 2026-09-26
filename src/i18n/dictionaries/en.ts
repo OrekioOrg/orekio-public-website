@@ -260,7 +260,7 @@ export const en: Dictionary = {
           src: "praticien-armoire.png",
           height: 1000,
           eyebrow: "Choosing the tools",
-          title: "You open modules as consultations go.",
+          title: "You open access to modules as consultations go.",
           text: "Each tool opens once you have worked on it together, and can be withdrawn at any time.",
           alt: "The list of modules opened for a fictional patient.",
         },
