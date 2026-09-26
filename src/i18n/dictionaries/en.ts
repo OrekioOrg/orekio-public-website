@@ -284,7 +284,7 @@ export const en: Dictionary = {
           src: "praticien-plan-securite.png",
           height: 990,
           eyebrow: "Safety plan",
-          title: "The plan, in the patient's own words.",
+          title: "The safety plan, in the patient's own words.",
           text: "Six steps, written with them and reviewed together in consultation.",
           alt: "A fictional patient's safety plan, at the warning signs step.",
         },

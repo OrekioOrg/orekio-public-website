@@ -295,7 +295,7 @@ export const fr = {
           src: "praticien-plan-securite.png",
           height: 990,
           eyebrow: "Plan de sécurité",
-          title: "Le plan, dans les mots du patient.",
+          title: "Le plan de sécurité, avec les mots du patient.",
           text: "Six étapes, rédigées avec lui et revues ensemble en consultation.",
           alt: "Le plan de sécurité d'une patiente fictive, étape des signes avant-coureurs.",
         },
