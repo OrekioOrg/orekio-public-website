@@ -37,12 +37,12 @@ export const en: Dictionary = {
 
   home: {
     eyebrow: "Your digital therapeutic toolkit",
-    title: "The consultation continues between appointments, on your patient's phone.",
+    title: "Your follow-up continues between appointments.",
     description:
-      "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them between appointments, and you go over them together in consultation.",
+      "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them day to day, and you go over them together in consultation.",
     ctaSubscribe: "Join the waiting list",
     ctaFeatures: "See the tools",
-    section2Title: "Between appointments, the work continues.",
+    section2Title: "The work continues at home.",
     section2Description:
       "Orekio is built for psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners. Your patient practises, reads, answers, writes. You find everything in your space, dated and exactly as they wrote it. The clinical reading remains yours.",
     highlights: [
@@ -347,7 +347,7 @@ export const en: Dictionary = {
       {
         name: "Founders",
         price: "€19 excl. VAT",
-        period: "per month, locked for life",
+        period: "per month, for life",
         description:
           "For the first 100 who subscribe during their trial.",
         features: [
