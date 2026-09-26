@@ -268,7 +268,7 @@ export const en: Dictionary = {
           src: "praticien-sommeil-donnees.png",
           height: 990,
           eyebrow: "Sleep diary",
-          title: "The nights, as they entered them.",
+          title: "Easily view the sleep diary data.",
           text: "The grid of nights, and the averages calculated over the period you choose.",
           alt: "Sleep diary data: averages for the period and the grid of nights.",
         },
