@@ -306,7 +306,7 @@ export const en: Dictionary = {
         {
           title: "Sources",
           description:
-            "Every module cites the scientific references it draws on, checked at the source.",
+            "Every module cites the scientific references it draws on.",
         },
         {
           title: "Offline",
