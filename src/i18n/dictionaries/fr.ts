@@ -287,7 +287,7 @@ export const fr = {
           src: "praticien-suivi-courbes.png",
           height: 990,
           eyebrow: "Suivi quotidien",
-          title: "Chaque indicateur sur un an, en valeurs brutes.",
+          title: "Consultez chaque indicateur sur la période de votre choix.",
           text: "Une courbe par indicateur, la plage des valeurs de la période et le nombre de jours notés.",
           alt: "Le suivi quotidien sur un an : une courbe par indicateur.",
         },
