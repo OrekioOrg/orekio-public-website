@@ -226,7 +226,7 @@ export const en: Dictionary = {
     },
     patientSide: {
       eyebrow: "Patient side",
-      title: "Their phone, between appointments.",
+      title: "The work goes on between appointments.",
       description: "Two screens from the patient app, with sample data.",
       items: [
         {

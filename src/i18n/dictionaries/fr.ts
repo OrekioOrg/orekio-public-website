@@ -237,7 +237,7 @@ export const fr = {
     },
     patientSide: {
       eyebrow: "Côté patient",
-      title: "Son téléphone, entre deux rendez-vous.",
+      title: "Le travail se poursuit entre deux rendez-vous.",
       description: "Deux écrans de l'application patient, avec des données d'exemple.",
       items: [
         {
