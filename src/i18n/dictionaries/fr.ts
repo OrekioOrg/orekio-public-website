@@ -279,7 +279,7 @@ export const fr = {
           src: "praticien-sommeil-donnees.png",
           height: 990,
           eyebrow: "Agenda du sommeil",
-          title: "Les nuits, telles qu'il les a notées.",
+          title: "Consultez facilement les données de l'agenda du sommeil.",
           text: "La grille des nuits, et les moyennes calculées sur la période que vous choisissez.",
           alt: "Les données de l'agenda du sommeil : moyennes de la période et grille des nuits.",
         },
