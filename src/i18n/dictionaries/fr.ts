@@ -47,7 +47,7 @@ export const fr = {
 
   home: {
     eyebrow: "Votre armoire thérapeutique numérique",
-    title: "La consultation continue entre deux rendez-vous, sur le téléphone de votre patient.",
+    title: "Votre suivi continue entre deux rendez-vous.",
     description:
       "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient les utilise entre deux rendez-vous, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Rejoindre la liste d'attente",
@@ -358,7 +358,7 @@ export const fr = {
       {
         name: "Fondateurs",
         price: "19 € HT",
-        period: "par mois, bloqué à vie",
+        period: "par mois, à vie",
         description:
           "Pour les 100 premiers qui souscrivent pendant leur essai.",
         features: [
