@@ -474,7 +474,7 @@ export const fr = {
       {
         heading: "Éditeur du site",
         lines: [
-          ["[Raison sociale], [forme juridique, ex : SAS, EI…]"],
+          ["Orekio, [forme juridique, ex : SAS, EI…]"],
           ["[Adresse du siège social]"],
           ["[Numéro SIRET]"],
           ["Capital social : [montant]"],
@@ -498,7 +498,7 @@ export const fr = {
         heading: "Propriété intellectuelle",
         lines: [
           [
-            "L'ensemble des contenus présents sur ce site (textes, logos, marques, graphismes) est la propriété de [Raison sociale], sauf mention contraire, et ne peut être reproduit sans autorisation préalable.",
+            "L'ensemble des contenus présents sur ce site (textes, logos, marques, graphismes) est la propriété de Orekio, sauf mention contraire, et ne peut être reproduit sans autorisation préalable.",
           ],
         ] as Segment[][],
       },
@@ -528,7 +528,7 @@ export const fr = {
         heading: "Responsable de traitement",
         lines: [
           [
-            "[Raison sociale], en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : [DPO ou contact RGPD], ",
+            "Orekio, en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : [DPO ou contact RGPD], ",
             email,
             ".",
           ],
@@ -622,7 +622,7 @@ export const fr = {
         heading: "4. Propriété intellectuelle",
         lines: [
           [
-            "Le service, sa marque et ses contenus restent la propriété exclusive de [Raison sociale]. Les données saisies par les utilisateurs (agenda du sommeil, réponses aux échelles, etc.) restent leur propriété.",
+            "Le service, sa marque et ses contenus restent la propriété exclusive de Orekio. Les données saisies par les utilisateurs (agenda du sommeil, réponses aux échelles, etc.) restent leur propriété.",
           ],
         ] as Segment[][],
       },
