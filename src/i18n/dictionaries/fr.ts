@@ -528,7 +528,7 @@ export const fr = {
         heading: "Responsable de traitement",
         lines: [
           [
-            "Orekio, en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : [DPO ou contact RGPD], ",
+            "Orekio, en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : ",
             email,
             ".",
           ],
