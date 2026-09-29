@@ -462,7 +462,7 @@ export const en: Dictionary = {
       {
         heading: "Website publisher",
         lines: [
-          ["[Legal company name], [legal form, e.g. SAS, sole trader…]"],
+          ["Orekio, [legal form, e.g. SAS, sole trader…]"],
           ["[Registered office address]"],
           ["[Company registration number]"],
           ["Share capital: [amount]"],
@@ -486,7 +486,7 @@ export const en: Dictionary = {
         heading: "Intellectual property",
         lines: [
           [
-            "All content on this site (text, logos, trademarks, graphics) is the property of [Legal company name], unless otherwise stated, and may not be reproduced without prior authorization.",
+            "All content on this site (text, logos, trademarks, graphics) is the property of Orekio, unless otherwise stated, and may not be reproduced without prior authorization.",
           ],
         ] as Segment[][],
       },
@@ -516,7 +516,7 @@ export const en: Dictionary = {
         heading: "Data controller",
         lines: [
           [
-            "[Legal company name], as data controller, carries out the data processing described below. For any question, contact: [DPO or GDPR contact], ",
+            "Orekio, as data controller, carries out the data processing described below. For any question, contact: [DPO or GDPR contact], ",
             email,
             ".",
           ],
@@ -610,7 +610,7 @@ export const en: Dictionary = {
         heading: "4. Intellectual property",
         lines: [
           [
-            "The service, its brand, and its content remain the exclusive property of [Legal company name]. Data entered by users (sleep diary, scale answers, etc.) remains their property.",
+            "The service, its brand, and its content remain the exclusive property of Orekio. Data entered by users (sleep diary, scale answers, etc.) remains their property.",
           ],
         ] as Segment[][],
       },
