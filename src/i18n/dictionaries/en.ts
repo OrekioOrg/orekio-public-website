@@ -516,7 +516,7 @@ export const en: Dictionary = {
         heading: "Data controller",
         lines: [
           [
-            "Orekio, as data controller, carries out the data processing described below. For any question, contact: [DPO or GDPR contact], ",
+            "Orekio, as data controller, carries out the data processing described below. For any question, contact: ",
             email,
             ".",
           ],
