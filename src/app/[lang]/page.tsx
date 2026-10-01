@@ -83,9 +83,6 @@ export default async function Home({
           </div>
         </div>
       </section>
-      <p className="mx-auto max-w-6xl px-6 pt-5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-on-surface-variant">
-        {dict.screensCaption}
-      </p>
 
       {/* Orekio est un outil double : un espace web pour le praticien, une app
           mobile pour le patient. Un écran par surface, chacun au-dessus du texte
