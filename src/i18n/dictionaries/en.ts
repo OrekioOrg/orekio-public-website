@@ -74,7 +74,7 @@ export const en: Dictionary = {
     ],
     highlightsNote:
       "Six modules from day one, some thirty already built, opening over the coming months.",
-    screensCaption: "The patient app, with sample data",
+    screensCaption: "The patient app",
     screens: {
       sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
       tracking: "Daily log: today's entry, one slider per indicator.",
@@ -176,7 +176,7 @@ export const en: Dictionary = {
       eyebrow: "From day one",
       title: "What your patient sees on their phone.",
       description:
-        "One screen per tool, with sample data. The list grows with every new tool that opens.",
+        "One screen per tool. The list grows with every new tool that opens.",
       previous: "Previous screen",
       next: "Next screen",
       items: [
@@ -227,7 +227,7 @@ export const en: Dictionary = {
     patientSide: {
       eyebrow: "Patient side",
       title: "The work goes on between appointments.",
-      description: "Two screens from the patient app, with sample data.",
+      description: "Two screens from the patient app.",
       items: [
         {
           src: "accueil-patient.png",
