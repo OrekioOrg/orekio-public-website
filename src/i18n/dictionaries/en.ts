@@ -74,6 +74,7 @@ export const en: Dictionary = {
     ],
     highlightsNote:
       "Six modules from day one, some thirty already built, opening over the coming months.",
+    screensCaption: "The patient app",
     screens: {
       sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
       tracking: "Daily log: today's entry, one slider per indicator.",

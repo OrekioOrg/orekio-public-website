@@ -84,6 +84,7 @@ export const fr = {
     ],
     highlightsNote:
       "Six modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
+    screensCaption: "L'application patient",
     screens: {
       sleep:
         "L'agenda du sommeil : la dernière nuit sur un cadran de 24 heures, puis les dix nuits précédentes.",
