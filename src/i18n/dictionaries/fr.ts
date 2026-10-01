@@ -186,7 +186,7 @@ export const fr = {
       eyebrow: "Dès l'ouverture",
       title: "Ce que votre patient voit sur son téléphone.",
       description:
-        "Un écran par outil, avec des données d'exemple. La liste s'allonge à chaque nouvel outil ouvert.",
+        "Un écran par outil. La liste s'allonge à chaque nouvel outil ouvert.",
       previous: "Écran précédent",
       next: "Écran suivant",
       items: [
@@ -237,7 +237,7 @@ export const fr = {
     patientSide: {
       eyebrow: "Côté patient",
       title: "Le travail se poursuit entre deux rendez-vous.",
-      description: "Deux écrans de l'application patient, avec des données d'exemple.",
+      description: "Deux écrans de l'application patient.",
       items: [
         {
           src: "accueil-patient.png",

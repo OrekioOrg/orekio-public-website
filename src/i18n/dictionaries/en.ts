@@ -175,7 +175,7 @@ export const en: Dictionary = {
       eyebrow: "From day one",
       title: "What your patient sees on their phone.",
       description:
-        "One screen per tool, with sample data. The list grows with every new tool that opens.",
+        "One screen per tool. The list grows with every new tool that opens.",
       previous: "Previous screen",
       next: "Next screen",
       items: [
@@ -226,7 +226,7 @@ export const en: Dictionary = {
     patientSide: {
       eyebrow: "Patient side",
       title: "The work goes on between appointments.",
-      description: "Two screens from the patient app, with sample data.",
+      description: "Two screens from the patient app.",
       items: [
         {
           src: "accueil-patient.png",
