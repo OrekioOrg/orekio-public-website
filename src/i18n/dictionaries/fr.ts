@@ -21,7 +21,7 @@ export const fr = {
   meta: {
     title: "Orekio, l'accompagnement thérapeutique entre les rendez-vous",
     description:
-      "Votre armoire thérapeutique numérique, entre les consultations : agenda du sommeil, PHQ-9, plan de sécurité, six modules dès l'ouverture et une trentaine en chemin. Un carnet de bord numérique : Orekio affiche, le praticien interprète.",
+      "Votre armoire thérapeutique numérique, entre les consultations : agenda du sommeil, PHQ-9, plan de sécurité, sept modules dès l'ouverture et une trentaine en chemin. Un carnet de bord numérique : Orekio affiche, le praticien interprète.",
   },
 
   nav: {
@@ -83,7 +83,7 @@ export const fr = {
       },
     ],
     highlightsNote:
-      "Six modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
+      "Sept modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
     screensCaption: "L'application patient, avec des données d'exemple",
     screens: {
       sleep:
@@ -125,7 +125,7 @@ export const fr = {
   features: {
     pageTitle: "Fonctionnalités",
     metaDescription:
-      "Six modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
+      "Sept modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
     eyebrow: "Fonctionnalités",
     heading: "Ce que vous pouvez confier à votre patient.",
     description:
@@ -138,7 +138,7 @@ export const fr = {
         modules: [
           { name: "Colonnes de Beck", fromDayOne: true },
           { name: "Exposition graduée", fromDayOne: false },
-          { name: "Activation comportementale", fromDayOne: false },
+          { name: "Activation comportementale", fromDayOne: true },
           { name: "Retraitement par imagerie mentale", fromDayOne: false },
           { name: "Balance décisionnelle", fromDayOne: false },
           { name: "Balance motivationnelle", fromDayOne: false },

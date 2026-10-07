@@ -11,7 +11,7 @@ export const en: Dictionary = {
   meta: {
     title: "Orekio, therapeutic support between appointments",
     description:
-      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, six modules at launch and around thirty on the way. A digital care journal: Orekio displays, the practitioner interprets.",
+      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, seven modules at launch and around thirty on the way. A digital care journal: Orekio displays, the practitioner interprets.",
   },
 
   nav: {
@@ -73,7 +73,7 @@ export const en: Dictionary = {
       },
     ],
     highlightsNote:
-      "Six modules from day one, some thirty already built, opening over the coming months.",
+      "Seven modules from day one, some thirty already built, opening over the coming months.",
     screensCaption: "The patient app, with sample data",
     screens: {
       sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
@@ -114,7 +114,7 @@ export const en: Dictionary = {
   features: {
     pageTitle: "Features",
     metaDescription:
-      "Six modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
+      "Seven modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
     eyebrow: "Features",
     heading: "What you can hand over to your patient.",
     description:
@@ -127,7 +127,7 @@ export const en: Dictionary = {
         modules: [
           { name: "Beck's thought records", fromDayOne: true },
           { name: "Graded exposure", fromDayOne: false },
-          { name: "Behavioural activation", fromDayOne: false },
+          { name: "Behavioural activation", fromDayOne: true },
           { name: "Mental imagery reprocessing", fromDayOne: false },
           { name: "Decisional balance", fromDayOne: false },
           { name: "Motivational balance", fromDayOne: false },
