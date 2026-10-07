@@ -105,7 +105,7 @@ export default async function FonctionnalitesPage({
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
                       <span>
                         {module.name}
-                        {/* Six modules et le PHQ-9 sont ouverts au lancement, revus de
+                        {/* Sept modules et le PHQ-9 sont ouverts au lancement, revus de
                             bout en bout ; le reste est construit mais s'ouvre au fil
                             des mois. Le drapeau vit sur le module lui-meme. */}
                         {module.fromDayOne ? (
