@@ -264,7 +264,7 @@ export const fr = {
           height: 1000,
           eyebrow: "Avant la consultation",
           title: "Ce que le patient a noté, d'un coup d'œil.",
-          text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et ce qui reste à ouvrir.",
+          text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et les questionnaires reçus pas encore consultés.",
           alt: "La vue d'ensemble d'une patiente fictive : ses modules et les jours où elle a noté quelque chose.",
         },
         {

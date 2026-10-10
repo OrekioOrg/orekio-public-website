@@ -253,7 +253,7 @@ export const en: Dictionary = {
           height: 1000,
           eyebrow: "Before the consultation",
           title: "What the patient has entered, at a glance.",
-          text: "The modules used over the last four weeks, day by day, and what is left to open.",
+          text: "The modules used over the last four weeks, day by day, and the questionnaires received but not yet viewed.",
           alt: "A fictional patient's overview: her modules and the days she entered something.",
         },
         {
