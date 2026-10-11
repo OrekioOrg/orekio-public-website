@@ -32,36 +32,63 @@ export const ogLocaleByLocale: Record<Locale, string> = {
   en: "en_US",
 };
 
-// Every indexable route below the locale segment, as the path suffix that
-// follows "/<lang>". "" is the locale home page. Slugs are French for both
-// locales by design (e.g. /en/fonctionnalites). Keep this list in sync with
-// the app/[lang] route folders, the sitemap is generated from it.
-export const routeSuffixes = [
-  "",
-  "/fonctionnalites",
-  "/tarifs",
-  "/a-propos",
-  "/blog",
-  "/contact",
-  "/mentions-legales",
-  "/confidentialite",
-  "/cgu",
-  "/account-deletion",
-] as const;
+// Every route below the locale segment, as the path suffix that follows
+// "/<lang>" in each locale. "" is the locale home page. Pages whose slug
+// differs per locale are served by app/[lang]/[page] (see src/views); the
+// sitemap, nav and language switcher are all generated from this table.
+export const routes = {
+  home: { fr: "", en: "" },
+  features: { fr: "/fonctionnalites", en: "/features" },
+  pricing: { fr: "/tarifs", en: "/pricing" },
+  about: { fr: "/a-propos", en: "/about" },
+  blog: { fr: "/blog", en: "/blog" },
+  contact: { fr: "/contact", en: "/contact" },
+  legalNotice: { fr: "/mentions-legales", en: "/legal-notice" },
+  privacy: { fr: "/confidentialite", en: "/privacy" },
+  terms: { fr: "/cgu", en: "/terms" },
+  accountDeletion: { fr: "/account-deletion", en: "/account-deletion" },
+} as const satisfies Record<string, Record<Locale, string>>;
 
-export type RouteSuffix = (typeof routeSuffixes)[number];
+export type RouteKey = keyof typeof routes;
+
+/** Locale-prefixed path to a route, e.g. ("en", "pricing") → "/en/pricing". */
+export function pathTo(lang: Locale, key: RouteKey): string {
+  return `/${lang}${routes[key][lang]}`;
+}
 
 // Placeholder legal drafts: served (linked in the footer) but kept out of
 // the sitemap and marked noindex until the real text is in place.
-export const noindexSuffixes: readonly string[] = [
-  "/mentions-legales",
-  "/confidentialite",
-  "/cgu",
+export const noindexRoutes: readonly RouteKey[] = [
+  "legalNotice",
+  "privacy",
+  "terms",
 ];
 
-export const indexableRouteSuffixes = routeSuffixes.filter(
-  (s) => !noindexSuffixes.includes(s),
+export const indexableRoutes = (Object.keys(routes) as RouteKey[]).filter(
+  (k) => !noindexRoutes.includes(k),
 );
+
+// English pages used to live at their French slugs (/en/tarifs…). Each old
+// address is still generated as a redirect stub (app/[lang]/[page]).
+export const legacyRedirects: Readonly<
+  Partial<Record<Locale, Record<string, RouteKey>>>
+> = {
+  en: {
+    fonctionnalites: "features",
+    tarifs: "pricing",
+    "a-propos": "about",
+    "mentions-legales": "legalNotice",
+    confidentialite: "privacy",
+    cgu: "terms",
+  },
+};
+
+/** A path suffix shared by every locale, or one per locale. */
+export type LocalizedSuffix = string | Readonly<Record<Locale, string>>;
+
+export function suffixFor(suffix: LocalizedSuffix, lang: Locale): string {
+  return typeof suffix === "string" ? suffix : suffix[lang];
+}
 
 /** Absolute URL for a locale + route suffix, e.g. ("en", "/tarifs"). */
 export function absoluteUrl(lang: Locale, suffix: string = ""): string {
@@ -73,14 +100,17 @@ export function absoluteUrl(lang: Locale, suffix: string = ""): string {
  * per locale and an x-default. Relative paths compose with `metadataBase`
  * (set in the root layout).
  */
-export function alternatesFor(lang: Locale, suffix: string = "") {
+export function alternatesFor(
+  lang: Locale,
+  suffix: LocalizedSuffix = "",
+) {
   const languages: Record<string, string> = {};
   for (const locale of locales) {
-    languages[hreflangByLocale[locale]] = `/${locale}${suffix}`;
+    languages[hreflangByLocale[locale]] = `/${locale}${suffixFor(suffix, locale)}`;
   }
-  languages["x-default"] = `/${defaultLocale}${suffix}`;
+  languages["x-default"] = `/${defaultLocale}${suffixFor(suffix, defaultLocale)}`;
   return {
-    canonical: `/${lang}${suffix}`,
+    canonical: `/${lang}${suffixFor(suffix, lang)}`,
     languages,
   };
 }

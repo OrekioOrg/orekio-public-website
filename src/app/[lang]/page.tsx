@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { CtaBanner } from "@/components/cta-banner";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
 import { softwareApplicationSchema } from "@/structured-data";
+import { pathTo } from "@/site";
 
 export default async function Home({
   params,
@@ -47,7 +48,7 @@ export default async function Home({
               {dict.ctaSubscribe}
             </Link>
             <Link
-              href={`/${lang}/fonctionnalites`}
+              href={pathTo(lang, "features")}
               className="rounded-lg border border-on-ink/25 px-6 py-3 text-[15px] font-medium text-on-ink transition-colors hover:bg-on-ink/10"
             >
               {dict.ctaFeatures}

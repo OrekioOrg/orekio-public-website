@@ -4,6 +4,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LegalPage } from "@/components/legal-page";
 import { pageMetadata } from "@/seo";
+import { routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -15,7 +16,7 @@ export async function generateMetadata({
   const dict = getDictionary(lang).cgu;
   return pageMetadata({
     lang,
-    suffix: "/cgu",
+    suffix: routes.terms,
     title: dict.pageTitle,
     description: dict.metaDescription,
     // Placeholder draft (bracketed content); flip to indexable once finalised.

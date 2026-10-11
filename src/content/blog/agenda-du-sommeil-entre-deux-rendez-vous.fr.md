@@ -3,7 +3,7 @@ title: "L'agenda du sommeil : à quoi il sert entre deux rendez-vous"
 description: "Ce qu'un agenda du sommeil tenu chaque matin apporte à la consultation, comment l'introduire avec un patient, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "l'équipe Orekio"
+author: "Olivier Teil"
 tags: ["agenda du sommeil", "TCC de l'insomnie", "consultation"]
 draft: false
 cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"

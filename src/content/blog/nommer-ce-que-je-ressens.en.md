@@ -3,7 +3,7 @@ title: "Naming what I feel: why the right word matters in consultation"
 description: "Moving from \"I feel bad\" to a precise word. The models, the clinical value, and what Orekio does with it: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "the Orekio team"
+author: "Olivier Teil"
 tags: ["naming what I feel", "emotion regulation", "CBT"]
 draft: false
 cover: "/blog/nommer-ce-que-je-ressens.png"
@@ -28,11 +28,11 @@ Several models coexist: Plutchik's wheel (eight primary emotions, with intensiti
 
 In Orekio, Naming what I feel is a module you open when you judge it useful. Between two appointments, the patient picks a family, then a shade as fine as they wish, notes an intensity from 1 to 5, the context and, if they want, a few words. If they cannot find a word, they can save an entry without a word. At the next appointment, you find these entries as they are, in the order they wrote them.
 
-Orekio does not summarise mood, draws no interpreted curve and gives no signal. You read the patient's words. As with the other modules, this is consistent with its status as a digital logbook, not a medical device (see [About](/en/a-propos)).
+Orekio does not summarise mood, draws no interpreted curve and gives no signal. You read the patient's words. As with the other modules, this is consistent with its status as a digital logbook, not a medical device (see [About](/en/about)).
 
 ## In practice
 
-The module suits short, repeated use: a few entries a week, rather than a detailed journal. It is often opened together with [Daily log](/en/fonctionnalites) and, for moments of high intensity, with the [safety plan](/en/blog/plan-de-securite-comment-le-construire) and the [Grounding](/en/fonctionnalites) module.
+The module suits short, repeated use: a few entries a week, rather than a detailed journal. It is often opened together with [Daily log](/en/features) and, for moments of high intensity, with the [safety plan](/en/blog/plan-de-securite-comment-le-construire) and the [Grounding](/en/features) module.
 
 ## Sources
 

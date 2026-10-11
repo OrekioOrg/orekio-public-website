@@ -5,6 +5,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
+import { routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -16,7 +17,7 @@ export async function generateMetadata({
   const dict = getDictionary(lang).pricing;
   return pageMetadata({
     lang,
-    suffix: "/tarifs",
+    suffix: routes.pricing,
     title: dict.pageTitle,
     description: dict.metaDescription,
   });

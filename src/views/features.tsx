@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
+import { routes } from "@/site";
 import { CtaBanner } from "@/components/cta-banner";
 import { ModuleGallery } from "@/components/module-gallery";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
@@ -17,7 +18,7 @@ export async function generateMetadata({
   const dict = getDictionary(lang).features;
   return pageMetadata({
     lang,
-    suffix: "/fonctionnalites",
+    suffix: routes.features,
     title: dict.pageTitle,
     description: dict.metaDescription,
   });

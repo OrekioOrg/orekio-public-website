@@ -3,7 +3,7 @@ title: "The safety plan: what it is for and how to build it"
 description: "A plan written by two, in the patient's words, for moments of suicidal crisis. Its six steps, and what Orekio does with it: make it available, without recording anything."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "the Orekio team"
+author: "Olivier Teil"
 tags: ["safety plan", "suicide prevention", "crisis"]
 draft: false
 cover: "/blog/plan-de-securite-comment-le-construire.png"
@@ -42,11 +42,11 @@ Alongside the six steps, the patient has two spaces that are never passed on to 
 
 Another particularity deserves to be said: the plan is the only module that is not subject to the patient's sharing consent, because it is built by two and hiding it would take away from you what you wrote yourself. The patient is told so where they write.
 
-Orekio makes the plan available, and nothing more. Consistent with its status as a digital logbook, not a medical device (see [About](/en/a-propos)): risk assessment and care remain yours.
+Orekio makes the plan available, and nothing more. Consistent with its status as a digital logbook, not a medical device (see [About](/en/about)): risk assessment and care remain yours.
 
 ## In practice
 
-The plan benefits from being reviewed: after a crisis, after a change in circumstances, or simply at regular intervals, and Orekio lets you date that review. A version using the informal "tu", with more concrete titles, exists for adolescents; it is you who switch it on. The [Grounding, Breathing and Distress tolerance](/en/fonctionnalites) modules are often opened alongside, as a toolkit for step 2. A safety plan supports care, without replacing it.
+The plan benefits from being reviewed: after a crisis, after a change in circumstances, or simply at regular intervals, and Orekio lets you date that review. A version using the informal "tu", with more concrete titles, exists for adolescents; it is you who switch it on. The [Grounding, Breathing and Distress tolerance](/en/features) modules are often opened alongside, as a toolkit for step 2. A safety plan supports care, without replacing it.
 
 ## Sources
 
