@@ -1,11 +1,28 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SITE_NAME, SITE_URL, absoluteUrl } from "@/site";
+import {
+  COMPANY,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_PROFILES,
+  absoluteUrl,
+  pathTo,
+} from "@/site";
 
 // Stable @id anchors so the graph nodes can reference each other and be
 // merged by search engines across pages.
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const APP_ID = `${SITE_URL}/#app`;
+
+// Google wants a raster logo (min 112×112) for the knowledge panel; the
+// SVG brand mark isn't reliably picked up. This is app/icon.png.
+const LOGO = {
+  "@type": "ImageObject",
+  url: `${SITE_URL}/icon.png`,
+  width: 512,
+  height: 512,
+};
 
 export function organizationSchema(dict: Dictionary) {
   return {
@@ -13,11 +30,19 @@ export function organizationSchema(dict: Dictionary) {
     "@type": "Organization",
     "@id": ORG_ID,
     name: SITE_NAME,
+    legalName: COMPANY.legalName,
     url: SITE_URL,
-    logo: `${SITE_URL}/brand/orekio-symbole.svg`,
+    logo: LOGO,
+    image: `${SITE_URL}/og.png`,
     description: dict.meta.description,
     email: "contact@orekio.app",
-    sameAs: ["https://orekio.app"],
+    address: { "@type": "PostalAddress", ...COMPANY.address },
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "SIREN",
+      value: COMPANY.siren,
+    },
+    sameAs: SOCIAL_PROFILES,
   };
 }
 
@@ -39,28 +64,43 @@ export function websiteSchema(lang: Locale, dict: Dictionary) {
  * Orekio is a product, with its category, platform and pricing tiers.
  */
 export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
+  const pricingUrl = `${SITE_URL}${pathTo(lang, "pricing")}`;
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": APP_ID,
     name: SITE_NAME,
     url: absoluteUrl(lang),
+    image: `${SITE_URL}/og.png`,
     applicationCategory: "HealthApplication",
     operatingSystem: "iOS, Android, Web",
+    inLanguage: lang,
     description: dict.meta.description,
     publisher: { "@id": ORG_ID },
-    offers: dict.pricing.plans.map((plan) => ({
-      "@type": "Offer",
-      name: plan.name,
-      description: plan.description,
-      ...(plan.price === "Gratuit" || plan.price === "Free"
-        ? { price: "0", priceCurrency: "EUR" }
-        : plan.price.includes("€")
+    offers: dict.pricing.plans.map((plan) => {
+      // "19 € HT" → 19 per month, VAT excluded; "Gratuit"/"Free" → 0.
+      const amount =
+        /\d+(?:[.,]\d+)?/.exec(plan.price)?.[0].replace(",", ".") ?? "0";
+      return {
+        "@type": "Offer",
+        name: plan.name,
+        description: plan.description,
+        url: pricingUrl,
+        price: amount,
+        priceCurrency: "EUR",
+        ...(amount !== "0"
           ? {
-              price: plan.price.replace(/[^0-9.,]/g, "").replace(",", "."),
-              priceCurrency: "EUR",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: amount,
+                priceCurrency: "EUR",
+                unitCode: "MON",
+                valueAddedTaxIncluded: false,
+              },
             }
           : {}),
-    })),
+      };
+    }),
   };
 }
 
