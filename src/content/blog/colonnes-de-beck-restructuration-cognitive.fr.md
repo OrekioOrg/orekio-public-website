@@ -3,7 +3,7 @@ title: "Les colonnes de Beck : le relevé de pensées en TCC"
 description: "Repérer et mettre à l'épreuve les pensées automatiques. Les formats, comment les remplir, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "l'équipe Orekio"
+author: "Olivier Teil"
 tags: ["colonnes de Beck", "restructuration cognitive", "TCC"]
 draft: false
 cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"

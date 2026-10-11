@@ -6,6 +6,8 @@ import {
   alternatesFor,
   hreflangByLocale,
   ogLocaleByLocale,
+  suffixFor,
+  type LocalizedSuffix,
 } from "@/site";
 
 // Static OG image committed at public/og.png (see scripts/generate-og.mjs).
@@ -25,8 +27,11 @@ interface ArticleMeta {
 
 interface PageMetaInput {
   lang: Locale;
-  /** Path after "/<lang>", e.g. "/tarifs". "" for the locale home page. */
-  suffix?: string;
+  /**
+   * Path after "/<lang>", e.g. "/blog", or one per locale (`routes.pricing`).
+   * "" for the locale home page.
+   */
+  suffix?: LocalizedSuffix;
   /** Raw page title (without the "- Orekio" suffix; the layout template adds it). */
   title: string;
   description: string;
@@ -78,15 +83,16 @@ export function pageMetadata({
   article,
   availableLocales,
 }: PageMetaInput): Metadata {
-  const url = absoluteUrl(lang, suffix);
-  const ogTitle = suffix === "" ? title : `${title} - ${SITE_NAME}`;
+  const path = suffixFor(suffix, lang);
+  const url = absoluteUrl(lang, path);
+  const ogTitle = path === "" ? title : `${title} - ${SITE_NAME}`;
   const ogImage = image
     ? { url: image, width: 1200, height: 630, alt: title }
     : OG_IMAGE;
 
   const alternates =
     availableLocales && availableLocales.length > 0
-      ? alternatesForSubset(lang, suffix, availableLocales)
+      ? alternatesForSubset(lang, path, availableLocales)
       : alternatesFor(lang, suffix);
 
   return {

@@ -11,6 +11,7 @@ import {
   GOOGLE_SITE_VERIFICATION,
   SITE_NAME,
   SITE_URL,
+  pathTo,
 } from "@/site";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -121,17 +122,17 @@ export default async function RootLayout({
   const dict = getDictionary(lang);
 
   const navLinks = [
-    { href: `/${lang}/fonctionnalites`, label: dict.nav.features },
-    { href: `/${lang}/tarifs`, label: dict.nav.pricing },
-    { href: `/${lang}/a-propos`, label: dict.nav.about },
+    { href: pathTo(lang, "features"), label: dict.nav.features },
+    { href: pathTo(lang, "pricing"), label: dict.nav.pricing },
+    { href: pathTo(lang, "about"), label: dict.nav.about },
     { href: `/${lang}/blog`, label: dict.nav.blog },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
 
   const legalLinks = [
-    { href: `/${lang}/mentions-legales`, label: dict.footer.legalNotice },
-    { href: `/${lang}/confidentialite`, label: dict.footer.privacy },
-    { href: `/${lang}/cgu`, label: dict.footer.terms },
+    { href: pathTo(lang, "legalNotice"), label: dict.footer.legalNotice },
+    { href: pathTo(lang, "privacy"), label: dict.footer.privacy },
+    { href: pathTo(lang, "terms"), label: dict.footer.terms },
     { href: `/${lang}/account-deletion`, label: dict.footer.accountDeletion },
   ];
 

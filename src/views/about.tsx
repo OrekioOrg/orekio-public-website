@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
+import { routes } from "@/site";
 import { CtaBanner } from "@/components/cta-banner";
 
 export async function generateMetadata({
@@ -15,7 +16,7 @@ export async function generateMetadata({
   const dict = getDictionary(lang).about;
   return pageMetadata({
     lang,
-    suffix: "/a-propos",
+    suffix: routes.about,
     title: dict.pageTitle,
     description: dict.metaDescription,
   });

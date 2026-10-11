@@ -3,7 +3,7 @@ title: "The PHQ-9: questionnaire, score and clinical reading"
 description: "What the PHQ-9 is, how it is scored, what its thresholds indicate, and what Orekio does with it: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "the Orekio team"
+author: "Olivier Teil"
 tags: ["PHQ-9", "clinical scales", "depression"]
 draft: false
 cover: "/blog/phq-9-questionnaire-score-interpretation.png"
@@ -32,7 +32,7 @@ These figures remain a marker: diagnosis stays a clinical act, made in interview
 
 In Orekio, the PHQ-9 is a module you open when you judge it useful. The patient fills it in from their phone, in the French translation for France reproduced word for word. At the next appointment, you find the total score, the item-by-item detail, and the previous administrations one below the other.
 
-Orekio displays the score and the detail of the answers, and stops there. It shows no severity band, compares to no norm and gives no signal, including on item 9. This choice is deliberate: Orekio is designed as a digital logbook, not as a medical device (see [About](/en/a-propos)). The clinical reading, the course of action and the assessment of suicide risk belong entirely to you.
+Orekio displays the score and the detail of the answers, and stops there. It shows no severity band, compares to no norm and gives no signal, including on item 9. This choice is deliberate: Orekio is designed as a digital logbook, not as a medical device (see [About](/en/about)). The clinical reading, the course of action and the assessment of suicide risk belong entirely to you.
 
 Concretely, the PHQ-9 in Orekio makes a data point available, and vigilance remains yours: it is you who organise the framework around it (rhythm of administrations, interview, [safety plan](/en/blog/plan-de-securite-comment-le-construire) where appropriate).
 

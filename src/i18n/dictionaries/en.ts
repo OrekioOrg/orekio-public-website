@@ -477,7 +477,7 @@ export const en: Dictionary = {
           ["[Host address]"],
           [
             "The health data processed by Orekio is intended to be hosted with a provider certified as a Health Data Host (HDS in France) under Article L.1111-8 of the French Public Health Code, before commercial launch (see the ",
-            { href: "/en/a-propos", text: "About" },
+            { href: "/en/about", text: "About" },
             " page).",
           ],
         ] as Segment[][],
@@ -495,7 +495,7 @@ export const en: Dictionary = {
         lines: [
           [
             "The processing of personal data is described in our ",
-            { href: "/en/confidentialite", text: "privacy policy" },
+            { href: "/en/privacy", text: "privacy policy" },
             ".",
           ],
         ] as Segment[][],
@@ -583,7 +583,7 @@ export const en: Dictionary = {
         lines: [
           [
             "These terms of use (“Terms”) define the conditions of access to and use of the Orekio service, a digital care journal designed to facilitate therapeutic follow-up between a practitioner and their patient. Orekio is not a medical device within the meaning of Regulation (EU) 2017/745 (see the ",
-            { href: "/en/a-propos", text: "About" },
+            { href: "/en/about", text: "About" },
             " page).",
           ],
         ] as Segment[][],
@@ -593,7 +593,7 @@ export const en: Dictionary = {
         lines: [
           [
             "Access to the service is by practitioner invitation for the patient, or by subscription for the practitioner (see the ",
-            { href: "/en/tarifs", text: "Pricing" },
+            { href: "/en/pricing", text: "Pricing" },
             " page). [To be completed: eligibility conditions, account creation, verification of healthcare professional status where applicable.]",
           ],
         ] as Segment[][],
@@ -635,7 +635,7 @@ export const en: Dictionary = {
         lines: [
           [
             "The processing of personal data is described in our ",
-            { href: "/en/confidentialite", text: "privacy policy" },
+            { href: "/en/privacy", text: "privacy policy" },
             ".",
           ],
           ["Orekio sells no data and shows no advertising."],
