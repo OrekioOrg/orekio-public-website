@@ -468,27 +468,23 @@ export const fr = {
     metaDescription: "Mentions légales du site Orekio.",
     eyebrow: "Mentions légales",
     heading: "Mentions légales",
-    noticeBox:
-      "Cette page est un brouillon de structure. Les informations entre crochets doivent être complétées et validées avant l'ouverture du site au public, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).",
     sections: [
       {
         heading: "Éditeur du site",
         lines: [
-          ["Orekio, [forme juridique, ex : SAS, EI…]"],
-          ["[Adresse du siège social]"],
-          ["[Numéro SIRET]"],
-          ["Capital social : [montant]"],
-          ["Directeur de la publication : [nom, prénom]"],
+          ["OREKIO, société par actions simplifiée (SAS) au capital de 500 €"],
+          ["Siège social : 101 rue Gabriel Péri, bâtiment C, 94270 Le Kremlin-Bicêtre, France"],
+          ["Immatriculée au RCS de Créteil sous le numéro 130 344 369"],
+          ["Directeur de la publication : Guillaume Zarb, Président"],
           ["Contact : ", email],
         ] as Segment[][],
       },
       {
         heading: "Hébergement",
         lines: [
-          ["[Nom de l'hébergeur]"],
-          ["[Adresse de l'hébergeur]"],
+          ["Site internet : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."],
           [
-            "Les données de santé traitées par Orekio sont destinées à être hébergées chez un hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique, avant l'ouverture commerciale (voir la page ",
+            "Application et données de santé : OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique (voir la page ",
             { href: "/fr/a-propos", text: "À propos" },
             ").",
           ],
