@@ -4,7 +4,8 @@ import { SegmentText } from "./segment-text";
 export interface LegalPageDict {
   eyebrow: string;
   heading: string;
-  noticeBox: string;
+  /** Draft warning, shown until the page's content is final. */
+  noticeBox?: string;
   sections: {
     heading: string;
     lines: Segment[][];
@@ -24,11 +25,13 @@ export function LegalPage({ dict }: { dict: LegalPageDict }) {
         {dict.heading}
       </h1>
 
-      <div className="mt-6 rounded-lg border border-outline bg-surface-container-low p-6">
-        <p className="text-[15px] leading-relaxed text-on-surface-variant">
-          {dict.noticeBox}
-        </p>
-      </div>
+      {dict.noticeBox ? (
+        <div className="mt-6 rounded-lg border border-outline bg-surface-container-low p-6">
+          <p className="text-[15px] leading-relaxed text-on-surface-variant">
+            {dict.noticeBox}
+          </p>
+        </div>
+      ) : null}
 
       <div className="mt-10 space-y-8 text-[16px] leading-relaxed text-on-surface">
         {dict.sections.map((section) => (

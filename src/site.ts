@@ -59,7 +59,6 @@ export function pathTo(lang: Locale, key: RouteKey): string {
 // Placeholder legal drafts: served (linked in the footer) but kept out of
 // the sitemap and marked noindex until the real text is in place.
 export const noindexRoutes: readonly RouteKey[] = [
-  "legalNotice",
   "privacy",
   "terms",
 ];

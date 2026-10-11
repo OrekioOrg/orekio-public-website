@@ -456,27 +456,23 @@ export const en: Dictionary = {
     metaDescription: "Legal notice for the Orekio website.",
     eyebrow: "Legal notice",
     heading: "Legal notice",
-    noticeBox:
-      "This page is a draft structure. The bracketed information must be filled in and validated before the site opens to the public, in accordance with French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN).",
     sections: [
       {
         heading: "Website publisher",
         lines: [
-          ["Orekio, [legal form, e.g. SAS, sole trader…]"],
-          ["[Registered office address]"],
-          ["[Company registration number]"],
-          ["Share capital: [amount]"],
-          ["Publication director: [name]"],
+          ["OREKIO, a French simplified joint-stock company (SAS) with share capital of €500"],
+          ["Registered office: 101 rue Gabriel Péri, bâtiment C, 94270 Le Kremlin-Bicêtre, France"],
+          ["Registered with the Créteil Trade and Companies Register (RCS) under number 130 344 369"],
+          ["Publication director: Guillaume Zarb, President"],
           ["Contact: ", email],
         ] as Segment[][],
       },
       {
         heading: "Hosting",
         lines: [
-          ["[Host name]"],
-          ["[Host address]"],
+          ["Website: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."],
           [
-            "The health data processed by Orekio is intended to be hosted with a provider certified as a Health Data Host (HDS in France) under Article L.1111-8 of the French Public Health Code, before commercial launch (see the ",
+            "Application and health data: OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, a certified Health Data Host (HDS) under Article L.1111-8 of the French Public Health Code (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
