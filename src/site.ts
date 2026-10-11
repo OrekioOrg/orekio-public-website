@@ -9,6 +9,24 @@ export const SITE_URL = "https://orekio.fr";
 
 export const SITE_NAME = "Orekio";
 
+// The publishing company, as registered (Kbis). Feeds the Organization
+// JSON-LD so search engines tie the brand to the legal entity.
+export const COMPANY = {
+  legalName: "OREKIO",
+  siren: "130344369",
+  address: {
+    streetAddress: "101 rue Gabriel Péri, bâtiment C",
+    postalCode: "94270",
+    addressLocality: "Le Kremlin-Bicêtre",
+    addressCountry: "FR",
+  },
+} as const;
+
+// Official profiles of the brand elsewhere (LinkedIn, Instagram, app
+// stores…). Emitted as the Organization's `sameAs`, which is how Google
+// links them to the Orekio knowledge panel. Add each URL as it goes live.
+export const SOCIAL_PROFILES: readonly string[] = ["https://orekio.app"];
+
 // Search-engine ownership-verification tokens. Paste the value from the
 // "HTML tag" verification method (just the content="..." part, not the
 // whole <meta> tag). Leave empty to emit nothing.
