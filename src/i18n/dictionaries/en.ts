@@ -38,6 +38,7 @@ export const en: Dictionary = {
   home: {
     eyebrow: "Your digital therapeutic toolkit",
     title: "Your follow-up continues between appointments.",
+    lead: "Build a personalised care plan for your patient by unlocking, one by one, the modules suited to their needs.",
     description:
       "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them day to day, and you go over them together in consultation.",
     ctaSubscribe: "Join the waiting list",

@@ -48,6 +48,7 @@ export const fr = {
   home: {
     eyebrow: "Votre armoire thérapeutique numérique",
     title: "Votre suivi continue entre deux rendez-vous.",
+    lead: "Construisez un plan de soins personnalisé pour votre patient, en débloquant un à un les modules adaptés à ses besoins.",
     description:
       "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Rejoindre la liste d'attente",
