@@ -37,7 +37,10 @@ export default async function Home({
           <h1 className="mt-6 text-[34px] font-medium leading-[1.1] tracking-[-0.02em] text-on-ink md:text-[52px]">
             {dict.title}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-[17px] font-light leading-relaxed text-on-ink/75">
+          <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-on-ink/90">
+            {dict.lead}
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-[17px] font-light leading-relaxed text-on-ink/75">
             {dict.description}
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
