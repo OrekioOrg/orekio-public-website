@@ -311,7 +311,7 @@ export const en: Dictionary = {
         {
           title: "Offline",
           description:
-            "Your patient writes without a network; everything syncs as soon as one is back.",
+            "Your patient keeps working without internet, and nothing is lost.",
         },
         {
           title: "The patient stays in control",

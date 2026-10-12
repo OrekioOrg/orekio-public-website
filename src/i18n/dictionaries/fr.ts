@@ -322,7 +322,7 @@ export const fr = {
         {
           title: "Hors connexion",
           description:
-            "Votre patient saisit sans réseau ; tout se synchronise dès qu'il en retrouve un.",
+            "Votre patient continue de travailler sans internet, rien ne se perd.",
         },
         {
           title: "Le patient garde la main",
