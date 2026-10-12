@@ -4,6 +4,7 @@ description: "Moving from \"I feel bad\" to a precise word. The models, the clin
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["naming what I feel", "emotion regulation", "CBT"]
 draft: false
 cover: "/blog/nommer-ce-que-je-ressens.png"

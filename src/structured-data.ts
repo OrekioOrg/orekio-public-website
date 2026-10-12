@@ -112,6 +112,7 @@ export function blogPostingSchema(input: {
   datePublished: string;
   dateModified?: string;
   authorName?: string;
+  authorUrl?: string;
   image?: string;
   inLanguage: string;
 }) {
@@ -127,7 +128,11 @@ export function blogPostingSchema(input: {
     dateModified: input.dateModified ?? input.datePublished,
     inLanguage: input.inLanguage,
     image: input.image ? [`${SITE_URL}${input.image}`] : [`${SITE_URL}/og.png`],
-    author: { "@type": "Person", name: input.authorName ?? SITE_NAME },
+    author: {
+      "@type": "Person",
+      name: input.authorName ?? SITE_NAME,
+      ...(input.authorUrl ? { url: input.authorUrl, sameAs: [input.authorUrl] } : {}),
+    },
     publisher: { "@id": ORG_ID },
   };
 }

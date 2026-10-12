@@ -4,6 +4,7 @@ description: "Ce qu'un agenda du sommeil tenu chaque matin apporte à la consult
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["agenda du sommeil", "TCC de l'insomnie", "consultation"]
 draft: false
 cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"

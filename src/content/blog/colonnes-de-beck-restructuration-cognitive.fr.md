@@ -4,6 +4,7 @@ description: "Repérer et mettre à l'épreuve les pensées automatiques. Les fo
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["colonnes de Beck", "restructuration cognitive", "TCC"]
 draft: false
 cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"

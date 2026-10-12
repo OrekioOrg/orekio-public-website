@@ -4,6 +4,7 @@ description: "What a sleep diary kept every morning brings to the consultation, 
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["sleep diary", "CBT for insomnia", "consultation"]
 draft: false
 cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"
