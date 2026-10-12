@@ -310,11 +310,6 @@ export const fr = {
             "Vous posez des jours et une heure par outil. Votre patient peut les décaler ou les mettre en pause, et vous voyez ce qu'il en a fait. Jamais conditionnés à ce qu'il écrit.",
         },
         {
-          title: "Vue patient et mode ado",
-          description:
-            "Pour chaque outil, l'écran exactement tel que votre patient le voit. Un langage adapté aux adolescents, que vous activez.",
-        },
-        {
           title: "Sources",
           description:
             "Chaque module cite les références scientifiques sur lesquelles il s'appuie.",
@@ -322,7 +317,7 @@ export const fr = {
         {
           title: "Hors connexion",
           description:
-            "Votre patient saisit sans réseau ; tout se synchronise dès qu'il en retrouve un.",
+            "Votre patient continue de travailler sans internet, rien ne se perd.",
         },
         {
           title: "Le patient garde la main",

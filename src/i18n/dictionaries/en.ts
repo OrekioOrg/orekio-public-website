@@ -299,11 +299,6 @@ export const en: Dictionary = {
             "You set days and a time for each tool. Your patient can shift or pause them, and you see what they did with them. Never conditioned on what they write.",
         },
         {
-          title: "Patient view and teen mode",
-          description:
-            "For each tool, the screen exactly as your patient sees it. Language adapted to teenagers, which you switch on.",
-        },
-        {
           title: "Sources",
           description:
             "Every module cites the scientific references it draws on.",
@@ -311,7 +306,7 @@ export const en: Dictionary = {
         {
           title: "Offline",
           description:
-            "Your patient writes without a network; everything syncs as soon as one is back.",
+            "Your patient keeps working without internet, and nothing is lost.",
         },
         {
           title: "The patient stays in control",
