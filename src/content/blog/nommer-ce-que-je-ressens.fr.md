@@ -4,6 +4,7 @@ description: "Passer de « je me sens mal » à un mot précis. Les modèles, l'
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["nommer ce que je ressens", "régulation émotionnelle", "TCC"]
 draft: false
 cover: "/blog/nommer-ce-que-je-ressens.png"

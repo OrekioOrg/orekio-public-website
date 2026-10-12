@@ -4,6 +4,7 @@ description: "What the PHQ-9 is, how it is scored, what its thresholds indicate,
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["PHQ-9", "clinical scales", "depression"]
 draft: false
 cover: "/blog/phq-9-questionnaire-score-interpretation.png"

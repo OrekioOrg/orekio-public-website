@@ -21,6 +21,8 @@ export interface ArticleFrontmatter {
   /** ISO date of the last meaningful edit, if any. */
   updated?: string;
   author?: string;
+  /** Public profile of the author (LinkedIn), linked from the byline. */
+  authorUrl?: string;
   tags?: string[];
   /** Absolute-from-root path to a 1200×630 cover, e.g. /blog/foo.png. */
   cover?: string;

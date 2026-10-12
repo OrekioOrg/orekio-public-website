@@ -4,6 +4,7 @@ description: "Un plan écrit à deux, dans les mots du patient, pour les moments
 date: "2026-09-08"
 updated: "2026-09-16"
 author: "Olivier Teil"
+authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
 tags: ["plan de sécurité", "prévention du suicide", "crise"]
 draft: false
 cover: "/blog/plan-de-securite-comment-le-construire.png"

@@ -111,6 +111,7 @@ export default async function ArticlePage({
             datePublished: article.date,
             dateModified: article.updated,
             authorName: article.author,
+            authorUrl: article.authorUrl,
             image: article.cover,
             inLanguage: lang,
           }),
@@ -140,7 +141,23 @@ export default async function ArticlePage({
             </time>
             {" · "}
             {article.readingMinutes} {dict.readingTime}
-            {article.author ? ` · ${dict.by} ${article.author}` : ""}
+            {article.author ? (
+              <>
+                {` · ${dict.by} `}
+                {article.authorUrl ? (
+                  <a
+                    href={article.authorUrl}
+                    target="_blank"
+                    rel="noopener noreferrer author"
+                    className="text-primary hover:underline"
+                  >
+                    {article.author}
+                  </a>
+                ) : (
+                  article.author
+                )}
+              </>
+            ) : null}
           </p>
           {article.updated ? (
             <p className="mt-1 font-mono text-[11px] text-on-surface-variant">
