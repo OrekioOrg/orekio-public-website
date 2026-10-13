@@ -102,7 +102,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      "60 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
+      "30 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
     ctaSectionButton: "Rejoindre la liste d'attente",
     apps: {
       title: "Deux applications, un même espace",
@@ -332,59 +332,73 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      "Essai de 60 jours sans carte bancaire, puis 29 € HT par mois. Fondateurs : 19 € HT par mois à vie, 100 places. Application patient toujours gratuite.",
+      "Essai de 30 jours sans carte bancaire. zelai : 29,99 € TTC par mois, jusqu'à 15 patients. mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
     eyebrow: "Tarifs",
-    heading: "Un abonnement, tous vos patients.",
+    heading: "Deux offres, le même produit.",
     description:
-      "60 jours d'essai, sans carte bancaire. Ensuite, un seul abonnement : 29 € HT par mois sans engagement, ou 24 € HT par mois en annuel. Les 100 premiers inscrits gardent 19 € HT par mois à vie. Jamais de prix par patient.",
+      "30 jours d'essai sur mendi, sans carte bancaire. Ensuite, deux offres au contenu identique : tous les modules, toutes les échelles. Seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Les 100 premiers inscrits gardent 24,99 € TTC par mois à vie.",
     plans: [
       {
         name: "Essai",
         price: "Gratuit",
-        period: "60 jours, sans carte bancaire",
+        period: "30 jours, sans carte bancaire",
         description:
-          "Deux mois, c'est plusieurs rendez-vous : le temps de confier des outils à vos patients et d'en reparler ensemble.",
+          "Un mois sur mendi, l'offre la plus haute : le temps de confier des outils à vos patients et d'en reparler ensemble.",
         features: [
-          "Le produit complet, sans restriction",
+          "Le produit complet, jusqu'à 30 patients suivis",
           "Aucune carte demandée, rien à résilier",
         ],
         note: "À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 30 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
         highlighted: false,
       },
       {
-        name: "Fondateurs",
-        price: "19 € HT",
-        period: "par mois, à vie",
+        name: "zelai",
+        price: "29,99 €",
+        period: "TTC par mois, sans engagement",
         description:
-          "Pour les 100 premiers qui souscrivent pendant leur essai.",
+          "« Prairie » en basque. Ou 329,89 € TTC par an : un mois offert.",
         features: [
-          "Tarif garanti tant que l'abonnement reste actif",
-          "Un canal direct avec l'équipe",
-          "La feuille de route en avant-première",
-        ],
-        highlighted: true,
-      },
-      {
-        name: "Abonnement",
-        price: "29 € HT",
-        period: "par mois, sans engagement",
-        description:
-          "Ou 24 € HT par mois en annuel payé d'avance, soit deux mois offerts.",
-        features: [
+          "Jusqu'à 15 patients suivis",
           "Résiliable à tout moment",
-          "Parrainage : un mois offert pour vous et pour chaque collègue parrainé",
         ],
         highlighted: false,
       },
+      {
+        name: "mendi",
+        price: "39,99 €",
+        period: "TTC par mois, sans engagement",
+        description:
+          "« Montagne » en basque. Ou 439,89 € TTC par an : un mois offert.",
+        features: [
+          "Jusqu'à 30 patients suivis",
+          "Résiliable à tout moment",
+        ],
+        highlighted: false,
+      },
+      {
+        name: "Fondateurs",
+        price: "24,99 €",
+        period: "TTC par mois, à vie",
+        description:
+          "Pour les 100 premiers inscrits, sur l'offre zelai.",
+        features: [
+          "Jusqu'à 15 patients suivis",
+          "Tarif garanti tant que l'abonnement reste actif",
+          "Au mois uniquement",
+          "Un canal direct avec l'équipe",
+        ],
+        highlighted: true,
+      },
     ] as PricingPlan[],
     included: {
-      title: "Inclus dans tous les cas",
+      title: "Inclus dans toutes les offres",
       items: [
         "Espace web praticien",
         "Application patient gratuite",
-        "Patients illimités",
-        "Tous les modules disponibles, sans supplément",
+        "Tous les modules et toutes les échelles",
         "Historique complet et export",
+        "Changement d'offre depuis l'application",
+        "Parrainage : un mois offert pour vous et pour votre collègue",
         "Support par email",
       ],
     },
@@ -392,9 +406,9 @@ export const fr = {
     subscribeButton: "Rejoindre la liste d'attente",
     subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
     footerNote: [
-      "Prix hors taxes, TVA de 20 % en sus. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous êtes une structure avec plusieurs praticiens ? ",
+      "Prix TTC, TVA de 20 % incluse. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur zelai, 31,99 € TTC sur mendi. Plus de 30 patients suivis ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },
-      " : un plan Structure est en préparation.",
+      " : nous vous rappelons sous 7 jours ouvrés.",
     ] as Segment[],
   },
 

@@ -45,14 +45,15 @@ export default async function TarifsPage({
         {dict.description}
       </p>
 
-      {/* Les trois cartes partagent les mêmes rangées (grille parente + subgrid) :
-          nom, prix, description, liste et bouton tombent à la même hauteur d'une
-          carte à l'autre, quelle que soit la longueur des textes. */}
-      <div className="mt-12 grid gap-6 md:grid-cols-3 md:grid-rows-[auto_auto_auto_1fr_auto] md:gap-y-0">
+      {/* Sur grand écran, les quatre cartes partagent les mêmes rangées (grille
+          parente + subgrid) : nom, prix, description, liste et bouton tombent à
+          la même hauteur d'une carte à l'autre, quelle que soit la longueur des
+          textes. Deux colonnes sur tablette, une sur mobile. */}
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0">
         {dict.plans.map((plan) => (
           <div
             key={plan.name}
-            className={`flex flex-col rounded-lg border p-8 md:row-span-5 md:grid md:grid-rows-subgrid ${
+            className={`flex flex-col rounded-lg border p-6 lg:row-span-5 lg:grid lg:grid-rows-subgrid ${
               plan.highlighted
                 ? "border-primary bg-primary-container"
                 : "border-outline bg-surface"
@@ -111,7 +112,7 @@ export default async function TarifsPage({
 
     </div>
 
-    {/* Un seul produit : tout ce qui est commun aux trois cartes vit ici, une fois,
+    {/* Un seul produit : tout ce qui est commun aux quatre cartes vit ici, une fois,
         sur le fond teinté qui rythme la page. Une ligne separee par des points
         medians sur grand ecran, une liste sur mobile. */}
     <section className="bg-surface-container-low">

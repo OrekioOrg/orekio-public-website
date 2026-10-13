@@ -78,7 +78,7 @@ export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
     description: dict.meta.description,
     publisher: { "@id": ORG_ID },
     offers: dict.pricing.plans.map((plan) => {
-      // "19 € HT" → 19 per month, VAT excluded; "Gratuit"/"Free" → 0.
+      // "29,99 €" → 29.99 per month, VAT included; "Gratuit"/"Free" → 0.
       const amount =
         /\d+(?:[.,]\d+)?/.exec(plan.price)?.[0].replace(",", ".") ?? "0";
       return {
@@ -95,7 +95,7 @@ export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
                 price: amount,
                 priceCurrency: "EUR",
                 unitCode: "MON",
-                valueAddedTaxIncluded: false,
+                valueAddedTaxIncluded: true,
               },
             }
           : {}),
