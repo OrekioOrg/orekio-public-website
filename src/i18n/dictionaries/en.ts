@@ -321,18 +321,18 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      "30-day trial, no credit card. zelai: €29.99 per month incl. VAT, up to 15 patients. mendi: €39.99 per month incl. VAT, up to 30 patients. Founders: €24.99 per month incl. VAT for life, 100 seats.",
+      "30-day trial, no credit card. Zelai: €29.99 per month incl. VAT, up to 15 patients. Mendi: €39.99 per month incl. VAT, up to 30 patients. Founders: €24.99 per month incl. VAT for life, 100 seats.",
     eyebrow: "Pricing",
     heading: "Two plans, the same product.",
     description:
-      "30-day trial on mendi, no credit card. Then two plans with identical content: every module, every scale. Only the number of followed patients changes, and pausing a follow-up frees its place. The first 100 subscribers keep €24.99 incl. VAT per month for life.",
+      "30-day trial on Mendi, no credit card. Then two plans with identical content: every module, every scale. Only the number of followed patients changes, and pausing a follow-up frees its place. The first 100 subscribers keep €24.99 incl. VAT per month for life.",
     plans: [
       {
         name: "Trial",
         price: "Free",
         period: "30 days, no credit card",
         description:
-          "One month on mendi, the highest plan: time to hand tools to your patients and go over them together.",
+          "One month on Mendi, the highest plan: time to hand tools to your patients and go over them together.",
         features: [
           "The full product, up to 30 followed patients",
           "No card requested, nothing to cancel",
@@ -341,7 +341,7 @@ export const en: Dictionary = {
         highlighted: false,
       },
       {
-        name: "zelai",
+        name: "Zelai",
         price: "€29.99",
         period: "per month incl. VAT, no commitment",
         description:
@@ -353,7 +353,7 @@ export const en: Dictionary = {
         highlighted: false,
       },
       {
-        name: "mendi",
+        name: "Mendi",
         price: "€39.99",
         period: "per month incl. VAT, no commitment",
         description:
@@ -369,7 +369,7 @@ export const en: Dictionary = {
         price: "€24.99",
         period: "per month incl. VAT, for life",
         description:
-          "For the first 100 subscribers, on the zelai plan.",
+          "For the first 100 subscribers, on the Zelai plan.",
         features: [
           "Up to 15 followed patients",
           "Rate guaranteed as long as the subscription stays active",
@@ -395,7 +395,7 @@ export const en: Dictionary = {
     subscribeButton: "Join the waiting list",
     subscribeButtonTitle: "During the beta, each account is opened one by one",
     footerNote: [
-      "Prices include VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on zelai, €31.99 on mendi. More than 30 followed patients? ",
+      "Prices include VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on Zelai, €31.99 on Mendi. More than 30 followed patients? ",
       { href: "/en/contact", text: "Write to us" },
       ": we call you back within 7 working days.",
     ] as Segment[],
