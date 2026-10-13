@@ -332,18 +332,18 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      "Essai de 30 jours sans carte bancaire. zelai : 29,99 € TTC par mois, jusqu'à 15 patients. mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
+      "Essai de 30 jours sans carte bancaire. Zelai : 29,99 € TTC par mois, jusqu'à 15 patients. Mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
     eyebrow: "Tarifs",
     heading: "Deux offres, le même produit.",
     description:
-      "30 jours d'essai sur mendi, sans carte bancaire. Ensuite, deux offres au contenu identique : tous les modules, toutes les échelles. Seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Les 100 premiers inscrits gardent 24,99 € TTC par mois à vie.",
+      "30 jours d'essai sur Mendi, sans carte bancaire. Ensuite, deux offres au contenu identique : tous les modules, toutes les échelles. Seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Les 100 premiers inscrits gardent 24,99 € TTC par mois à vie.",
     plans: [
       {
         name: "Essai",
         price: "Gratuit",
         period: "30 jours, sans carte bancaire",
         description:
-          "Un mois sur mendi, l'offre la plus haute : le temps de confier des outils à vos patients et d'en reparler ensemble.",
+          "Un mois sur Mendi, l'offre la plus haute : le temps de confier des outils à vos patients et d'en reparler ensemble.",
         features: [
           "Le produit complet, jusqu'à 30 patients suivis",
           "Aucune carte demandée, rien à résilier",
@@ -352,7 +352,7 @@ export const fr = {
         highlighted: false,
       },
       {
-        name: "zelai",
+        name: "Zelai",
         price: "29,99 €",
         period: "TTC par mois, sans engagement",
         description:
@@ -364,7 +364,7 @@ export const fr = {
         highlighted: false,
       },
       {
-        name: "mendi",
+        name: "Mendi",
         price: "39,99 €",
         period: "TTC par mois, sans engagement",
         description:
@@ -380,7 +380,7 @@ export const fr = {
         price: "24,99 €",
         period: "TTC par mois, à vie",
         description:
-          "Pour les 100 premiers inscrits, sur l'offre zelai.",
+          "Pour les 100 premiers inscrits, sur l'offre Zelai.",
         features: [
           "Jusqu'à 15 patients suivis",
           "Tarif garanti tant que l'abonnement reste actif",
@@ -406,7 +406,7 @@ export const fr = {
     subscribeButton: "Rejoindre la liste d'attente",
     subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
     footerNote: [
-      "Prix TTC, TVA de 20 % incluse. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur zelai, 31,99 € TTC sur mendi. Plus de 30 patients suivis ? ",
+      "Prix TTC, TVA de 20 % incluse. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },
       " : nous vous rappelons sous 7 jours ouvrés.",
     ] as Segment[],
