@@ -91,7 +91,7 @@ export const en: Dictionary = {
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      "60-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
+      "30-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
     ctaSectionButton: "Join the waiting list",
     apps: {
       title: "Two apps, one shared space",
@@ -321,59 +321,73 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      "60-day trial, no credit card, then €29 per month excl. VAT. Founders: €19 per month excl. VAT for life, 100 seats. Patient app always free.",
+      "30-day trial, no credit card. zelai: €29.99 per month incl. VAT, up to 15 patients. mendi: €39.99 per month incl. VAT, up to 30 patients. Founders: €24.99 per month incl. VAT for life, 100 seats.",
     eyebrow: "Pricing",
-    heading: "One subscription, all your patients.",
+    heading: "Two plans, the same product.",
     description:
-      "60-day trial, no credit card. Then a single subscription: €29 excl. VAT per month with no commitment, or €24 excl. VAT per month billed annually. The first 100 subscribers keep €19 excl. VAT per month for life. Never a price per patient.",
+      "30-day trial on mendi, no credit card. Then two plans with identical content: every module, every scale. Only the number of followed patients changes, and pausing a follow-up frees its place. The first 100 subscribers keep €24.99 incl. VAT per month for life.",
     plans: [
       {
         name: "Trial",
         price: "Free",
-        period: "60 days, no credit card",
+        period: "30 days, no credit card",
         description:
-          "Two months is several appointments: time to hand tools to your patients and go over them together.",
+          "One month on mendi, the highest plan: time to hand tools to your patients and go over them together.",
         features: [
-          "The full product, no restrictions",
+          "The full product, up to 30 followed patients",
           "No card requested, nothing to cancel",
         ],
         note: "At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 30 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
         highlighted: false,
       },
       {
-        name: "Founders",
-        price: "€19 excl. VAT",
-        period: "per month, for life",
+        name: "zelai",
+        price: "€29.99",
+        period: "per month incl. VAT, no commitment",
         description:
-          "For the first 100 who subscribe during their trial.",
+          "Basque for “meadow”. Or €329.89 incl. VAT per year: one month free.",
         features: [
-          "Rate guaranteed as long as the subscription stays active",
-          "A direct channel to the team",
-          "The roadmap ahead of everyone",
-        ],
-        highlighted: true,
-      },
-      {
-        name: "Subscription",
-        price: "€29 excl. VAT",
-        period: "per month, no commitment",
-        description:
-          "Or €24 excl. VAT per month billed annually in advance, that is two months free.",
-        features: [
+          "Up to 15 followed patients",
           "Cancel at any time",
-          "Referral: one month free for you and for each colleague you refer",
         ],
         highlighted: false,
       },
+      {
+        name: "mendi",
+        price: "€39.99",
+        period: "per month incl. VAT, no commitment",
+        description:
+          "Basque for “mountain”. Or €439.89 incl. VAT per year: one month free.",
+        features: [
+          "Up to 30 followed patients",
+          "Cancel at any time",
+        ],
+        highlighted: false,
+      },
+      {
+        name: "Founders",
+        price: "€24.99",
+        period: "per month incl. VAT, for life",
+        description:
+          "For the first 100 subscribers, on the zelai plan.",
+        features: [
+          "Up to 15 followed patients",
+          "Rate guaranteed as long as the subscription stays active",
+          "Monthly billing only",
+          "A direct channel to the team",
+        ],
+        highlighted: true,
+      },
     ],
     included: {
-      title: "Included in every case",
+      title: "Included in every plan",
       items: [
         "Practitioner web space",
         "Free patient app",
-        "Unlimited patients",
-        "All available modules, no extra charge",
+        "Every module and every scale",
         "Full history and export",
+        "Change plans from the app",
+        "Referral: one month free for you and your colleague",
         "Email support",
       ],
     },
@@ -381,9 +395,9 @@ export const en: Dictionary = {
     subscribeButton: "Join the waiting list",
     subscribeButtonTitle: "During the beta, each account is opened one by one",
     footerNote: [
-      "Prices exclude VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice or organisation with several practitioners? ",
+      "Prices include VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on zelai, €31.99 on mendi. More than 30 followed patients? ",
       { href: "/en/contact", text: "Write to us" },
-      ": an Organisation plan is in preparation.",
+      ": we call you back within 7 working days.",
     ] as Segment[],
   },
 
