@@ -36,7 +36,7 @@ Orekio n'analyse pas le contenu, ne compte rien et ne repère aucune distorsion 
 
 ## En pratique
 
-Deux à quatre relevés par semaine suffisent souvent au début. L'objectif tient à la régularité plutôt qu'au volume, et surtout à la relecture commune en rendez-vous, où le patient et vous examinez ensemble une ou deux situations en détail. Les échelles [PHQ-9](/fr/blog/phq-9-questionnaire-score-interpretation) et GAD-7 servent parfois de repère chiffré en parallèle.
+Deux à quatre relevés par semaine suffisent souvent au début. L'objectif tient à la régularité plutôt qu'au volume, et surtout à la relecture commune en rendez-vous, où le patient et vous examinez ensemble une ou deux situations en détail.
 
 ## Sources
 
