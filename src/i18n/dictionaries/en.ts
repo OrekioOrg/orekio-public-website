@@ -200,6 +200,12 @@ export const en: Dictionary = {
           alt: "Beck's thought records: the facts that support the thought, and those that contradict it.",
         },
         {
+          src: "galerie-activites.png",
+          name: "Behavioural activation",
+          family: "Practise",
+          alt: "Behavioural activation: the activities prepared with the practitioner, from easiest to hardest, each linked to a life area.",
+        },
+        {
           src: "galerie-emotions.png",
           name: "Naming what I feel",
           family: "Understand",

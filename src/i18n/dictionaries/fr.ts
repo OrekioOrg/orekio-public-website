@@ -211,6 +211,12 @@ export const fr = {
           alt: "Colonnes de Beck : les faits qui vont dans le sens de la pensée, et ceux qui la contredisent.",
         },
         {
+          src: "galerie-activites.png",
+          name: "Activation comportementale",
+          family: "S'exercer",
+          alt: "Activation comportementale : les activités préparées avec le praticien, de la plus facile à la plus difficile, chacune reliée à un domaine de vie.",
+        },
+        {
           src: "galerie-emotions.png",
           name: "Nommer ce que je ressens",
           family: "Comprendre",
