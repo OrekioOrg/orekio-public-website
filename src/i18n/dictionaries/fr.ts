@@ -170,7 +170,6 @@ export const fr = {
         tagline: "Un score, jamais une interprétation.",
         modules: [
           { name: "PHQ-9", fromDayOne: true },
-          { name: "GAD-7", fromDayOne: false },
         ],
       },
       {

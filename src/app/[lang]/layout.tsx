@@ -78,7 +78,6 @@ export async function generateMetadata({
       "échelles cliniques",
       "plan de sécurité",
       "PHQ-9",
-      "GAD-7",
       "TCC",
       "psychiatre",
       "psychologue",
