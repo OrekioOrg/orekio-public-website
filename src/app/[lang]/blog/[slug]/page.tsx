@@ -139,8 +139,6 @@ export default async function ArticlePage({
             <time dateTime={article.date}>
               {formatDate(article.date, lang)}
             </time>
-            {" · "}
-            {article.readingMinutes} {dict.readingTime}
             {article.author ? (
               <>
                 {` · ${dict.by} `}

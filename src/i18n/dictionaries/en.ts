@@ -159,7 +159,6 @@ export const en: Dictionary = {
         tagline: "A score, never an interpretation.",
         modules: [
           { name: "PHQ-9", fromDayOne: true },
-          { name: "GAD-7", fromDayOne: false },
         ],
       },
       {
@@ -453,7 +452,6 @@ export const en: Dictionary = {
       "Each article describes a tool, what the literature says about it, and what Orekio does with it. With sources.",
     empty: "The first articles are coming soon.",
     readMore: "Read the article →",
-    readingTime: "min read",
     by: "By",
     publishedOn: "Published",
     updatedOn: "Updated",
