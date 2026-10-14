@@ -9,13 +9,13 @@ draft: false
 cover: "/blog/activation-comportementale.png"
 ---
 
-When mood is low, people sometimes do fewer things: they go out less, put things off, give up what they used to enjoy. Behavioural activation starts from there. It focuses on the link between what one does and mood, without targeting thoughts first (NICE, 2022). The patient plans small activities chosen with you, does them, then notes what they brought.
+When mood is low, people sometimes do fewer things: they go out less, put things off, give up what they used to enjoy. Behavioural activation starts from there. It focuses on the link between what one does and mood, without directly targeting thoughts (NICE, 2022). The patient plans small activities chosen with you, does them, then notes what they brought.
 
 ## The principle
 
 The reference manual, the BATD-R (Lejuez et al., 2011), follows a precise order:
 
-1. **The patient's life areas**: relationships, work, leisure, health, daily life, values;
+1. **The patient's life areas**, for example relationships, work, leisure, health, daily life;
 2. **What matters** in each, put by the patient in their own words;
 3. **Activities** linked to what matters, ranked from easiest to hardest, starting with the easiest;
 4. **A day and a time** for each: the manual calls this a key aspect of the treatment.
@@ -24,15 +24,15 @@ Activities start from what matters to the patient rather than being picked at ra
 
 ## What the evidence says
 
-In depressed adults treated as outpatients, behavioural activation does better than control conditions and does not differ from other psychotherapies (Cuijpers et al., 2026, 105 trials). The Cochrane review rates the certainty of the evidence as moderate (Uphoff et al., 2020). In the COBRA trial, delivered by workers without professional psychotherapy training, it was non-inferior to CBT at twelve months (Richards et al., 2016). NICE lists it among first-line treatments for depression and, for less severe depression, as guided self-help: the patient moves forward between appointments, while a trained practitioner encourages them and reviews progress with them.
+In depressed adults treated as outpatients, behavioural activation does better than control conditions and does not differ from other psychotherapies (Cuijpers et al., 2026, 105 trials). The Cochrane review rates as moderate the certainty of its comparisons with usual care and with CBT, and notes that the advantage over usual care does not hold in every sensitivity analysis (Uphoff et al., 2020). In the COBRA trial, delivered by workers without professional psychotherapy training, it was non-inferior to CBT at twelve months (Richards et al., 2016). NICE lists it among first-line treatments for depression and, for less severe depression, as guided self-help: the patient moves forward between appointments, while a trained practitioner encourages them and reviews progress with them.
 
-Two limits deserve to be stated. In digital form, the specific effect of activity scheduling is not established: in the only trial that isolates it, added to internet-delivered CBT, it brings no additional effect (Watkins et al., 2023), and online programmes with no support at all do not reach significance (Alber et al., 2023). And this evidence concerns mostly adult depression. This is why the module is designed as an extension of the consultation: activities are prepared with you and reviewed with you.
+Two limits deserve to be stated. In digital form, the specific effect of activity scheduling is not established: in a trial that isolates it, added to internet-delivered CBT, it brings no additional effect (Watkins et al., 2023), and online programmes with no support at all, only three interventions, do not reach significance (Alber et al., 2023). And this evidence concerns mostly adult depression. This is why the module is designed as an extension of the consultation: activities are prepared with you and reviewed with you.
 
 ## What Orekio does with it, and what belongs to you
 
 In Orekio, behavioural activation is a module you open when you judge it useful; the patient finds it under the name "My activities". In consultation, you build with them, life area by life area, what matters and the activities attached to it, each ranked Easy, Medium or Hard. You also choose whether to offer them general ideas as a complement.
 
-On their phone, even offline, the patient sees their week: one dot per activity, filled when done, outlined when planned. They plan an activity for a day, with a time they are encouraged to set. When they tick it, they can rate from 0 to 10 the pleasure felt and the sense of having accomplished something, or skip the rating: both are legitimate. At the next appointment, you find a report week by week and by life area: what was planned, what was done, the raw ratings and the patient's own words.
+On their phone, even offline, the patient sees their week: one dot per activity, filled when done, outlined when planned. They plan an activity for a day, with a time they are encouraged to set. When they tick it, they can rate from 0 to 10 the pleasure felt and the sense of having accomplished something, or skip the rating: both are legitimate. At the next appointment, if they have agreed to share, you find a report week by week and by life area: what was planned, what was done, the raw ratings and the patient's own words.
 
 Orekio counts, and stops there. The patient sees no streak, no percentage, no congratulations; an unticked activity stays a simple outline, with no message. No signal is sent about an empty week, and no activity norm is displayed. What a week means, you read with them. Orekio is designed as a digital logbook, not a medical device (see [About](/en/about)).
 
