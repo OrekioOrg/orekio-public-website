@@ -36,7 +36,7 @@ Orekio does not analyse the content, counts nothing and spots no distortion in y
 
 ## In practice
 
-Two to four records a week are often enough at first. The goal is regularity rather than volume, and above all the shared rereading at the appointment, where the patient and you examine one or two situations in detail together. The [PHQ-9](/en/blog/phq-9-questionnaire-score-interpretation) and GAD-7 scales sometimes serve as a numerical marker alongside.
+Two to four records a week are often enough at first. The goal is regularity rather than volume, and above all the shared rereading at the appointment, where the patient and you examine one or two situations in detail together.
 
 ## Sources
 
