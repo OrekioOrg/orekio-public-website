@@ -39,7 +39,7 @@ Concretely, the PHQ-9 in Orekio makes a data point available, and vigilance rema
 
 ## In practice
 
-A first administration, at the start of care, gives a baseline. Many practitioners have it repeated every two to four weeks, during a treatment or a psychotherapy, as a numerical support the patient and you look at together. It is you who set the rhythm, in consultation; Orekio simply displays the administrations one below the other. The GAD-7 and the [sleep diary](/en/blog/agenda-du-sommeil-entre-deux-rendez-vous) are often used alongside.
+A first administration, at the start of care, gives a baseline. Many practitioners have it repeated every two to four weeks, during a treatment or a psychotherapy, as a numerical support the patient and you look at together. It is you who set the rhythm, in consultation; Orekio simply displays the administrations one below the other.
 
 ## Sources
 
