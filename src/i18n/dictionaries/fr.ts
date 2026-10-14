@@ -459,7 +459,6 @@ export const fr = {
       "Chaque article décrit un outil, ce qu'en dit la littérature, et ce qu'Orekio en fait. Avec les sources.",
     empty: "Les premiers articles arrivent bientôt.",
     readMore: "Lire l’article →",
-    readingTime: "min de lecture",
     by: "Par",
     publishedOn: "Publié le",
     updatedOn: "Mis à jour le",

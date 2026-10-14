@@ -56,7 +56,7 @@ Les tokens correspondants vivent dans `src/app/globals.css`.
 - **Outfit** — titres, interface, corps de texte. Graisses **300 / 400 / 500
   uniquement**.
 - **IBM Plex Mono** — éyebrow de section, micro-labels, métadonnées (dates,
-  temps de lecture, mentions techniques).
+  auteur, mentions techniques).
 
 | Usage | Fonte | Graisse | Taille desktop |
 |---|---|---|---|
