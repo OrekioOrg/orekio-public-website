@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import QRCode from "qrcode";
 import { basePath } from "@/base-path";
 
@@ -53,7 +52,12 @@ export default async function BetaPage() {
       <header className="bg-ink text-on-ink">
         <div className="mx-auto max-w-5xl px-4 pt-6 pb-14 sm:px-8 sm:pt-8 sm:pb-20">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/fr" className="flex items-center gap-2.5">
+            <a
+              href="/fr"
+              target="_blank"
+              rel="noopener"
+              className="flex items-center gap-2.5"
+            >
               <Image
                 src={`${basePath}/brand/orekio-symbole-nav.svg`}
                 alt=""
@@ -61,7 +65,7 @@ export default async function BetaPage() {
                 height={30}
               />
               <span className="text-[19px]">Orekio</span>
-            </Link>
+            </a>
             <span className="rounded-full border border-white/15 px-3 py-1 text-[13px] text-on-ink/75">
               Parcours de test
             </span>
