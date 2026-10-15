@@ -115,7 +115,7 @@ export default async function BetaPage() {
             title="Le site vitrine"
           >
             <p>
-              Explorez-le pour comprendre ce qu’est Orekio et à quoi il sert.
+              Parcourez-le librement, comme si vous découvriez Orekio.
             </p>
             <div className="mt-6">
               <ButtonLink href="/fr" variant="outline">
@@ -131,9 +131,8 @@ export default async function BetaPage() {
             title="L’outil du professionnel"
           >
             <p>
-              L’application web soignante, destinée aux professionnels.
-              Explorez l’outil et ses fonctionnalités&nbsp;: sa prise en main
-              doit être claire et rapide.
+              L’application web destinée aux professionnels. Explorez-la
+              librement.
             </p>
             <div className="mt-6">
               <ButtonLink href={OREKIO_APP}>Ouvrir orekio.app</ButtonLink>
@@ -148,8 +147,8 @@ export default async function BetaPage() {
             last
           >
             <p>
-              Découvrez ce que recevra votre patient et faites-vous un
-              avis&nbsp;: l’app doit lui être facile à utiliser au quotidien.
+              L’application que reçoit votre patient, sur Android ou
+              iPhone.
             </p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">
