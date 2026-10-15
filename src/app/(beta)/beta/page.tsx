@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import QRCode from "qrcode";
 import { basePath } from "@/base-path";
+import { BrowserFrame } from "@/components/product-frames";
+import { FloatingFeedback } from "./floating-feedback";
 
 // Parcours de test des beta testeurs, version web de l'infographie
 // « Découvrez Orekio en 3 étapes ». Hors sitemap et noindex : la page
@@ -21,6 +23,22 @@ const ANDROID_STORE =
   "https://play.google.com/store/apps/details?id=com.orekio.app";
 const TESTFLIGHT_APP = "https://apps.apple.com/app/testflight/id899247664";
 const TESTFLIGHT_JOIN = "https://testflight.apple.com/join/y6bPGjd6";
+
+const phones = [
+  {
+    src: "telephone-respiration.webp",
+    alt: "Respiration guidée dans l’application patient",
+  },
+  {
+    src: "telephone-accueil.webp",
+    alt: "Écran d’accueil de l’application patient",
+    main: true,
+  },
+  {
+    src: "telephone-sommeil.webp",
+    alt: "Agenda du sommeil dans l’application patient",
+  },
+];
 
 const stops = [
   { id: "site", label: "Le site vitrine", icon: <GlobeIcon /> },
@@ -49,7 +67,7 @@ export default async function BetaPage() {
   return (
     <div className="bg-surface text-on-surface">
       {/* Hero : la seule section sombre de la page. */}
-      <header className="bg-ink text-on-ink">
+      <header id="beta-hero" className="bg-ink text-on-ink">
         <div className="mx-auto max-w-5xl px-4 pt-6 pb-14 sm:px-8 sm:pt-8 sm:pb-20">
           <div className="flex items-center justify-between gap-4">
             <a
@@ -115,7 +133,7 @@ export default async function BetaPage() {
             title="Le site vitrine"
           >
             <p>
-              Explorez-le pour comprendre ce qu’est Orekio et à quoi il sert.
+              Parcourez-le librement, comme si vous découvriez Orekio.
             </p>
             <div className="mt-6">
               <ButtonLink href="/fr" variant="outline">
@@ -131,12 +149,20 @@ export default async function BetaPage() {
             title="L’outil du professionnel"
           >
             <p>
-              L’application web soignante, destinée aux professionnels.
-              Explorez l’outil et ses fonctionnalités&nbsp;: sa prise en main
-              doit être claire et rapide.
+              L’application web destinée aux professionnels. Explorez-la
+              librement.
             </p>
             <div className="mt-6">
               <ButtonLink href={OREKIO_APP}>Ouvrir orekio.app</ButtonLink>
+            </div>
+            {/* Capture de l'espace praticien, débordant à droite et en bas. */}
+            <div className="mt-8 overflow-hidden rounded-3xl bg-primary-container pt-[6%] pl-[6%]">
+              <BrowserFrame
+                src="praticien-vue-ensemble.png"
+                alt="Vue d’ensemble d’un patient dans orekio.app"
+                intrinsic={[1600, 1000]}
+                className="-mb-[12%] w-[112%] max-w-none rounded-r-none"
+              />
             </div>
           </Step>
 
@@ -148,9 +174,27 @@ export default async function BetaPage() {
             last
           >
             <p>
-              Découvrez ce que recevra votre patient et faites-vous un
-              avis&nbsp;: l’app doit lui être facile à utiliser au quotidien.
+              L’application que reçoit votre patient, sur Android ou
+              iPhone.
             </p>
+
+            {/* Captures de l'app patient, coupées par le bas du cadre. */}
+            <div className="relative mt-8 flex aspect-[16/11] items-start justify-center gap-[3%] overflow-hidden rounded-3xl bg-primary-container px-[4%] pt-[7%] sm:aspect-[16/10]">
+              {phones.map((phone) => (
+                <Image
+                  key={phone.src}
+                  src={`${basePath}/beta/${phone.src}`}
+                  alt={phone.alt}
+                  width={620}
+                  height={1300}
+                  className={
+                    phone.main
+                      ? "relative z-10 w-[34%] drop-shadow-[0_24px_40px_rgba(18,63,58,0.18)]"
+                      : "mt-[9%] w-[28%] drop-shadow-[0_16px_28px_rgba(18,63,58,0.14)]"
+                  }
+                />
+              ))}
+            </div>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Platform name="Android" icon={<AndroidIcon />} qr={androidQr}>
@@ -178,7 +222,7 @@ export default async function BetaPage() {
                   </InlineLink>
                 </SubStep>
                 <SubStep n={3} title="Installer">
-                  Touchez « Accepter », puis « Installer ».
+                  Touchez «&nbsp;Accepter&nbsp;», puis «&nbsp;Installer&nbsp;».
                 </SubStep>
               </Platform>
             </div>
@@ -188,16 +232,22 @@ export default async function BetaPage() {
                 <KeyIcon />
               </span>
               <p>
-                <span className="font-medium">Identifiants de démo.</span> Sur
-                orekio.app, ouvrez la fiche d’un patient de démonstration, onglet
-                « Vue d’ensemble », carte « Compte de démonstration ».
+                <span className="font-medium">
+                  Se connecter à l’app mobile.
+                </span>{" "}
+                Les informations de connexion se trouvent sur la fiche
+                patient, dans orekio.app&nbsp;: ouvrez la fiche d’un patient de
+                démonstration, onglet «&nbsp;Vue d’ensemble&nbsp;», carte
+                «&nbsp;Compte de démonstration&nbsp;».
               </p>
             </div>
           </Step>
         </ol>
 
         {/* Pour finir */}
-        <section className="relative mt-20 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-on-primary sm:mt-28 sm:px-14 sm:py-16">
+        <section
+          id="avis"
+          className="relative mt-20 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-on-primary sm:mt-28 sm:px-14 sm:py-16">
           <span
             aria-hidden
             className="pointer-events-none absolute -right-16 -bottom-24 size-[22rem] opacity-[0.12] sm:-right-8 sm:-bottom-20"
@@ -242,6 +292,7 @@ export default async function BetaPage() {
           </a>
         </footer>
       </main>
+      <FloatingFeedback href={TALLY} heroId="beta-hero" endId="avis" />
     </div>
   );
 }
