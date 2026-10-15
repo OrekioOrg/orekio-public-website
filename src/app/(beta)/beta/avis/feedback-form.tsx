@@ -252,6 +252,14 @@ function Form({ initial }: { initial: Draft | null }) {
             {current.intro}
           </p>
         )}
+        {current.questions.some((q) => q.required) && (
+          <p className="mt-3 text-[14px] text-on-surface-variant">
+            <span aria-hidden className="text-primary">
+              *
+            </span>{" "}
+            Réponse obligatoire
+          </p>
+        )}
 
         <div className="mt-10 flex flex-col gap-12">
           {current.questions
@@ -332,10 +340,13 @@ function Field({
     <>
       <span id={labelId} className="block text-[19px] leading-snug font-normal text-on-surface-strong">
         {q.label}
-        {!q.required && (
-          <span className="ml-2 text-[14px] font-light text-on-surface-variant">
-            facultatif
-          </span>
+        {q.required && (
+          <>
+            <span aria-hidden className="ml-1 text-primary">
+              *
+            </span>
+            <span className="sr-only"> (obligatoire)</span>
+          </>
         )}
       </span>
       {q.help && (
