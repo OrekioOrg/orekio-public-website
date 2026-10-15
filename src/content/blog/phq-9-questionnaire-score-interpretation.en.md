@@ -3,8 +3,7 @@ title: "The PHQ-9: questionnaire, score and clinical reading"
 description: "What the PHQ-9 is, how it is scored, what its thresholds indicate, and what Orekio does with it: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["PHQ-9", "clinical scales", "depression"]
 draft: false
 cover: "/blog/phq-9-questionnaire-score-interpretation.png"

@@ -3,8 +3,7 @@ title: "Nommer ce que je ressens : pourquoi le mot juste compte en consultation"
 description: "Passer de « je me sens mal » à un mot précis. Les modèles, l'intérêt clinique, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "L’équipe Orekio"
 tags: ["nommer ce que je ressens", "régulation émotionnelle", "TCC"]
 draft: false
 cover: "/blog/nommer-ce-que-je-ressens.png"

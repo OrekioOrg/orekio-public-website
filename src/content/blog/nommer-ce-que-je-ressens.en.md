@@ -3,8 +3,7 @@ title: "Naming what I feel: why the right word matters in consultation"
 description: "Moving from \"I feel bad\" to a precise word. The models, the clinical value, and what Orekio does with it: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["naming what I feel", "emotion regulation", "CBT"]
 draft: false
 cover: "/blog/nommer-ce-que-je-ressens.png"

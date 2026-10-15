@@ -3,8 +3,7 @@ title: "The safety plan: what it is for and how to build it"
 description: "A plan written by two, in the patient's words, for moments of suicidal crisis. Its six steps, and what Orekio does with it: make it available, without recording anything."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["safety plan", "suicide prevention", "crisis"]
 draft: false
 cover: "/blog/plan-de-securite-comment-le-construire.png"
