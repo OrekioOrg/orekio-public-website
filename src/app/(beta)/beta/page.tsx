@@ -22,6 +22,22 @@ const ANDROID_STORE =
 const TESTFLIGHT_APP = "https://apps.apple.com/app/testflight/id899247664";
 const TESTFLIGHT_JOIN = "https://testflight.apple.com/join/y6bPGjd6";
 
+const phones = [
+  {
+    src: "telephone-respiration.webp",
+    alt: "Respiration guidée dans l’application patient",
+  },
+  {
+    src: "telephone-accueil.webp",
+    alt: "Écran d’accueil de l’application patient",
+    main: true,
+  },
+  {
+    src: "telephone-sommeil.webp",
+    alt: "Agenda du sommeil dans l’application patient",
+  },
+];
+
 const stops = [
   { id: "site", label: "Le site vitrine", icon: <GlobeIcon /> },
   { id: "outil", label: "L’outil du professionnel", icon: <LaptopIcon /> },
@@ -151,6 +167,24 @@ export default async function BetaPage() {
               iPhone.
             </p>
 
+            {/* Captures de l'app patient, coupées par le bas du cadre. */}
+            <div className="relative mt-8 flex aspect-[16/11] items-start justify-center gap-[3%] overflow-hidden rounded-3xl bg-primary-container px-[4%] pt-[7%] sm:aspect-[16/10]">
+              {phones.map((phone) => (
+                <Image
+                  key={phone.src}
+                  src={`${basePath}/beta/${phone.src}`}
+                  alt={phone.alt}
+                  width={620}
+                  height={1300}
+                  className={
+                    phone.main
+                      ? "relative z-10 w-[34%] drop-shadow-[0_24px_40px_rgba(18,63,58,0.18)]"
+                      : "mt-[9%] w-[28%] drop-shadow-[0_16px_28px_rgba(18,63,58,0.14)]"
+                  }
+                />
+              ))}
+            </div>
+
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Platform name="Android" icon={<AndroidIcon />} qr={androidQr}>
                 <SubStep n={1} title="Devenir testeur">
@@ -177,7 +211,7 @@ export default async function BetaPage() {
                   </InlineLink>
                 </SubStep>
                 <SubStep n={3} title="Installer">
-                  Touchez « Accepter », puis « Installer ».
+                  Touchez «&nbsp;Accepter&nbsp;», puis «&nbsp;Installer&nbsp;».
                 </SubStep>
               </Platform>
             </div>
