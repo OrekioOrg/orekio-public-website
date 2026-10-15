@@ -7,7 +7,7 @@ import { FeedbackForm } from "./feedback-form";
 // Questionnaire des beta testeurs, version intégrée du formulaire Tally.
 // Noindex et hors sitemap, comme /beta.
 export const metadata: Metadata = {
-  title: "Questionnaire bêta - Orekio",
+  title: "Votre avis sur Orekio",
   description: "Donnez-nous votre avis sur Orekio.",
   alternates: { canonical: "/beta/avis" },
   robots: { index: false, follow: false },
@@ -36,7 +36,7 @@ export default function BetaFeedbackPage() {
         </div>
         <div className="mx-auto max-w-3xl px-4 pt-8 pb-12 sm:px-8 sm:pt-12 sm:pb-16">
           <h1 className="text-[34px] leading-[1.05] font-medium tracking-[-0.03em] sm:text-[56px]">
-            Questionnaire bêta
+            Votre avis sur Orekio
           </h1>
         </div>
       </header>
