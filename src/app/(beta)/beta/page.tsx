@@ -3,6 +3,7 @@ import Image from "next/image";
 import QRCode from "qrcode";
 import { basePath } from "@/base-path";
 import { BrowserFrame } from "@/components/product-frames";
+import { FloatingFeedback } from "./floating-feedback";
 
 // Parcours de test des beta testeurs, version web de l'infographie
 // « Découvrez Orekio en 3 étapes ». Hors sitemap et noindex : la page
@@ -66,7 +67,7 @@ export default async function BetaPage() {
   return (
     <div className="bg-surface text-on-surface">
       {/* Hero : la seule section sombre de la page. */}
-      <header className="bg-ink text-on-ink">
+      <header id="beta-hero" className="bg-ink text-on-ink">
         <div className="mx-auto max-w-5xl px-4 pt-6 pb-14 sm:px-8 sm:pt-8 sm:pb-20">
           <div className="flex items-center justify-between gap-4">
             <a
@@ -244,7 +245,9 @@ export default async function BetaPage() {
         </ol>
 
         {/* Pour finir */}
-        <section className="relative mt-20 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-on-primary sm:mt-28 sm:px-14 sm:py-16">
+        <section
+          id="avis"
+          className="relative mt-20 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-on-primary sm:mt-28 sm:px-14 sm:py-16">
           <span
             aria-hidden
             className="pointer-events-none absolute -right-16 -bottom-24 size-[22rem] opacity-[0.12] sm:-right-8 sm:-bottom-20"
@@ -289,6 +292,7 @@ export default async function BetaPage() {
           </a>
         </footer>
       </main>
+      <FloatingFeedback href={TALLY} heroId="beta-hero" endId="avis" />
     </div>
   );
 }
