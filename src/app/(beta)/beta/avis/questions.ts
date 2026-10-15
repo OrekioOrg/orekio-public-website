@@ -1,8 +1,10 @@
 // Questionnaire bêta, repris du formulaire Tally RWKD24. Chaque réponse est
 // enregistrée sous l'`id` de sa question ; les choix sont stockés par leur
 // libellé, lisible tel quel dans la table. Changer un libellé ou un id change
-// le sens des réponses déjà reçues : relever alors FORM_VERSION.
-export const FORM_VERSION = "2026-10-15";
+// le sens des réponses déjà reçues : relever alors FORM_VERSION. Partout où
+// une réponse fermée gagne à être nuancée, un champ libre facultatif la suit
+// (`<id>_precision`, ou `<id>_autre` quand « Autre » est choisi).
+export const FORM_VERSION = "2026-10-15b";
 
 export type Condition = { id: string; anyOf: string[] };
 
@@ -17,7 +19,7 @@ type Base = {
 export type Question =
   | (Base & { type: "single"; options: string[] })
   | (Base & { type: "multi"; options: string[] })
-  | (Base & { type: "text"; long?: boolean })
+  | (Base & { type: "text"; long?: boolean; rows?: number })
   | (Base & { type: "number"; suffix?: string })
   | (Base & { type: "email" })
   | (Base & {
@@ -64,6 +66,14 @@ export const sections: Section[] = [
         options: ["IPA", "Psychologue", "Psychiatre", "IDE", "Autre"],
       },
       {
+        id: "metier_autre",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Précisez votre métier",
+        showIf: { id: "metier", anyOf: ["Autre"] },
+      },
+      {
         id: "exercice",
         type: "single",
         label: "Votre mode d'exercice",
@@ -99,7 +109,6 @@ export const sections: Section[] = [
   {
     id: "site",
     title: "Le site orekio.fr",
-    intro: "À remplir après avoir lu le site, avant d'ouvrir l'application.",
     questions: [
       {
         id: "site_lu",
@@ -135,13 +144,19 @@ export const sections: Section[] = [
         maxLabel: "Tout à fait",
         required: true,
       },
+      {
+        id: "site_clarte_precision",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Qu'est-ce qui était clair, ou pas ?",
+      },
     ],
   },
   {
     id: "modules",
     title: "Les modules",
-    intro:
-      "Vous pouvez maintenant utiliser l'application. Une ligne par module.",
+    intro: "Une ligne par module.",
     questions: [
       {
         id: "modules_clarte",
@@ -192,6 +207,13 @@ export const sections: Section[] = [
           "Après un bon moment",
           "Je ne suis pas sûr d'avoir compris",
         ],
+      },
+      {
+        id: "temps_comprehension_precision",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Qu'est-ce qui vous a aidé à comprendre, ou qui vous a manqué ?",
       },
       {
         id: "besoin_aide",
@@ -266,6 +288,14 @@ export const sections: Section[] = [
         options: ["Papier", "Une autre application", "Rien", "Autre"],
       },
       {
+        id: "outils_actuels_autre",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Précisez ce que vous utilisez",
+        showIf: { id: "outils_actuels", anyOf: ["Autre"] },
+      },
+      {
         id: "autre_application",
         type: "text",
         label: "Quelle application utilisez-vous ?",
@@ -283,6 +313,13 @@ export const sections: Section[] = [
         required: true,
       },
       {
+        id: "aise_numerique_precision",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Un mot pour préciser ?",
+      },
+      {
         id: "aise_patients",
         type: "scale",
         label:
@@ -292,6 +329,13 @@ export const sections: Section[] = [
         minLabel: "Pas du tout",
         maxLabel: "Tout à fait",
         required: true,
+      },
+      {
+        id: "aise_patients_precision",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Un mot pour préciser ?",
       },
       {
         id: "reserves",
@@ -323,6 +367,13 @@ export const sections: Section[] = [
         minLabel: "Pas du tout",
         maxLabel: "Certainement",
         required: true,
+      },
+      {
+        id: "recommandation_precision",
+        type: "text",
+        long: true,
+        rows: 2,
+        label: "Pourquoi cette note ?",
       },
     ],
   },

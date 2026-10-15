@@ -232,11 +232,8 @@ function Form({ initial }: { initial: Draft | null }) {
             minutes.
           </p>
           <p className="mt-2 font-light">
-            Ordre à suivre&nbsp;: lisez d’abord le site orekio.fr, puis répondez
-            aux questions sur le site avant d’ouvrir l’application. Testez
-            ensuite l’application web et l’application mobile, puis complétez
-            le reste du questionnaire. Vos réponses restent enregistrées dans ce
-            navigateur&nbsp;: vous pouvez revenir finir plus tard.
+            Vos réponses restent enregistrées dans ce navigateur&nbsp;: vous
+            pouvez revenir finir plus tard.
           </p>
         </div>
       )}
@@ -519,7 +516,7 @@ function Control({
       return q.long ? (
         <textarea
           id={id}
-          rows={4}
+          rows={q.rows ?? 4}
           maxLength={4000}
           value={(value as string) ?? ""}
           onChange={(e) => onChange(e.target.value)}
