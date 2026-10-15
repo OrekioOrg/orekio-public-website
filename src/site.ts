@@ -50,6 +50,10 @@ export const ogLocaleByLocale: Record<Locale, string> = {
   en: "en_US",
 };
 
+// Les prix des offres ne sont pas encore definitifs : tant que ce drapeau
+// est faux, la page Tarifs floute les montants et ils sortent des metadonnees.
+export const PRICES_FINAL = false;
+
 // Every route below the locale segment, as the path suffix that follows
 // "/<lang>" in each locale. "" is the locale home page. Pages whose slug
 // differs per locale are served by app/[lang]/[page] (see src/views); the

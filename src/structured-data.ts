@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import {
   COMPANY,
+  PRICES_FINAL,
   SITE_NAME,
   SITE_URL,
   SOCIAL_PROFILES,
@@ -77,31 +78,36 @@ export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
     inLanguage: lang,
     description: dict.meta.description,
     publisher: { "@id": ORG_ID },
-    offers: dict.pricing.plans.map((plan) => {
-      // "29,99 €" → 29.99 per month, VAT included; "Gratuit"/"Free" → 0.
-      const amount =
-        /\d+(?:[.,]\d+)?/.exec(plan.price)?.[0].replace(",", ".") ?? "0";
-      return {
-        "@type": "Offer",
-        name: plan.name,
-        description: plan.description,
-        url: pricingUrl,
-        price: amount,
-        priceCurrency: "EUR",
-        ...(amount !== "0"
-          ? {
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: amount,
-                priceCurrency: "EUR",
-                unitCode: "MON",
-                valueAddedTaxIncluded: true,
-              },
-            }
-          : {}),
-      };
-    }),
+    // Pas d'offres chiffrees tant que les prix ne sont pas definitifs.
+    ...(PRICES_FINAL ? { offers: offers(dict, pricingUrl) } : {}),
   };
+}
+
+function offers(dict: Dictionary, pricingUrl: string) {
+  return dict.pricing.plans.map((plan) => {
+    // "29,99 €" → 29.99 per month, VAT included; "Gratuit"/"Free" → 0.
+    const amount =
+      /\d+(?:[.,]\d+)?/.exec(plan.price)?.[0].replace(",", ".") ?? "0";
+    return {
+      "@type": "Offer",
+      name: plan.name,
+      description: plan.description,
+      url: pricingUrl,
+      price: amount,
+      priceCurrency: "EUR",
+      ...(amount !== "0"
+        ? {
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: amount,
+              priceCurrency: "EUR",
+              unitCode: "MON",
+              valueAddedTaxIncluded: true,
+            },
+          }
+        : {}),
+    };
+  });
 }
 
 /** BlogPosting node for a single article. */
