@@ -67,10 +67,10 @@ export default async function BetaPage() {
             </span>
           </div>
 
-          <h1 className="mt-16 max-w-3xl text-[44px] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:mt-24 sm:text-[76px]">
+          <h1 className="mt-16 text-[44px] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:mt-24 md:text-[min(6.4vw,72px)] md:whitespace-nowrap">
             Découvrez Orekio en&nbsp;3&nbsp;étapes
           </h1>
-          <p className="mt-6 max-w-xl text-[18px] leading-relaxed font-light text-on-ink/75 sm:text-[20px]">
+          <p className="mt-6 max-w-2xl text-[18px] leading-relaxed font-light text-on-ink/75 sm:text-[20px]">
             Le site vitrine, l’outil du professionnel, puis l’application de
             vos patients.
           </p>
