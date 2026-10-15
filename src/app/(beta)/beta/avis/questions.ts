@@ -426,6 +426,7 @@ export const sections: Section[] = [
         id: "email",
         type: "email",
         label: "Votre adresse mail",
+        help: "Elle sert uniquement à vous recontacter et est effacée au bout de 6 mois.",
         showIf: { id: "recontact", anyOf: ["Oui"] },
       },
     ],
