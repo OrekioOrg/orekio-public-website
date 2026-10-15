@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import QRCode from "qrcode";
 import { basePath } from "@/base-path";
 import { BrowserFrame } from "@/components/product-frames";
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 };
 
 const OREKIO_APP = "https://orekio.app";
-const TALLY = "https://tally.so/r/RWKD24";
+// Le questionnaire intégré (app/(beta)/beta/avis), qui remplace Tally.
+const FEEDBACK = "/beta/avis";
 const ANDROID_TESTING = "https://play.google.com/apps/testing/com.orekio.app";
 const ANDROID_STORE =
   "https://play.google.com/store/apps/details?id=com.orekio.app";
@@ -267,15 +269,15 @@ export default async function BetaPage() {
               retour compte.
             </p>
             <div className="mt-8">
-              <a
-                href={TALLY}
+              <Link
+                href={FEEDBACK}
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-3 rounded-full bg-on-primary px-7 py-4 text-[17px] font-medium text-ink transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-primary"
               >
                 Donner mon avis
                 <ExternalIcon />
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -292,7 +294,7 @@ export default async function BetaPage() {
           </a>
         </footer>
       </main>
-      <FloatingFeedback href={TALLY} heroId="beta-hero" endId="avis" />
+      <FloatingFeedback href={FEEDBACK} heroId="beta-hero" endId="avis" />
     </div>
   );
 }
