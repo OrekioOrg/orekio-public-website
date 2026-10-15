@@ -439,13 +439,14 @@ function Control({
       const steps = Array.from({ length: q.max - q.min + 1 }, (_, i) => String(q.min + i));
       return (
         <div>
-          <div className="grid gap-1.5" style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}>
+          {/* 0 à 10 : deux lignes sur mobile, pour garder des cases à la taille du doigt. */}
+          <div className={`grid gap-1.5 ${steps.length > 7 ? "grid-cols-6 sm:grid-cols-11" : "grid-cols-5"}`}>
             {steps.map((n, i) => {
               const on = value === n;
               return (
                 <label
                   key={n}
-                  className={`flex aspect-square max-h-14 cursor-pointer items-center justify-center rounded-xl border text-[16px] transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary sm:aspect-auto sm:h-14 ${
+                  className={`flex h-12 cursor-pointer items-center justify-center rounded-xl border text-[16px] transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary sm:h-14 ${
                     on ? "border-primary bg-primary font-medium text-on-primary" : choiceOff
                   }`}
                 >

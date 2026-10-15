@@ -29,13 +29,13 @@ export default function BetaFeedbackPage() {
           </Link>
           <Link
             href="/beta"
-            className="rounded-full border border-white/15 px-3 py-1 text-[13px] text-on-ink/75 transition-colors hover:text-on-ink"
+            className="rounded-full border border-white/15 px-3 py-1 text-[13px] whitespace-nowrap text-on-ink/75 transition-colors hover:text-on-ink"
           >
             Parcours de test
           </Link>
         </div>
         <div className="mx-auto max-w-3xl px-4 pt-8 pb-12 sm:px-8 sm:pt-12 sm:pb-16">
-          <h1 className="text-[40px] leading-[1.05] font-medium tracking-[-0.03em] sm:text-[56px]">
+          <h1 className="text-[34px] leading-[1.05] font-medium tracking-[-0.03em] sm:text-[56px]">
             Questionnaire bêta
           </h1>
         </div>
