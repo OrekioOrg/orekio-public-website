@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { BlurredPrices } from "@/components/blurred-prices";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
-import { routes } from "@/site";
+import { PRICES_FINAL, routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -19,7 +20,9 @@ export async function generateMetadata({
     lang,
     suffix: routes.pricing,
     title: dict.pageTitle,
-    description: dict.metaDescription,
+    description: PRICES_FINAL
+      ? dict.metaDescription
+      : dict.metaDescriptionProvisional,
   });
 }
 
@@ -42,7 +45,7 @@ export default async function TarifsPage({
         {dict.heading}
       </h1>
       <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
-        {dict.description}
+        <BlurredPrices text={dict.description} />
       </p>
 
       {/* Sur grand écran, les quatre cartes partagent les mêmes rangées (grille
@@ -70,14 +73,14 @@ export default async function TarifsPage({
             {/* Prix et période sur deux lignes : les prix s'alignent entre cartes. */}
             <p className="mt-4">
               <span className="block text-[32px] font-medium leading-tight text-on-surface-strong">
-                {plan.price}
+                <BlurredPrices text={plan.price} />
               </span>
               <span className="mt-1 block text-[14px] text-on-surface-variant">
                 {plan.period}
               </span>
             </p>
             <p className="mt-3 text-[15px] leading-relaxed text-on-surface-variant">
-              {plan.description}
+              <BlurredPrices text={plan.description} />
             </p>
             <div className="mt-6 flex flex-1 flex-col">
             <ul className="flex-1 space-y-3">
@@ -137,7 +140,11 @@ export default async function TarifsPage({
 
       <p className="mt-10 max-w-2xl text-[14px] leading-relaxed text-on-surface-variant">
         {dict.footerNote.map((segment, index) => (
-          <SegmentText key={index} segment={segment} />
+          typeof segment === "string" ? (
+            <BlurredPrices key={index} text={segment} />
+          ) : (
+            <SegmentText key={index} segment={segment} />
+          )
         ))}
       </p>
     </div>

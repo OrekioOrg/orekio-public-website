@@ -333,6 +333,8 @@ export const fr = {
     pageTitle: "Tarifs",
     metaDescription:
       "Essai de 30 jours sans carte bancaire. Zelai : 29,99 € TTC par mois, jusqu'à 15 patients. Mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
+    metaDescriptionProvisional:
+      "Essai de 30 jours sans carte bancaire. Deux offres au contenu identique, Zelai jusqu'à 15 patients et Mendi jusqu'à 30, et une offre Fondateurs pour les 100 premiers inscrits.",
     eyebrow: "Tarifs",
     heading: "Deux offres, le même produit.",
     description:
