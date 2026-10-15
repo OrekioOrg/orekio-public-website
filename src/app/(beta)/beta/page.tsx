@@ -114,7 +114,7 @@ export default async function BetaPage() {
               Explorez-le pour comprendre ce qu’est Orekio et à quoi il sert.
             </p>
             <div className="mt-6">
-              <ButtonLink href="/fr" variant="outline" internal>
+              <ButtonLink href="/fr" variant="outline">
                 Ouvrir orekio.fr
               </ButtonLink>
             </div>
@@ -228,12 +228,14 @@ export default async function BetaPage() {
 
         <footer className="mt-12 flex items-center justify-between text-[15px] font-light text-on-surface-variant">
           <span>Merci pour votre participation.</span>
-          <Link
+          <a
             href="/fr"
+            target="_blank"
+            rel="noopener"
             className="font-normal text-primary hover:underline"
           >
             orekio.fr
-          </Link>
+          </a>
         </footer>
       </main>
     </div>
@@ -358,12 +360,10 @@ function InlineLink({
 function ButtonLink({
   href,
   variant = "solid",
-  internal = false,
   children,
 }: {
   href: string;
   variant?: "solid" | "outline";
-  internal?: boolean;
   children: React.ReactNode;
 }) {
   const className = `inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-[16px] font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${
@@ -371,13 +371,6 @@ function ButtonLink({
       ? "bg-primary text-on-primary"
       : "border border-primary/30 text-primary"
   }`;
-  if (internal) {
-    return (
-      <Link href={href} className={className}>
-        {children}
-      </Link>
-    );
-  }
   return (
     <a href={href} target="_blank" rel="noopener" className={className}>
       {children}
