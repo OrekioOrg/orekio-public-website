@@ -3,8 +3,7 @@ title: "Le plan de sécurité : à quoi il sert et comment le construire"
 description: "Un plan écrit à deux, dans les mots du patient, pour les moments de crise suicidaire. Ses six étapes, et ce qu'Orekio en fait : le rendre disponible, sans rien enregistrer."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "L’équipe Orekio"
 tags: ["plan de sécurité", "prévention du suicide", "crise"]
 draft: false
 cover: "/blog/plan-de-securite-comment-le-construire.png"

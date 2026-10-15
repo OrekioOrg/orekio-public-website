@@ -134,11 +134,15 @@ export function blogPostingSchema(input: {
     dateModified: input.dateModified ?? input.datePublished,
     inLanguage: input.inLanguage,
     image: input.image ? [`${SITE_URL}${input.image}`] : [`${SITE_URL}/og.png`],
-    author: {
-      "@type": "Person",
-      name: input.authorName ?? SITE_NAME,
-      ...(input.authorUrl ? { url: input.authorUrl, sameAs: [input.authorUrl] } : {}),
-    },
+    // Without a personal profile the byline is the team, i.e. the organisation.
+    author: input.authorUrl
+      ? {
+          "@type": "Person",
+          name: input.authorName ?? SITE_NAME,
+          url: input.authorUrl,
+          sameAs: [input.authorUrl],
+        }
+      : { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
   };
 }
