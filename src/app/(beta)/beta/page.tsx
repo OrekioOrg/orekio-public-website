@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import QRCode from "qrcode";
 import { basePath } from "@/base-path";
+import { BrowserFrame } from "@/components/product-frames";
 
 // Parcours de test des beta testeurs, version web de l'infographie
 // « Découvrez Orekio en 3 étapes ». Hors sitemap et noindex : la page
@@ -152,6 +153,15 @@ export default async function BetaPage() {
             </p>
             <div className="mt-6">
               <ButtonLink href={OREKIO_APP}>Ouvrir orekio.app</ButtonLink>
+            </div>
+            {/* Capture de l'espace praticien, débordant à droite et en bas. */}
+            <div className="mt-8 overflow-hidden rounded-3xl bg-primary-container pt-[6%] pl-[6%]">
+              <BrowserFrame
+                src="praticien-vue-ensemble.png"
+                alt="Vue d’ensemble d’un patient dans orekio.app"
+                intrinsic={[1600, 1000]}
+                className="-mb-[12%] w-[112%] max-w-none rounded-r-none"
+              />
             </div>
           </Step>
 
