@@ -221,9 +221,13 @@ export default async function BetaPage() {
                 <KeyIcon />
               </span>
               <p>
-                <span className="font-medium">Identifiants de démo.</span> Sur
-                orekio.app, ouvrez la fiche d’un patient de démonstration, onglet
-                « Vue d’ensemble », carte « Compte de démonstration ».
+                <span className="font-medium">
+                  Se connecter à l’app mobile.
+                </span>{" "}
+                Les informations de connexion se trouvent sur la fiche
+                patient, dans orekio.app&nbsp;: ouvrez la fiche d’un patient de
+                démonstration, onglet «&nbsp;Vue d’ensemble&nbsp;», carte
+                «&nbsp;Compte de démonstration&nbsp;».
               </p>
             </div>
           </Step>
