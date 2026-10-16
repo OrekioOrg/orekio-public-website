@@ -2,8 +2,7 @@
 title: "L'activation comportementale : prévoir, faire, noter ce que ça apporte"
 description: "Relier de petites activités à ce qui compte pour le patient, une semaine après l'autre. Le principe, ce que disent les preuves, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-10-14"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "L’équipe Orekio"
 tags: ["activation comportementale", "dépression", "TCC"]
 draft: false
 cover: "/blog/activation-comportementale.png"

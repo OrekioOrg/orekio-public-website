@@ -2,8 +2,7 @@
 title: "Behavioural activation: plan, do, note what it brought"
 description: "Linking small activities to what matters to the patient, one week after another. The principle, what the evidence says, and what Orekio does with it: display, without concluding."
 date: "2026-10-14"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["behavioural activation", "depression", "CBT"]
 draft: false
 cover: "/blog/activation-comportementale.png"
