@@ -327,6 +327,8 @@ export const en: Dictionary = {
     pageTitle: "Pricing",
     metaDescription:
       "30-day trial, no credit card. Zelai: €29.99 per month incl. VAT, up to 15 patients. Mendi: €39.99 per month incl. VAT, up to 30 patients. Founders: €24.99 per month incl. VAT for life, 100 seats.",
+    metaDescriptionProvisional:
+      "30-day trial, no credit card. Two plans with identical content, Zelai up to 15 patients and Mendi up to 30, plus a Founders offer for the first 100 subscribers.",
     eyebrow: "Pricing",
     heading: "Two plans, the same product.",
     description:

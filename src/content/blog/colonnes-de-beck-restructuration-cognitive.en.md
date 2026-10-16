@@ -3,8 +3,7 @@ title: "Beck's thought records: the thought record in CBT"
 description: "Spotting and testing automatic thoughts. The formats, how to fill them in, and what Orekio does with them: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["Beck's thought records", "cognitive restructuring", "CBT"]
 draft: false
 cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"

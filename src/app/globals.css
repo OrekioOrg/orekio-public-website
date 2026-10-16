@@ -164,3 +164,31 @@ body {
   border: 0;
   border-top: 1px solid var(--color-outline);
 }
+
+/*
+ * /beta : au chargement, le fil du parcours se trace de gauche à droite et
+ * les trois étapes apparaissent l'une après l'autre. Seule animation de la
+ * page ; rien ne bouge si l'utilisateur a réduit les animations.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .beta-route-line {
+    transform-origin: left;
+    animation: beta-draw 900ms cubic-bezier(0.65, 0, 0.35, 1) 150ms both;
+  }
+  .beta-stop {
+    animation: beta-pop 500ms cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  }
+}
+
+@keyframes beta-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes beta-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+}

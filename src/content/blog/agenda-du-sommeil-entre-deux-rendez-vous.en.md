@@ -3,8 +3,7 @@ title: "The sleep diary: what it is for between two appointments"
 description: "What a sleep diary kept every morning brings to the consultation, how to introduce it with a patient, and what Orekio does with it: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "Olivier Teil"
-authorUrl: "https://www.linkedin.com/in/olivier-teil-8aa800220/"
+author: "The Orekio team"
 tags: ["sleep diary", "CBT for insomnia", "consultation"]
 draft: false
 cover: "/blog/agenda-du-sommeil-entre-deux-rendez-vous.png"
