@@ -180,6 +180,16 @@ function Form({ initial }: { initial: Draft | null }) {
     else go(visible[position + 1]);
   }
 
+  // Entrée dans un champ soumettrait le formulaire (soumission implicite) et
+  // validerait toute la page avant la saisie. Sur une option, Entrée la coche ;
+  // seul le bouton envoie.
+  function onKeyDown(e: React.KeyboardEvent<HTMLFormElement>) {
+    const t = e.target;
+    if (e.key !== "Enter" || !(t instanceof HTMLInputElement)) return;
+    e.preventDefault();
+    if (t.type === "radio" || t.type === "checkbox") t.click();
+  }
+
   if (status === "sent") {
     return (
       <div ref={top} className="scroll-mt-8 py-10 text-center sm:py-16">
@@ -243,7 +253,7 @@ function Form({ initial }: { initial: Draft | null }) {
         </p>
       )}
 
-      <form onSubmit={next} noValidate className="mt-10">
+      <form onSubmit={next} onKeyDown={onKeyDown} noValidate className="mt-10">
         <h2 className="text-[30px] leading-tight font-medium tracking-[-0.02em] text-on-surface-strong sm:text-[38px]">
           {current.title}
         </h2>
