@@ -4,7 +4,7 @@
 // le sens des réponses déjà reçues : relever alors FORM_VERSION. Partout où
 // une réponse fermée gagne à être nuancée, un champ libre facultatif la suit
 // (`<id>_precision`, ou `<id>_autre` quand « Autre » est choisi).
-export const FORM_VERSION = "2026-10-15b";
+export const FORM_VERSION = "2026-10-22";
 
 export type Condition = { id: string; anyOf: string[] };
 
@@ -86,7 +86,8 @@ export const sections: Section[] = [
         label: "Combien de patients suivez-vous actuellement (file active) ?",
         required: true,
         options: [
-          "Moins de 30",
+          "Moins de 10",
+          "10 à 30",
           "30 à 80",
           "80 à 150",
           "Plus de 150",
