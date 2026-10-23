@@ -60,7 +60,7 @@ export const fr = {
       {
         title: "S'exercer",
         description:
-          "Colonnes de Beck, exposition graduée, activation comportementale, imagerie mentale, balances décisionnelle et motivationnelle. Le travail de fond, entre deux rendez-vous.",
+          "Colonnes de Beck, exposition graduée, activation comportementale, imagerie mentale, balance décisionnelle. Le travail de fond, entre deux rendez-vous.",
       },
       {
         title: "Observer",
@@ -142,7 +142,6 @@ export const fr = {
           { name: "Activation comportementale", fromDayOne: true },
           { name: "Retraitement par imagerie mentale", fromDayOne: false },
           { name: "Balance décisionnelle", fromDayOne: false },
-          { name: "Balance motivationnelle", fromDayOne: false },
         ],
       },
       {

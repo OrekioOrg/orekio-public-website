@@ -50,7 +50,7 @@ export const en: Dictionary = {
       {
         title: "Practise",
         description:
-          "Beck's thought records, graded exposure, behavioural activation, mental imagery, decisional and motivational balances. The in-depth work, between appointments.",
+          "Beck's thought records, graded exposure, behavioural activation, mental imagery, decisional balance. The in-depth work, between appointments.",
       },
       {
         title: "Observe",
@@ -131,7 +131,6 @@ export const en: Dictionary = {
           { name: "Behavioural activation", fromDayOne: true },
           { name: "Mental imagery reprocessing", fromDayOne: false },
           { name: "Decisional balance", fromDayOne: false },
-          { name: "Motivational balance", fromDayOne: false },
         ],
       },
       {
