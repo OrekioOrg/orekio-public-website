@@ -88,13 +88,13 @@ export function MobileMenu({
               </Link>
             );
           })}
-          <Link
+          <a
             href={subscribeHref}
             onClick={() => setOpen(false)}
             className="mt-2 rounded-lg bg-accent px-4 py-3 text-center text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
           >
             {subscribeLabel}
-          </Link>
+          </a>
         </nav>
       )}
     </div>

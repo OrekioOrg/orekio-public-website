@@ -30,7 +30,7 @@ export const fr = {
     about: "À propos",
     blog: "Blog",
     contact: "Contact",
-    subscribe: "Liste d'attente",
+    subscribe: "Créer un compte",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
   },
@@ -51,7 +51,7 @@ export const fr = {
     lead: "Construisez un plan de soins personnalisé pour votre patient, en débloquant un à un les modules adaptés à ses besoins.",
     description:
       "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
-    ctaSubscribe: "Rejoindre la liste d'attente",
+    ctaSubscribe: "Essayer gratuitement",
     ctaFeatures: "Voir les outils",
     section2Title: "Le travail continue à la maison.",
     section2Description:
@@ -103,7 +103,7 @@ export const fr = {
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
       "30 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
-    ctaSectionButton: "Rejoindre la liste d'attente",
+    ctaSectionButton: "Essayer gratuitement",
     apps: {
       title: "Deux applications, un même espace",
       description:
@@ -410,10 +410,9 @@ export const fr = {
       ],
     },
     highlightLabel: "Offre de lancement",
-    subscribeButton: "Rejoindre la liste d'attente",
-    subscribeButtonTitle: "Pendant la bêta, chaque compte est ouvert un par un",
+    subscribeButton: "Créer un compte",
     footerNote: [
-      "Prix TTC, TVA de 20 % incluse. Pendant la bêta, l'inscription passe par la liste d'attente et chaque compte est ouvert un par un. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
+      "Prix TTC, TVA de 20 % incluse. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },
       " : nous vous rappelons sous 7 jours ouvrés.",
     ] as Segment[],

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { BlurredPrices } from "@/components/blurred-prices";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
-import { PRICES_FINAL, routes } from "@/site";
+import { APP_URL, PRICES_FINAL, routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -102,13 +101,12 @@ export default async function TarifsPage({
               </p>
             ) : null}
             </div>
-            <Link
-              href={`/${lang}/contact`}
-              title={dict.subscribeButtonTitle}
+            <a
+              href={APP_URL}
               className="mt-8 rounded-lg bg-primary px-6 py-3 text-center text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
             >
               {dict.subscribeButton}
-            </Link>
+            </a>
           </div>
         ))}
       </div>

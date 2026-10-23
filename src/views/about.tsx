@@ -65,7 +65,6 @@ export default async function AProposPage({
       </div>
 
       <CtaBanner
-        lang={lang}
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
