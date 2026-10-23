@@ -430,9 +430,9 @@ export const en: Dictionary = {
     pageTitle: "Contact",
     metaDescription: "Contact the Orekio team for any question or a demo.",
     eyebrow: "Contact",
-    heading: "A question, a demo, or keen to be among the first?",
+    heading: "A question, or would you like a demo?",
     description:
-      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally.",
+      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on orekio.app.",
     email: "contact@orekio.app",
   },
 
