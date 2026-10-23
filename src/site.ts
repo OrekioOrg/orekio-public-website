@@ -25,7 +25,10 @@ export const COMPANY = {
 // Official profiles of the brand elsewhere (LinkedIn, Instagram, app
 // stores…). Emitted as the Organization's `sameAs`, which is how Google
 // links them to the Orekio knowledge panel. Add each URL as it goes live.
-export const SOCIAL_PROFILES: readonly string[] = ["https://orekio.app"];
+// The app itself: every sign-up call to action on the site leads here.
+export const APP_URL = "https://orekio.app";
+
+export const SOCIAL_PROFILES: readonly string[] = [APP_URL];
 
 // Search-engine ownership-verification tokens. Paste the value from the
 // "HTML tag" verification method (just the content="..." part, not the

@@ -214,7 +214,6 @@ export default async function FonctionnalitesPage({
       </section>
 
       <CtaBanner
-        lang={lang}
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}

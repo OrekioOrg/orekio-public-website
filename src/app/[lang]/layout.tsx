@@ -7,6 +7,7 @@ import { basePath } from "@/base-path";
 import { locales, hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import {
+  APP_URL,
   BING_SITE_VERIFICATION,
   GOOGLE_SITE_VERIFICATION,
   SITE_NAME,
@@ -156,17 +157,16 @@ export default async function RootLayout({
             <SiteNav links={navLinks} />
             <div className="flex items-center gap-4">
               <LanguageSwitcher current={lang} />
-              {/* Rien ne se vend avant l'HDS et la SAS : l'appel unique du site
-                  capte l'interet, il ne mene pas a une offre. */}
-              <Link
-                href={`/${lang}/contact`}
+              {/* L'appel unique du site : la création de compte, sur l'application. */}
+              <a
+                href={APP_URL}
                 className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 md:inline-block"
               >
                 {dict.nav.subscribe}
-              </Link>
+              </a>
               <MobileMenu
                 navLinks={navLinks}
-                subscribeHref={`/${lang}/contact`}
+                subscribeHref={APP_URL}
                 subscribeLabel={dict.nav.subscribe}
                 openLabel={dict.nav.openMenu}
                 closeLabel={dict.nav.closeMenu}

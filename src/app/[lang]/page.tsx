@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { CtaBanner } from "@/components/cta-banner";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
 import { softwareApplicationSchema } from "@/structured-data";
-import { pathTo } from "@/site";
+import { APP_URL, pathTo } from "@/site";
 
 export default async function Home({
   params,
@@ -44,12 +44,12 @@ export default async function Home({
             {dict.description}
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <Link
-              href={`/${lang}/contact`}
+            <a
+              href={APP_URL}
               className="rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
             >
               {dict.ctaSubscribe}
-            </Link>
+            </a>
             <Link
               href={pathTo(lang, "features")}
               className="rounded-lg border border-on-ink/25 px-6 py-3 text-[15px] font-medium text-on-ink transition-colors hover:bg-on-ink/10"
@@ -185,7 +185,6 @@ export default async function Home({
       </section>
 
       <CtaBanner
-        lang={lang}
         title={dict.ctaSectionTitle}
         description={dict.ctaSectionDescription}
         buttonLabel={dict.ctaSectionButton}

@@ -20,7 +20,7 @@ export const en: Dictionary = {
     about: "About",
     blog: "Blog",
     contact: "Contact",
-    subscribe: "Waiting list",
+    subscribe: "Sign up",
     openMenu: "Open menu",
     closeMenu: "Close menu",
   },
@@ -41,7 +41,7 @@ export const en: Dictionary = {
     lead: "Build a personalised care plan for your patient by unlocking, one by one, the modules suited to their needs.",
     description:
       "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them day to day, and you go over them together in consultation.",
-    ctaSubscribe: "Join the waiting list",
+    ctaSubscribe: "Try it free",
     ctaFeatures: "See the tools",
     section2Title: "The work continues at home.",
     section2Description:
@@ -92,7 +92,7 @@ export const en: Dictionary = {
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
       "30-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
-    ctaSectionButton: "Join the waiting list",
+    ctaSectionButton: "Try it free",
     apps: {
       title: "Two apps, one shared space",
       description:
@@ -398,10 +398,9 @@ export const en: Dictionary = {
       ],
     },
     highlightLabel: "Launch offer",
-    subscribeButton: "Join the waiting list",
-    subscribeButtonTitle: "During the beta, each account is opened one by one",
+    subscribeButton: "Sign up",
     footerNote: [
-      "Prices include VAT (20%). During the beta, sign-up goes through the waiting list and each account is opened one by one. A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on Zelai, €31.99 on Mendi. More than 30 followed patients? ",
+      "Prices include VAT (20%). A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on Zelai, €31.99 on Mendi. More than 30 followed patients? ",
       { href: "/en/contact", text: "Write to us" },
       ": we call you back within 7 working days.",
     ] as Segment[],
@@ -430,9 +429,9 @@ export const en: Dictionary = {
     pageTitle: "Contact",
     metaDescription: "Contact the Orekio team for any question or a demo.",
     eyebrow: "Contact",
-    heading: "A question, a demo, or keen to be among the first?",
+    heading: "A question, or would you like a demo?",
     description:
-      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally.",
+      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on orekio.app.",
     email: "contact@orekio.app",
   },
 

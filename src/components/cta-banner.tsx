@@ -1,8 +1,6 @@
-import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { APP_URL } from "@/site";
 
 interface CtaBannerProps {
-  lang: Locale;
   title: string;
   description: string;
   buttonLabel: string;
@@ -17,7 +15,6 @@ interface CtaBannerProps {
 // Bandeau d'appel de fin de page, partage par l'accueil et Fonctionnalites :
 // un seul rendu, pour qu'il reste identique des deux cotes.
 export function CtaBanner({
-  lang,
   title,
   description,
   buttonLabel,
@@ -37,14 +34,14 @@ export function CtaBanner({
         >
           {description}
         </p>
-        <Link
-          href={`/${lang}/contact`}
+        <a
+          href={APP_URL}
           className={`mt-8 inline-block rounded-lg px-6 py-3 text-[15px] font-medium transition-opacity hover:opacity-90 ${
             light ? "bg-primary text-on-primary" : "bg-accent text-ink"
           }`}
         >
           {buttonLabel}
-        </Link>
+        </a>
       </div>
     </section>
   );
