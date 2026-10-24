@@ -430,8 +430,11 @@ export const en: Dictionary = {
     metaDescription: "Contact the Orekio team for any question or a demo.",
     eyebrow: "Contact",
     heading: "A question, or would you like a demo?",
-    description:
-      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on orekio.app.",
+    description: [
+      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on ",
+      { href: "https://orekio.app", text: "orekio.app", external: true },
+      ".",
+    ] as Segment[],
     email: "contact@orekio.app",
   },
 

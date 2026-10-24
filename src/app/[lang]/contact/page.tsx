@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
 
 export async function generateMetadata({
@@ -38,7 +39,9 @@ export default async function ContactPage({
         {dict.heading}
       </h1>
       <p className="mt-4 text-[16px] leading-relaxed text-on-surface">
-        {dict.description}
+        {dict.description.map((segment, index) => (
+          <SegmentText key={index} segment={segment} />
+        ))}
       </p>
 
       <a
