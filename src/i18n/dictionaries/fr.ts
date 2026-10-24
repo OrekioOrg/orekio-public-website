@@ -442,8 +442,11 @@ export const fr = {
       "Contactez l'équipe Orekio pour une question ou une démonstration.",
     eyebrow: "Contact",
     heading: "Une question, ou envie d'une démonstration ?",
-    description:
-      "Écrivez-nous en une ligne : votre métier, et ce que vous attendez d'Orekio. Nous répondons personnellement. Pour commencer tout de suite, le compte se crée sur orekio.app.",
+    description: [
+      "Écrivez-nous en une ligne : votre métier, et ce que vous attendez d'Orekio. Nous répondons personnellement. Pour commencer tout de suite, le compte se crée sur ",
+      { href: "https://orekio.app", text: "orekio.app", external: true },
+      ".",
+    ] as Segment[],
     email: "contact@orekio.app",
   },
 
