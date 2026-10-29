@@ -581,7 +581,7 @@ export const en: Dictionary = {
             "During the beta, the database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
           ],
           [
-            "Before commercial launch, health data will be hosted by a provider certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code.",
+            "Before commercial launch, the application and its data will be hosted by OVHcloud, in France, on an offering certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code.",
           ],
         ] as Segment[][],
       },

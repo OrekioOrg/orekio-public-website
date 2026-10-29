@@ -593,7 +593,7 @@ export const fr = {
             "Pendant la bêta, la base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
           ],
           [
-            "Avant la commercialisation, les données de santé seront hébergées chez un hébergeur certifié Hébergeur de Données de Santé (HDS), au sens de l'article L.1111-8 du Code de la santé publique.",
+            "Avant la commercialisation, l'application et ses données seront hébergées chez OVHcloud, en France, sur une offre certifiée Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique.",
           ],
         ] as Segment[][],
       },
