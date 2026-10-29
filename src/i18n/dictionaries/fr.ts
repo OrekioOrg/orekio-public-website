@@ -564,7 +564,25 @@ export const fr = {
         heading: "Durée de conservation",
         lines: [
           [
-            "[À définir : durée de conservation des données pendant le suivi actif et après clôture du compte, conformément aux recommandations de la CNIL et, le cas échéant, aux obligations de conservation des données de santé.]",
+            "Chaque type de donnée a sa durée de conservation, appliquée chaque nuit par une suppression automatique. Ces durées sont en cours de validation.",
+          ],
+          [
+            "Saisies du patient, notes du praticien et carnet de consultation : tant que le patient se connecte, tout son historique est conservé. Une donnée de plus de 5 ans est supprimée lorsque le patient ne s'est pas connecté depuis un an. Rien n'est supprimé pendant qu'un suivi est en pause.",
+          ],
+          [
+            "Journal d'audit des accès aux données : 10 ans.",
+          ],
+          [
+            "Données de l'assistant IA (compteurs d'usage, avis sur les réponses), demandes de support et journal du prestataire de paiement : 13 mois. La copie d'une demande de support reçue par e-mail est effacée chaque mois.",
+          ],
+          [
+            "Journaux des notifications : 1 an. Invitations expirées : 30 jours.",
+          ],
+          [
+            "Fin d'abonnement : le compte du praticien passe en lecture seule pendant 90 jours s'il n'a jamais été abonné, 3 ans s'il l'a été. À ce terme, ses suivis sont effacés, après un message de prévenance au praticien et au patient. Un module qu'un autre praticien suit reste.",
+          ],
+          [
+            "Sur demande, un compte et ses données sont effacés sans attendre ces durées (voir « Vos droits »).",
           ],
         ] as Segment[][],
       },
@@ -572,7 +590,56 @@ export const fr = {
         heading: "Hébergement",
         lines: [
           [
-            "Les données de santé sont destinées à être hébergées chez un hébergeur certifié Hébergeur de Données de Santé (HDS), au sens de l'article L.1111-8 du Code de la santé publique.",
+            "Pendant la bêta, la base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
+          ],
+          [
+            "Avant la commercialisation, les données de santé seront hébergées chez un hébergeur certifié Hébergeur de Données de Santé (HDS), au sens de l'article L.1111-8 du Code de la santé publique.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Sous-traitants",
+        lines: [
+          [
+            "Orekio fait appel aux prestataires suivants, chacun pour une tâche précise :",
+          ],
+          [
+            "Supabase : base de données, authentification et photos de profil (Paris).",
+          ],
+          [
+            "Render : serveur de l'application (Francfort).",
+          ],
+          [
+            "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte), depuis l'Union européenne.",
+          ],
+          [
+            "Expo et Google Firebase : acheminement des notifications de rappel vers le téléphone du patient. [À compléter : localisation et garanties de transfert.]",
+          ],
+          [
+            "Stripe : paiement de l'abonnement du praticien. Stripe ne reçoit aucune donnée de santé. [À compléter : localisation et garanties de transfert.]",
+          ],
+          [
+            "Anthropic : assistant IA du praticien (voir la section suivante).",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Assistant IA du praticien",
+        lines: [
+          [
+            "Dans l'application web, le praticien peut poser des questions à un assistant IA sur l'utilisation d'Orekio. L'assistant s'appuie sur un modèle d'Anthropic, qui agit comme sous-traitant. Il est réservé aux praticiens : l'application du patient n'en comporte pas.",
+          ],
+          [
+            "Orekio n'envoie jamais à l'IA les données des patients : ni nom, ni saisies, ni scores, ni notes. Quand le praticien demande une information sur un patient, c'est Orekio qui la lit et l'affiche ; elle ne part jamais vers le modèle. Le modèle reçoit le guide d'utilisation, le nom de l'écran ouvert, la date du jour et la question du praticien, dont les noms et adresses e-mail sont retirés avant l'envoi. Il est demandé au praticien de ne saisir aucune donnée de patient dans ses questions.",
+          ],
+          [
+            "Anthropic est situé aux États-Unis. Le transfert est encadré par les clauses contractuelles types de la Commission européenne, intégrées à son contrat de sous-traitance. [À compléter : durée de conservation des requêtes chez Anthropic, ou suppression dès la réponse si elle est accordée.]",
+          ],
+          [
+            "Orekio ne conserve ni les questions ni les réponses : la conversation n'existe que dans le navigateur du praticien et s'efface quand il ferme la fenêtre de l'assistant. Orekio conserve 13 mois, sans aucun texte, le nombre de questions de chaque praticien, leur coût, le type de chaque réponse et l'avis donné par le praticien. Si le praticien choisit de signaler une question restée sans réponse, son texte est transmis à l'équipe comme une demande de support.",
+          ],
+          [
+            "Chaque réponse indique si elle a été rédigée par l'IA ou affichée par Orekio.",
           ],
         ] as Segment[][],
       },
@@ -645,7 +712,32 @@ export const fr = {
         ] as Segment[][],
       },
       {
-        heading: "6. Durée et résiliation",
+        heading: "6. Assistant IA",
+        lines: [
+          [
+            "Le service comprend, pour les praticiens et dans l'application web, un assistant IA qui aide à utiliser Orekio : il explique l'application et le calcul d'un score, guide pas à pas, ouvre un écran et prépare certaines actions.",
+          ],
+          [
+            "L'assistant ne donne aucun avis clinique, n'interprète aucune donnée et ne recommande aucun module. Ses réponses peuvent comporter des erreurs ; l'appréciation clinique reste celle du praticien.",
+          ],
+          [
+            "Aucune action préparée par l'assistant n'est enregistrée sans que le praticien clique sur « Confirmer ». Le praticien reste responsable des actions qu'il confirme.",
+          ],
+          [
+            "Le praticien s'engage à ne saisir dans l'assistant aucune donnée permettant d'identifier un patient, ni aucune donnée de santé.",
+          ],
+          [
+            "Pendant la bêta, l'assistant peut être ouvert à une partie des praticiens seulement, limité en nombre de questions, ou suspendu à tout moment.",
+          ],
+          [
+            "Le traitement des données lié à l'assistant est décrit dans la ",
+            { href: "/fr/confidentialite", text: "politique de confidentialité" },
+            ".",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "7. Durée et résiliation",
         lines: [
           [
             "[À compléter : conditions de résiliation par l'utilisateur et par l'éditeur, sort des données après résiliation.]",
@@ -653,7 +745,7 @@ export const fr = {
         ] as Segment[][],
       },
       {
-        heading: "7. Données personnelles",
+        heading: "8. Données personnelles",
         lines: [
           [
             "Le traitement des données personnelles est décrit dans notre ",
@@ -664,7 +756,7 @@ export const fr = {
         ] as Segment[][],
       },
       {
-        heading: "8. Droit applicable",
+        heading: "9. Droit applicable",
         lines: [
           [
             "Les présentes CGU sont soumises au droit français. [À compléter : juridiction compétente en cas de litige.]",

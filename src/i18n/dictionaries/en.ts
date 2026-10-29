@@ -552,7 +552,25 @@ export const en: Dictionary = {
         heading: "Retention period",
         lines: [
           [
-            "[To be defined: data retention period during active follow-up and after account closure, in line with CNIL recommendations and, where applicable, health-data retention obligations.]",
+            "Each type of data has its own retention period, enforced every night by automatic deletion. These periods are being validated.",
+          ],
+          [
+            "Patient entries, practitioner notes and the consultation notebook: as long as the patient keeps signing in, their whole history is kept. Data older than 5 years is deleted once the patient has not signed in for a year. Nothing is deleted while a follow-up is paused.",
+          ],
+          [
+            "Data access audit log: 10 years.",
+          ],
+          [
+            "AI assistant data (usage counters, feedback on answers), support requests and the payment provider log: 13 months. The copy of a support request received by email is erased every month.",
+          ],
+          [
+            "Notification logs: 1 year. Expired invitations: 30 days.",
+          ],
+          [
+            "End of subscription: the practitioner's account becomes read-only for 90 days if it was never subscribed, 3 years if it was. At the end of that period, their follow-ups are erased, after advance notice to the practitioner and the patient. A module that another practitioner follows is kept.",
+          ],
+          [
+            "On request, an account and its data are erased without waiting for these periods (see “Your rights”).",
           ],
         ] as Segment[][],
       },
@@ -560,7 +578,56 @@ export const en: Dictionary = {
         heading: "Hosting",
         lines: [
           [
-            "Health data is intended to be hosted with a provider certified as a Health Data Host (HDS in France), under Article L.1111-8 of the French Public Health Code.",
+            "During the beta, the database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
+          ],
+          [
+            "Before commercial launch, health data will be hosted by a provider certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Processors",
+        lines: [
+          [
+            "Orekio relies on the following providers, each for a specific task:",
+          ],
+          [
+            "Supabase: database, authentication and profile pictures (Paris).",
+          ],
+          [
+            "Render: application server (Frankfurt).",
+          ],
+          [
+            "Resend: sending emails (invitations, password reset, account status), from the European Union.",
+          ],
+          [
+            "Expo and Google Firebase: delivering reminder notifications to the patient's phone. [To be completed: location and transfer safeguards.]",
+          ],
+          [
+            "Stripe: payment of the practitioner's subscription. Stripe receives no health data. [To be completed: location and transfer safeguards.]",
+          ],
+          [
+            "Anthropic: the practitioner's AI assistant (see the next section).",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Practitioner AI assistant",
+        lines: [
+          [
+            "In the web app, practitioners can ask an AI assistant questions about using Orekio. The assistant relies on a model from Anthropic, acting as a processor. It is for practitioners only: the patient app has none.",
+          ],
+          [
+            "Orekio never sends patient data to the AI: no name, entries, scores or notes. When a practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the name of the open screen, today's date and the practitioner's question, with names and email addresses removed before sending. Practitioners are asked not to enter any patient data in their questions.",
+          ],
+          [
+            "Anthropic is located in the United States. The transfer is governed by the European Commission's standard contractual clauses, included in its data processing agreement. [To be completed: how long Anthropic retains requests, or deletion upon response if granted.]",
+          ],
+          [
+            "Orekio keeps neither questions nor answers: the conversation exists only in the practitioner's browser and is erased when they close the assistant window. For 13 months, Orekio keeps, without any text, the number of questions each practitioner asks, their cost, the type of each answer and the practitioner's feedback. If a practitioner chooses to report an unanswered question, its text is sent to the team as a support request.",
+          ],
+          [
+            "Each answer shows whether it was written by the AI or displayed by Orekio.",
           ],
         ] as Segment[][],
       },
@@ -633,7 +700,32 @@ export const en: Dictionary = {
         ] as Segment[][],
       },
       {
-        heading: "6. Term and termination",
+        heading: "6. AI assistant",
+        lines: [
+          [
+            "For practitioners, in the web app, the service includes an AI assistant that helps them use Orekio: it explains the app and how a score is calculated, guides step by step, opens a screen and prepares certain actions.",
+          ],
+          [
+            "The assistant gives no clinical advice, interprets no data and recommends no module. Its answers may contain errors; clinical judgement remains the practitioner's.",
+          ],
+          [
+            "No action prepared by the assistant is saved until the practitioner clicks “Confirm”. The practitioner remains responsible for the actions they confirm.",
+          ],
+          [
+            "The practitioner agrees not to enter in the assistant any data that could identify a patient, nor any health data.",
+          ],
+          [
+            "During the beta, the assistant may be available to some practitioners only, limited in number of questions, or suspended at any time.",
+          ],
+          [
+            "The processing of data related to the assistant is described in the ",
+            { href: "/en/privacy", text: "privacy policy" },
+            ".",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "7. Term and termination",
         lines: [
           [
             "[To be completed: termination conditions for the user and for the publisher, what happens to data after termination.]",
@@ -641,7 +733,7 @@ export const en: Dictionary = {
         ] as Segment[][],
       },
       {
-        heading: "7. Personal data",
+        heading: "8. Personal data",
         lines: [
           [
             "The processing of personal data is described in our ",
@@ -652,7 +744,7 @@ export const en: Dictionary = {
         ] as Segment[][],
       },
       {
-        heading: "8. Governing law",
+        heading: "9. Governing law",
         lines: [
           [
             "These Terms are governed by French law. [To be completed: competent jurisdiction in case of dispute.]",
