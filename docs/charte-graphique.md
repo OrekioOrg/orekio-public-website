@@ -108,6 +108,18 @@ Fichiers dans `public/brand/`.
 - **Header** : `#123F3A`, hauteur 58–72 px, logotype 26 px, liens
   `rgba(253,254,254,0.68)` → `#FDFEFE` à l'état actif.
 
+### Exception : cartes d'offres (page Tarifs)
+
+Seul endroit du site où la marque s'autorise un registre expressif. Ces règles
+ne valent que pour ces deux cartes (`src/components/plan-card.tsx`).
+
+- Titres `zelai` / `mendi` en **Bagel Fat One**, 118 px (84 px sur mobile), en
+  relief et à cheval sur la bordure. `#6BC9BF` peut y porter le titre zelai,
+  cerné de `#123F3A`, et le libellé de l'encart sur la carte sombre.
+- Outfit **600** pour les prix, les libellés d'encart et les boutons.
+- Rayons : carte 36 px, encart 20 px, bouton en pilule avec ombre pleine.
+- Bande de fond `#EAF6F5` derrière les cartes ; la carte mendi est sur `#123F3A`.
+
 ---
 
 ## 5. Densité et mise en page

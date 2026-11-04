@@ -25,7 +25,8 @@ import "../globals.css";
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  // 600 : prix et boutons des cartes d'offres (charte, section 4).
+  weight: ["300", "400", "500", "600"],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
