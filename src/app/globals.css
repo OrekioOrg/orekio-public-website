@@ -166,6 +166,55 @@ body {
 }
 
 /*
+ * Titres des cartes d'offres (/tarifs) : un empilement d'ombres de 1 px donne
+ * l'epaisseur, le contour pose derriere le remplissage arrondit l'ensemble.
+ * Poses a cheval sur la bordure de la carte.
+ */
+.plan-title {
+  position: absolute;
+  top: -63px;
+  left: 28px;
+  margin: 0;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  color: var(--plan-fill);
+  -webkit-text-stroke: 7px var(--plan-edge);
+  paint-order: stroke fill;
+  text-shadow:
+    1px 1px 0 var(--plan-edge),
+    2px 2px 0 var(--plan-edge),
+    3px 3px 0 var(--plan-edge),
+    4px 4px 0 var(--plan-edge),
+    5px 5px 0 var(--plan-edge),
+    6px 6px 0 var(--plan-edge),
+    7px 7px 0 var(--plan-edge),
+    8px 8px 0 var(--plan-edge),
+    9px 9px 0 var(--plan-edge),
+    10px 10px 0 var(--plan-edge),
+    11px 11px 0 var(--plan-edge),
+    12px 12px 0 var(--plan-edge),
+    16px 20px 22px rgba(0, 0, 0, 0.35);
+}
+.plan-title--zelai {
+  --plan-fill: var(--color-accent);
+  --plan-edge: var(--color-ink);
+}
+.plan-title--mendi {
+  --plan-fill: var(--color-on-ink);
+  --plan-edge: var(--color-primary);
+}
+@media (min-width: 64rem) {
+  .plan-title {
+    top: -88px;
+    left: 42px;
+    font-size: 118px;
+  }
+}
+
+/*
  * /beta : au chargement, le fil du parcours se trace de gauche à droite et
  * les trois étapes apparaissent l'une après l'autre. Seule animation de la
  * page ; rien ne bouge si l'utilisateur a réduit les animations.

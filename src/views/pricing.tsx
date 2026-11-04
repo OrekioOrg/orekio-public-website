@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { BlurredPrices } from "@/components/blurred-prices";
+import { PlanCard } from "@/components/plan-card";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
-import { APP_URL, PRICES_FINAL, routes } from "@/site";
+import { PRICES_FINAL, routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -47,76 +48,27 @@ export default async function TarifsPage({
         <BlurredPrices text={dict.description} />
       </p>
 
-      {/* Sur grand écran, les quatre cartes partagent les mêmes rangées (grille
-          parente + subgrid) : nom, prix, description, liste et bouton tombent à
-          la même hauteur d'une carte à l'autre, quelle que soit la longueur des
-          textes. Deux colonnes sur tablette, une sur mobile. */}
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0">
-        {dict.plans.map((plan) => (
-          <div
-            key={plan.name}
-            className={`flex flex-col rounded-lg border p-6 lg:row-span-5 lg:grid lg:grid-rows-subgrid ${
-              plan.highlighted
-                ? "border-primary bg-primary-container"
-                : "border-outline bg-surface"
-            }`}
-          >
-            <h2 className="flex flex-wrap items-center gap-3 text-[18px] font-medium text-on-surface-strong">
-              {plan.name}
-              {plan.highlighted ? (
-                <span className="rounded-full bg-primary px-2.5 py-0.5 font-mono text-[11px] font-normal uppercase tracking-[0.06em] text-on-primary">
-                  {dict.highlightLabel}
-                </span>
-              ) : null}
-            </h2>
-            {/* Prix et période sur deux lignes : les prix s'alignent entre cartes. */}
-            <p className="mt-4">
-              <span className="block text-[32px] font-medium leading-tight text-on-surface-strong">
-                <BlurredPrices text={plan.price} />
-              </span>
-              <span className="mt-1 block text-[14px] text-on-surface-variant">
-                {plan.period}
-              </span>
-            </p>
-            <p className="mt-3 text-[15px] leading-relaxed text-on-surface-variant">
-              <BlurredPrices text={plan.description} />
-            </p>
-            <div className="mt-6 flex flex-1 flex-col">
-            <ul className="flex-1 space-y-3">
-              {plan.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 text-[15px] text-on-surface"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            {/* Fin d'essai : ce qui arrive aux donnees si l'on ne souscrit pas.
-                Portee par la seule carte Essai, sous ses points, au-dessus du bouton. */}
-            {plan.note ? (
-              <p className="mt-4 text-[15px] leading-relaxed text-on-surface-variant">
-                {plan.note}
-              </p>
-            ) : null}
-            </div>
-            <a
-              href={APP_URL}
-              className="mt-8 rounded-lg bg-primary px-6 py-3 text-center text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
-            >
-              {dict.subscribeButton}
-            </a>
-          </div>
-        ))}
-      </div>
-
     </div>
 
-    {/* Un seul produit : tout ce qui est commun aux quatre cartes vit ici, une fois,
-        sur le fond teinté qui rythme la page. Une ligne separee par des points
-        medians sur grand ecran, une liste sur mobile. */}
-    <section className="bg-surface-container-low">
+    {/* Le titre de chaque carte deborde au-dessus de sa bordure : pt-24 et gap-24
+        lui laissent la place. Une colonne jusqu'au grand ecran, ou les prix
+        tiennent enfin sur une ligne. */}
+    <section className="bg-primary-container">
+      <div className="mx-auto grid max-w-[560px] gap-24 px-6 pt-24 pb-16 lg:max-w-6xl lg:grid-cols-2 lg:gap-11">
+        {dict.plans.map((plan) => (
+          <PlanCard
+            key={plan.name}
+            plan={plan}
+            ctaLabel={dict.subscribeButton}
+          />
+        ))}
+      </div>
+    </section>
+
+    {/* Un seul produit : tout ce qui est commun aux offres vit ici, une fois.
+        Une ligne separee par des points medians sur grand ecran, une liste sur
+        mobile. */}
+    <section>
     <div className="mx-auto max-w-6xl px-6 py-14">
       <div>
         <h2 className="text-[16px] font-medium text-on-surface-strong">
@@ -135,6 +87,19 @@ export default async function TarifsPage({
           ))}
         </ul>
       </div>
+
+      <dl className="mt-10 max-w-3xl space-y-4 text-[15px] leading-relaxed text-on-surface-variant">
+        {dict.details.map((detail) => (
+          <div key={detail.label}>
+            <dt className="inline font-medium text-on-surface-strong">
+              {detail.label}.{" "}
+            </dt>
+            <dd className="inline">
+              <BlurredPrices text={detail.text} />
+            </dd>
+          </div>
+        ))}
+      </dl>
 
       <p className="mt-10 max-w-2xl text-[14px] leading-relaxed text-on-surface-variant">
         {dict.footerNote.map((segment, index) => (

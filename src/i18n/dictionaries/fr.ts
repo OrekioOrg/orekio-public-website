@@ -1,14 +1,14 @@
 import type { Segment } from "../segment";
 
-/** Une carte de la page Tarifs. `note` : paragraphe de fin d'essai, sur la carte Essai seulement. */
+/** Une carte de la page Tarifs. `note` : l'encart propre à l'offre. */
 export interface PricingPlan {
   name: string;
+  theme: "zelai" | "mendi";
   price: string;
   period: string;
-  description: string;
+  priceExclVat: string;
   features: string[];
-  note?: string;
-  highlighted: boolean;
+  note: { label: string; text: string };
 }
 
 const email: Segment = {
@@ -345,57 +345,50 @@ export const fr = {
       "30 jours d'essai sur Mendi, sans carte bancaire. Ensuite, deux offres au contenu identique : tous les modules, toutes les échelles. Seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Les 100 premiers inscrits gardent 24,99 € TTC par mois à vie.",
     plans: [
       {
-        name: "Essai",
-        price: "Gratuit",
-        period: "30 jours, sans carte bancaire",
-        description:
-          "Un mois sur Mendi, l'offre la plus haute : le temps de confier des outils à vos patients et d'en reparler ensemble.",
-        features: [
-          "Le produit complet, jusqu'à 30 patients suivis",
-          "Aucune carte demandée, rien à résilier",
-        ],
-        note: "À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 30 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
-        highlighted: false,
-      },
-      {
         name: "Zelai",
+        theme: "zelai",
         price: "29,99 €",
-        period: "TTC par mois, sans engagement",
-        description:
-          "« Prairie » en basque. Ou 329,89 € TTC par an : un mois offert.",
+        period: "TTC / mois",
+        priceExclVat: "24,99 € HT / mois",
         features: [
           "Jusqu'à 15 patients suivis",
-          "Résiliable à tout moment",
+          "Tous les modules et échelles",
         ],
-        highlighted: false,
+        note: {
+          label: "Fondateurs :",
+          text: "24,99 € TTC / mois à vie (20,83 € HT), 100 places",
+        },
       },
       {
         name: "Mendi",
+        theme: "mendi",
         price: "39,99 €",
-        period: "TTC par mois, sans engagement",
-        description:
-          "« Montagne » en basque. Ou 439,89 € TTC par an : un mois offert.",
+        period: "TTC / mois",
+        priceExclVat: "33,33 € HT / mois",
         features: [
           "Jusqu'à 30 patients suivis",
-          "Résiliable à tout moment",
+          "Tous les modules et échelles",
         ],
-        highlighted: false,
-      },
-      {
-        name: "Fondateurs",
-        price: "24,99 €",
-        period: "TTC par mois, à vie",
-        description:
-          "Pour les 100 premiers inscrits, sur l'offre Zelai.",
-        features: [
-          "Jusqu'à 15 patients suivis",
-          "Tarif garanti tant que l'abonnement reste actif",
-          "Au mois uniquement",
-          "Un canal direct avec l'équipe",
-        ],
-        highlighted: true,
+        note: {
+          label: "Essai offert :",
+          text: "30 jours pour tout tester",
+        },
       },
     ] as PricingPlan[],
+    details: [
+      {
+        label: "Essai",
+        text: "Un mois sur Mendi, l'offre la plus haute, sans carte bancaire et sans rien à résilier. À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 30 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
+      },
+      {
+        label: "Zelai et Mendi",
+        text: "Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : 329,89 € TTC pour Zelai, 439,89 € TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».",
+      },
+      {
+        label: "Fondateurs",
+        text: "Pour les 100 premiers inscrits, sur l'offre Zelai, jusqu'à 15 patients suivis. Tarif garanti tant que l'abonnement reste actif, au mois uniquement, avec un canal direct avec l'équipe.",
+      },
+    ],
     included: {
       title: "Inclus dans toutes les offres",
       items: [
@@ -408,8 +401,7 @@ export const fr = {
         "Support par email",
       ],
     },
-    highlightLabel: "Offre de lancement",
-    subscribeButton: "Créer un compte",
+    subscribeButton: "Essayer gratuitement",
     footerNote: [
       "Prix TTC, TVA de 20 % incluse. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },

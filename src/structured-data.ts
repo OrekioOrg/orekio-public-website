@@ -91,7 +91,7 @@ function offers(dict: Dictionary, pricingUrl: string) {
     return {
       "@type": "Offer",
       name: plan.name,
-      description: plan.description,
+      description: plan.features.join(", "),
       url: pricingUrl,
       price: amount,
       priceCurrency: "EUR",
