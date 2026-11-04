@@ -393,8 +393,6 @@ export const fr = {
         "Application patient gratuite",
         "Tous les modules et toutes les échelles",
         "Historique complet et export",
-        "Changement d'offre depuis l'application",
-        "Parrainage : un mois offert pour vous et pour votre collègue",
         "Support par email",
       ],
     },

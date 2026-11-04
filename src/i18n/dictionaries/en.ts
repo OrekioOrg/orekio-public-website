@@ -382,8 +382,6 @@ export const en: Dictionary = {
         "Free patient app",
         "Every module and every scale",
         "Full history and export",
-        "Change plans from the app",
-        "Referral: one month free for you and your colleague",
         "Email support",
       ],
     },
