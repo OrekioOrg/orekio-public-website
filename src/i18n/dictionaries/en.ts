@@ -329,9 +329,6 @@ export const en: Dictionary = {
     metaDescriptionProvisional:
       "30-day trial, no credit card. Two plans with identical content, Zelai up to 15 patients and Mendi up to 30, plus a Founders offer for the first 100 subscribers.",
     eyebrow: "Pricing",
-    heading: "Two plans, the same product.",
-    description:
-      "30-day trial on Mendi, no credit card. Then two plans with identical content: every module, every scale. Only the number of followed patients changes, and pausing a follow-up frees its place. The first 100 subscribers keep €24.99 incl. VAT per month for life.",
     plans: [
       {
         name: "Zelai",
@@ -371,7 +368,7 @@ export const en: Dictionary = {
       },
       {
         label: "Zelai and Mendi",
-        text: "No commitment, cancel at any time. Or yearly, with one month free: €329.89 incl. VAT for Zelai, €439.89 incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.",
+        text: "The same product: only the number of followed patients changes, and pausing a follow-up frees its place. No commitment, cancel at any time. Or yearly, with one month free: €329.89 incl. VAT for Zelai, €439.89 incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.",
       },
       {
         label: "Founders",

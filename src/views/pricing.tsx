@@ -37,17 +37,11 @@ export default async function TarifsPage({
 
   return (
     <>
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
+    {/* Seul titre de la page : le h1 garde le style d'eyebrow. */}
+    <div className="mx-auto max-w-6xl px-6 py-8">
+      <h1 className="font-mono text-[11px] font-normal uppercase tracking-[0.1em] text-secondary">
         {dict.eyebrow}
-      </p>
-      <h1 className="mt-4 text-[32px] font-medium text-on-surface-strong">
-        {dict.heading}
       </h1>
-      <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-on-surface">
-        <BlurredPrices text={dict.description} />
-      </p>
-
     </div>
 
     {/* Le titre de chaque carte deborde au-dessus de sa bordure : pt-20 et gap-20

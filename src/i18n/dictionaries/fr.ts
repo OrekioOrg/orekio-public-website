@@ -340,9 +340,6 @@ export const fr = {
     metaDescriptionProvisional:
       "Essai de 30 jours sans carte bancaire. Deux offres au contenu identique, Zelai jusqu'à 15 patients et Mendi jusqu'à 30, et une offre Fondateurs pour les 100 premiers inscrits.",
     eyebrow: "Tarifs",
-    heading: "Deux offres, le même produit.",
-    description:
-      "30 jours d'essai sur Mendi, sans carte bancaire. Ensuite, deux offres au contenu identique : tous les modules, toutes les échelles. Seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Les 100 premiers inscrits gardent 24,99 € TTC par mois à vie.",
     plans: [
       {
         name: "Zelai",
@@ -382,7 +379,7 @@ export const fr = {
       },
       {
         label: "Zelai et Mendi",
-        text: "Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : 329,89 € TTC pour Zelai, 439,89 € TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».",
+        text: "Le même produit : seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : 329,89 € TTC pour Zelai, 439,89 € TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».",
       },
       {
         label: "Fondateurs",
