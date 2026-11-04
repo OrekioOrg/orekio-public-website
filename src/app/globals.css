@@ -172,16 +172,16 @@ body {
  */
 .plan-title {
   position: absolute;
-  top: -63px;
-  left: 28px;
+  top: -44px;
+  left: 20px;
   margin: 0;
-  font-size: 84px;
+  font-size: 60px;
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0;
   text-transform: lowercase;
   color: var(--plan-fill);
-  -webkit-text-stroke: 7px var(--plan-edge);
+  -webkit-text-stroke: 4px var(--plan-edge);
   paint-order: stroke fill;
   text-shadow:
     1px 1px 0 var(--plan-edge),
@@ -190,13 +190,7 @@ body {
     4px 4px 0 var(--plan-edge),
     5px 5px 0 var(--plan-edge),
     6px 6px 0 var(--plan-edge),
-    7px 7px 0 var(--plan-edge),
-    8px 8px 0 var(--plan-edge),
-    9px 9px 0 var(--plan-edge),
-    10px 10px 0 var(--plan-edge),
-    11px 11px 0 var(--plan-edge),
-    12px 12px 0 var(--plan-edge),
-    16px 20px 22px rgba(0, 0, 0, 0.35);
+    8px 10px 10px rgba(0, 0, 0, 0.2);
 }
 .plan-title--zelai {
   --plan-fill: var(--color-accent);
@@ -208,9 +202,9 @@ body {
 }
 @media (min-width: 64rem) {
   .plan-title {
-    top: -88px;
-    left: 42px;
-    font-size: 118px;
+    top: -52px;
+    left: 28px;
+    font-size: 72px;
   }
 }
 

@@ -50,11 +50,11 @@ export default async function TarifsPage({
 
     </div>
 
-    {/* Le titre de chaque carte deborde au-dessus de sa bordure : pt-24 et gap-24
+    {/* Le titre de chaque carte deborde au-dessus de sa bordure : pt-20 et gap-20
         lui laissent la place. Une colonne jusqu'au grand ecran, ou les prix
         tiennent enfin sur une ligne. */}
     <section className="bg-primary-container">
-      <div className="mx-auto grid max-w-[560px] gap-24 px-6 pt-24 pb-16 lg:max-w-6xl lg:grid-cols-2 lg:gap-11">
+      <div className="mx-auto grid max-w-[460px] gap-20 px-6 pt-20 pb-14 lg:max-w-[880px] lg:grid-cols-2 lg:gap-8">
         {dict.plans.map((plan) => (
           <PlanCard
             key={plan.name}

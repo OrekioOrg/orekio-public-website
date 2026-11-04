@@ -11,7 +11,7 @@ const bagelFatOne = Bagel_Fat_One({
 
 const themes = {
   zelai: {
-    card: "border-ink bg-surface shadow-[0_30px_60px_-24px_rgba(18,63,58,0.3)]",
+    card: "border-ink bg-surface shadow-[0_16px_32px_-20px_rgba(18,63,58,0.25)]",
     title: "plan-title--zelai",
     price: "text-ink",
     secondary: "text-on-surface-variant",
@@ -21,10 +21,10 @@ const themes = {
     check: { circle: "#eaf6f5", path: "#1a6b63" },
     note: "bg-primary-container text-ink",
     noteLabel: "",
-    cta: "bg-primary text-on-primary shadow-[0_6px_0_var(--color-ink)]",
+    cta: "bg-primary text-on-primary shadow-[0_3px_0_var(--color-ink)]",
   },
   mendi: {
-    card: "border-accent bg-ink shadow-[0_30px_60px_-24px_rgba(18,63,58,0.6)]",
+    card: "border-accent bg-ink shadow-[0_16px_32px_-20px_rgba(18,63,58,0.45)]",
     title: "plan-title--mendi",
     price: "text-on-ink",
     secondary: "text-[#b7ddd9]",
@@ -34,7 +34,7 @@ const themes = {
     check: { circle: "#6bc9bf", path: "#123f3a" },
     note: "border-[1.5px] border-dashed border-accent/60 text-[#e4f2f0]",
     noteLabel: "text-accent",
-    cta: "bg-accent text-[#0b2926] shadow-[0_6px_0_var(--color-primary)]",
+    cta: "bg-accent text-[#0b2926] shadow-[0_3px_0_var(--color-primary)]",
   },
 };
 
@@ -43,8 +43,8 @@ function Check({ circle, path }: { circle: string; path: string }) {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      width="26"
-      height="26"
+      width="20"
+      height="20"
       className="shrink-0"
     >
       <circle cx="12" cy="12" r="12" fill={circle} />
@@ -71,37 +71,37 @@ export function PlanCard({
 
   return (
     <article
-      className={`relative flex min-w-0 flex-col rounded-[36px] border-[3px] px-7 pb-10 lg:px-11 ${theme.card}`}
+      className={`relative flex min-w-0 flex-col rounded-3xl border-2 px-6 pb-7 lg:px-8 ${theme.card}`}
     >
       {/* Pose en absolu sur la bordure : un vrai <legend> couperait le trait. */}
       <h2 className={`plan-title ${theme.title} ${bagelFatOne.className}`}>
         {plan.name}
       </h2>
 
-      <div className="flex flex-1 flex-col pt-10">
+      <div className="flex flex-1 flex-col pt-7">
         <p
-          className={`mt-[34px] flex flex-wrap items-baseline gap-x-2.5 text-[52px] font-semibold leading-none tracking-[-2px] lg:text-[68px] ${theme.price}`}
+          className={`mt-5 flex flex-wrap items-baseline gap-x-2 text-[40px] font-semibold leading-none tracking-[-1px] lg:text-[44px] ${theme.price}`}
         >
           <span>
             <BlurredPrices text={plan.price} />
           </span>
           <span
-            className={`text-[20px] font-medium tracking-normal ${theme.secondary}`}
+            className={`text-[15px] font-medium tracking-normal ${theme.secondary}`}
           >
             {plan.period}
           </span>
         </p>
-        <p className={`mt-2 text-[18px] ${theme.secondary}`}>
+        <p className={`mt-1.5 text-[14px] ${theme.secondary}`}>
           <BlurredPrices text={plan.priceExclVat} />
         </p>
 
-        <div className={`my-[26px] h-px ${theme.divider}`} />
+        <div className={`my-5 h-px ${theme.divider}`} />
 
         <ul
-          className={`flex flex-col gap-4 text-[17px] lg:text-[19px] ${theme.features}`}
+          className={`flex flex-col gap-2.5 text-[15px] ${theme.features}`}
         >
           {plan.features.map((feature) => (
-            <li key={feature} className="flex items-center gap-3.5">
+            <li key={feature} className="flex items-center gap-2.5">
               <Check {...theme.check} />
               <span>
                 {/* Le nombre de patients ressort en gras. */}
@@ -123,7 +123,7 @@ export function PlanCard({
         </ul>
 
         <p
-          className={`mt-[26px] rounded-[20px] px-[22px] py-4 text-[17px] leading-[1.45] text-pretty ${theme.note}`}
+          className={`mt-5 rounded-2xl px-4 py-3 text-[14px] leading-[1.45] text-pretty ${theme.note}`}
         >
           <strong className={`font-semibold ${theme.noteLabel}`}>
             {plan.note.label}
@@ -132,10 +132,10 @@ export function PlanCard({
         </p>
 
         {/* mt-auto : les boutons s'alignent en bas des deux cartes. */}
-        <div className="mt-auto pt-[26px]">
+        <div className="mt-auto pt-5">
           <a
             href={APP_URL}
-            className={`flex min-h-[52px] items-center justify-center rounded-full text-center text-[17px] font-semibold transition-opacity hover:opacity-90 ${theme.cta}`}
+            className={`flex min-h-11 items-center justify-center rounded-full text-center text-[15px] font-semibold transition-opacity hover:opacity-90 ${theme.cta}`}
           >
             {ctaLabel}
           </a>

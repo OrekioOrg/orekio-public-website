@@ -113,11 +113,11 @@ Fichiers dans `public/brand/`.
 Seul endroit du site où la marque s'autorise un registre expressif. Ces règles
 ne valent que pour ces deux cartes (`src/components/plan-card.tsx`).
 
-- Titres `zelai` / `mendi` en **Bagel Fat One**, 118 px (84 px sur mobile), en
+- Titres `zelai` / `mendi` en **Bagel Fat One**, 72 px (60 px sur mobile), en
   relief et à cheval sur la bordure. `#6BC9BF` peut y porter le titre zelai,
   cerné de `#123F3A`, et le libellé de l'encart sur la carte sombre.
 - Outfit **600** pour les prix, les libellés d'encart et les boutons.
-- Rayons : carte 36 px, encart 20 px, bouton en pilule avec ombre pleine.
+- Rayons : carte 24 px, encart 16 px, bouton en pilule avec ombre pleine.
 - Bande de fond `#EAF6F5` derrière les cartes ; la carte mendi est sur `#123F3A`.
 
 ---
