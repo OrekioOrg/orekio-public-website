@@ -4,7 +4,7 @@ import { SegmentText } from "./segment-text";
 export interface LegalPageDict {
   eyebrow: string;
   heading: string;
-  /** Draft warning, shown until the page's content is final. */
+  /** Optional notice shown above the sections. */
   noticeBox?: string;
   sections: {
     heading: string;
@@ -12,8 +12,8 @@ export interface LegalPageDict {
   }[];
 }
 
-// Shared layout for the three placeholder legal pages (mentions légales,
-// confidentialité, CGU): eyebrow, heading, a "draft" notice box, then a
+// Shared layout for the legal pages (mentions légales, confidentialité, CGU):
+// eyebrow, heading, an optional notice box, then a
 // list of sections whose paragraphs may contain inline links.
 export function LegalPage({ dict }: { dict: LegalPageDict }) {
   return (

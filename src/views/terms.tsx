@@ -19,8 +19,6 @@ export async function generateMetadata({
     suffix: routes.terms,
     title: dict.pageTitle,
     description: dict.metaDescription,
-    // Placeholder draft (bracketed content); flip to indexable once finalised.
-    index: false,
   });
 }
 
