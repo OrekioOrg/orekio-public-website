@@ -655,7 +655,7 @@ export const fr = {
     eyebrow: "CGU",
     heading: "Conditions générales d'utilisation",
     noticeBox:
-      "Cette page est un brouillon de structure, à faire rédiger et valider par un professionnel du droit avant l'ouverture du service au public, en particulier les sections responsabilité et résiliation, compte tenu du caractère sensible des données traitées.",
+      "Ce texte est complet, mais il attend encore la validation d'un professionnel du droit, en particulier les sections responsabilité et résiliation, compte tenu du caractère sensible des données traitées.",
     sections: [
       {
         heading: "1. Objet",
@@ -671,9 +671,18 @@ export const fr = {
         heading: "2. Accès au service",
         lines: [
           [
-            "L'accès au service se fait sur invitation du praticien pour le patient, ou sur abonnement pour le praticien (voir la page ",
+            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU, confirme son adresse e-mail et active la double authentification, obligatoire pour tout compte praticien. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
+          ],
+          [
+            "Le praticien accède au service sur abonnement (voir la page ",
             { href: "/fr/tarifs", text: "Tarifs" },
-            "). [À compléter : conditions d'éligibilité, création de compte, vérification de la qualité de professionnel de santé le cas échéant.]",
+            "). Le service s'adresse à lui en tant que professionnel.",
+          ],
+          [
+            "Le patient ne s'inscrit pas seul : il accède au service sur invitation de son praticien, sans frais. Il décide de partager ou non ses saisies avec lui, et peut retirer ce partage à tout moment.",
+          ],
+          [
+            "Lorsque le patient est mineur, le praticien recueille les consentements requis auprès de lui et des titulaires de l'autorité parentale avant de l'inviter.",
           ],
         ] as Segment[][],
       },
@@ -681,7 +690,15 @@ export const fr = {
         heading: "3. Obligations des utilisateurs",
         lines: [
           [
-            "Le praticien s'engage à utiliser Orekio dans le seul cadre d'un suivi thérapeutique réel, et avec le consentement de son patient. Le patient s'engage à fournir des informations sincères. [À compléter : usage loyal du service, sécurité des identifiants, interdiction de détournement.]",
+            "Le praticien s'engage à utiliser Orekio dans le seul cadre d'un suivi thérapeutique réel, et avec le consentement de son patient. Orekio ne remplace pas le dossier du patient, que le praticien tient selon ses obligations professionnelles. Le patient s'engage à fournir des informations sincères.",
+          ],
+          [
+            "Chacun garde ses identifiants confidentiels, n'utilise que son propre compte et prévient Orekio sans délai s'il soupçonne un accès non autorisé (",
+            email,
+            ").",
+          ],
+          [
+            "Sont interdits : l'accès aux données d'une personne sans droit, le contournement des mesures de sécurité ou des limites du service, l'extraction automatisée de données, la copie du service, et tout usage contraire à la loi.",
           ],
         ] as Segment[][],
       },
@@ -697,7 +714,16 @@ export const fr = {
         heading: "5. Responsabilité",
         lines: [
           [
-            "Orekio restitue les données saisies telles quelles et ne se substitue à aucun avis médical. [À compléter : limites de responsabilité, disponibilité du service, cas de force majeure.]",
+            "Orekio restitue les données saisies telles quelles et ne se substitue à aucun avis médical. Le praticien reste seul juge de leur lecture et des décisions de soin.",
+          ],
+          [
+            "Orekio n'est pas un service d'urgence : personne ne surveille les saisies en temps réel, et une saisie ne prévient personne. En cas d'urgence, appelez le 15 ou le 112 ; en cas de pensées suicidaires, le 3114.",
+          ],
+          [
+            "Orekio met en œuvre des moyens raisonnables pour que le service reste disponible et sûr, sans garantir une disponibilité continue : une maintenance ou une panne peut l'interrompre. Sur le téléphone, le patient peut continuer à saisir hors connexion.",
+          ],
+          [
+            "Orekio répond de ses manquements dans les conditions du droit commun. Envers le praticien, sa responsabilité se limite aux dommages directs et prévisibles. Rien dans ces CGU n'exclut la responsabilité d'Orekio en cas de faute lourde ou intentionnelle, ni dans les cas où la loi interdit de la limiter. Aucune partie ne répond d'un manquement dû à un cas de force majeure (article 1218 du Code civil).",
           ],
         ] as Segment[][],
       },
@@ -730,7 +756,26 @@ export const fr = {
         heading: "7. Durée et résiliation",
         lines: [
           [
-            "[À compléter : conditions de résiliation par l'utilisateur et par l'éditeur, sort des données après résiliation.]",
+            "Les présentes CGU s'appliquent tant que le compte existe.",
+          ],
+          [
+            "Le patient peut supprimer son compte et ses données à tout moment (voir la page ",
+            { href: "/fr/account-deletion", text: "Suppression de compte" },
+            ").",
+          ],
+          [
+            "Le praticien peut résilier son abonnement à tout moment depuis l'application, avec effet à la fin de la période payée. Il peut demander la fermeture de son compte en écrivant à ",
+            email,
+            ".",
+          ],
+          [
+            "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
+          ],
+          [
+            "Au terme du gel, le compte et les données du praticien sont effacés. Un patient suivi par un autre praticien perd seulement sa relation avec celui-ci ; un patient qui n'a plus aucun praticien est effacé. Le patient en est prévenu dans l'application et peut exporter ses données avant cette date.",
+          ],
+          [
+            "Orekio peut suspendre ou fermer un compte en cas de manquement grave à ces CGU, après un avertissement, sauf urgence ou obligation légale. Orekio préviendra les utilisateurs avant toute fin définitive du service et leur laissera le temps d'exporter leurs données.",
           ],
         ] as Segment[][],
       },
@@ -749,7 +794,12 @@ export const fr = {
         heading: "9. Droit applicable",
         lines: [
           [
-            "Les présentes CGU sont soumises au droit français. [À compléter : juridiction compétente en cas de litige.]",
+            "Les présentes CGU sont soumises au droit français. En cas de litige, les parties cherchent d'abord une solution amiable, en écrivant à ",
+            email,
+            ".",
+          ],
+          [
+            "À défaut d'accord, le litige relève des tribunaux français compétents. Un patient agissant comme consommateur peut saisir le tribunal du lieu de son domicile.",
           ],
         ] as Segment[][],
       },

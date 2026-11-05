@@ -643,7 +643,7 @@ export const en: Dictionary = {
     eyebrow: "Terms",
     heading: "Terms of use",
     noticeBox:
-      "This page is a draft structure, to be drafted and validated by a legal professional before the service opens to the public, particularly the liability and termination sections, given the sensitive nature of the data processed.",
+      "This text is complete but still awaits validation by a legal professional, particularly the liability and termination sections, given the sensitive nature of the data processed.",
     sections: [
       {
         heading: "1. Purpose",
@@ -659,9 +659,18 @@ export const en: Dictionary = {
         heading: "2. Access to the service",
         lines: [
           [
-            "Access to the service is by practitioner invitation for the patient, or by subscription for the practitioner (see the ",
+            "Practitioners create their own account. They declare their professional title, accept these Terms, confirm their email address and turn on two-factor authentication, which is mandatory for every practitioner account. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
+          ],
+          [
+            "Practitioners access the service by subscription (see the ",
             { href: "/en/pricing", text: "Pricing" },
-            " page). [To be completed: eligibility conditions, account creation, verification of healthcare professional status where applicable.]",
+            " page). The service is offered to them as professionals.",
+          ],
+          [
+            "Patients do not sign up alone: they access the service on their practitioner's invitation, free of charge. They decide whether to share their entries with the practitioner, and can withdraw that sharing at any time.",
+          ],
+          [
+            "When the patient is a minor, the practitioner obtains the required consents from the patient and from the holders of parental authority before inviting them.",
           ],
         ] as Segment[][],
       },
@@ -669,7 +678,15 @@ export const en: Dictionary = {
         heading: "3. User obligations",
         lines: [
           [
-            "The practitioner agrees to use Orekio solely as part of genuine therapeutic follow-up and with their patient's consent. The patient agrees to provide truthful information. [To be completed: fair use of the service, credential security, prohibition of misuse.]",
+            "The practitioner agrees to use Orekio solely as part of genuine therapeutic follow-up and with their patient's consent. Orekio does not replace the patient's record, which the practitioner keeps in line with their professional obligations. The patient agrees to provide truthful information.",
+          ],
+          [
+            "Everyone keeps their credentials confidential, uses only their own account and tells Orekio without delay if they suspect unauthorised access (",
+            email,
+            ").",
+          ],
+          [
+            "The following are prohibited: accessing a person's data without the right to do so, circumventing the service's security measures or limits, automated data extraction, copying the service, and any unlawful use.",
           ],
         ] as Segment[][],
       },
@@ -685,7 +702,16 @@ export const en: Dictionary = {
         heading: "5. Liability",
         lines: [
           [
-            "Orekio displays the data entered as it is and does not substitute for any medical advice. [To be completed: limitations of liability, service availability, force majeure.]",
+            "Orekio displays the data entered as it is and does not substitute for any medical advice. The practitioner alone judges how to read it and what care decisions to make.",
+          ],
+          [
+            "Orekio is not an emergency service: nobody monitors entries in real time, and an entry notifies nobody. In an emergency, call 15 or 112; for suicidal thoughts, 3114 (France).",
+          ],
+          [
+            "Orekio uses reasonable means to keep the service available and secure, without guaranteeing continuous availability: maintenance or an outage may interrupt it. On the phone, patients can keep making entries offline.",
+          ],
+          [
+            "Orekio is liable for its failures under ordinary law. Towards the practitioner, its liability is limited to direct and foreseeable damage. Nothing in these Terms excludes Orekio's liability for gross negligence or wilful misconduct, or where the law forbids limiting it. Neither party is liable for a failure caused by force majeure (Article 1218 of the French Civil Code).",
           ],
         ] as Segment[][],
       },
@@ -718,7 +744,26 @@ export const en: Dictionary = {
         heading: "7. Term and termination",
         lines: [
           [
-            "[To be completed: termination conditions for the user and for the publisher, what happens to data after termination.]",
+            "These Terms apply for as long as the account exists.",
+          ],
+          [
+            "Patients can delete their account and data at any time (see the ",
+            { href: "/en/account-deletion", text: "Account deletion" },
+            " page).",
+          ],
+          [
+            "Practitioners can cancel their subscription at any time from the app, effective at the end of the paid period. They can ask for their account to be closed by writing to ",
+            email,
+            ".",
+          ],
+          [
+            "At the end of the trial, after cancellation or a final payment failure, the practitioner's account becomes read-only: the data is kept intact, they can read and export it, and they can reactivate their subscription. This freeze lasts 90 days for an account that never paid, and 3 years for a former subscriber. The practitioner is notified before it ends.",
+          ],
+          [
+            "When the freeze ends, the practitioner's account and data are erased. A patient followed by another practitioner only loses their relationship with this one; a patient with no practitioner left is erased. The patient is told in the app and can export their data before that date.",
+          ],
+          [
+            "Orekio may suspend or close an account for a serious breach of these Terms, after a warning, except in an emergency or under a legal obligation. Orekio will notify users before any permanent end of the service and give them time to export their data.",
           ],
         ] as Segment[][],
       },
@@ -737,7 +782,12 @@ export const en: Dictionary = {
         heading: "9. Governing law",
         lines: [
           [
-            "These Terms are governed by French law. [To be completed: competent jurisdiction in case of dispute.]",
+            "These Terms are governed by French law. In case of dispute, the parties first seek an amicable solution, by writing to ",
+            email,
+            ".",
+          ],
+          [
+            "Failing agreement, the dispute falls under the competent French courts. A patient acting as a consumer may bring the matter before the court of their place of residence.",
           ],
         ] as Segment[][],
       },
