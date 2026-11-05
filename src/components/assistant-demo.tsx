@@ -102,7 +102,7 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
         ref={windowRef}
         role="group"
         aria-label={copy.ariaLabel}
-        className="relative mx-auto flex h-[640px] w-full max-w-[440px] flex-col overflow-hidden rounded-2xl border border-outline bg-surface text-[14.5px] leading-normal shadow-sm"
+        className="relative mx-auto flex h-[640px] w-full max-w-[440px] flex-col overflow-hidden rounded-[22px] bg-surface text-[14.5px] leading-normal text-on-surface shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
       >
         <p className="border-b border-outline px-4 py-3.5 text-[16px] font-medium text-on-surface-strong">{copy.windowTitle}</p>
         <div className="flex min-h-0 flex-1 flex-col justify-end gap-3 overflow-hidden px-4 py-3.5">
@@ -146,7 +146,7 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
             aria-pressed={i === index}
             onClick={() => choose(i)}
             className={`min-h-11 rounded-full border px-3 py-1.5 text-[13.5px] transition-colors ${
-              i === index ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface hover:bg-primary-container"
+              i === index ? "border-on-ink bg-on-ink text-ink" : "border-on-ink/20 bg-on-ink/10 text-on-ink hover:bg-on-ink/20"
             }`}
           >
             {item.label}
@@ -159,13 +159,13 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
               setPaused(moving);
               setAuto(!moving);
             }}
-            className="min-h-11 rounded-full px-3 py-1.5 text-[13.5px] text-primary underline-offset-2 hover:underline"
+            className="min-h-11 rounded-full px-3 py-1.5 text-[13.5px] text-accent underline-offset-2 hover:underline"
           >
             {moving ? copy.pause : copy.resume}
           </button>
         )}
       </div>
-      <p className="mt-3 text-center font-mono text-[11px] tracking-[0.06em] text-on-surface-variant">{copy.fictional}</p>
+      <p className="mt-3 text-center font-mono text-[11px] tracking-[0.06em] text-on-ink/75">{copy.fictional}</p>
     </div>
   );
 }

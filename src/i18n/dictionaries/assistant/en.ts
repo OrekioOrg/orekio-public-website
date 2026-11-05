@@ -111,6 +111,12 @@ export const assistantEn: AssistantPageCopy = {
   lede: "A window that follows you from screen to screen. It explains the app, guides you step by step, finds a piece of information and prepares an action.",
   ledeStrong: "It displays, it never concludes, and Orekio does not itself send the model any of your patients' data.",
   scope: "In the practitioner web app. The patient app has no assistant.",
+  stats: [
+    { value: "13", label: "answer forms" },
+    { value: "12", label: "pieces of information" },
+    { value: "6", label: "actions to confirm" },
+    { value: "0", label: "patient data added by Orekio" },
+  ],
   demo: {
     ariaLabel: "Assistant demonstration",
     windowTitle: "AI assistant",
@@ -423,10 +429,7 @@ export const assistantEn: AssistantPageCopy = {
     ],
   },
   teaser: {
-    eyebrow: "AI assistant",
-    title: "A question about the app? Ask it.",
-    description:
-      "A window explains the app, guides you step by step, finds a piece of information and prepares an action you confirm. It displays, it never concludes, and Orekio does not itself send the model any of your patients' data.",
-    link: "Discover the assistant",
+    text: "A question about the app? The AI assistant explains it, guides you step by step and finds a piece of information.",
+    link: "See it all on the assistant page",
   },
 };

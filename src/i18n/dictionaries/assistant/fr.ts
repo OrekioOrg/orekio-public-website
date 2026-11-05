@@ -111,6 +111,12 @@ export const assistantFr: AssistantPageCopy = {
   lede: "Une fenêtre qui vous suit d'écran en écran. Elle explique l'app, guide pas à pas, retrouve une information et prépare un geste.",
   ledeStrong: "Elle affiche, elle ne conclut jamais, et Orekio n'envoie de lui-même au modèle aucune donnée de vos patients.",
   scope: "Sur l'app web du praticien. L'app du patient n'a pas d'assistant.",
+  stats: [
+    { value: "13", label: "formes de réponse" },
+    { value: "12", label: "informations retrouvées" },
+    { value: "6", label: "gestes à confirmer" },
+    { value: "0", label: "donnée patient ajoutée par Orekio" },
+  ],
   demo: {
     ariaLabel: "Démonstration de l'assistant",
     windowTitle: "Assistant IA",
@@ -423,10 +429,7 @@ export const assistantFr: AssistantPageCopy = {
     ],
   },
   teaser: {
-    eyebrow: "Assistant IA",
-    title: "Une question sur l'app ? Posez-la.",
-    description:
-      "Une fenêtre explique l'app, guide pas à pas, retrouve une information et prépare un geste que vous confirmez. Elle affiche, elle ne conclut jamais, et Orekio n'envoie de lui-même au modèle aucune donnée de vos patients.",
-    link: "Découvrir l'assistant",
+    text: "Une question sur l'app ? L'assistant IA l'explique, vous guide pas à pas et retrouve une information.",
+    link: "Tout voir sur la page de l'assistant",
   },
 };
