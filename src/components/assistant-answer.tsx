@@ -107,8 +107,9 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
         <div className={`${CARD} border-2 border-primary`}>
           <p className={CARD_TITLE}>{answer.title}</p>
           <Facts facts={answer.facts} />
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
           {answer.fields.map((field) => (
-            <div key={field.question} className="flex flex-col gap-1.5">
+            <div key={field.question} className={`flex min-w-0 flex-col gap-1.5 ${"days" in field ? "col-span-2" : ""}`}>
               <p className="text-[13px] text-on-surface-variant">{field.question}</p>
               {"days" in field ? (
                 <ul className="flex flex-wrap gap-1.5">
@@ -126,6 +127,7 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
               )}
             </div>
           ))}
+          </div>
           <ConfirmRow cancel={answer.cancel} confirm={answer.confirm} />
         </div>
       );
