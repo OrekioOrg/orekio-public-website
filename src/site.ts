@@ -81,12 +81,8 @@ export function pathTo(lang: Locale, key: RouteKey): string {
   return `/${lang}${routes[key][lang]}`;
 }
 
-// Placeholder legal drafts: served (linked in the footer) but kept out of
-// the sitemap and marked noindex until the real text is in place.
-export const noindexRoutes: readonly RouteKey[] = [
-  "privacy",
-  "terms",
-];
+// Pages served but kept out of the sitemap and marked noindex (none today).
+export const noindexRoutes: readonly RouteKey[] = [];
 
 export const indexableRoutes = (Object.keys(routes) as RouteKey[]).filter(
   (k) => !noindexRoutes.includes(k),

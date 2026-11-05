@@ -327,7 +327,7 @@ export const fr = {
         {
           title: "Le patient garde la main",
           description:
-            "Il autorise le partage une fois ; ses saisies vous parviennent ensuite en continu. Il peut retirer cette autorisation ou effacer ses données quand il le souhaite. Vous pouvez retirer un outil à tout moment.",
+            "Le partage de ses saisies est actif par défaut et vous parvient en continu. Il peut l'arrêter ou effacer ses données quand il le souhaite. Vous pouvez retirer un outil à tout moment.",
         },
       ],
     },
@@ -375,7 +375,7 @@ export const fr = {
     details: [
       {
         label: "Essai",
-        text: "Un mois sur Mendi, l'offre la plus haute, sans carte bancaire et sans rien à résilier. À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 30 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
+        text: "Un mois sur Mendi, l'offre la plus haute, sans carte bancaire et sans rien à résilier. À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
       },
       {
         label: "Zelai et Mendi",
@@ -420,7 +420,7 @@ export const fr = {
     boxText:
       "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
     paragraph4:
-      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Elles ne vous sont transmises qu'avec l'autorisation du patient, qui peut la retirer et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
   },
 
   contact: {
@@ -488,7 +488,7 @@ export const fr = {
         lines: [
           ["Site internet : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."],
           [
-            "Application et données de santé : OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique (voir la page ",
+            "Application et données de santé, pendant la bêta : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Avant la commercialisation : OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique (voir la page ",
             { href: "/fr/a-propos", text: "À propos" },
             ").",
           ],
@@ -521,8 +521,6 @@ export const fr = {
       "Comment Orekio collecte, utilise et protège les données personnelles et de santé de ses utilisateurs.",
     eyebrow: "Confidentialité",
     heading: "Politique de confidentialité",
-    noticeBox:
-      "Cette page est un brouillon de structure, à faire valider par un professionnel du droit avant toute ouverture publique du service. Orekio traite des données de santé (article 9 du RGPD), une catégorie particulière nécessitant des garanties renforcées.",
     sections: [
       {
         heading: "Responsable de traitement",
@@ -546,7 +544,7 @@ export const fr = {
         heading: "Finalités et base légale",
         lines: [
           [
-            "Les données de suivi sont traitées sur la base du consentement explicite du patient (article 9.2.a du RGPD), pour la seule finalité de faciliter le suivi thérapeutique entre le patient et son praticien. Ces données sont restituées brutes au praticien, à qui revient l'analyse clinique.",
+            "Les données de suivi sont traitées pour la seule finalité de faciliter le suivi thérapeutique entre le patient et son praticien. Le partage des saisies avec le praticien est actif par défaut, et le patient peut l'arrêter à tout moment depuis son profil. Ces données sont restituées brutes au praticien, avec les scores calculés, sans interprétation : l'analyse clinique lui revient.",
           ],
         ] as Segment[][],
       },
@@ -554,7 +552,25 @@ export const fr = {
         heading: "Durée de conservation",
         lines: [
           [
-            "[À définir : durée de conservation des données pendant le suivi actif et après clôture du compte, conformément aux recommandations de la CNIL et, le cas échéant, aux obligations de conservation des données de santé.]",
+            "Chaque type de donnée a sa durée de conservation, appliquée chaque nuit par une suppression automatique. Toute modification de ces durées sera publiée ici.",
+          ],
+          [
+            "Saisies du patient, notes du praticien et carnet de consultation : tant que le patient se connecte, tout son historique est conservé. Une donnée de plus de 5 ans est supprimée lorsque le patient ne s'est pas connecté depuis un an. Aucune saisie ni note n'est supprimée pour inactivité pendant qu'un suivi est en pause.",
+          ],
+          [
+            "Journal d'audit des accès aux données : 10 ans.",
+          ],
+          [
+            "Données de l'assistant IA (compteurs d'usage, avis sur les réponses), demandes de support et journal du prestataire de paiement : 13 mois. La copie e-mail d'une demande de support traitée est effacée chaque mois.",
+          ],
+          [
+            "Journaux des notifications : 1 an. Invitations expirées : 30 jours.",
+          ],
+          [
+            "Fin d'abonnement : le compte du praticien passe en lecture seule pendant 90 jours s'il n'a jamais payé, 3 ans sinon. À ce terme, ses suivis sont effacés. Le praticien est prévenu avant, et le patient aussi lorsque tous ses praticiens sont concernés. Un module qu'un autre praticien suit reste. Au lancement, un compte resté en attente de sa carte, sans droit ni patient, est effacé après 30 jours.",
+          ],
+          [
+            "Sur demande, un compte et ses données sont effacés sans attendre ces durées (voir « Vos droits »).",
           ],
         ] as Segment[][],
       },
@@ -562,7 +578,53 @@ export const fr = {
         heading: "Hébergement",
         lines: [
           [
-            "Les données de santé sont destinées à être hébergées chez un hébergeur certifié Hébergeur de Données de Santé (HDS), au sens de l'article L.1111-8 du Code de la santé publique.",
+            "Pendant la bêta, la base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
+          ],
+          [
+            "Avant la commercialisation, l'application et ses données seront hébergées chez OVHcloud, en France, sur une offre certifiée Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Sous-traitants",
+        lines: [
+          [
+            "Orekio fait appel aux prestataires suivants, chacun pour une tâche précise :",
+          ],
+          [
+            "Supabase : base de données, authentification et photos de profil (Paris).",
+          ],
+          [
+            "Render : serveur de l'application (Francfort).",
+          ],
+          [
+            "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte, demandes de support et questions signalées), depuis l'Union européenne.",
+          ],
+          [
+            "Expo et Google Firebase, et Apple pour les iPhone : acheminement des notifications (rappels, récapitulatifs du carnet) vers le téléphone du patient. Ces prestataires sont situés aux États-Unis ; pour Expo et Firebase, le transfert est encadré par les clauses contractuelles types de la Commission européenne, prévues dans leurs conditions.",
+          ],
+          [
+            "Stripe : paiement de l'abonnement du praticien. Stripe ne reçoit aucune donnée de santé. En Europe, le contrat est conclu avec sa société irlandaise ; les transferts vers les États-Unis sont encadrés par le Data Privacy Framework et, à défaut, par les clauses contractuelles types.",
+          ],
+          [
+            "Anthropic : assistant IA du praticien (voir la section suivante).",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "Assistant IA du praticien",
+        lines: [
+          [
+            "Dans l'application web, le praticien peut poser des questions à un assistant IA sur l'utilisation d'Orekio. L'assistant s'appuie sur un modèle d'Anthropic, qui agit comme sous-traitant. Il est réservé aux praticiens : l'application du patient n'en comporte pas.",
+          ],
+          [
+            "Orekio n'envoie de lui-même à l'IA aucune donnée des patients : ni nom, ni saisies, ni scores, ni notes. Quand le praticien demande une information sur un patient, c'est Orekio qui la lit et l'affiche ; elle ne part jamais vers le modèle. Le modèle reçoit le guide d'utilisation, le catalogue des modules et des champs, le nom de l'écran ouvert, le module affiché, le fait qu'une fiche est ouverte (sans dire laquelle), la date du jour, et les questions de la conversation. Un second modèle d'Anthropic contrôle la question et toute réponse libre avant l'affichage. Les noms des patients et des invités qu'Orekio reconnaît, et toute adresse e-mail, sont retirés des questions avant l'envoi. Le reste part tel qu'il est écrit : une situation clinique décrite en toutes lettres, ou un nom seul écrit en minuscules, mal orthographié ou absent de la liste, n'est pas reconnu. Il est demandé au praticien de ne pas écrire de données de patient dans ses questions, hormis le nom complet ou l'alias pour préparer un geste.",
+          ],
+          [
+            "Anthropic est situé aux États-Unis. Le transfert est encadré par les clauses contractuelles types de la Commission européenne, intégrées à son contrat de sous-traitance. Anthropic a confirmé appliquer à Orekio la conservation zéro : les requêtes et les réponses ne sont pas conservées une fois la réponse rendue, et ne servent pas à entraîner ses modèles. Anthropic prévoit deux exceptions : une obligation légale, et la lutte contre les abus, pour laquelle un contenu signalé peut être gardé jusqu'à deux ans et le résultat de ses contrôles de sécurité est conservé.",
+          ],
+          [
+            "Orekio ne conserve ni les questions ni les réponses : la conversation n'existe que dans le navigateur du praticien et s'efface quand il ferme la fenêtre de l'assistant. Orekio conserve 13 mois, sans aucun texte, le nombre de questions de chaque praticien, leur coût, un identifiant de conversation, le type et le sujet de chaque réponse (des listes fermées) et l'avis donné par le praticien. Si le praticien choisit de signaler une question restée sans réponse, son texte est transmis à l'équipe comme une demande de support.",
           ],
         ] as Segment[][],
       },
@@ -587,8 +649,6 @@ export const fr = {
       "Conditions générales d'utilisation du service Orekio pour les praticiens et leurs patients.",
     eyebrow: "CGU",
     heading: "Conditions générales d'utilisation",
-    noticeBox:
-      "Cette page est un brouillon de structure, à faire rédiger et valider par un professionnel du droit avant l'ouverture du service au public, en particulier les sections responsabilité et résiliation, compte tenu du caractère sensible des données traitées.",
     sections: [
       {
         heading: "1. Objet",
@@ -604,9 +664,18 @@ export const fr = {
         heading: "2. Accès au service",
         lines: [
           [
-            "L'accès au service se fait sur invitation du praticien pour le patient, ou sur abonnement pour le praticien (voir la page ",
+            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée pendant la bêta, puis exigée avant sa première invitation, ou à la connexion d'un compte abonné ou qui a des patients. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
+          ],
+          [
+            "Le praticien accède au service sur abonnement (voir la page ",
             { href: "/fr/tarifs", text: "Tarifs" },
-            "). [À compléter : conditions d'éligibilité, création de compte, vérification de la qualité de professionnel de santé le cas échéant.]",
+            "). Le service s'adresse à lui en tant que professionnel.",
+          ],
+          [
+            "Le patient ne s'inscrit pas seul : il accède au service sur invitation de son praticien, sans frais. Il peut arrêter à tout moment le partage de ses saisies. Le plan de sécurité construit à deux et le carnet de consultation restent visibles du praticien.",
+          ],
+          [
+            "Lorsque le patient est mineur, le praticien recueille les consentements requis auprès de lui et des titulaires de l'autorité parentale avant de l'inviter.",
           ],
         ] as Segment[][],
       },
@@ -614,7 +683,15 @@ export const fr = {
         heading: "3. Obligations des utilisateurs",
         lines: [
           [
-            "Le praticien s'engage à utiliser Orekio dans le seul cadre d'un suivi thérapeutique réel, et avec le consentement de son patient. Le patient s'engage à fournir des informations sincères. [À compléter : usage loyal du service, sécurité des identifiants, interdiction de détournement.]",
+            "Le praticien s'engage à utiliser Orekio dans le seul cadre d'un suivi thérapeutique réel, et avec le consentement de son patient. Orekio ne remplace pas le dossier du patient, que le praticien tient selon ses obligations professionnelles. Le patient s'engage à fournir des informations sincères.",
+          ],
+          [
+            "Chacun garde ses identifiants confidentiels, n'utilise que son propre compte et prévient Orekio sans délai s'il soupçonne un accès non autorisé (",
+            email,
+            ").",
+          ],
+          [
+            "Sont interdits : l'accès aux données d'une personne sans droit, le contournement des mesures de sécurité ou des limites du service, l'extraction automatisée de données, la copie du service, et tout usage contraire à la loi.",
           ],
         ] as Segment[][],
       },
@@ -630,20 +707,73 @@ export const fr = {
         heading: "5. Responsabilité",
         lines: [
           [
-            "Orekio restitue les données saisies telles quelles et ne se substitue à aucun avis médical. [À compléter : limites de responsabilité, disponibilité du service, cas de force majeure.]",
+            "Orekio restitue les données saisies telles quelles et ne se substitue à aucun avis médical. Le praticien reste seul juge de leur lecture et des décisions de soin.",
+          ],
+          [
+            "Orekio n'est pas un service d'urgence : personne ne surveille les saisies en temps réel, et aucune saisie ne déclenche d'alerte. La cloche du praticien signale seulement certains actes, sans leur contenu. En cas d'urgence, appelez le 15 ou le 112 ; en cas de pensées suicidaires, le 3114.",
+          ],
+          [
+            "Orekio met en œuvre des moyens raisonnables pour que le service reste disponible et sûr, sans garantir une disponibilité continue : une maintenance ou une panne peut l'interrompre. Sur le téléphone, le patient peut continuer à saisir hors connexion.",
+          ],
+          [
+            "Orekio répond de ses manquements dans les conditions du droit commun. Envers le praticien, sa responsabilité se limite aux dommages directs et prévisibles. Rien dans ces CGU n'exclut la responsabilité d'Orekio en cas de faute lourde ou intentionnelle, ni dans les cas où la loi interdit de la limiter. Aucune partie ne répond d'un manquement dû à un cas de force majeure (article 1218 du Code civil).",
           ],
         ] as Segment[][],
       },
       {
-        heading: "6. Durée et résiliation",
+        heading: "6. Assistant IA",
         lines: [
           [
-            "[À compléter : conditions de résiliation par l'utilisateur et par l'éditeur, sort des données après résiliation.]",
+            "Le service comprend, pour les praticiens et dans l'application web, un assistant IA qui aide à utiliser Orekio : il explique l'application et le calcul d'un score, guide pas à pas, propose d'ouvrir un écran et prépare certaines actions.",
+          ],
+          [
+            "L'assistant est paramétré et filtré pour ne donner aucun avis clinique, n'interpréter aucune donnée et ne recommander aucun module. Ses réponses peuvent comporter des erreurs ; l'appréciation clinique reste celle du praticien.",
+          ],
+          [
+            "Aucune action préparée par l'assistant n'est enregistrée sans que le praticien clique sur « Confirmer ». Le praticien reste responsable des actions qu'il confirme.",
+          ],
+          [
+            "Le praticien s'engage à ne décrire dans l'assistant aucune situation clinique ni aucune donnée de santé. Pour préparer un geste, il peut désigner un patient par son nom complet ou son alias, qu'Orekio retire de la question.",
+          ],
+          [
+            "Le nombre de questions est limité. Pendant la bêta, l'assistant peut être suspendu à tout moment.",
+          ],
+          [
+            "Le traitement des données lié à l'assistant est décrit dans la ",
+            { href: "/fr/confidentialite", text: "politique de confidentialité" },
+            ".",
           ],
         ] as Segment[][],
       },
       {
-        heading: "7. Données personnelles",
+        heading: "7. Durée et résiliation",
+        lines: [
+          [
+            "Les présentes CGU s'appliquent tant que le compte existe.",
+          ],
+          [
+            "Le patient peut supprimer son compte et ses données à tout moment (voir la page ",
+            { href: "/fr/account-deletion", text: "Suppression de compte" },
+            ").",
+          ],
+          [
+            "Le praticien peut résilier son abonnement à tout moment depuis l'application, avec effet à la fin de la période payée. Il peut demander la fermeture de son compte en écrivant à ",
+            email,
+            ".",
+          ],
+          [
+            "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
+          ],
+          [
+            "Au terme du gel, les suivis du praticien sont effacés ; son compte reste, et un nouvel abonnement lui rend l'accès. Un patient suivi par un autre praticien perd sa relation avec celui-ci et les modules que lui seul suivait, avec leurs saisies ; un patient qui n'a plus aucun praticien est effacé. Un patient dont tous les praticiens sont gelés en est prévenu dans l'application dans les 30 jours qui précèdent, et peut exporter ses données.",
+          ],
+          [
+            "Orekio peut suspendre ou fermer un compte en cas de manquement grave à ces CGU, après un avertissement, sauf urgence ou obligation légale. Orekio préviendra les utilisateurs avant toute fin définitive du service et leur laissera le temps d'exporter leurs données.",
+          ],
+        ] as Segment[][],
+      },
+      {
+        heading: "8. Données personnelles",
         lines: [
           [
             "Le traitement des données personnelles est décrit dans notre ",
@@ -654,10 +784,15 @@ export const fr = {
         ] as Segment[][],
       },
       {
-        heading: "8. Droit applicable",
+        heading: "9. Droit applicable",
         lines: [
           [
-            "Les présentes CGU sont soumises au droit français. [À compléter : juridiction compétente en cas de litige.]",
+            "Les présentes CGU sont soumises au droit français. En cas de litige, les parties cherchent d'abord une solution amiable, en écrivant à ",
+            email,
+            ".",
+          ],
+          [
+            "À défaut d'accord, le litige relève des tribunaux français compétents. Un patient agissant comme consommateur peut saisir le tribunal du lieu de son domicile.",
           ],
         ] as Segment[][],
       },
