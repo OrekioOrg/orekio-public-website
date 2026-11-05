@@ -509,8 +509,6 @@ export const en: Dictionary = {
       "How Orekio collects, uses, and protects its users' personal and health data.",
     eyebrow: "Privacy",
     heading: "Privacy policy",
-    noticeBox:
-      "This page is a draft structure, to be reviewed by a legal professional before the service opens to the public. Orekio processes health data (Article 9 of the GDPR), a special category requiring enhanced safeguards.",
     sections: [
       {
         heading: "Data controller",
@@ -591,10 +589,10 @@ export const en: Dictionary = {
             "Resend: sending emails (invitations, password reset, account status), from the European Union.",
           ],
           [
-            "Expo and Google Firebase: delivering reminder notifications to the patient's phone. [To be completed: location and transfer safeguards.]",
+            "Expo and Google Firebase: delivering reminder notifications to the patient's phone. These providers are based in the United States; the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
           ],
           [
-            "Stripe: payment of the practitioner's subscription. Stripe receives no health data. [To be completed: location and transfer safeguards.]",
+            "Stripe: payment of the practitioner's subscription. Stripe receives no health data. In Europe, the contract is with its Irish company; transfers to the United States are governed by the Data Privacy Framework and, failing that, by the standard contractual clauses.",
           ],
           [
             "Anthropic: the practitioner's AI assistant (see the next section).",
@@ -611,13 +609,10 @@ export const en: Dictionary = {
             "Orekio never sends patient data to the AI: no name, entries, scores or notes. When a practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the name of the open screen, today's date and the practitioner's question, with names and email addresses removed before sending. Practitioners are asked not to enter any patient data in their questions.",
           ],
           [
-            "Anthropic is located in the United States. The transfer is governed by the European Commission's standard contractual clauses, included in its data processing agreement. [To be completed: how long Anthropic retains requests, or deletion upon response if granted.]",
+            "Anthropic is located in the United States. The transfer is governed by the European Commission's standard contractual clauses, included in its data processing agreement. Anthropic has confirmed that it applies zero data retention to Orekio: requests and responses are not kept once the response is returned, and are not used to train its models. Anthropic provides two exceptions: a legal obligation, and abuse prevention, for which flagged content may be kept for up to two years and the results of its safety checks are retained.",
           ],
           [
             "Orekio keeps neither questions nor answers: the conversation exists only in the practitioner's browser and is erased when they close the assistant window. For 13 months, Orekio keeps, without any text, the number of questions each practitioner asks, their cost, the type of each answer and the practitioner's feedback. If a practitioner chooses to report an unanswered question, its text is sent to the team as a support request.",
-          ],
-          [
-            "Each answer shows whether it was written by the AI or displayed by Orekio.",
           ],
         ] as Segment[][],
       },
@@ -642,8 +637,6 @@ export const en: Dictionary = {
       "Terms of use for the Orekio service, for practitioners and their patients.",
     eyebrow: "Terms",
     heading: "Terms of use",
-    noticeBox:
-      "This text is complete but still awaits validation by a legal professional, particularly the liability and termination sections, given the sensitive nature of the data processed.",
     sections: [
       {
         heading: "1. Purpose",

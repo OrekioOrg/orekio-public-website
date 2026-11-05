@@ -521,8 +521,6 @@ export const fr = {
       "Comment Orekio collecte, utilise et protège les données personnelles et de santé de ses utilisateurs.",
     eyebrow: "Confidentialité",
     heading: "Politique de confidentialité",
-    noticeBox:
-      "Cette page est un brouillon de structure, à faire valider par un professionnel du droit avant toute ouverture publique du service. Orekio traite des données de santé (article 9 du RGPD), une catégorie particulière nécessitant des garanties renforcées.",
     sections: [
       {
         heading: "Responsable de traitement",
@@ -603,10 +601,10 @@ export const fr = {
             "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte), depuis l'Union européenne.",
           ],
           [
-            "Expo et Google Firebase : acheminement des notifications de rappel vers le téléphone du patient. [À compléter : localisation et garanties de transfert.]",
+            "Expo et Google Firebase : acheminement des notifications de rappel vers le téléphone du patient. Ces prestataires sont situés aux États-Unis ; le transfert est encadré par les clauses contractuelles types de la Commission européenne, prévues dans leurs conditions.",
           ],
           [
-            "Stripe : paiement de l'abonnement du praticien. Stripe ne reçoit aucune donnée de santé. [À compléter : localisation et garanties de transfert.]",
+            "Stripe : paiement de l'abonnement du praticien. Stripe ne reçoit aucune donnée de santé. En Europe, le contrat est conclu avec sa société irlandaise ; les transferts vers les États-Unis sont encadrés par le Data Privacy Framework et, à défaut, par les clauses contractuelles types.",
           ],
           [
             "Anthropic : assistant IA du praticien (voir la section suivante).",
@@ -623,13 +621,10 @@ export const fr = {
             "Orekio n'envoie jamais à l'IA les données des patients : ni nom, ni saisies, ni scores, ni notes. Quand le praticien demande une information sur un patient, c'est Orekio qui la lit et l'affiche ; elle ne part jamais vers le modèle. Le modèle reçoit le guide d'utilisation, le nom de l'écran ouvert, la date du jour et la question du praticien, dont les noms et adresses e-mail sont retirés avant l'envoi. Il est demandé au praticien de ne saisir aucune donnée de patient dans ses questions.",
           ],
           [
-            "Anthropic est situé aux États-Unis. Le transfert est encadré par les clauses contractuelles types de la Commission européenne, intégrées à son contrat de sous-traitance. [À compléter : durée de conservation des requêtes chez Anthropic, ou suppression dès la réponse si elle est accordée.]",
+            "Anthropic est situé aux États-Unis. Le transfert est encadré par les clauses contractuelles types de la Commission européenne, intégrées à son contrat de sous-traitance. Anthropic a confirmé appliquer à Orekio la conservation zéro : les requêtes et les réponses ne sont pas conservées une fois la réponse rendue, et ne servent pas à entraîner ses modèles. Anthropic prévoit deux exceptions : une obligation légale, et la lutte contre les abus, pour laquelle un contenu signalé peut être gardé jusqu'à deux ans et le résultat de ses contrôles de sécurité est conservé.",
           ],
           [
             "Orekio ne conserve ni les questions ni les réponses : la conversation n'existe que dans le navigateur du praticien et s'efface quand il ferme la fenêtre de l'assistant. Orekio conserve 13 mois, sans aucun texte, le nombre de questions de chaque praticien, leur coût, le type de chaque réponse et l'avis donné par le praticien. Si le praticien choisit de signaler une question restée sans réponse, son texte est transmis à l'équipe comme une demande de support.",
-          ],
-          [
-            "Chaque réponse indique si elle a été rédigée par l'IA ou affichée par Orekio.",
           ],
         ] as Segment[][],
       },
@@ -654,8 +649,6 @@ export const fr = {
       "Conditions générales d'utilisation du service Orekio pour les praticiens et leurs patients.",
     eyebrow: "CGU",
     heading: "Conditions générales d'utilisation",
-    noticeBox:
-      "Ce texte est complet, mais il attend encore la validation d'un professionnel du droit, en particulier les sections responsabilité et résiliation, compte tenu du caractère sensible des données traitées.",
     sections: [
       {
         heading: "1. Objet",

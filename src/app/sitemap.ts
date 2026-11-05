@@ -11,8 +11,8 @@ import { getArticles, getArticleLocales } from "@/blog";
 // Statically emitted at build time (output: "export") to out/sitemap.xml.
 // Static routes (keyed on the French URL) + every published blog article,
 // each with xhtml:link alternates for the locales it actually exists in so
-// Google pairs the fr/en versions. Placeholder legal pages are excluded
-// (they're noindex) — see src/site.ts.
+// Google pairs the fr/en versions. Pages marked noindex are excluded
+// (see src/site.ts).
 //
 // lastmod is only emitted where it is real: an article's own date, and the
 // blog index (its newest article). Stamping every page with the build time
