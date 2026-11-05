@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { OFFERS, VAT_PERCENT, eurEn as eur, exclVat } from "../../offers";
 import { assistantEn } from "./assistant/en";
 import type { Dictionary } from "./fr";
 
@@ -93,7 +94,7 @@ export const en: Dictionary = {
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      "2 months free with no credit card and a founders' rate, reserved for the first 100 sign-ups.",
+      `${OFFERS.founders.freeMonths} months free with no credit card and a founders' rate, reserved for the first ${OFFERS.founders.seats} sign-ups.`,
     ctaSectionButton: "Try it free",
     apps: {
       title: "Two apps, one shared space",
@@ -327,54 +328,54 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      "Zelai: €29.99 per month incl. VAT, up to 30 patients. Mendi: €39.99 per month incl. VAT, unlimited patients. Founders, the first 100 sign-ups: €19.99 and €29.99 per month incl. VAT for life, 2 months free with no credit card.",
+      `Zelai: ${eur(OFFERS.zelai.month)} per month incl. VAT, up to ${OFFERS.zelai.maxPatients} patients. Mendi: ${eur(OFFERS.mendi.month)} per month incl. VAT, unlimited patients. Founders, the first ${OFFERS.founders.seats} sign-ups: ${eur(OFFERS.founders.zelai.month)} and ${eur(OFFERS.founders.mendi.month)} per month incl. VAT for life, ${OFFERS.founders.freeMonths} months free with no credit card.`,
     metaDescriptionProvisional:
-      "Two plans with identical content, Zelai up to 30 patients and Mendi unlimited, plus a Founders offer for the first 100 sign-ups, 2 months free with no credit card.",
+      `Two plans with identical content, Zelai up to ${OFFERS.zelai.maxPatients} patients and Mendi unlimited, plus a Founders offer for the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card.`,
     eyebrow: "Pricing",
     plans: [
       {
         name: "Zelai",
         theme: "zelai",
-        price: "€29.99",
+        price: eur(OFFERS.zelai.month),
         period: "incl. VAT / month",
-        priceExclVat: "€24.99 excl. VAT / month",
+        priceExclVat: `${eur(exclVat(OFFERS.zelai.month))} excl. VAT / month`,
         features: [
-          "Up to 30 followed patients",
+          `Up to ${OFFERS.zelai.maxPatients} followed patients`,
           "Every module and scale",
         ],
         note: {
           label: "Founders:",
-          text: "€19.99 incl. VAT / month for life (€16.66 excl. VAT), 100 seats",
+          text: `${eur(OFFERS.founders.zelai.month)} incl. VAT / month for life (${eur(exclVat(OFFERS.founders.zelai.month))} excl. VAT), ${OFFERS.founders.seats} seats`,
         },
       },
       {
         name: "Mendi",
         theme: "mendi",
-        price: "€39.99",
+        price: eur(OFFERS.mendi.month),
         period: "incl. VAT / month",
-        priceExclVat: "€33.33 excl. VAT / month",
+        priceExclVat: `${eur(exclVat(OFFERS.mendi.month))} excl. VAT / month`,
         features: [
           "Unlimited followed patients",
           "Every module and scale",
         ],
         note: {
           label: "Founders:",
-          text: "€29.99 incl. VAT / month for life (€24.99 excl. VAT), 100 seats",
+          text: `${eur(OFFERS.founders.mendi.month)} incl. VAT / month for life (${eur(exclVat(OFFERS.founders.mendi.month))} excl. VAT), ${OFFERS.founders.seats} seats`,
         },
       },
     ],
     details: [
       {
         label: "Trial",
-        text: "For the first 100 sign-ups, 2 months free with no credit card. After that, 1 month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
+        text: `For the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card. After that, ${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.`,
       },
       {
         label: "Zelai and Mendi",
-        text: "The same product: only the number of followed patients changes, and pausing a follow-up frees its place. No commitment, cancel at any time. Or yearly, with one month free: €329.89 incl. VAT for Zelai, €439.89 incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.",
+        text: `The same product: only the number of followed patients changes, and pausing a follow-up frees its place. No commitment, cancel at any time. Or yearly, with one month free: ${eur(OFFERS.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.mendi.year)} incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.`,
       },
       {
         label: "Founders",
-        text: "For the first 100 sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (€219.89 incl. VAT for Zelai, €329.89 incl. VAT for Mendi), with a direct channel to the team.",
+        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team.`,
       },
     ],
     included: {
@@ -389,7 +390,7 @@ export const en: Dictionary = {
     },
     subscribeButton: "Try for free",
     footerNote: [
-      "Prices include VAT (20%). Do you represent an organisation? ",
+      `Prices include VAT (${VAT_PERCENT}%). Do you represent an organisation? `,
       { href: "/en/contact", text: "Write to us" },
       ": we call you back within 7 working days.",
     ] as Segment[],
