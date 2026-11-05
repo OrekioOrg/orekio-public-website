@@ -19,8 +19,7 @@ const themes = {
     features: "text-on-surface",
     strong: "text-ink",
     check: { circle: "#eaf6f5", path: "#1a6b63" },
-    note: "bg-primary-container text-ink",
-    noteLabel: "",
+    offer: "small_practice",
     cta: "bg-primary text-on-primary shadow-[0_3px_0_var(--color-ink)]",
   },
   mendi: {
@@ -32,8 +31,7 @@ const themes = {
     features: "text-[#e4f2f0]",
     strong: "text-on-ink",
     check: { circle: "#6bc9bf", path: "#123f3a" },
-    note: "border-[1.5px] border-dashed border-accent/60 text-[#e4f2f0]",
-    noteLabel: "text-accent",
+    offer: "large_practice",
     cta: "bg-accent text-[#0b2926] shadow-[0_3px_0_var(--color-primary)]",
   },
 };
@@ -122,19 +120,11 @@ export function PlanCard({
           ))}
         </ul>
 
-        <p
-          className={`mt-5 rounded-2xl px-4 py-3 text-[14px] leading-[1.45] text-pretty ${theme.note}`}
-        >
-          <strong className={`font-semibold ${theme.noteLabel}`}>
-            {plan.note.label}
-          </strong>{" "}
-          <BlurredPrices text={plan.note.text} />
-        </p>
 
         {/* mt-auto : les boutons s'alignent en bas des deux cartes. */}
         <div className="mt-auto pt-5">
           <a
-            href={APP_URL}
+            href={`${APP_URL}/inscription/offre?offre=${theme.offer}`}
             className={`flex min-h-11 items-center justify-center rounded-full text-center text-[15px] font-semibold transition-opacity hover:opacity-90 ${theme.cta}`}
           >
             {ctaLabel}

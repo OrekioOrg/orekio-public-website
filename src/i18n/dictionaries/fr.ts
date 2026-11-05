@@ -10,7 +10,6 @@ export interface PricingPlan {
   period: string;
   priceExclVat: string;
   features: string[];
-  note: { label: string; text: string };
 }
 
 const email: Segment = {
@@ -105,7 +104,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      `${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
+      `${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai.`,
     ctaSectionButton: "Essayer gratuitement",
     apps: {
       title: "Deux applications, un même espace",
@@ -339,9 +338,9 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. Fondateurs, les ${OFFERS.founders.seats} premiers inscrits : ${eur(OFFERS.founders.zelai.month)} et ${eur(OFFERS.founders.mendi.month)} TTC par mois à vie, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
+      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. ${OFFERS.freeMonths} mois gratuit.`,
     metaDescriptionProvisional:
-      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, et une offre Fondateurs pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
+      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, ${OFFERS.freeMonths} mois gratuit.`,
     eyebrow: "Tarifs",
     plans: [
       {
@@ -354,10 +353,6 @@ export const fr = {
           `Jusqu'à ${OFFERS.zelai.maxPatients} patients suivis`,
           "Tous les modules et échelles",
         ],
-        note: {
-          label: "Fondateurs :",
-          text: `${eur(OFFERS.founders.zelai.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.zelai.month))} HT), ${OFFERS.founders.seats} places`,
-        },
       },
       {
         name: "Mendi",
@@ -369,24 +364,16 @@ export const fr = {
           "Patients suivis illimités",
           "Tous les modules et échelles",
         ],
-        note: {
-          label: "Fondateurs :",
-          text: `${eur(OFFERS.founders.mendi.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.mendi.month))} HT), ${OFFERS.founders.seats} places`,
-        },
       },
     ] as PricingPlan[],
     details: [
       {
         label: "Essai",
-        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire. Ensuite, ${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
+        text: `${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
       },
       {
         label: "Zelai et Mendi",
         text: `Le même produit : seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : ${eur(OFFERS.zelai.year)} TTC pour Zelai, ${eur(OFFERS.mendi.year)} TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».`,
-      },
-      {
-        label: "Fondateurs",
-        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe.`,
       },
     ],
     included: {
@@ -423,7 +410,7 @@ export const fr = {
     boxText:
       "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
     paragraph4:
-      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Aujourd'hui, l'hébergement de l'application n'est pas certifié données de santé (HDS) ; le passage à un hébergeur certifié est en préparation.",
   },
 
   contact: {
@@ -491,7 +478,7 @@ export const fr = {
         lines: [
           ["Site internet : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."],
           [
-            "Application et données de santé, pendant la bêta : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Avant la commercialisation : OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique (voir la page ",
+            "Application et données de santé : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique ; le passage à un hébergeur certifié est en préparation (voir la page ",
             { href: "/fr/a-propos", text: "À propos" },
             ").",
           ],
@@ -581,10 +568,10 @@ export const fr = {
         heading: "Hébergement",
         lines: [
           [
-            "Pendant la bêta, la base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
+            "La base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
           ],
           [
-            "Avant la commercialisation, l'application et ses données seront hébergées chez OVHcloud, en France, sur une offre certifiée Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique.",
+            "Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. Le passage à un hébergeur certifié est en préparation ; cette page dira son nom et sa date.",
           ],
         ] as Segment[][],
       },
@@ -667,7 +654,7 @@ export const fr = {
         heading: "2. Accès au service",
         lines: [
           [
-            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée pendant la bêta, puis exigée avant sa première invitation, ou à la connexion d'un compte abonné ou qui a des patients. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
+            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
           ],
           [
             "Le praticien accède au service sur abonnement (voir la page ",
@@ -739,7 +726,7 @@ export const fr = {
             "Le praticien s'engage à ne décrire dans l'assistant aucune situation clinique ni aucune donnée de santé. Pour préparer un geste, il peut désigner un patient par son nom complet ou son alias, qu'Orekio retire de la question.",
           ],
           [
-            "Le nombre de questions est limité. Pendant la bêta, l'assistant peut être suspendu à tout moment.",
+            "Le nombre de questions est limité. L'assistant peut être suspendu à tout moment.",
           ],
           [
             "Le traitement des données lié à l'assistant est décrit dans la ",

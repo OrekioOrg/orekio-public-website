@@ -94,7 +94,7 @@ export const en: Dictionary = {
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      `${OFFERS.founders.freeMonths} months free with no credit card and a founders' rate, reserved for the first ${OFFERS.founders.seats} sign-ups.`,
+      `${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial.`,
     ctaSectionButton: "Try it free",
     apps: {
       title: "Two apps, one shared space",
@@ -328,9 +328,9 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      `Zelai: ${eur(OFFERS.zelai.month)} per month incl. VAT, up to ${OFFERS.zelai.maxPatients} patients. Mendi: ${eur(OFFERS.mendi.month)} per month incl. VAT, unlimited patients. Founders, the first ${OFFERS.founders.seats} sign-ups: ${eur(OFFERS.founders.zelai.month)} and ${eur(OFFERS.founders.mendi.month)} per month incl. VAT for life, ${OFFERS.founders.freeMonths} months free with no credit card.`,
+      `Zelai: ${eur(OFFERS.zelai.month)} per month incl. VAT, up to ${OFFERS.zelai.maxPatients} patients. Mendi: ${eur(OFFERS.mendi.month)} per month incl. VAT, unlimited patients. ${OFFERS.freeMonths} month free.`,
     metaDescriptionProvisional:
-      `Two plans with identical content, Zelai up to ${OFFERS.zelai.maxPatients} patients and Mendi unlimited, plus a Founders offer for the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card.`,
+      `Two plans with identical content, Zelai up to ${OFFERS.zelai.maxPatients} patients and Mendi unlimited, ${OFFERS.freeMonths} month free.`,
     eyebrow: "Pricing",
     plans: [
       {
@@ -343,10 +343,6 @@ export const en: Dictionary = {
           `Up to ${OFFERS.zelai.maxPatients} followed patients`,
           "Every module and scale",
         ],
-        note: {
-          label: "Founders:",
-          text: `${eur(OFFERS.founders.zelai.month)} incl. VAT / month for life (${eur(exclVat(OFFERS.founders.zelai.month))} excl. VAT), ${OFFERS.founders.seats} seats`,
-        },
       },
       {
         name: "Mendi",
@@ -358,24 +354,16 @@ export const en: Dictionary = {
           "Unlimited followed patients",
           "Every module and scale",
         ],
-        note: {
-          label: "Founders:",
-          text: `${eur(OFFERS.founders.mendi.month)} incl. VAT / month for life (${eur(exclVat(OFFERS.founders.mendi.month))} excl. VAT), ${OFFERS.founders.seats} seats`,
-        },
       },
     ],
     details: [
       {
         label: "Trial",
-        text: `For the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card. After that, ${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.`,
+        text: `${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.`,
       },
       {
         label: "Zelai and Mendi",
         text: `The same product: only the number of followed patients changes, and pausing a follow-up frees its place. No commitment, cancel at any time. Or yearly, with one month free: ${eur(OFFERS.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.mendi.year)} incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.`,
-      },
-      {
-        label: "Founders",
-        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team.`,
       },
     ],
     included: {
@@ -412,7 +400,7 @@ export const en: Dictionary = {
     boxText:
       "Orekio is designed as a digital logbook, not as a medical device. The app only displays: a raw figure, a neutral history, a score without interpretation. No threshold, no signal, no comparison to a norm. The clinical reading belongs to you.",
     paragraph4:
-      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Certified health data hosting (HDS) is planned before commercial opening.",
+      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Today, the application's hosting is not certified for health data (HDS); the move to a certified host is being prepared.",
   },
 
   contact: {
@@ -479,7 +467,7 @@ export const en: Dictionary = {
         lines: [
           ["Website: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."],
           [
-            "Application and health data, during the beta: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). Before commercial launch: OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, a certified Health Data Hosting (HDS) provider within the meaning of Article L.1111-8 of the French Public Health Code (see the ",
+            "Application and health data: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). This hosting is not certified as Health Data Hosting (HDS) within the meaning of Article L.1111-8 of the French Public Health Code; the move to a certified host is being prepared (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
@@ -569,10 +557,10 @@ export const en: Dictionary = {
         heading: "Hosting",
         lines: [
           [
-            "During the beta, the database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
+            "The database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
           ],
           [
-            "Before commercial launch, the application and its data will be hosted by OVHcloud, in France, on an offering certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code.",
+            "This hosting is not certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The move to a certified host is being prepared; this page will give its name and date.",
           ],
         ] as Segment[][],
       },
@@ -655,7 +643,7 @@ export const en: Dictionary = {
         heading: "2. Access to the service",
         lines: [
           [
-            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered during the beta, then required before their first invitation, or at sign-in for an account that is subscribed or has patients. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
+            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered to them. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
           ],
           [
             "Practitioners access the service by subscription (see the ",
@@ -727,7 +715,7 @@ export const en: Dictionary = {
             "The practitioner agrees not to describe in the assistant any clinical situation or any health data. To prepare an action, they may refer to a patient by full name or alias, which Orekio removes from the question.",
           ],
           [
-            "The number of questions is limited. During the beta, the assistant may be suspended at any time.",
+            "The number of questions is limited. The assistant may be suspended at any time.",
           ],
           [
             "The processing of data related to the assistant is described in the ",

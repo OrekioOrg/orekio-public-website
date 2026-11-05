@@ -10,13 +10,7 @@ export const VAT_PERCENT = 20;
 export const OFFERS = {
   zelai: { maxPatients: 30, month: 2999, year: 32989 },
   mendi: { month: 3999, year: 43989 },
-  founders: {
-    seats: 100,
-    freeMonths: 2,
-    zelai: { month: 1999, year: 21989 },
-    mendi: { month: 2999, year: 32989 },
-  },
-  /** Le mois gratuit après les places Fondateurs. */
+  /** Le mois gratuit de l'essai. */
   freeMonths: 1,
 } as const;
 
