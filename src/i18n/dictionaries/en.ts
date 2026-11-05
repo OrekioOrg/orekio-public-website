@@ -11,7 +11,7 @@ export const en: Dictionary = {
   meta: {
     title: "Orekio, therapeutic support between appointments",
     description:
-      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, seven modules at launch and around thirty on the way. A digital care journal: Orekio displays, the practitioner interprets.",
+      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, seven modules at launch and around thirty on the way. A digital logbook: Orekio displays, the practitioner interprets.",
   },
 
   nav: {
@@ -364,7 +364,7 @@ export const en: Dictionary = {
     details: [
       {
         label: "Trial",
-        text: "One month on Mendi, the highest plan, with no credit card and nothing to cancel. At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 30 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
+        text: "One month on Mendi, the highest plan, with no credit card and nothing to cancel. At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
       },
       {
         label: "Zelai and Mendi",
@@ -396,7 +396,7 @@ export const en: Dictionary = {
   about: {
     pageTitle: "About",
     metaDescription:
-      "Orekio is a digital care journal supporting the relationship between a practitioner and their patient, between appointments.",
+      "Orekio is a digital logbook supporting the relationship between a practitioner and their patient, between appointments.",
     eyebrow: "About",
     heading: "Orekio was born in consultation.",
     paragraph1:
@@ -476,7 +476,7 @@ export const en: Dictionary = {
         lines: [
           ["Website: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."],
           [
-            "Application and health data: OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, a certified Health Data Host (HDS) under Article L.1111-8 of the French Public Health Code (see the ",
+            "Application and health data, during the beta: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). Before commercial launch: OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, a certified Health Data Hosting (HDS) provider within the meaning of Article L.1111-8 of the French Public Health Code (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
@@ -540,22 +540,22 @@ export const en: Dictionary = {
         heading: "Retention period",
         lines: [
           [
-            "Each type of data has its own retention period, enforced every night by automatic deletion. These periods are being validated.",
+            "Each type of data has its own retention period, enforced every night by automatic deletion. Any change to these periods will be published here.",
           ],
           [
-            "Patient entries, practitioner notes and the consultation notebook: as long as the patient keeps signing in, their whole history is kept. Data older than 5 years is deleted once the patient has not signed in for a year. Nothing is deleted while a follow-up is paused.",
+            "Patient entries, practitioner notes and the consultation notebook: as long as the patient signs in, their full history is kept. Data older than 5 years is deleted when the patient has not signed in for a year. No entry or note is deleted for inactivity while a follow-up is paused.",
           ],
           [
             "Data access audit log: 10 years.",
           ],
           [
-            "AI assistant data (usage counters, feedback on answers), support requests and the payment provider log: 13 months. The copy of a support request received by email is erased every month.",
+            "AI assistant data (usage counters, feedback on answers), support requests and the payment provider's log: 13 months. The email copy of a handled support request is erased every month.",
           ],
           [
             "Notification logs: 1 year. Expired invitations: 30 days.",
           ],
           [
-            "End of subscription: the practitioner's account becomes read-only for 90 days if it was never subscribed, 3 years if it was. At the end of that period, their follow-ups are erased, after advance notice to the practitioner and the patient. A module that another practitioner follows is kept.",
+            "End of subscription: the practitioner's account becomes read-only for 90 days if it never paid, 3 years otherwise. At that point, their follow-ups are erased. The practitioner is notified beforehand, and so is the patient when all of their practitioners are affected. A module followed by another practitioner remains. An account opened without registering a card is erased after 30 days.",
           ],
           [
             "On request, an account and its data are erased without waiting for these periods (see “Your rights”).",
@@ -586,10 +586,10 @@ export const en: Dictionary = {
             "Render: application server (Frankfurt).",
           ],
           [
-            "Resend: sending emails (invitations, password reset, account status), from the European Union.",
+            "Resend: sending emails (invitations, password reset, account status, support requests and reported questions), from the European Union.",
           ],
           [
-            "Expo and Google Firebase: delivering reminder notifications to the patient's phone. These providers are based in the United States; the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
+            "Expo, Google Firebase and Apple: delivering notifications (reminders, notebook summaries) to the patient's phone. These providers are based in the United States; the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
           ],
           [
             "Stripe: payment of the practitioner's subscription. Stripe receives no health data. In Europe, the contract is with its Irish company; transfers to the United States are governed by the Data Privacy Framework and, failing that, by the standard contractual clauses.",
@@ -606,13 +606,13 @@ export const en: Dictionary = {
             "In the web app, practitioners can ask an AI assistant questions about using Orekio. The assistant relies on a model from Anthropic, acting as a processor. It is for practitioners only: the patient app has none.",
           ],
           [
-            "Orekio never sends patient data to the AI: no name, entries, scores or notes. When a practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the name of the open screen, today's date and the practitioner's question, with names and email addresses removed before sending. Practitioners are asked not to enter any patient data in their questions.",
+            "Orekio does not itself send the AI any data about its patients: no name, entries, scores or notes. When the practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the catalogue of modules and fields, the name of the open screen, the module on display, whether a record is open (without saying which), today's date, and the questions in the conversation. A second Anthropic model checks the question and the answer before display. The names of patients and invitees that Orekio recognises, and any email address, are removed from questions before sending. The rest goes out as written: a clinical situation described in plain words, or a single name typed in lower case, misspelled or not on the list, is not recognised. The practitioner is asked not to write patient data in their questions.",
           ],
           [
             "Anthropic is located in the United States. The transfer is governed by the European Commission's standard contractual clauses, included in its data processing agreement. Anthropic has confirmed that it applies zero data retention to Orekio: requests and responses are not kept once the response is returned, and are not used to train its models. Anthropic provides two exceptions: a legal obligation, and abuse prevention, for which flagged content may be kept for up to two years and the results of its safety checks are retained.",
           ],
           [
-            "Orekio keeps neither questions nor answers: the conversation exists only in the practitioner's browser and is erased when they close the assistant window. For 13 months, Orekio keeps, without any text, the number of questions each practitioner asks, their cost, the type of each answer and the practitioner's feedback. If a practitioner chooses to report an unanswered question, its text is sent to the team as a support request.",
+            "Orekio keeps neither questions nor answers: the conversation exists only in the practitioner's browser and is cleared when they close the assistant window. For 13 months, with no text, Orekio keeps the number of questions per practitioner, their cost, a conversation identifier, the type and subject of each answer (closed lists) and the practitioner's feedback. If the practitioner chooses to report a question left unanswered, its text is passed to the team as a support request.",
           ],
         ] as Segment[][],
       },
@@ -642,7 +642,7 @@ export const en: Dictionary = {
         heading: "1. Purpose",
         lines: [
           [
-            "These terms of use (“Terms”) define the conditions of access to and use of the Orekio service, a digital care journal designed to facilitate therapeutic follow-up between a practitioner and their patient. Orekio is not a medical device within the meaning of Regulation (EU) 2017/745 (see the ",
+            "These terms of use (“Terms”) define the conditions of access to and use of the Orekio service, a digital logbook designed to facilitate therapeutic follow-up between a practitioner and their patient. Orekio is not a medical device within the meaning of Regulation (EU) 2017/745 (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
@@ -652,7 +652,7 @@ export const en: Dictionary = {
         heading: "2. Access to the service",
         lines: [
           [
-            "Practitioners create their own account. They declare their professional title, accept these Terms, confirm their email address and turn on two-factor authentication, which is mandatory for every practitioner account. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
+            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered during the beta, then required before their first invitation. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
           ],
           [
             "Practitioners access the service by subscription (see the ",
@@ -660,7 +660,7 @@ export const en: Dictionary = {
             " page). The service is offered to them as professionals.",
           ],
           [
-            "Patients do not sign up alone: they access the service on their practitioner's invitation, free of charge. They decide whether to share their entries with the practitioner, and can withdraw that sharing at any time.",
+            "Patients do not sign up alone: they access the service on their practitioner's invitation, free of charge. They can stop sharing their entries at any time. The safety plan built together and the consultation notebook remain visible to the practitioner.",
           ],
           [
             "When the patient is a minor, the practitioner obtains the required consents from the patient and from the holders of parental authority before inviting them.",
@@ -698,7 +698,7 @@ export const en: Dictionary = {
             "Orekio displays the data entered as it is and does not substitute for any medical advice. The practitioner alone judges how to read it and what care decisions to make.",
           ],
           [
-            "Orekio is not an emergency service: nobody monitors entries in real time, and an entry notifies nobody. In an emergency, call 15 or 112; for suicidal thoughts, 3114 (France).",
+            "Orekio is not an emergency service: nobody monitors entries in real time, and no entry triggers an alert. The practitioner's bell only reports certain actions, without their content. In an emergency, call 15 or 112; for suicidal thoughts, 3114 (France).",
           ],
           [
             "Orekio uses reasonable means to keep the service available and secure, without guaranteeing continuous availability: maintenance or an outage may interrupt it. On the phone, patients can keep making entries offline.",
@@ -712,19 +712,19 @@ export const en: Dictionary = {
         heading: "6. AI assistant",
         lines: [
           [
-            "For practitioners, in the web app, the service includes an AI assistant that helps them use Orekio: it explains the app and how a score is calculated, guides step by step, opens a screen and prepares certain actions.",
+            "For practitioners, in the web app, the service includes an AI assistant that helps with using Orekio: it explains the app and how a score is calculated, guides step by step, offers to open a screen and prepares certain actions.",
           ],
           [
-            "The assistant gives no clinical advice, interprets no data and recommends no module. Its answers may contain errors; clinical judgement remains the practitioner's.",
+            "The assistant is configured and filtered to give no clinical advice, interpret no data and recommend no module. Its answers may contain errors; clinical judgement remains the practitioner's.",
           ],
           [
             "No action prepared by the assistant is saved until the practitioner clicks “Confirm”. The practitioner remains responsible for the actions they confirm.",
           ],
           [
-            "The practitioner agrees not to enter in the assistant any data that could identify a patient, nor any health data.",
+            "The practitioner agrees not to describe in the assistant any clinical situation or any health data. To prepare an action, they may name a patient: Orekio removes the name it recognises from the question.",
           ],
           [
-            "During the beta, the assistant may be available to some practitioners only, limited in number of questions, or suspended at any time.",
+            "The number of questions is limited. During the beta, the assistant may be suspended at any time.",
           ],
           [
             "The processing of data related to the assistant is described in the ",
@@ -753,7 +753,7 @@ export const en: Dictionary = {
             "At the end of the trial, after cancellation or a final payment failure, the practitioner's account becomes read-only: the data is kept intact, they can read and export it, and they can reactivate their subscription. This freeze lasts 90 days for an account that never paid, and 3 years for a former subscriber. The practitioner is notified before it ends.",
           ],
           [
-            "When the freeze ends, the practitioner's account and data are erased. A patient followed by another practitioner only loses their relationship with this one; a patient with no practitioner left is erased. The patient is told in the app and can export their data before that date.",
+            "When the freeze ends, the practitioner's follow-ups are erased; their account remains, and a new subscription restores access. A patient followed by another practitioner loses their relationship with this one and the modules only this one followed, with their entries; a patient with no practitioner left is erased. A patient whose practitioners are all frozen is told in the app in the 30 days before, and can export their data.",
           ],
           [
             "Orekio may suspend or close an account for a serious breach of these Terms, after a warning, except in an emergency or under a legal obligation. Orekio will notify users before any permanent end of the service and give them time to export their data.",
