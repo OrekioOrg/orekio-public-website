@@ -532,7 +532,7 @@ export const en: Dictionary = {
         heading: "Purposes and legal basis",
         lines: [
           [
-            "Follow-up data is processed on the basis of the patient's explicit consent (Article 9.2.a of the GDPR), for the sole purpose of facilitating the therapeutic follow-up between the patient and their practitioner. This data is shown back to the practitioner raw, and the clinical analysis is theirs to make.",
+            "Follow-up data is processed for the sole purpose of facilitating the therapeutic follow-up between the patient and their practitioner. Sharing entries with the practitioner is on by default, and the patient can stop it at any time from their profile. This data is shown back to the practitioner raw, with calculated scores and no interpretation: the clinical analysis is theirs to make.",
           ],
         ] as Segment[][],
       },

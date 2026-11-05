@@ -544,7 +544,7 @@ export const fr = {
         heading: "Finalités et base légale",
         lines: [
           [
-            "Les données de suivi sont traitées sur la base du consentement explicite du patient (article 9.2.a du RGPD), pour la seule finalité de faciliter le suivi thérapeutique entre le patient et son praticien. Ces données sont restituées brutes au praticien, à qui revient l'analyse clinique.",
+            "Les données de suivi sont traitées pour la seule finalité de faciliter le suivi thérapeutique entre le patient et son praticien. Le partage des saisies avec le praticien est actif par défaut, et le patient peut l'arrêter à tout moment depuis son profil. Ces données sont restituées brutes au praticien, avec les scores calculés, sans interprétation : l'analyse clinique lui revient.",
           ],
         ] as Segment[][],
       },
