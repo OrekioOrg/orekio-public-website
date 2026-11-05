@@ -26,6 +26,24 @@ function Facts({ facts, compact = false }: { facts: readonly Fact[]; compact?: b
   );
 }
 
+function ConfirmRow({ cancel, confirm }: { cancel: string; confirm: string }) {
+  return (
+    <div className="flex justify-end gap-2 border-t border-outline pt-3">
+      <span className="px-3 py-1.5 text-[13.5px] text-on-surface">{cancel}</span>
+      <span className="rounded-lg bg-primary px-3.5 py-1.5 text-[13.5px] text-on-primary">{confirm}</span>
+    </div>
+  );
+}
+
+function CardHead({ title, subtitle }: { title: string; subtitle: string }) {
+  return (
+    <div>
+      <h4 className={CARD_TITLE}>{title}</h4>
+      <p className="text-[12.5px] text-on-surface-variant">{subtitle}</p>
+    </div>
+  );
+}
+
 /*
  * Une réponse de l'assistant, telle que la fenêtre de l'app la rend : même découpage en cartes,
  * mêmes libellés. Aucune couleur ne suit une valeur (règle d'or) : tout s'habille à l'identique.
@@ -84,10 +102,7 @@ export function AssistantAnswer({ answer, voteLabels }: { answer: DemoAnswer; vo
           <h4 className={CARD_TITLE}>{answer.title}</h4>
           <Facts facts={answer.facts} />
           {answer.state === "pending" ? (
-            <div className="flex justify-end gap-2 border-t border-outline pt-3">
-              <span className="px-3 py-1.5 text-[13.5px] text-on-surface">{answer.cancel}</span>
-              <span className="rounded-lg bg-primary px-3.5 py-1.5 text-[13.5px] text-on-primary">{answer.confirm}</span>
-            </div>
+            <ConfirmRow cancel={answer.cancel} confirm={answer.confirm} />
           ) : (
             <p className="border-t border-outline pt-2.5 text-[13px] text-on-surface-variant">{answer.done}</p>
           )}
@@ -113,19 +128,13 @@ export function AssistantAnswer({ answer, voteLabels }: { answer: DemoAnswer; vo
           </ul>
           <p className="text-[13px] text-on-surface-variant">{answer.timeQuestion}</p>
           <p className="rounded-lg border border-outline px-3 py-1.5 tabular-nums text-on-surface-strong">{answer.time}</p>
-          <div className="flex justify-end gap-2 border-t border-outline pt-3">
-            <span className="px-3 py-1.5 text-[13.5px] text-on-surface">{answer.cancel}</span>
-            <span className="rounded-lg bg-primary px-3.5 py-1.5 text-[13.5px] text-on-primary">{answer.confirm}</span>
-          </div>
+          <ConfirmRow cancel={answer.cancel} confirm={answer.confirm} />
         </div>
       );
     case "entries":
       return (
         <div className={CARD}>
-          <div>
-            <h4 className={CARD_TITLE}>{answer.title}</h4>
-            <p className="text-[12.5px] text-on-surface-variant">{answer.period}</p>
-          </div>
+          <CardHead title={answer.title} subtitle={answer.period} />
           {answer.days.map((day) => (
             <div key={day.day} className="flex flex-col gap-1.5 border-t border-outline-variant pt-2.5">
               <p className="text-[13.5px] font-medium text-on-surface-strong">{day.day}</p>
@@ -139,10 +148,7 @@ export function AssistantAnswer({ answer, voteLabels }: { answer: DemoAnswer; vo
     case "value":
       return (
         <div className={CARD}>
-          <div>
-            <h4 className={CARD_TITLE}>{answer.title}</h4>
-            <p className="text-[12.5px] text-on-surface-variant">{answer.lead}</p>
-          </div>
+          <CardHead title={answer.title} subtitle={answer.lead} />
           <p className="text-[36px] font-medium leading-none tabular-nums text-on-surface-strong">{answer.value}</p>
           <span className={ROUTE_BUTTON}>{answer.button}</span>
         </div>
@@ -150,10 +156,7 @@ export function AssistantAnswer({ answer, voteLabels }: { answer: DemoAnswer; vo
     case "field":
       return (
         <div className={CARD}>
-          <div>
-            <h4 className={CARD_TITLE}>{answer.title}</h4>
-            <p className="text-[12.5px] text-on-surface-variant">{answer.subtitle}</p>
-          </div>
+          <CardHead title={answer.title} subtitle={answer.subtitle} />
           <Facts facts={answer.facts} />
         </div>
       );
