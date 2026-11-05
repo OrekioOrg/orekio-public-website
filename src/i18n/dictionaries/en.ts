@@ -329,60 +329,50 @@ export const en: Dictionary = {
     metaDescriptionProvisional:
       "30-day trial, no credit card. Two plans with identical content, Zelai up to 15 patients and Mendi up to 30, plus a Founders offer for the first 100 subscribers.",
     eyebrow: "Pricing",
-    heading: "Two plans, the same product.",
-    description:
-      "30-day trial on Mendi, no credit card. Then two plans with identical content: every module, every scale. Only the number of followed patients changes, and pausing a follow-up frees its place. The first 100 subscribers keep €24.99 incl. VAT per month for life.",
     plans: [
       {
-        name: "Trial",
-        price: "Free",
-        period: "30 days, no credit card",
-        description:
-          "One month on Mendi, the highest plan: time to hand tools to your patients and go over them together.",
-        features: [
-          "The full product, up to 30 followed patients",
-          "No card requested, nothing to cancel",
-        ],
-        note: "At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 30 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
-        highlighted: false,
-      },
-      {
         name: "Zelai",
+        theme: "zelai",
         price: "€29.99",
-        period: "per month incl. VAT, no commitment",
-        description:
-          "Basque for “meadow”. Or €329.89 incl. VAT per year: one month free.",
+        period: "incl. VAT / month",
+        priceExclVat: "€24.99 excl. VAT / month",
         features: [
           "Up to 15 followed patients",
-          "Cancel at any time",
+          "Every module and scale",
         ],
-        highlighted: false,
+        note: {
+          label: "Founders:",
+          text: "€24.99 incl. VAT / month for life (€20.83 excl. VAT), 100 seats",
+        },
       },
       {
         name: "Mendi",
+        theme: "mendi",
         price: "€39.99",
-        period: "per month incl. VAT, no commitment",
-        description:
-          "Basque for “mountain”. Or €439.89 incl. VAT per year: one month free.",
+        period: "incl. VAT / month",
+        priceExclVat: "€33.33 excl. VAT / month",
         features: [
           "Up to 30 followed patients",
-          "Cancel at any time",
+          "Every module and scale",
         ],
-        highlighted: false,
+        note: {
+          label: "Free trial:",
+          text: "30 days to try everything",
+        },
+      },
+    ],
+    details: [
+      {
+        label: "Trial",
+        text: "One month on Mendi, the highest plan, with no credit card and nothing to cancel. At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 30 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
       },
       {
-        name: "Founders",
-        price: "€24.99",
-        period: "per month incl. VAT, for life",
-        description:
-          "For the first 100 subscribers, on the Zelai plan.",
-        features: [
-          "Up to 15 followed patients",
-          "Rate guaranteed as long as the subscription stays active",
-          "Monthly billing only",
-          "A direct channel to the team",
-        ],
-        highlighted: true,
+        label: "Zelai and Mendi",
+        text: "The same product: only the number of followed patients changes, and pausing a follow-up frees its place. No commitment, cancel at any time. Or yearly, with one month free: €329.89 incl. VAT for Zelai, €439.89 incl. VAT for Mendi. Zelai is Basque for “meadow”, Mendi for “mountain”.",
+      },
+      {
+        label: "Founders",
+        text: "For the first 100 subscribers, on the Zelai plan, up to 15 followed patients. Rate guaranteed as long as the subscription stays active, monthly billing only, with a direct channel to the team.",
       },
     ],
     included: {
@@ -392,13 +382,10 @@ export const en: Dictionary = {
         "Free patient app",
         "Every module and every scale",
         "Full history and export",
-        "Change plans from the app",
-        "Referral: one month free for you and your colleague",
         "Email support",
       ],
     },
-    highlightLabel: "Launch offer",
-    subscribeButton: "Sign up",
+    subscribeButton: "Try for free",
     footerNote: [
       "Prices include VAT (20%). A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on Zelai, €31.99 on Mendi. More than 30 followed patients? ",
       { href: "/en/contact", text: "Write to us" },
@@ -430,8 +417,11 @@ export const en: Dictionary = {
     metaDescription: "Contact the Orekio team for any question or a demo.",
     eyebrow: "Contact",
     heading: "A question, or would you like a demo?",
-    description:
-      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on orekio.app.",
+    description: [
+      "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on ",
+      { href: "https://orekio.app", text: "orekio.app", external: true },
+      ".",
+    ] as Segment[],
     email: "contact@orekio.app",
   },
 
