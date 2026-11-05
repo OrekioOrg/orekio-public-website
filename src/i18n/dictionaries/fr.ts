@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { OFFERS, VAT_PERCENT, eurFr as eur, exclVat } from "../../offers";
 import { assistantFr } from "./assistant/fr";
 
 /** Une carte de la page Tarifs. `note` : l'encart propre à l'offre. */
@@ -104,7 +105,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      "30 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
+      `${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
     ctaSectionButton: "Essayer gratuitement",
     apps: {
       title: "Deux applications, un même espace",
@@ -338,54 +339,54 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      "Essai de 30 jours sans carte bancaire. Zelai : 29,99 € TTC par mois, jusqu'à 15 patients. Mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
+      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. Fondateurs, les ${OFFERS.founders.seats} premiers inscrits : ${eur(OFFERS.founders.zelai.month)} et ${eur(OFFERS.founders.mendi.month)} TTC par mois à vie, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
     metaDescriptionProvisional:
-      "Essai de 30 jours sans carte bancaire. Deux offres au contenu identique, Zelai jusqu'à 15 patients et Mendi jusqu'à 30, et une offre Fondateurs pour les 100 premiers inscrits.",
+      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, et une offre Fondateurs pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
     eyebrow: "Tarifs",
     plans: [
       {
         name: "Zelai",
         theme: "zelai",
-        price: "29,99 €",
+        price: eur(OFFERS.zelai.month),
         period: "TTC / mois",
-        priceExclVat: "24,99 € HT / mois",
+        priceExclVat: `${eur(exclVat(OFFERS.zelai.month))} HT / mois`,
         features: [
-          "Jusqu'à 15 patients suivis",
+          `Jusqu'à ${OFFERS.zelai.maxPatients} patients suivis`,
           "Tous les modules et échelles",
         ],
         note: {
           label: "Fondateurs :",
-          text: "24,99 € TTC / mois à vie (20,83 € HT), 100 places",
+          text: `${eur(OFFERS.founders.zelai.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.zelai.month))} HT), ${OFFERS.founders.seats} places`,
         },
       },
       {
         name: "Mendi",
         theme: "mendi",
-        price: "39,99 €",
+        price: eur(OFFERS.mendi.month),
         period: "TTC / mois",
-        priceExclVat: "33,33 € HT / mois",
+        priceExclVat: `${eur(exclVat(OFFERS.mendi.month))} HT / mois`,
         features: [
-          "Jusqu'à 30 patients suivis",
+          "Patients suivis illimités",
           "Tous les modules et échelles",
         ],
         note: {
-          label: "Essai offert :",
-          text: "30 jours pour tout tester",
+          label: "Fondateurs :",
+          text: `${eur(OFFERS.founders.mendi.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.mendi.month))} HT), ${OFFERS.founders.seats} places`,
         },
       },
     ] as PricingPlan[],
     details: [
       {
         label: "Essai",
-        text: "Un mois sur Mendi, l'offre la plus haute, sans carte bancaire et sans rien à résilier. À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire. Ensuite, ${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
       },
       {
         label: "Zelai et Mendi",
-        text: "Le même produit : seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : 329,89 € TTC pour Zelai, 439,89 € TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».",
+        text: `Le même produit : seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : ${eur(OFFERS.zelai.year)} TTC pour Zelai, ${eur(OFFERS.mendi.year)} TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».`,
       },
       {
         label: "Fondateurs",
-        text: "Pour les 100 premiers inscrits, sur l'offre Zelai, jusqu'à 15 patients suivis. Tarif garanti tant que l'abonnement reste actif, au mois uniquement, avec un canal direct avec l'équipe.",
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe.`,
       },
     ],
     included: {
@@ -400,7 +401,7 @@ export const fr = {
     },
     subscribeButton: "Essayer gratuitement",
     footerNote: [
-      "Prix TTC, TVA de 20 % incluse. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
+      `Prix TTC, TVA de ${VAT_PERCENT} % incluse. Vous représentez une structure ? `,
       { href: "/fr/contact", text: "Écrivez-nous" },
       " : nous vous rappelons sous 7 jours ouvrés.",
     ] as Segment[],
