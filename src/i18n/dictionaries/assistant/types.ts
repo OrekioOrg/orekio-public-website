@@ -16,19 +16,17 @@ export type DemoAnswer =
       kind: "action";
       title: string;
       facts: readonly Fact[];
-      state: "pending" | "done";
-      cancel: string;
-      confirm: string;
       done: string;
     }
   | {
       kind: "actionForm";
       title: string;
       facts: readonly Fact[];
-      daysQuestion: string;
-      days: readonly { label: string; selected: boolean }[];
-      timeQuestion: string;
-      time: string;
+      /** Ce que la carte demande, pré-réglé sur la question : un choix, ou des jours. */
+      fields: readonly (
+        | { question: string; value: string }
+        | { question: string; days: readonly { label: string; selected: boolean }[] }
+      )[];
       cancel: string;
       confirm: string;
     }

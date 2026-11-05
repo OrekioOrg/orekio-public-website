@@ -40,7 +40,7 @@ function ConfirmRow({ cancel, confirm }: { cancel: string; confirm: string }) {
 function CardHead({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div>
-      <h4 className={CARD_TITLE}>{title}</h4>
+      <p className={CARD_TITLE}>{title}</p>
       <p className="text-[12.5px] text-on-surface-variant">{subtitle}</p>
     </div>
   );
@@ -72,7 +72,7 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
     case "steps":
       return (
         <div className={CARD}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <ol className="flex flex-col gap-2 text-on-surface">
             {answer.steps.map((step, i) => (
               <li key={step.text} className="grid grid-cols-[22px_minmax(0,1fr)] gap-x-2.5">
@@ -96,34 +96,36 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
       );
     case "action":
       return (
-        <div className={`${CARD} ${answer.state === "pending" ? "border-2 border-primary" : ""}`}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+        <div className={CARD}>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <Facts facts={answer.facts} />
-          {answer.state === "pending" ? (
-            <ConfirmRow cancel={answer.cancel} confirm={answer.confirm} />
-          ) : (
-            <p className="border-t border-outline pt-2.5 text-[13px] text-on-surface-variant">{answer.done}</p>
-          )}
+          <p className="border-t border-outline pt-2.5 text-[13px] text-on-surface-variant">{answer.done}</p>
         </div>
       );
     case "actionForm":
       return (
         <div className={`${CARD} border-2 border-primary`}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <Facts facts={answer.facts} />
-          <p className="text-[13px] text-on-surface-variant">{answer.daysQuestion}</p>
-          <ul className="flex flex-wrap gap-1.5">
-            {answer.days.map((day, i) => (
-              <li
-                key={`${day.label}-${i}`}
-                className={`flex h-7 w-7 items-center justify-center rounded-full border text-[12.5px] ${CHIP_STATE(day.selected)}`}
-              >
-                {day.label}
-              </li>
-            ))}
-          </ul>
-          <p className="text-[13px] text-on-surface-variant">{answer.timeQuestion}</p>
-          <p className="rounded-lg border border-outline px-3 py-1.5 tabular-nums text-on-surface-strong">{answer.time}</p>
+          {answer.fields.map((field) => (
+            <div key={field.question} className="flex flex-col gap-1.5">
+              <p className="text-[13px] text-on-surface-variant">{field.question}</p>
+              {"days" in field ? (
+                <ul className="flex flex-wrap gap-1.5">
+                  {field.days.map((day, i) => (
+                    <li
+                      key={`${day.label}-${i}`}
+                      className={`flex h-7 min-w-7 items-center justify-center rounded-full border px-1 text-[12.5px] ${CHIP_STATE(day.selected)}`}
+                    >
+                      {day.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="rounded-lg border border-outline px-3 py-1.5 tabular-nums text-on-surface-strong">{field.value}</p>
+              )}
+            </div>
+          ))}
           <ConfirmRow cancel={answer.cancel} confirm={answer.confirm} />
         </div>
       );
@@ -159,7 +161,7 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
     case "item":
       return (
         <div className={CARD}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <p className="text-[13px] text-on-surface-variant">{answer.instruction}</p>
           <p className="font-medium text-on-surface-strong">{answer.statement}</p>
           <ul className="flex flex-col gap-1.5 text-[13.5px] text-on-surface">
@@ -176,7 +178,7 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
     case "compare":
       return (
         <div className={`${CARD} overflow-x-auto`}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <table className="w-full border-collapse text-left text-[13px]">
             <thead>
               <tr>
@@ -208,7 +210,7 @@ export function AssistantAnswer({ answer }: { answer: DemoAnswer }) {
     case "check":
       return (
         <div className={CARD}>
-          <h4 className={CARD_TITLE}>{answer.title}</h4>
+          <p className={CARD_TITLE}>{answer.title}</p>
           <ul className="flex flex-col gap-1.5 text-[13.5px] text-on-surface">
             {answer.points.map((point) => (
               <li key={point} className="border-t border-outline-variant pt-1.5 first:border-t-0 first:pt-0">

@@ -11,13 +11,25 @@ const SCHEDULE: readonly Fact[] = [
 ];
 const ACTION_WORDS = { cancel: "Cancel", confirm: "Confirm", done: "Action done" };
 
-const scheduleAction = (state: "pending" | "done"): DemoAnswer => ({
+const SCHEDULE_DONE: DemoAnswer = {
   kind: "action",
   title: "Schedule a scale",
   facts: SCHEDULE,
-  state,
-  ...ACTION_WORDS,
-});
+  done: ACTION_WORDS.done,
+};
+const SCHEDULE_PENDING: DemoAnswer = {
+  kind: "actionForm",
+  title: "Schedule a scale",
+  facts: [patientFact],
+  fields: [
+    { question: "Which scale?", value: "PHQ-9" },
+    { question: "How often?", value: "Weekly" },
+    { question: "Which day?", value: "Monday" },
+    { question: "At what time?", value: "09:00" },
+  ],
+  cancel: ACTION_WORDS.cancel,
+  confirm: ACTION_WORDS.confirm,
+};
 
 const FREE: DemoAnswer = {
   kind: "text",
@@ -29,8 +41,8 @@ const STEPS: DemoAnswer = {
   kind: "steps",
   title: "Export your data",
   steps: [
-    { text: "Open “My profile”.", show: "Show on the page" },
-    { text: "In the “My data” card, click “Export my data”." },
+    { text: "Open “My profile”." },
+    { text: "In the “My data” card, click “Export my data”.", show: "Show on the page" },
     { text: "Pick the format: “Readable document” or “Raw data (JSON)”." },
     { text: "The file downloads; its name carries the date, never a patient's name." },
   ],
@@ -38,7 +50,7 @@ const STEPS: DemoAnswer = {
 };
 const NIGHTS = [
     {
-      day: "Monday, October 26",
+      day: "Night from Sunday to Monday, October 26",
       facts: [
         { label: "Time I tried to fall asleep", value: "23:10" },
         { label: "Number of awakenings", value: "2" },
@@ -46,7 +58,7 @@ const NIGHTS = [
       ],
     },
     {
-      day: "Sunday, October 25",
+      day: "Night from Saturday to Sunday, October 25",
       facts: [
         { label: "Time I tried to fall asleep", value: "00:20" },
         { label: "Number of awakenings", value: "0" },
@@ -92,12 +104,12 @@ const REFUSAL: DemoAnswer = {
 export const assistantEn: AssistantPageCopy = {
   pageTitle: "AI assistant",
   metaDescription:
-    "The Orekio AI assistant explains the app, guides you step by step, finds a piece of information and prepares an action you confirm. It displays, it never concludes, and Orekio sends it none of your patients' data.",
+    "The Orekio AI assistant explains the app, guides you step by step, finds a piece of information and prepares an action you confirm. It displays, it never concludes, and Orekio does not itself send the model any of your patients' data.",
   eyebrow: "The practitioner's AI assistant",
   headingLine1: "Ask the question.",
   headingLine2: "Orekio shows you.",
   lede: "A window that follows you from screen to screen. It explains the app, guides you step by step, finds a piece of information and prepares an action.",
-  ledeStrong: "It displays, it never concludes, and Orekio sends the model none of your patients' data.",
+  ledeStrong: "It displays, it never concludes, and Orekio does not itself send the model any of your patients' data.",
   scope: "In the practitioner web app. The patient app has no assistant.",
   demo: {
     ariaLabel: "Assistant demonstration",
@@ -121,8 +133,8 @@ export const assistantEn: AssistantPageCopy = {
         label: "Schedule a scale",
         question: "Schedule the PHQ-9 every Monday at 9 am.",
         patient: true,
-        answer: scheduleAction("pending"),
-        after: scheduleAction("done"),
+        answer: SCHEDULE_PENDING,
+        after: SCHEDULE_DONE,
         toast: ACTION_WORDS.done,
       },
       { label: "Find entries", question: "Their nights this week?", patient: true, answer: ENTRIES_DEMO },
@@ -139,7 +151,7 @@ export const assistantEn: AssistantPageCopy = {
       "The model does not write everything. Most of the time it points: to a walkthrough, a screen, a field, a piece of information. Orekio then writes the answer with its own labels and reads the data itself, the way the screen reads it.",
     tiles: [
       {
-        tag: "Free answer",
+        tag: "Free-text answer",
         title: "It explains the app",
         description: "A short plain-text answer about a screen, a module or a setting.",
         examples: [{ question: "What is the consultation notebook for?", answer: FREE }],
@@ -233,6 +245,7 @@ export const assistantEn: AssistantPageCopy = {
                 { label: "Type", values: ["Scale", "Scale"] },
                 { label: "Questions", values: ["10", "6"] },
                 { label: "Score", values: ["0 to 27", "0 to 24"] },
+                { label: "Audience", values: ["Adult, Senior", "Adult"] },
               ],
             },
           },
@@ -241,7 +254,7 @@ export const assistantEn: AssistantPageCopy = {
       {
         tag: "Troubleshooting",
         title: "It checks for you",
-        description: "A module not visible, missing entries: each point is read the way the screen reads it, with the same sign and the same ink for every state.",
+        description: "A module not visible, missing entries: each point is read the way the screen reads it, with no colour by state.",
         examples: [
           {
             question: "They can't see the breathing module",
@@ -283,19 +296,23 @@ export const assistantEn: AssistantPageCopy = {
             answer: {
               kind: "actionForm",
               title: "Add a reminder",
-              facts: [patientFact, { label: "Module", value: "Sleep diary" }],
-              daysQuestion: "Which days?",
-              days: [
-                { label: "M", selected: true },
-                { label: "T", selected: true },
-                { label: "W", selected: true },
-                { label: "T", selected: true },
-                { label: "F", selected: true },
-                { label: "S", selected: false },
-                { label: "S", selected: false },
+              facts: [patientFact],
+              fields: [
+                { question: "Which module?", value: "Sleep diary" },
+                {
+                  question: "Which days?",
+                  days: [
+                    { label: "M", selected: true },
+                    { label: "T", selected: true },
+                    { label: "W", selected: true },
+                    { label: "T", selected: true },
+                    { label: "F", selected: true },
+                    { label: "S", selected: false },
+                    { label: "S", selected: false },
+                  ],
+                },
+                { question: "At what time?", value: "21:00" },
               ],
-              timeQuestion: "At what time?",
-              time: "21:00",
               cancel: ACTION_WORDS.cancel,
               confirm: ACTION_WORDS.confirm,
             },
@@ -303,7 +320,7 @@ export const assistantEn: AssistantPageCopy = {
           {
             question: "Schedule the PHQ-9 every Monday at 9 am",
             patient: true,
-            answer: scheduleAction("done"),
+            answer: SCHEDULE_DONE,
           },
         ],
       },
@@ -313,7 +330,7 @@ export const assistantEn: AssistantPageCopy = {
     eyebrow: "Preparing an action",
     title: "It prepares. You confirm.",
     description:
-      "“I want to add a reminder” is enough. The card asks for what is missing and every setting can be corrected on the spot. Nothing is written before “Confirm”, through the same service as the screen's button, with the same checks and an entry in the audit log.",
+      "“I want to add a reminder” is enough. The card asks for what is missing and every setting can be corrected on the spot. Nothing is written before “Confirm”, through the same service as the screen's button, with the same checks.",
     items: [
       { title: "Unlock a module", description: "For the patient on the record, under the same conditions as the screen's button." },
       { title: "Schedule a scale", description: "Cadence, send day and time, with the options of the screen." },
@@ -330,36 +347,36 @@ export const assistantEn: AssistantPageCopy = {
       "The model picks a request from a closed catalogue. The card reads it the way the screen reads it, for the patient in question. What it displays never goes back to the model.",
     items: [
       "Unlocked modules",
-      "Scheduled scales",
+      "Scale scheduling",
       "A scale's completions",
-      "Last entry",
+      "Last entry received",
       "A module's entries",
       "A day's value",
       "A module's reminders",
-      "Patient notes",
-      "Active caseload",
+      "Notes on the patient",
+      "Caseload",
       "Pending invitations",
-      "Library",
-      "Subscription",
+      "Modules in my library",
+      "My subscription",
     ],
   },
   privacy: {
     eyebrow: "Confidentiality",
     title: "Displayed, yes. Sent, no.",
     description:
-      "Orekio does not pass your patients' names, entries or scores, or your notes, to the model. When you ask for information about a patient, Orekio reads and displays it. The names of your patients and invitees, and any email address, are removed from your question twice before sending: in the browser, then on the server.",
+      "Orekio does not itself pass your patients' names, entries or scores, or your notes, to the model. When you ask for information about a patient, Orekio reads and displays it. The names of your patients and invitees, and any email address, are removed from your question twice before sending: in the browser, then on the server.",
     typedTitle: "What you type",
     sentTitle: "What is sent",
     question: [
       { text: "Schedule the PHQ-9 for " },
-      { text: "Camille Martin", replacedBy: "this patient" },
-      { text: " every Monday, and notify " },
-      { text: "camille.m@example.com", replacedBy: "this address" },
+      { text: "Camille Martin", replacedBy: "ce patient" },
+      { text: " every Monday at 9 am, and notify " },
+      { text: "camille.m@example.com", replacedBy: "cette adresse" },
     ],
     returnedTitle: "What comes back",
-    returned: "A proposal in a closed form, checked by the server: schedule the PHQ-9, Monday at 09:00. The patient comes from the open record, never from the model.",
+    returned: "A proposal in a closed form, checked by the server: schedule the PHQ-9, Monday at 09:00. The patient comes from the record or from your question, recognised by Orekio, never from the model.",
     receivedTitle: "Received by the model",
-    received: "The instructions, the user guide, the module catalogue, the screen's name (one word from a closed list), the module on display, whether a record is open, today's date and your questions, without names or addresses.",
+    received: "The instructions, the user guide, closed lists (modules, fields, walkthroughs, actions), the screen's name, the module on display, whether a record is open, today's date and your questions, without recognised names or addresses. A second model checks the question and the answer.",
     neverTitle: "Never passed on by Orekio",
     never: "The page address, the patient's identifier, their name, entries, scores, notes, the list of what they are tracking. A card's result stays in your browser.",
     limitTitle: "A limit to be aware of",
@@ -377,7 +394,7 @@ export const assistantEn: AssistantPageCopy = {
       "Show a day's raw value, without comment",
       "Explain how a score is calculated, and its range",
       "Display a scale question and its answers, with its source",
-      "Compare two modules on facts: questions, range, audience",
+      "Compare two or three modules on facts: questions, range, audience",
       "Open the screen where the information can be read",
     ],
     refusesTitle: "What it refuses",
@@ -393,14 +410,14 @@ export const assistantEn: AssistantPageCopy = {
   safeguards: {
     eyebrow: "Safeguards",
     title: "Predictable, sober, under control",
-    description: "An AI in a care tool is judged by what it cannot do. Here is what holds true for every question.",
+    description: "An AI in a logbook is judged by what it cannot do. Here is what the app guarantees.",
     items: [
       { title: "Nothing without your click", description: "No screen opens, nothing is highlighted, nothing is written without an action from you." },
       { title: "Plain text only", description: "No tag, image or link coming from the model is interpreted." },
-      { title: "Output filter", description: "An out-of-scope free answer is removed before it can be read: “This answer cannot be displayed.”" },
+      { title: "Output filter", description: "An out-of-scope free-text answer is removed before it can be read: “This answer cannot be displayed.”" },
       { title: "AI notice", description: "“You are talking to an AI”, at the top of the conversation." },
-      { title: "Nothing kept", description: "Orekio keeps neither your questions nor the answers, except a question you choose to report. The conversation lives in the tab and the cross clears it." },
-      { title: "Your feedback", description: "Two thumbs under each answer, helpful or not, in one gesture." },
+      { title: "No text kept", description: "Orekio keeps neither your questions nor the answers, only counters with no text, except a question you choose to report. The conversation lives in the tab and the cross clears it." },
+      { title: "Your feedback", description: "Two thumbs under a rendered answer, helpful or not, in one gesture." },
       { title: "Reported question", description: "Under an “I don't know”, you reread the text and decide whether to send it to the team." },
       { title: "Always there", description: "Movable, collapsible into a pill, the window follows you from one screen to the next." },
     ],
@@ -409,7 +426,7 @@ export const assistantEn: AssistantPageCopy = {
     eyebrow: "AI assistant",
     title: "A question about the app? Ask it.",
     description:
-      "A window explains the app, guides you step by step, finds a piece of information and prepares an action you confirm. It displays, it never concludes, and Orekio sends it none of your patients' data.",
+      "A window explains the app, guides you step by step, finds a piece of information and prepares an action you confirm. It displays, it never concludes, and Orekio does not itself send the model any of your patients' data.",
     link: "Discover the assistant",
   },
 };

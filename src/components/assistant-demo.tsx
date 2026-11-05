@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { AssistantAnswer, AssistantChart, AssistantQuestion } from "@/components/assistant-answer";
 import type { DemoCopy } from "@/i18n/dictionaries/assistant/types";
 
@@ -14,20 +14,31 @@ const BEFORE_GESTURE_MS = 1900;
 const READ_MS = 5200;
 const FIRST_REST_MS = 4200;
 
-function prefersReducedMotion(): boolean {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void): () => void {
+  const query = window.matchMedia(REDUCED_MOTION);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
 }
 
 /*
  * La fenêtre de l'assistant, rejouée : la question se tape, l'attente, la réponse, puis le geste.
- * Elle tourne seule, sauf en mouvement réduit ; choisir une scène ou la mettre en pause arrête le
- * défilement (WCAG 2.2.2), et elle s'arrête hors de l'écran. Une hauteur fixe : la page ne saute pas d'une scène à l'autre.
+ * Elle tourne seule, sauf en mouvement réduit ; choisir une scène arrête le défilement, le bouton
+ * fige tout de suite ce qui bouge (WCAG 2.2.2), et elle s'arrête hors de l'écran. Une hauteur fixe : la page ne saute pas d'une scène à l'autre.
  */
 export function AssistantDemo({ copy }: { copy: DemoCopy }) {
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<Phase>("rest");
+  const [storedPhase, setPhase] = useState<Phase>("rest");
   const [typed, setTyped] = useState(0);
   const [auto, setAuto] = useState(true);
+  const [paused, setPaused] = useState(false);
+  const reduced = useSyncExternalStore(
+    subscribeReducedMotion,
+    () => window.matchMedia(REDUCED_MOTION).matches,
+    () => false,
+  );
+  const phase: Phase = reduced ? "rest" : storedPhase;
   const [visible, setVisible] = useState(true);
   const windowRef = useRef<HTMLDivElement>(null);
   const scene = copy.scenes[index];
@@ -43,13 +54,13 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
   const play = useCallback((next: number) => {
     setIndex(next);
     setTyped(0);
-    setPhase(prefersReducedMotion() ? "rest" : "typing");
+    setPhase("typing");
   }, []);
 
   const next = (index + 1) % copy.scenes.length;
 
   useEffect(() => {
-    if (!visible || prefersReducedMotion()) return;
+    if (!visible || reduced || paused) return;
     const after = (ms: number, step: () => void) => {
       const timer = setTimeout(step, ms);
       return () => clearTimeout(timer);
@@ -70,10 +81,11 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
       case "after":
         return loop(READ_MS);
     }
-  }, [phase, typed, auto, visible, scene, next, play]);
+  }, [phase, typed, auto, visible, reduced, paused, scene, next, play]);
 
   const choose = (i: number) => {
     setAuto(false);
+    setPaused(false);
     play(i);
   };
 
@@ -131,20 +143,25 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
             type="button"
             aria-pressed={i === index}
             onClick={() => choose(i)}
-            className={`rounded-full border px-3 py-1.5 text-[13.5px] transition-colors ${
+            className={`min-h-11 rounded-full border px-3 py-1.5 text-[13.5px] transition-colors ${
               i === index ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface hover:bg-primary-container"
             }`}
           >
             {item.label}
           </button>
         ))}
-        <button
-          type="button"
-          onClick={() => setAuto((value) => !value)}
-          className="rounded-full px-3 py-1.5 text-[13.5px] text-primary underline-offset-2 hover:underline"
-        >
-          {auto ? copy.pause : copy.resume}
-        </button>
+        {reduced ? null : (
+          <button
+            type="button"
+            onClick={() => {
+              setPaused(auto && !paused);
+              setAuto(paused || !auto);
+            }}
+            className="min-h-11 rounded-full px-3 py-1.5 text-[13.5px] text-primary underline-offset-2 hover:underline"
+          >
+            {auto && !paused ? copy.pause : copy.resume}
+          </button>
+        )}
       </div>
       <p className="mt-3 text-center font-mono text-[11px] tracking-[0.06em] text-on-surface-variant">{copy.fictional}</p>
     </div>

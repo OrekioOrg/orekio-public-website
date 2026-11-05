@@ -11,13 +11,25 @@ const SCHEDULE: readonly Fact[] = [
 ];
 const ACTION_WORDS = { cancel: "Annuler", confirm: "Confirmer", done: "Action effectuée" };
 
-const scheduleAction = (state: "pending" | "done"): DemoAnswer => ({
+const SCHEDULE_DONE: DemoAnswer = {
   kind: "action",
   title: "Programmer une échelle",
   facts: SCHEDULE,
-  state,
-  ...ACTION_WORDS,
-});
+  done: ACTION_WORDS.done,
+};
+const SCHEDULE_PENDING: DemoAnswer = {
+  kind: "actionForm",
+  title: "Programmer une échelle",
+  facts: [patientFact],
+  fields: [
+    { question: "Quelle échelle ?", value: "PHQ-9" },
+    { question: "À quelle cadence ?", value: "Hebdomadaire" },
+    { question: "Quel jour ?", value: "Lundi" },
+    { question: "À quelle heure ?", value: "09:00" },
+  ],
+  cancel: ACTION_WORDS.cancel,
+  confirm: ACTION_WORDS.confirm,
+};
 
 const FREE: DemoAnswer = {
   kind: "text",
@@ -29,8 +41,8 @@ const STEPS: DemoAnswer = {
   kind: "steps",
   title: "Exporter ses données",
   steps: [
-    { text: "Ouvrez « Mon profil ».", show: "Montrer sur la page" },
-    { text: "Dans la carte « Mes données », cliquez « Exporter mes données »." },
+    { text: "Ouvrez « Mon profil »." },
+    { text: "Dans la carte « Mes données », cliquez « Exporter mes données ».", show: "Montrer sur la page" },
     { text: "Choisissez le format : « Document lisible » ou « Données brutes (JSON) »." },
     { text: "Le fichier se télécharge ; son nom porte la date, jamais le nom d'un patient." },
   ],
@@ -38,7 +50,7 @@ const STEPS: DemoAnswer = {
 };
 const NIGHTS = [
     {
-      day: "Lundi 26 octobre",
+      day: "Nuit de dimanche à lundi 26 octobre",
       facts: [
         { label: "Heure où j'ai essayé de dormir", value: "23:10" },
         { label: "Nombre de fois réveillé(e)", value: "2" },
@@ -46,7 +58,7 @@ const NIGHTS = [
       ],
     },
     {
-      day: "Dimanche 25 octobre",
+      day: "Nuit de samedi à dimanche 25 octobre",
       facts: [
         { label: "Heure où j'ai essayé de dormir", value: "00:20" },
         { label: "Nombre de fois réveillé(e)", value: "0" },
@@ -92,12 +104,12 @@ const REFUSAL: DemoAnswer = {
 export const assistantFr: AssistantPageCopy = {
   pageTitle: "Assistant IA",
   metaDescription:
-    "L'assistant IA d'Orekio explique l'app, guide pas à pas, retrouve une information et prépare un geste que vous confirmez. Il affiche, il ne conclut jamais, et Orekio ne lui envoie aucune donnée de vos patients.",
+    "L'assistant IA d'Orekio explique l'app, guide pas à pas, retrouve une information et prépare un geste que vous confirmez. Il affiche, il ne conclut jamais, et Orekio n'envoie de lui-même au modèle aucune donnée de vos patients.",
   eyebrow: "Assistant IA du praticien",
   headingLine1: "Posez la question.",
   headingLine2: "Orekio vous montre.",
   lede: "Une fenêtre qui vous suit d'écran en écran. Elle explique l'app, guide pas à pas, retrouve une information et prépare un geste.",
-  ledeStrong: "Elle affiche, elle ne conclut jamais, et Orekio n'envoie au modèle aucune donnée de vos patients.",
+  ledeStrong: "Elle affiche, elle ne conclut jamais, et Orekio n'envoie de lui-même au modèle aucune donnée de vos patients.",
   scope: "Sur l'app web du praticien. L'app du patient n'a pas d'assistant.",
   demo: {
     ariaLabel: "Démonstration de l'assistant",
@@ -121,8 +133,8 @@ export const assistantFr: AssistantPageCopy = {
         label: "Programmer une échelle",
         question: "Programme le PHQ-9 tous les lundis à 9 h.",
         patient: true,
-        answer: scheduleAction("pending"),
-        after: scheduleAction("done"),
+        answer: SCHEDULE_PENDING,
+        after: SCHEDULE_DONE,
         toast: ACTION_WORDS.done,
       },
       { label: "Retrouver des saisies", question: "Ses nuits de la semaine ?", patient: true, answer: ENTRIES_DEMO },
@@ -233,6 +245,7 @@ export const assistantFr: AssistantPageCopy = {
                 { label: "Type", values: ["Échelle", "Échelle"] },
                 { label: "Questions", values: ["10", "6"] },
                 { label: "Score", values: ["0 à 27", "0 à 24"] },
+                { label: "Public", values: ["Adulte, Senior", "Adulte"] },
               ],
             },
           },
@@ -241,7 +254,7 @@ export const assistantFr: AssistantPageCopy = {
       {
         tag: "Dépannage",
         title: "Il vérifie pour vous",
-        description: "Module invisible, saisies absentes : chaque point est lu comme l'écran le lit, avec le même signe et la même encre pour tous les états.",
+        description: "Module invisible, saisies absentes : chaque point est lu comme l'écran le lit, sans couleur selon l'état.",
         examples: [
           {
             question: "Elle ne voit pas la respiration",
@@ -283,19 +296,23 @@ export const assistantFr: AssistantPageCopy = {
             answer: {
               kind: "actionForm",
               title: "Poser un rappel",
-              facts: [patientFact, { label: "Module", value: "Agenda du sommeil" }],
-              daysQuestion: "Quels jours ?",
-              days: [
-                { label: "L", selected: true },
-                { label: "M", selected: true },
-                { label: "M", selected: true },
-                { label: "J", selected: true },
-                { label: "V", selected: true },
-                { label: "S", selected: false },
-                { label: "D", selected: false },
+              facts: [patientFact],
+              fields: [
+                { question: "Quel module ?", value: "Agenda du sommeil" },
+                {
+                  question: "Quels jours ?",
+                  days: [
+                    { label: "L", selected: true },
+                    { label: "M", selected: true },
+                    { label: "Me", selected: true },
+                    { label: "J", selected: true },
+                    { label: "V", selected: true },
+                    { label: "S", selected: false },
+                    { label: "D", selected: false },
+                  ],
+                },
+                { question: "À quelle heure ?", value: "21:00" },
               ],
-              timeQuestion: "À quelle heure ?",
-              time: "21:00",
               cancel: ACTION_WORDS.cancel,
               confirm: ACTION_WORDS.confirm,
             },
@@ -303,7 +320,7 @@ export const assistantFr: AssistantPageCopy = {
           {
             question: "Programme le PHQ-9 tous les lundis à 9 h",
             patient: true,
-            answer: scheduleAction("done"),
+            answer: SCHEDULE_DONE,
           },
         ],
       },
@@ -313,7 +330,7 @@ export const assistantFr: AssistantPageCopy = {
     eyebrow: "Préparer un geste",
     title: "Il prépare. Vous confirmez.",
     description:
-      "« Je veux poser un rappel » suffit. La carte demande ce qui manque et chaque réglage se corrige sur place. Rien ne s'écrit avant « Confirmer », par le même service que le bouton de l'écran, avec les mêmes gardes et une trace au journal d'audit.",
+      "« Je veux poser un rappel » suffit. La carte demande ce qui manque et chaque réglage se corrige sur place. Rien ne s'écrit avant « Confirmer », par le même service que le bouton de l'écran, avec les mêmes gardes.",
     items: [
       { title: "Débloquer un module", description: "Pour le patient de la fiche, avec les mêmes conditions que le bouton de l'écran." },
       { title: "Programmer une échelle", description: "Cadence, jour d'envoi et heure, avec les options de l'écran." },
@@ -330,36 +347,36 @@ export const assistantFr: AssistantPageCopy = {
       "Le modèle choisit une demande dans un catalogue fermé. La carte la lit comme l'écran la lit, pour le patient de la question. Ce qu'elle affiche ne repart jamais au modèle.",
     items: [
       "Modules débloqués",
-      "Échelles programmées",
+      "Programmation des échelles",
       "Passations d'une échelle",
-      "Dernière saisie",
+      "Dernière saisie reçue",
       "Saisies d'un module",
       "Valeur d'un jour",
       "Rappels d'un module",
-      "Notes du patient",
+      "Notes sur le patient",
       "File active",
       "Invitations en attente",
-      "Bibliothèque",
-      "Abonnement",
+      "Modules de ma bibliothèque",
+      "Mon abonnement",
     ],
   },
   privacy: {
     eyebrow: "Confidentialité",
     title: "Afficher, oui. Envoyer, non.",
     description:
-      "Orekio ne transmet au modèle ni le nom de vos patients, ni leurs saisies, ni leurs scores, ni vos notes. Quand vous demandez une information sur un patient, c'est Orekio qui la lit et l'affiche. Les noms de vos patients et de vos invités, et toute adresse e-mail, sont retirés de votre question deux fois avant l'envoi : dans le navigateur, puis sur le serveur.",
+      "Orekio ne transmet de lui-même au modèle ni le nom de vos patients, ni leurs saisies, ni leurs scores, ni vos notes. Quand vous demandez une information sur un patient, c'est Orekio qui la lit et l'affiche. Les noms de vos patients et de vos invités, et toute adresse e-mail, sont retirés de votre question deux fois avant l'envoi : dans le navigateur, puis sur le serveur.",
     typedTitle: "Ce que vous tapez",
     sentTitle: "Ce qui part",
     question: [
       { text: "Programme le PHQ-9 pour " },
       { text: "Camille Martin", replacedBy: "ce patient" },
-      { text: " tous les lundis, et préviens " },
+      { text: " tous les lundis à 9 h, et préviens " },
       { text: "camille.m@exemple.fr", replacedBy: "cette adresse" },
     ],
     returnedTitle: "Ce qui revient",
-    returned: "Une proposition dans une forme fermée, vérifiée par le serveur : programmer le PHQ-9, le lundi à 09:00. Le patient vient de la fiche ouverte, jamais du modèle.",
+    returned: "Une proposition dans une forme fermée, vérifiée par le serveur : programmer le PHQ-9, le lundi à 09:00. Le patient vient de la fiche ou de votre question, reconnu par Orekio, jamais du modèle.",
     receivedTitle: "Reçu par le modèle",
-    received: "Les consignes, le guide d'usage, le catalogue des modules, le nom de l'écran (un mot d'une liste fermée), le module affiché, si une fiche est ouverte, la date du jour et vos questions, sans les noms ni les adresses.",
+    received: "Les consignes, le guide d'usage, des listes fermées (modules, champs, parcours, actions), le nom de l'écran, le module affiché, si une fiche est ouverte, la date du jour et vos questions, sans les noms ni les adresses reconnus. Un second modèle contrôle la question et la réponse.",
     neverTitle: "Jamais transmis par Orekio",
     never: "L'adresse de la page, l'identifiant du patient, son nom, ses saisies, ses scores, ses notes, la liste de ce qu'il suit. Le résultat d'une carte reste dans votre navigateur.",
     limitTitle: "Une limite à connaître",
@@ -377,7 +394,7 @@ export const assistantFr: AssistantPageCopy = {
       "Montrer la valeur brute d'un jour, sans commentaire",
       "Expliquer comment un score se calcule et ses bornes",
       "Afficher une question d'échelle et ses réponses, avec sa source",
-      "Comparer deux modules sur des faits : questions, bornes, public",
+      "Comparer deux ou trois modules sur des faits : questions, bornes, public",
       "Ouvrir l'écran où l'information se lit",
     ],
     refusesTitle: "Ce qu'il refuse",
@@ -393,14 +410,14 @@ export const assistantFr: AssistantPageCopy = {
   safeguards: {
     eyebrow: "Garde-fous",
     title: "Prévisible, sobre, sous contrôle",
-    description: "Une IA dans un outil de soin se juge à ce qu'elle ne peut pas faire. Voici ce qui reste vrai à chaque question.",
+    description: "Une IA dans un carnet de bord se juge à ce qu'elle ne peut pas faire. Voici ce que l'app garantit.",
     items: [
       { title: "Rien sans votre clic", description: "Aucun écran ne s'ouvre, aucun élément ne s'éclaire, rien ne s'écrit sans un geste de votre part." },
       { title: "Texte brut seulement", description: "Aucune balise, image ni lien venu du modèle n'est interprété." },
       { title: "Filtre de sortie", description: "Une réponse libre hors cadre est retirée avant d'être lue : « Cette réponse ne peut pas être affichée. »" },
       { title: "Mention IA", description: "« Vous échangez avec une IA », en tête de la conversation." },
-      { title: "Rien de conservé", description: "Orekio ne garde ni vos questions ni les réponses, sauf une question que vous choisissez de signaler. La conversation vit dans l'onglet et la croix l'efface." },
-      { title: "Vos retours", description: "Deux pouces sous chaque réponse, utile ou pas, en un geste." },
+      { title: "Aucun texte conservé", description: "Orekio ne garde ni vos questions ni les réponses, seulement des compteurs sans texte, sauf une question que vous choisissez de signaler. La conversation vit dans l'onglet et la croix l'efface." },
+      { title: "Vos retours", description: "Deux pouces sous une réponse rendue, utile ou pas, en un geste." },
       { title: "Question signalée", description: "Sous un « je ne sais pas », vous relisez le texte et décidez de l'envoyer à l'équipe." },
       { title: "Toujours là", description: "Déplaçable, réductible en pilule, la fenêtre vous suit d'un écran à l'autre." },
     ],
@@ -409,7 +426,7 @@ export const assistantFr: AssistantPageCopy = {
     eyebrow: "Assistant IA",
     title: "Une question sur l'app ? Posez-la.",
     description:
-      "Une fenêtre explique l'app, guide pas à pas, retrouve une information et prépare un geste que vous confirmez. Elle affiche, elle ne conclut jamais, et Orekio ne lui envoie aucune donnée de vos patients.",
+      "Une fenêtre explique l'app, guide pas à pas, retrouve une information et prépare un geste que vous confirmez. Elle affiche, elle ne conclut jamais, et Orekio n'envoie de lui-même au modèle aucune donnée de vos patients.",
     link: "Découvrir l'assistant",
   },
 };

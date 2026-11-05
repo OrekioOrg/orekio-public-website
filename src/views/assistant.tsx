@@ -190,14 +190,15 @@ export default async function AssistantPage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+      <section className="bg-surface-container-low">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <SectionHead copy={dict.goldenRule} />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {[
             { title: dict.goldenRule.doesTitle, items: dict.goldenRule.does, sign: "✓", tone: "text-primary" },
             { title: dict.goldenRule.refusesTitle, items: dict.goldenRule.refuses, sign: "×", tone: "text-on-surface-variant" },
           ].map((column) => (
-            <div key={column.title} className="rounded-2xl border border-outline p-6">
+            <div key={column.title} className="rounded-2xl border border-outline bg-surface p-6">
               <h3 className="text-[20px] font-medium text-on-surface-strong">{column.title}</h3>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {column.items.map((item) => (
@@ -210,13 +211,14 @@ export default async function AssistantPage({
             </div>
           ))}
         </div>
-        <div className="mt-5 flex max-w-xl flex-col gap-2.5 rounded-2xl border border-outline bg-surface-container-low p-4 text-[14px] leading-normal">
+        <div className="mt-5 flex max-w-xl flex-col gap-2.5 rounded-2xl border border-outline bg-surface p-4 text-[14px] leading-normal">
           <AssistantQuestion question={dict.goldenRule.example.question} patientChip={dict.demo.patientChip} />
           <AssistantAnswer answer={dict.goldenRule.example.answer} />
         </div>
+        </div>
       </section>
 
-      <section className="bg-surface-container-low">
+      <section>
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <SectionHead copy={dict.safeguards} />
           <ul className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
