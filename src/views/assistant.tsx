@@ -63,20 +63,31 @@ export default async function AssistantPage({
 
   return (
     <>
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 md:pb-24">
-        <div>
-          <p className={`${EYEBROW} text-secondary`}>{dict.eyebrow}</p>
-          <h1 className="mt-4 text-[40px] font-medium leading-[1.08] tracking-[-0.02em] text-on-surface-strong md:text-[60px]">
-            {dict.headingLine1}
-            <br />
-            <span className="text-primary">{dict.headingLine2}</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-[18px] font-light leading-relaxed text-on-surface md:text-[20px]">
-            {dict.lede} <strong className="font-normal text-on-surface-strong">{dict.ledeStrong}</strong>
-          </p>
-          <p className="mt-6 text-[13.5px] font-light text-on-surface-variant">{dict.scope}</p>
+      {/* Choix de Guillaume : deux sections foncées, comme la maquette de la page, écart assumé à la charte. */}
+      <section className="assistant-hero relative overflow-hidden bg-ink text-on-ink">
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 md:pb-24">
+          <div>
+            <p className={`${EYEBROW} text-accent`}>{dict.eyebrow}</p>
+            <h1 className="mt-4 text-[40px] font-medium leading-[1.08] tracking-[-0.02em] md:text-[60px]">
+              {dict.headingLine1}
+              <br />
+              <span className="assistant-hero-accent">{dict.headingLine2}</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-[18px] font-light leading-relaxed text-on-ink/80 md:text-[20px]">
+              {dict.lede} <strong className="font-normal text-on-ink">{dict.ledeStrong}</strong>
+            </p>
+            <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-7">
+              {dict.stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col-reverse">
+                  <dt className="mt-2 max-w-[11rem] font-mono text-[11.5px] uppercase tracking-[0.08em] text-on-ink/75">{stat.label}</dt>
+                  <dd className="text-[34px] font-medium leading-none tabular-nums tracking-[-0.02em]">{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-8 text-[13.5px] font-light text-on-ink/75">{dict.scope}</p>
+          </div>
+          <AssistantDemo copy={dict.demo} />
         </div>
-        <AssistantDemo copy={dict.demo} />
       </section>
 
       <section className="bg-surface-container-low">
@@ -133,8 +144,7 @@ export default async function AssistantPage({
         </div>
       </section>
 
-      {/* La seule section de rupture de la page (charte, section 1). */}
-      <section className="bg-ink text-on-ink">
+            <section className="bg-ink text-on-ink">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <SectionHead dark copy={dict.privacy} />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">

@@ -123,6 +123,7 @@ export type AssistantPageCopy = {
   lede: string;
   ledeStrong: string;
   scope: string;
+  stats: readonly { value: string; label: string }[];
   demo: DemoCopy;
   capabilities: SectionCopy & {
     tiles: readonly GalleryTile[];
@@ -159,5 +160,5 @@ export type AssistantPageCopy = {
   safeguards: SectionCopy & {
     items: readonly { title: string; description: string }[];
   };
-  teaser: { eyebrow: string; title: string; description: string; link: string };
+  teaser: { text: string; link: string };
 };
