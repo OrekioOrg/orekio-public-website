@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { assistantEn } from "./assistant/en";
 import type { Dictionary } from "./fr";
 
 const email: Segment = {
@@ -8,6 +9,7 @@ const email: Segment = {
 };
 
 export const en: Dictionary = {
+  assistantPage: assistantEn,
   meta: {
     title: "Orekio, therapeutic support between appointments",
     description:

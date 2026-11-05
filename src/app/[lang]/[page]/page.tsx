@@ -5,6 +5,7 @@ import { hasLocale, locales, type Locale } from "@/i18n/config";
 import { basePath } from "@/base-path";
 import { legacyRedirects, pathTo, routes, type RouteKey } from "@/site";
 import * as about from "@/views/about";
+import * as assistant from "@/views/assistant";
 import * as features from "@/views/features";
 import * as legalNotice from "@/views/legal-notice";
 import * as pricing from "@/views/pricing";
@@ -22,6 +23,7 @@ type View = {
 
 const views: Partial<Record<RouteKey, View>> = {
   features,
+  assistant,
   pricing,
   about,
   legalNotice,

@@ -235,3 +235,24 @@ body {
     transform: translateY(8px) scale(0.92);
   }
 }
+
+/* La démonstration de la page Assistant : l'attente et l'arrivée d'une réponse. */
+@media (prefers-reduced-motion: no-preference) {
+  .assistant-spinner {
+    animation: assistant-spin 0.9s linear infinite;
+  }
+  .assistant-enter {
+    animation: assistant-enter 0.45s ease-out both;
+  }
+}
+@keyframes assistant-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes assistant-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}

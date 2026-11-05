@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { assistantFr } from "./assistant/fr";
 
 /** Une carte de la page Tarifs. `note` : l'encart propre à l'offre. */
 export interface PricingPlan {
@@ -18,6 +19,7 @@ const email: Segment = {
 };
 
 export const fr = {
+  assistantPage: assistantFr,
   meta: {
     title: "Orekio, l'accompagnement thérapeutique entre les rendez-vous",
     description:
