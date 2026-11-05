@@ -4,17 +4,19 @@ import { notFound } from "next/navigation";
 import { AssistantAnswer, AssistantChart, AssistantQuestion } from "@/components/assistant-answer";
 import { AssistantDemo } from "@/components/assistant-demo";
 import { CtaBanner } from "@/components/cta-banner";
+import { Fragment } from "react";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import type { SectionCopy } from "@/i18n/dictionaries/assistant/types";
 import { pageMetadata } from "@/seo";
 import { pathTo, routes } from "@/site";
 
 const TILE_WIDTH = {
-  regular: "",
   wide: "md:col-span-2",
   full: "md:col-span-2 lg:col-span-3",
 } as const;
 
+const PANEL_ON_INK = "rounded-2xl border border-on-ink/15 p-5";
 const EYEBROW = "font-mono text-[11.5px] font-medium uppercase tracking-[0.1em]";
 
 export async function generateMetadata({
@@ -33,7 +35,7 @@ export async function generateMetadata({
   });
 }
 
-function SectionHead({ eyebrow, title, description, dark = false }: { eyebrow: string; title: string; description: string; dark?: boolean }) {
+function SectionHead({ copy: { eyebrow, title, description }, dark = false }: { copy: SectionCopy; dark?: boolean }) {
   return (
     <div className="grid items-end gap-4 md:grid-cols-2 md:gap-8">
       <div>
@@ -58,7 +60,6 @@ export default async function AssistantPage({
   const fullDict = getDictionary(lang);
   const dict = fullDict.assistantPage;
   const cta = fullDict.home;
-  const votes = [dict.demo.voteUp, dict.demo.voteDown] as const;
 
   return (
     <>
@@ -80,12 +81,12 @@ export default async function AssistantPage({
 
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <SectionHead eyebrow={dict.capabilities.eyebrow} title={dict.capabilities.title} description={dict.capabilities.description} />
+          <SectionHead copy={dict.capabilities} />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {dict.capabilities.tiles.map((tile) => (
               <article
                 key={tile.title}
-                className={`flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5 ${TILE_WIDTH[tile.width ?? "regular"]}`}
+                className={`flex min-w-0 flex-col gap-4 rounded-2xl border border-outline bg-surface p-5 ${tile.width ? TILE_WIDTH[tile.width] : ""}`}
               >
                 <header>
                   <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-primary">{tile.tag}</p>
@@ -94,13 +95,13 @@ export default async function AssistantPage({
                 </header>
                 <div className="grid min-w-0 flex-1 gap-4 rounded-xl bg-surface-container-low p-4 text-[14px] leading-normal md:auto-cols-fr md:grid-flow-col">
                   {tile.examples.map((example) => (
-                    <div key={example.question} className="contents">
+                    <Fragment key={example.question}>
                       <div className="flex min-w-0 flex-col gap-2.5">
                         <AssistantQuestion question={example.question} patientChip={example.patient ? dict.demo.patientChip : undefined} />
-                        <AssistantAnswer answer={example.answer} voteLabels={votes} />
+                        <AssistantAnswer answer={example.answer} />
                       </div>
                       {example.chart ? <div className="min-w-0 self-center"><AssistantChart chart={dict.demo.chart} /></div> : null}
-                    </div>
+                    </Fragment>
                   ))}
                 </div>
               </article>
@@ -110,7 +111,7 @@ export default async function AssistantPage({
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <SectionHead eyebrow={dict.actions.eyebrow} title={dict.actions.title} description={dict.actions.description} />
+        <SectionHead copy={dict.actions} />
         <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {dict.actions.items.map((item) => (
             <li key={item.title} className="border-t border-outline pt-5">
@@ -121,7 +122,7 @@ export default async function AssistantPage({
         </ul>
 
         <div className="mt-24">
-          <SectionHead eyebrow={dict.information.eyebrow} title={dict.information.title} description={dict.information.description} />
+          <SectionHead copy={dict.information} />
           <ul className="mt-12 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
             {dict.information.items.map((item) => (
               <li key={item} className="rounded-xl border border-outline px-4 py-3 text-[14.5px] text-on-surface">
@@ -135,13 +136,13 @@ export default async function AssistantPage({
       {/* La seule section de rupture de la page (charte, section 1). */}
       <section className="bg-ink text-on-ink">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <SectionHead dark eyebrow={dict.privacy.eyebrow} title={dict.privacy.title} description={dict.privacy.description} />
+          <SectionHead dark copy={dict.privacy} />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            <div className="rounded-2xl border border-on-ink/15 p-5">
+            <div className={PANEL_ON_INK}>
               <h3 className="text-[17px] font-medium">{dict.privacy.typedTitle}</h3>
               <p className="mt-3 font-mono text-[13px] leading-relaxed">
-                {dict.privacy.typed.map((part) =>
-                  part.removed ? (
+                {dict.privacy.question.map((part) =>
+                  part.replacedBy ? (
                     <s key={part.text} className="text-on-ink/70 decoration-accent decoration-2">{part.text}</s>
                   ) : (
                     <span key={part.text}>{part.text}</span>
@@ -149,29 +150,29 @@ export default async function AssistantPage({
                 )}
               </p>
             </div>
-            <div className="rounded-2xl border border-on-ink/15 p-5">
+            <div className={PANEL_ON_INK}>
               <h3 className="text-[17px] font-medium">{dict.privacy.sentTitle}</h3>
               <p className="mt-3 font-mono text-[13px] leading-relaxed">
-                {dict.privacy.sent.map((part) =>
-                  part.replaced ? (
-                    <span key={part.text} className="rounded bg-on-ink/10 px-1 text-accent">{part.text}</span>
+                {dict.privacy.question.map((part) =>
+                  part.replacedBy ? (
+                    <span key={part.text} className="rounded bg-on-ink/10 px-1 text-accent">{part.replacedBy}</span>
                   ) : (
                     <span key={part.text}>{part.text}</span>
                   ),
                 )}
               </p>
             </div>
-            <div className="rounded-2xl border border-on-ink/15 p-5">
+            <div className={PANEL_ON_INK}>
               <h3 className="text-[17px] font-medium">{dict.privacy.returnedTitle}</h3>
               <p className="mt-3 text-[14.5px] font-light leading-relaxed text-on-ink/80">{dict.privacy.returned}</p>
             </div>
           </div>
           <div className="mt-5 grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-on-ink/15 p-5">
+            <div className={PANEL_ON_INK}>
               <h3 className={`${EYEBROW} text-accent`}>{dict.privacy.receivedTitle}</h3>
               <p className="mt-3 text-[14.5px] font-light leading-relaxed text-on-ink/80">{dict.privacy.received}</p>
             </div>
-            <div className="rounded-2xl border border-on-ink/15 p-5">
+            <div className={PANEL_ON_INK}>
               <h3 className={`${EYEBROW} text-accent`}>{dict.privacy.neverTitle}</h3>
               <p className="mt-3 text-[14.5px] font-light leading-relaxed text-on-ink/80">{dict.privacy.never}</p>
             </div>
@@ -190,7 +191,7 @@ export default async function AssistantPage({
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <SectionHead eyebrow={dict.goldenRule.eyebrow} title={dict.goldenRule.title} description={dict.goldenRule.description} />
+        <SectionHead copy={dict.goldenRule} />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {[
             { title: dict.goldenRule.doesTitle, items: dict.goldenRule.does, sign: "✓", tone: "text-primary" },
@@ -217,7 +218,7 @@ export default async function AssistantPage({
 
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <SectionHead eyebrow={dict.safeguards.eyebrow} title={dict.safeguards.title} description={dict.safeguards.description} />
+          <SectionHead copy={dict.safeguards} />
           <ul className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {dict.safeguards.items.map((item) => (
               <li key={item.title} className="border-t border-outline pt-5">

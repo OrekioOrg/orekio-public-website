@@ -11,11 +11,19 @@ const SCHEDULE: readonly Fact[] = [
 ];
 const ACTION_WORDS = { cancel: "Cancel", confirm: "Confirm", done: "Action done" };
 
+const scheduleAction = (state: "pending" | "done"): DemoAnswer => ({
+  kind: "action",
+  title: "Schedule a scale",
+  facts: SCHEDULE,
+  state,
+  ...ACTION_WORDS,
+});
+
 const FREE: DemoAnswer = {
   kind: "text",
   text: "The consultation notebook gathers the questions the patient writes down between two appointments. You will find it on the overview of their record.",
   bullets: ["questions arrive as they are written", "at the end of the appointment, you write the summary"],
-  votes: true,
+  votes: ["Helpful answer", "Unhelpful answer"],
 };
 const STEPS: DemoAnswer = {
   kind: "steps",
@@ -102,13 +110,10 @@ export const assistantEn: AssistantPageCopy = {
     pickerLabel: "Choose a demonstration",
     pause: "Pause",
     resume: "Resume",
-    voteUp: "Helpful answer",
-    voteDown: "Unhelpful answer",
     chart: {
       caption: "Record · My daily tracking",
       ariaLabel: "Fictional mood curve over seven days, with a marker on Monday, October 26",
       days: ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"],
-      values: [5, 4, 6, 5, 7, 6, 6],
       marker: "Oct 26 · 6",
     },
     scenes: [
@@ -116,14 +121,14 @@ export const assistantEn: AssistantPageCopy = {
         label: "Schedule a scale",
         question: "Schedule the PHQ-9 every Monday at 9 am.",
         patient: true,
-        answer: { kind: "action", title: "Schedule a scale", facts: SCHEDULE, state: "pending", ...ACTION_WORDS },
-        after: { kind: "action", title: "Schedule a scale", facts: SCHEDULE, state: "done", ...ACTION_WORDS },
-        toast: "Action done",
+        answer: scheduleAction("pending"),
+        after: scheduleAction("done"),
+        toast: ACTION_WORDS.done,
       },
       { label: "Find entries", question: "Their nights this week?", patient: true, answer: ENTRIES_DEMO },
       { label: "Point at a chart", question: "What mood did they note on Monday?", patient: true, answer: VALUE, chart: true },
-      { label: "Get guided", question: "How do I export my data?", patient: false, answer: STEPS },
-      { label: "Understand a score", question: "How is the PHQ-9 score calculated?", patient: false, answer: FIELD },
+      { label: "Get guided", question: "How do I export my data?", answer: STEPS },
+      { label: "Understand a score", question: "How is the PHQ-9 score calculated?", answer: FIELD },
       { label: "A clinical question", question: "Their score went up, is that worrying?", patient: true, answer: REFUSAL },
     ],
   },
@@ -298,7 +303,7 @@ export const assistantEn: AssistantPageCopy = {
           {
             question: "Schedule the PHQ-9 every Monday at 9 am",
             patient: true,
-            answer: { kind: "action", title: "Schedule a scale", facts: SCHEDULE, state: "done", ...ACTION_WORDS },
+            answer: scheduleAction("done"),
           },
         ],
       },
@@ -344,18 +349,12 @@ export const assistantEn: AssistantPageCopy = {
     description:
       "Orekio does not pass your patients' names, entries or scores, or your notes, to the model. When you ask for information about a patient, Orekio reads and displays it. The names of your patients and invitees, and any email address, are removed from your question twice before sending: in the browser, then on the server.",
     typedTitle: "What you type",
-    typed: [
-      { text: "Schedule the PHQ-9 for " },
-      { text: "Camille Martin", removed: true },
-      { text: " every Monday, and notify " },
-      { text: "camille.m@example.com", removed: true },
-    ],
     sentTitle: "What is sent",
-    sent: [
+    question: [
       { text: "Schedule the PHQ-9 for " },
-      { text: "this patient", replaced: true },
+      { text: "Camille Martin", replacedBy: "this patient" },
       { text: " every Monday, and notify " },
-      { text: "this address", replaced: true },
+      { text: "camille.m@example.com", replacedBy: "this address" },
     ],
     returnedTitle: "What comes back",
     returned: "A proposal in a closed form, checked by the server: schedule the PHQ-9, Monday at 09:00. The patient comes from the open record, never from the model.",

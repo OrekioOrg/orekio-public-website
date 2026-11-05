@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AssistantAnswer, AssistantChart, AssistantQuestion } from "@/components/assistant-answer";
 import type { DemoCopy } from "@/i18n/dictionaries/assistant/types";
 
@@ -21,14 +21,24 @@ function prefersReducedMotion(): boolean {
 /*
  * La fenêtre de l'assistant, rejouée : la question se tape, l'attente, la réponse, puis le geste.
  * Elle tourne seule, sauf en mouvement réduit ; choisir une scène ou la mettre en pause arrête le
- * défilement (WCAG 2.2.2). Une hauteur fixe : la page ne saute pas d'une scène à l'autre.
+ * défilement (WCAG 2.2.2), et elle s'arrête hors de l'écran. Une hauteur fixe : la page ne saute pas d'une scène à l'autre.
  */
 export function AssistantDemo({ copy }: { copy: DemoCopy }) {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("rest");
   const [typed, setTyped] = useState(0);
   const [auto, setAuto] = useState(true);
+  const [visible, setVisible] = useState(true);
+  const windowRef = useRef<HTMLDivElement>(null);
   const scene = copy.scenes[index];
+
+  useEffect(() => {
+    const target = windowRef.current;
+    if (!target) return;
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
   const play = useCallback((next: number) => {
     setIndex(next);
@@ -39,14 +49,15 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
   const next = (index + 1) % copy.scenes.length;
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (!visible || prefersReducedMotion()) return;
     const after = (ms: number, step: () => void) => {
       const timer = setTimeout(step, ms);
       return () => clearTimeout(timer);
     };
+    const loop = (ms: number) => (auto ? after(ms, () => play(next)) : undefined);
     switch (phase) {
       case "rest":
-        return auto ? after(FIRST_REST_MS, () => play(next)) : undefined;
+        return loop(FIRST_REST_MS);
       case "typing":
         return typed < scene.question.length
           ? after(TYPE_MS, () => setTyped((n) => n + 1))
@@ -55,11 +66,11 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
         return after(WAITING_MS, () => setPhase("answer"));
       case "answer":
         if (scene.after || scene.chart) return after(BEFORE_GESTURE_MS, () => setPhase("after"));
-        return auto ? after(READ_MS, () => play(next)) : undefined;
+        return loop(READ_MS);
       case "after":
-        return auto ? after(READ_MS, () => play(next)) : undefined;
+        return loop(READ_MS);
     }
-  }, [phase, typed, auto, scene, next, play]);
+  }, [phase, typed, auto, visible, scene, next, play]);
 
   const choose = (i: number) => {
     setAuto(false);
@@ -74,6 +85,7 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
   return (
     <div>
       <div
+        ref={windowRef}
         role="group"
         aria-label={copy.ariaLabel}
         className="relative mx-auto flex h-[640px] w-full max-w-[440px] flex-col overflow-hidden rounded-2xl border border-outline bg-surface text-[14.5px] leading-normal shadow-sm"
@@ -84,13 +96,13 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
           {asked ? <AssistantQuestion question={scene.question} patientChip={scene.patient ? copy.patientChip : undefined} /> : null}
           {phase === "waiting" ? (
             <p className="flex items-center gap-2.5 text-[13px] text-on-surface-variant">
-              <span aria-hidden="true" className="assistant-spinner h-[22px] w-[22px] rounded-full border-[2.5px] border-outline border-t-primary" />
+              <span aria-hidden="true" className="h-[22px] w-[22px] rounded-full border-[2.5px] border-outline border-t-primary motion-safe:animate-spin" />
               {copy.waiting}
             </p>
           ) : null}
           {answered ? (
             <div key={`${index}-${gestured}`} className="assistant-enter flex flex-col gap-2.5">
-              <AssistantAnswer answer={answer} voteLabels={[copy.voteUp, copy.voteDown]} />
+              <AssistantAnswer answer={answer} />
               {gestured && scene.chart ? <AssistantChart chart={copy.chart} /> : null}
             </div>
           ) : null}

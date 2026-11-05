@@ -4,7 +4,7 @@
 export type Fact = { label: string; value: string; chip?: boolean };
 
 export type DemoAnswer =
-  | { kind: "text"; text: string; bullets?: readonly string[]; votes?: boolean }
+  | { kind: "text"; text: string; bullets: readonly string[]; votes: readonly [string, string] }
   | {
       kind: "steps";
       title: string;
@@ -68,19 +68,22 @@ export type DemoChart = {
   caption: string;
   ariaLabel: string;
   days: readonly string[];
-  values: readonly number[];
   marker: string;
 };
 
-export type DemoScene = {
-  label: string;
+/** Un échange montré : la question, le patient qu'elle concerne, la réponse. */
+export type DemoExchange = {
   question: string;
-  patient: boolean;
+  patient?: boolean;
   answer: DemoAnswer;
+  chart?: boolean;
+};
+
+export type DemoScene = DemoExchange & {
+  label: string;
   /** Ce que la carte devient après le geste de la démonstration. */
   after?: DemoAnswer;
   toast?: string;
-  chart?: boolean;
 };
 
 export type DemoCopy = {
@@ -94,8 +97,6 @@ export type DemoCopy = {
   pickerLabel: string;
   pause: string;
   resume: string;
-  voteUp: string;
-  voteDown: string;
   chart: DemoChart;
   scenes: readonly DemoScene[];
 };
@@ -106,12 +107,13 @@ export type GalleryTile = {
   description: string;
   /** Colonnes occupées sur grand écran : deux, ou toute la rangée. */
   width?: "wide" | "full";
-  examples: readonly {
-    question: string;
-    patient?: boolean;
-    answer: DemoAnswer;
-    chart?: boolean;
-  }[];
+  examples: readonly DemoExchange[];
+};
+
+export type SectionCopy = {
+  eyebrow: string;
+  title: string;
+  description: string;
 };
 
 export type AssistantPageCopy = {
@@ -124,32 +126,20 @@ export type AssistantPageCopy = {
   ledeStrong: string;
   scope: string;
   demo: DemoCopy;
-  capabilities: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  capabilities: SectionCopy & {
     tiles: readonly GalleryTile[];
   };
-  actions: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  actions: SectionCopy & {
     items: readonly { title: string; description: string }[];
   };
-  information: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  information: SectionCopy & {
     items: readonly string[];
   };
-  privacy: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  privacy: SectionCopy & {
     typedTitle: string;
-    typed: readonly { text: string; removed?: boolean }[];
     sentTitle: string;
-    sent: readonly { text: string; replaced?: boolean }[];
+    /** La question, morceau par morceau ; `replacedBy` : ce qu'un nom ou une adresse devient. */
+    question: readonly { text: string; replacedBy?: string }[];
     returnedTitle: string;
     returned: string;
     receivedTitle: string;
@@ -161,20 +151,14 @@ export type AssistantPageCopy = {
     provider: string;
     privacyLink: string;
   };
-  goldenRule: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  goldenRule: SectionCopy & {
     doesTitle: string;
     does: readonly string[];
     refusesTitle: string;
     refuses: readonly string[];
     example: { question: string; answer: DemoAnswer };
   };
-  safeguards: {
-    eyebrow: string;
-    title: string;
-    description: string;
+  safeguards: SectionCopy & {
     items: readonly { title: string; description: string }[];
   };
   teaser: { eyebrow: string; title: string; description: string; link: string };

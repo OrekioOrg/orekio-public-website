@@ -11,11 +11,19 @@ const SCHEDULE: readonly Fact[] = [
 ];
 const ACTION_WORDS = { cancel: "Annuler", confirm: "Confirmer", done: "Action effectuée" };
 
+const scheduleAction = (state: "pending" | "done"): DemoAnswer => ({
+  kind: "action",
+  title: "Programmer une échelle",
+  facts: SCHEDULE,
+  state,
+  ...ACTION_WORDS,
+});
+
 const FREE: DemoAnswer = {
   kind: "text",
   text: "Le carnet de consultation rassemble les questions que le patient note entre deux rendez-vous. Vous le trouvez sur la vue d'ensemble de sa fiche.",
   bullets: ["les questions arrivent au fil de l'eau", "en fin de rendez-vous, vous écrivez le récapitulatif"],
-  votes: true,
+  votes: ["Réponse utile", "Réponse pas utile"],
 };
 const STEPS: DemoAnswer = {
   kind: "steps",
@@ -102,13 +110,10 @@ export const assistantFr: AssistantPageCopy = {
     pickerLabel: "Choisir une démonstration",
     pause: "Mettre en pause",
     resume: "Reprendre",
-    voteUp: "Réponse utile",
-    voteDown: "Réponse pas utile",
     chart: {
       caption: "Fiche · Mon suivi quotidien",
       ariaLabel: "Courbe fictive de l'humeur sur sept jours, avec un repère sur le lundi 26 octobre",
       days: ["mar.", "mer.", "jeu.", "ven.", "sam.", "dim.", "lun."],
-      values: [5, 4, 6, 5, 7, 6, 6],
       marker: "26 oct. · 6",
     },
     scenes: [
@@ -116,14 +121,14 @@ export const assistantFr: AssistantPageCopy = {
         label: "Programmer une échelle",
         question: "Programme le PHQ-9 tous les lundis à 9 h.",
         patient: true,
-        answer: { kind: "action", title: "Programmer une échelle", facts: SCHEDULE, state: "pending", ...ACTION_WORDS },
-        after: { kind: "action", title: "Programmer une échelle", facts: SCHEDULE, state: "done", ...ACTION_WORDS },
-        toast: "Action effectuée",
+        answer: scheduleAction("pending"),
+        after: scheduleAction("done"),
+        toast: ACTION_WORDS.done,
       },
       { label: "Retrouver des saisies", question: "Ses nuits de la semaine ?", patient: true, answer: ENTRIES_DEMO },
       { label: "Pointer un graphique", question: "Quelle humeur a-t-elle notée lundi ?", patient: true, answer: VALUE, chart: true },
-      { label: "Être guidé", question: "Comment exporter mes données ?", patient: false, answer: STEPS },
-      { label: "Comprendre un score", question: "Comment se calcule le score du PHQ-9 ?", patient: false, answer: FIELD },
+      { label: "Être guidé", question: "Comment exporter mes données ?", answer: STEPS },
+      { label: "Comprendre un score", question: "Comment se calcule le score du PHQ-9 ?", answer: FIELD },
       { label: "Une question clinique", question: "Son score a monté, c'est inquiétant ?", patient: true, answer: REFUSAL },
     ],
   },
@@ -298,7 +303,7 @@ export const assistantFr: AssistantPageCopy = {
           {
             question: "Programme le PHQ-9 tous les lundis à 9 h",
             patient: true,
-            answer: { kind: "action", title: "Programmer une échelle", facts: SCHEDULE, state: "done", ...ACTION_WORDS },
+            answer: scheduleAction("done"),
           },
         ],
       },
@@ -344,18 +349,12 @@ export const assistantFr: AssistantPageCopy = {
     description:
       "Orekio ne transmet au modèle ni le nom de vos patients, ni leurs saisies, ni leurs scores, ni vos notes. Quand vous demandez une information sur un patient, c'est Orekio qui la lit et l'affiche. Les noms de vos patients et de vos invités, et toute adresse e-mail, sont retirés de votre question deux fois avant l'envoi : dans le navigateur, puis sur le serveur.",
     typedTitle: "Ce que vous tapez",
-    typed: [
-      { text: "Programme le PHQ-9 pour " },
-      { text: "Camille Martin", removed: true },
-      { text: " tous les lundis, et préviens " },
-      { text: "camille.m@exemple.fr", removed: true },
-    ],
     sentTitle: "Ce qui part",
-    sent: [
+    question: [
       { text: "Programme le PHQ-9 pour " },
-      { text: "ce patient", replaced: true },
+      { text: "Camille Martin", replacedBy: "ce patient" },
       { text: " tous les lundis, et préviens " },
-      { text: "cette adresse", replaced: true },
+      { text: "camille.m@exemple.fr", replacedBy: "cette adresse" },
     ],
     returnedTitle: "Ce qui revient",
     returned: "Une proposition dans une forme fermée, vérifiée par le serveur : programmer le PHQ-9, le lundi à 09:00. Le patient vient de la fiche ouverte, jamais du modèle.",
