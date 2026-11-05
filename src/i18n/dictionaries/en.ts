@@ -261,7 +261,7 @@ export const en: Dictionary = {
           eyebrow: "Before the consultation",
           title: "What the patient has entered, at a glance.",
           text: "The modules used over the last four weeks, day by day, and the questionnaires received but not yet viewed.",
-          alt: "A fictional patient's overview: her modules and the days she entered something.",
+          alt: "A fictional patient's overview: his modules and the days he entered something.",
         },
         {
           src: "praticien-armoire.png",

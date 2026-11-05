@@ -272,7 +272,7 @@ export const fr = {
           eyebrow: "Avant la consultation",
           title: "Ce que le patient a noté, d'un coup d'œil.",
           text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et les questionnaires reçus pas encore consultés.",
-          alt: "La vue d'ensemble d'une patiente fictive : ses modules et les jours où elle a noté quelque chose.",
+          alt: "La vue d'ensemble d'un patient fictif : ses modules et les jours où il a noté quelque chose.",
         },
         {
           src: "praticien-armoire.png",
