@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
-import { routes } from "@/site";
+import { pathTo, routes } from "@/site";
 import { CtaBanner } from "@/components/cta-banner";
 import { ModuleGallery } from "@/components/module-gallery";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
@@ -36,6 +37,7 @@ export default async function FonctionnalitesPage({
   const dict = fullDict.features;
   // Le bandeau reprend mot pour mot celui de l'accueil : memes cles.
   const cta = fullDict.home;
+  const assistantTeaser = fullDict.assistantPage.teaser;
 
   return (
     <>
@@ -191,6 +193,27 @@ export default async function FonctionnalitesPage({
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* L'assistant a sa page : ici, une entrée. */}
+      <section className="mx-auto max-w-6xl px-6 pt-20 md:pt-24">
+        <div className="grid items-end gap-6 rounded-2xl border border-outline p-6 md:grid-cols-[minmax(0,1fr)_auto] md:p-8">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">{assistantTeaser.eyebrow}</p>
+            <h2 className="mt-3 text-[24px] font-medium leading-tight text-on-surface-strong md:text-[28px]">
+              {assistantTeaser.title}
+            </h2>
+            <p className="mt-3 max-w-2xl text-[15px] font-light leading-relaxed text-on-surface-variant">
+              {assistantTeaser.description}
+            </p>
+          </div>
+          <Link
+            href={pathTo(lang, "assistant")}
+            className="inline-block justify-self-start rounded-lg bg-primary px-5 py-2.5 text-[15px] text-on-primary transition-opacity hover:opacity-90"
+          >
+            {assistantTeaser.link}
+          </Link>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { assistantFr } from "./assistant/fr";
 
 /** Une carte de la page Tarifs. `note` : l'encart propre à l'offre. */
 export interface PricingPlan {
@@ -18,6 +19,7 @@ const email: Segment = {
 };
 
 export const fr = {
+  assistantPage: assistantFr,
   meta: {
     title: "Orekio, l'accompagnement thérapeutique entre les rendez-vous",
     description:
@@ -270,7 +272,7 @@ export const fr = {
           eyebrow: "Avant la consultation",
           title: "Ce que le patient a noté, d'un coup d'œil.",
           text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et les questionnaires reçus pas encore consultés.",
-          alt: "La vue d'ensemble d'une patiente fictive : ses modules et les jours où elle a noté quelque chose.",
+          alt: "La vue d'ensemble d'un patient fictif : ses modules et les jours où il a noté quelque chose.",
         },
         {
           src: "praticien-armoire.png",
@@ -278,7 +280,7 @@ export const fr = {
           eyebrow: "Choisir les outils",
           title: "Vous ouvrez l'accès aux modules au fil des consultations.",
           text: "Chaque outil s'ouvre une fois travaillé ensemble, et se retire à tout moment.",
-          alt: "La liste des modules ouverts pour une patiente fictive.",
+          alt: "La liste des modules ouverts pour un patient fictif.",
         },
         {
           src: "praticien-sommeil-donnees.png",

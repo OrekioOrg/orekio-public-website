@@ -64,6 +64,7 @@ export const PRICES_FINAL = true;
 export const routes = {
   home: { fr: "", en: "" },
   features: { fr: "/fonctionnalites", en: "/features" },
+  assistant: { fr: "/assistant", en: "/assistant" },
   pricing: { fr: "/tarifs", en: "/pricing" },
   about: { fr: "/a-propos", en: "/about" },
   blog: { fr: "/blog", en: "/blog" },
