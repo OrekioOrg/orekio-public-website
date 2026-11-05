@@ -376,7 +376,7 @@ export const assistantEn: AssistantPageCopy = {
     returnedTitle: "What comes back",
     returned: "A proposal in a closed form, checked by the server: schedule the PHQ-9, Monday at 09:00. The patient comes from the record or from your question, recognised by Orekio, never from the model.",
     receivedTitle: "Received by the model",
-    received: "The instructions, the user guide, closed lists (modules, fields, walkthroughs, actions), the screen's name, the module on display, whether a record is open, today's date and your questions, without recognised names or addresses. A second model checks the question and the answer.",
+    received: "The instructions, the user guide, closed lists (modules, fields, walkthroughs, actions), the screen's name, the module on display, whether a record is open, today's date and your questions, without recognised names or addresses. A second model checks the question and any free-text answer.",
     neverTitle: "Never passed on by Orekio",
     never: "The page address, the patient's identifier, their name, entries, scores, notes, the list of what they are tracking. A card's result stays in your browser.",
     limitTitle: "A limit to be aware of",

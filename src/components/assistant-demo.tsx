@@ -89,6 +89,8 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
     play(i);
   };
 
+  const settled = phase === "rest" || phase === "after" || (phase === "answer" && !scene.after && !scene.chart);
+  const moving = !paused && (auto || !settled);
   const asked = phase !== "typing";
   const answered = phase === "rest" || phase === "answer" || phase === "after";
   const gestured = phase === "rest" || phase === "after";
@@ -108,7 +110,7 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
           {asked ? <AssistantQuestion question={scene.question} patientChip={scene.patient ? copy.patientChip : undefined} /> : null}
           {phase === "waiting" ? (
             <p className="flex items-center gap-2.5 text-[13px] text-on-surface-variant">
-              <span aria-hidden="true" className="h-[22px] w-[22px] rounded-full border-[2.5px] border-outline border-t-primary motion-safe:animate-spin" />
+              <span aria-hidden="true" className={`h-[22px] w-[22px] rounded-full border-[2.5px] border-outline border-t-primary ${paused ? "" : "motion-safe:animate-spin"}`} />
               {copy.waiting}
             </p>
           ) : null}
@@ -120,7 +122,7 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
           ) : null}
         </div>
         {phase === "after" && scene.toast ? (
-          <p className="assistant-enter absolute bottom-[84px] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-on-surface-strong px-3.5 py-2 text-[13.5px] text-surface">
+          <p className="assistant-enter absolute left-1/2 top-[60px] -translate-x-1/2 whitespace-nowrap rounded-xl bg-on-surface-strong px-3.5 py-2 text-[13.5px] text-surface">
             {scene.toast}
           </p>
         ) : null}
@@ -154,12 +156,12 @@ export function AssistantDemo({ copy }: { copy: DemoCopy }) {
           <button
             type="button"
             onClick={() => {
-              setPaused(auto && !paused);
-              setAuto(paused || !auto);
+              setPaused(moving);
+              setAuto(!moving);
             }}
             className="min-h-11 rounded-full px-3 py-1.5 text-[13.5px] text-primary underline-offset-2 hover:underline"
           >
-            {auto && !paused ? copy.pause : copy.resume}
+            {moving ? copy.pause : copy.resume}
           </button>
         )}
       </div>

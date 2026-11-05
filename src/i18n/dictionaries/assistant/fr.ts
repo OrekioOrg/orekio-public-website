@@ -376,7 +376,7 @@ export const assistantFr: AssistantPageCopy = {
     returnedTitle: "Ce qui revient",
     returned: "Une proposition dans une forme fermée, vérifiée par le serveur : programmer le PHQ-9, le lundi à 09:00. Le patient vient de la fiche ou de votre question, reconnu par Orekio, jamais du modèle.",
     receivedTitle: "Reçu par le modèle",
-    received: "Les consignes, le guide d'usage, des listes fermées (modules, champs, parcours, actions), le nom de l'écran, le module affiché, si une fiche est ouverte, la date du jour et vos questions, sans les noms ni les adresses reconnus. Un second modèle contrôle la question et la réponse.",
+    received: "Les consignes, le guide d'usage, des listes fermées (modules, champs, parcours, actions), le nom de l'écran, le module affiché, si une fiche est ouverte, la date du jour et vos questions, sans les noms ni les adresses reconnus. Un second modèle contrôle la question et toute réponse libre.",
     neverTitle: "Jamais transmis par Orekio",
     never: "L'adresse de la page, l'identifiant du patient, son nom, ses saisies, ses scores, ses notes, la liste de ce qu'il suit. Le résultat d'une carte reste dans votre navigateur.",
     limitTitle: "Une limite à connaître",
