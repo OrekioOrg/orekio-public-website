@@ -280,7 +280,7 @@ export const fr = {
           eyebrow: "Choisir les outils",
           title: "Vous ouvrez l'accès aux modules au fil des consultations.",
           text: "Chaque outil s'ouvre une fois travaillé ensemble, et se retire à tout moment.",
-          alt: "La liste des modules ouverts pour une patiente fictive.",
+          alt: "La liste des modules ouverts pour un patient fictif.",
         },
         {
           src: "praticien-sommeil-donnees.png",
