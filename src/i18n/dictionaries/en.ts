@@ -93,7 +93,7 @@ export const en: Dictionary = {
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      "30-day trial, no credit card. A founders' rate reserved for the first 100 sign-ups.",
+      "2 months free with no credit card and a founders' rate, reserved for the first 100 sign-ups.",
     ctaSectionButton: "Try it free",
     apps: {
       title: "Two apps, one shared space",
@@ -327,9 +327,9 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      "30-day trial, no credit card. Zelai: €29.99 per month incl. VAT, up to 15 patients. Mendi: €39.99 per month incl. VAT, up to 30 patients. Founders: €24.99 per month incl. VAT for life, 100 seats.",
+      "Zelai: €29.99 per month incl. VAT, up to 30 patients. Mendi: €39.99 per month incl. VAT, unlimited patients. Founders, the first 100 sign-ups: €19.99 and €29.99 per month incl. VAT for life, 2 months free with no credit card.",
     metaDescriptionProvisional:
-      "30-day trial, no credit card. Two plans with identical content, Zelai up to 15 patients and Mendi up to 30, plus a Founders offer for the first 100 subscribers.",
+      "Two plans with identical content, Zelai up to 30 patients and Mendi unlimited, plus a Founders offer for the first 100 sign-ups, 2 months free with no credit card.",
     eyebrow: "Pricing",
     plans: [
       {
@@ -339,12 +339,12 @@ export const en: Dictionary = {
         period: "incl. VAT / month",
         priceExclVat: "€24.99 excl. VAT / month",
         features: [
-          "Up to 15 followed patients",
+          "Up to 30 followed patients",
           "Every module and scale",
         ],
         note: {
           label: "Founders:",
-          text: "€24.99 incl. VAT / month for life (€20.83 excl. VAT), 100 seats",
+          text: "€19.99 incl. VAT / month for life (€16.66 excl. VAT), 100 seats",
         },
       },
       {
@@ -354,19 +354,19 @@ export const en: Dictionary = {
         period: "incl. VAT / month",
         priceExclVat: "€33.33 excl. VAT / month",
         features: [
-          "Up to 30 followed patients",
+          "Unlimited followed patients",
           "Every module and scale",
         ],
         note: {
-          label: "Free trial:",
-          text: "30 days to try everything",
+          label: "Founders:",
+          text: "€29.99 incl. VAT / month for life (€24.99 excl. VAT), 100 seats",
         },
       },
     ],
     details: [
       {
         label: "Trial",
-        text: "One month on Mendi, the highest plan, with no credit card and nothing to cancel. At the end of the trial, you subscribe and everything continues, data included. Otherwise your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
+        text: "For the first 100 sign-ups, 2 months free with no credit card. After that, 1 month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.",
       },
       {
         label: "Zelai and Mendi",
@@ -374,7 +374,7 @@ export const en: Dictionary = {
       },
       {
         label: "Founders",
-        text: "For the first 100 subscribers, on the Zelai plan, up to 15 followed patients. Rate guaranteed as long as the subscription stays active, monthly billing only, with a direct channel to the team.",
+        text: "For the first 100 sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (€219.89 incl. VAT for Zelai, €329.89 incl. VAT for Mendi), with a direct channel to the team.",
       },
     ],
     included: {
@@ -389,7 +389,7 @@ export const en: Dictionary = {
     },
     subscribeButton: "Try for free",
     footerNote: [
-      "Prices include VAT (20%). A practice with three practitioners or more? The Organisation plan costs €23.99 incl. VAT per practitioner on Zelai, €31.99 on Mendi. More than 30 followed patients? ",
+      "Prices include VAT (20%). Do you represent an organisation? ",
       { href: "/en/contact", text: "Write to us" },
       ": we call you back within 7 working days.",
     ] as Segment[],

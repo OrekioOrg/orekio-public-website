@@ -104,7 +104,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      "30 jours d'essai, sans carte bancaire. Un tarif fondateurs réservé aux 100 premiers inscrits.",
+      "2 mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux 100 premiers inscrits.",
     ctaSectionButton: "Essayer gratuitement",
     apps: {
       title: "Deux applications, un même espace",
@@ -338,9 +338,9 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      "Essai de 30 jours sans carte bancaire. Zelai : 29,99 € TTC par mois, jusqu'à 15 patients. Mendi : 39,99 € TTC par mois, jusqu'à 30 patients. Fondateurs : 24,99 € TTC par mois à vie, 100 places.",
+      "Zelai : 29,99 € TTC par mois, jusqu'à 30 patients. Mendi : 39,99 € TTC par mois, patients illimités. Fondateurs, les 100 premiers inscrits : 19,99 € et 29,99 € TTC par mois à vie, 2 mois gratuits sans carte bancaire.",
     metaDescriptionProvisional:
-      "Essai de 30 jours sans carte bancaire. Deux offres au contenu identique, Zelai jusqu'à 15 patients et Mendi jusqu'à 30, et une offre Fondateurs pour les 100 premiers inscrits.",
+      "Deux offres au contenu identique, Zelai jusqu'à 30 patients et Mendi illimité, et une offre Fondateurs pour les 100 premiers inscrits, 2 mois gratuits sans carte bancaire.",
     eyebrow: "Tarifs",
     plans: [
       {
@@ -350,12 +350,12 @@ export const fr = {
         period: "TTC / mois",
         priceExclVat: "24,99 € HT / mois",
         features: [
-          "Jusqu'à 15 patients suivis",
+          "Jusqu'à 30 patients suivis",
           "Tous les modules et échelles",
         ],
         note: {
           label: "Fondateurs :",
-          text: "24,99 € TTC / mois à vie (20,83 € HT), 100 places",
+          text: "19,99 € TTC / mois à vie (16,66 € HT), 100 places",
         },
       },
       {
@@ -365,19 +365,19 @@ export const fr = {
         period: "TTC / mois",
         priceExclVat: "33,33 € HT / mois",
         features: [
-          "Jusqu'à 30 patients suivis",
+          "Patients suivis illimités",
           "Tous les modules et échelles",
         ],
         note: {
-          label: "Essai offert :",
-          text: "30 jours pour tout tester",
+          label: "Fondateurs :",
+          text: "29,99 € TTC / mois à vie (24,99 € HT), 100 places",
         },
       },
     ] as PricingPlan[],
     details: [
       {
         label: "Essai",
-        text: "Un mois sur Mendi, l'offre la plus haute, sans carte bancaire et sans rien à résilier. À la fin de l'essai, vous souscrivez et tout continue, données comprises. Sinon, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
+        text: "Pour les 100 premiers inscrits, 2 mois gratuits sans carte bancaire. Ensuite, 1 mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.",
       },
       {
         label: "Zelai et Mendi",
@@ -385,7 +385,7 @@ export const fr = {
       },
       {
         label: "Fondateurs",
-        text: "Pour les 100 premiers inscrits, sur l'offre Zelai, jusqu'à 15 patients suivis. Tarif garanti tant que l'abonnement reste actif, au mois uniquement, avec un canal direct avec l'équipe.",
+        text: "Pour les 100 premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (219,89 € TTC pour Zelai, 329,89 € TTC pour Mendi), avec un canal direct avec l'équipe.",
       },
     ],
     included: {
@@ -400,7 +400,7 @@ export const fr = {
     },
     subscribeButton: "Essayer gratuitement",
     footerNote: [
-      "Prix TTC, TVA de 20 % incluse. Vous exercez en cabinet à trois praticiens ou plus ? Le plan Structure compte 23,99 € TTC par praticien sur Zelai, 31,99 € TTC sur Mendi. Plus de 30 patients suivis ? ",
+      "Prix TTC, TVA de 20 % incluse. Vous représentez une structure ? ",
       { href: "/fr/contact", text: "Écrivez-nous" },
       " : nous vous rappelons sous 7 jours ouvrés.",
     ] as Segment[],
