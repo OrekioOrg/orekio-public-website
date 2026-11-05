@@ -316,7 +316,7 @@ export const en: Dictionary = {
         {
           title: "The patient stays in control",
           description:
-            "They grant sharing once; their entries then reach you continuously. They can withdraw that permission or erase their data whenever they wish. You can withdraw a tool at any time.",
+            "Sharing their entries is on by default and they reach you continuously. They can stop it or erase their data whenever they wish. You can withdraw a tool at any time.",
         },
       ],
     },
@@ -409,7 +409,7 @@ export const en: Dictionary = {
     boxText:
       "Orekio is designed as a digital logbook, not as a medical device. The app only displays: a raw figure, a neutral history, a score without interpretation. No threshold, no signal, no comparison to a norm. The clinical reading belongs to you.",
     paragraph4:
-      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. They reach you only with the patient's permission, which they can withdraw, and they can request the export or erasure of their data at any time. Certified health data hosting (HDS) is planned before commercial opening.",
+      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Certified health data hosting (HDS) is planned before commercial opening.",
   },
 
   contact: {
@@ -555,7 +555,7 @@ export const en: Dictionary = {
             "Notification logs: 1 year. Expired invitations: 30 days.",
           ],
           [
-            "End of subscription: the practitioner's account becomes read-only for 90 days if it never paid, 3 years otherwise. At that point, their follow-ups are erased. The practitioner is notified beforehand, and so is the patient when all of their practitioners are affected. A module followed by another practitioner remains. An account opened without registering a card is erased after 30 days.",
+            "End of subscription: the practitioner's account becomes read-only for 90 days if it never paid, 3 years otherwise. At that point, their follow-ups are erased. The practitioner is notified beforehand, and so is the patient when all of their practitioners are affected. A module followed by another practitioner remains. At launch, an account still waiting for its card, with no entitlement or patient, is erased after 30 days.",
           ],
           [
             "On request, an account and its data are erased without waiting for these periods (see “Your rights”).",
@@ -589,7 +589,7 @@ export const en: Dictionary = {
             "Resend: sending emails (invitations, password reset, account status, support requests and reported questions), from the European Union.",
           ],
           [
-            "Expo, Google Firebase and Apple: delivering notifications (reminders, notebook summaries) to the patient's phone. These providers are based in the United States; the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
+            "Expo and Google Firebase, and Apple for iPhones: delivering notifications (reminders, notebook summaries) to the patient's phone. These providers are based in the United States; for Expo and Firebase, the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
           ],
           [
             "Stripe: payment of the practitioner's subscription. Stripe receives no health data. In Europe, the contract is with its Irish company; transfers to the United States are governed by the Data Privacy Framework and, failing that, by the standard contractual clauses.",
@@ -606,7 +606,7 @@ export const en: Dictionary = {
             "In the web app, practitioners can ask an AI assistant questions about using Orekio. The assistant relies on a model from Anthropic, acting as a processor. It is for practitioners only: the patient app has none.",
           ],
           [
-            "Orekio does not itself send the AI any data about its patients: no name, entries, scores or notes. When the practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the catalogue of modules and fields, the name of the open screen, the module on display, whether a record is open (without saying which), today's date, and the questions in the conversation. A second Anthropic model checks the question and the answer before display. The names of patients and invitees that Orekio recognises, and any email address, are removed from questions before sending. The rest goes out as written: a clinical situation described in plain words, or a single name typed in lower case, misspelled or not on the list, is not recognised. The practitioner is asked not to write patient data in their questions.",
+            "Orekio does not itself send the AI any data about patients: no name, entries, scores or notes. When the practitioner asks for information about a patient, Orekio reads and displays it; it never goes to the model. The model receives the user guide, the catalogue of modules and fields, the name of the open screen, the module on display, whether a record is open (without saying which), today's date, and the questions in the conversation. A second Anthropic model checks the question and any free-text answer before display. The names of patients and invitees that Orekio recognises, and any email address, are removed from questions before sending. The rest goes out as written: a clinical situation described in plain words, or a single name typed in lower case, misspelled or not on the list, is not recognised. The practitioner is asked not to write patient data in their questions, apart from the full name or alias to prepare an action.",
           ],
           [
             "Anthropic is located in the United States. The transfer is governed by the European Commission's standard contractual clauses, included in its data processing agreement. Anthropic has confirmed that it applies zero data retention to Orekio: requests and responses are not kept once the response is returned, and are not used to train its models. Anthropic provides two exceptions: a legal obligation, and abuse prevention, for which flagged content may be kept for up to two years and the results of its safety checks are retained.",
@@ -652,7 +652,7 @@ export const en: Dictionary = {
         heading: "2. Access to the service",
         lines: [
           [
-            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered during the beta, then required before their first invitation. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
+            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered during the beta, then required before their first invitation, or at sign-in for an account that is subscribed or has patients. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
           ],
           [
             "Practitioners access the service by subscription (see the ",
@@ -721,7 +721,7 @@ export const en: Dictionary = {
             "No action prepared by the assistant is saved until the practitioner clicks “Confirm”. The practitioner remains responsible for the actions they confirm.",
           ],
           [
-            "The practitioner agrees not to describe in the assistant any clinical situation or any health data. To prepare an action, they may name a patient: Orekio removes the name it recognises from the question.",
+            "The practitioner agrees not to describe in the assistant any clinical situation or any health data. To prepare an action, they may refer to a patient by full name or alias, which Orekio removes from the question.",
           ],
           [
             "The number of questions is limited. During the beta, the assistant may be suspended at any time.",

@@ -327,7 +327,7 @@ export const fr = {
         {
           title: "Le patient garde la main",
           description:
-            "Il autorise le partage une fois ; ses saisies vous parviennent ensuite en continu. Il peut retirer cette autorisation ou effacer ses données quand il le souhaite. Vous pouvez retirer un outil à tout moment.",
+            "Le partage de ses saisies est actif par défaut et vous parvient en continu. Il peut l'arrêter ou effacer ses données quand il le souhaite. Vous pouvez retirer un outil à tout moment.",
         },
       ],
     },
@@ -420,7 +420,7 @@ export const fr = {
     boxText:
       "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
     paragraph4:
-      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Elles ne vous sont transmises qu'avec l'autorisation du patient, qui peut la retirer et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
   },
 
   contact: {
@@ -567,7 +567,7 @@ export const fr = {
             "Journaux des notifications : 1 an. Invitations expirées : 30 jours.",
           ],
           [
-            "Fin d'abonnement : le compte du praticien passe en lecture seule pendant 90 jours s'il n'a jamais payé, 3 ans sinon. À ce terme, ses suivis sont effacés. Le praticien est prévenu avant, et le patient aussi lorsque tous ses praticiens sont concernés. Un module qu'un autre praticien suit reste. Un compte ouvert sans enregistrer de carte est effacé après 30 jours.",
+            "Fin d'abonnement : le compte du praticien passe en lecture seule pendant 90 jours s'il n'a jamais payé, 3 ans sinon. À ce terme, ses suivis sont effacés. Le praticien est prévenu avant, et le patient aussi lorsque tous ses praticiens sont concernés. Un module qu'un autre praticien suit reste. Au lancement, un compte resté en attente de sa carte, sans droit ni patient, est effacé après 30 jours.",
           ],
           [
             "Sur demande, un compte et ses données sont effacés sans attendre ces durées (voir « Vos droits »).",
@@ -601,7 +601,7 @@ export const fr = {
             "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte, demandes de support et questions signalées), depuis l'Union européenne.",
           ],
           [
-            "Expo, Google Firebase et Apple : acheminement des notifications (rappels, récapitulatifs du carnet) vers le téléphone du patient. Ces prestataires sont situés aux États-Unis ; le transfert est encadré par les clauses contractuelles types de la Commission européenne, prévues dans leurs conditions.",
+            "Expo et Google Firebase, et Apple pour les iPhone : acheminement des notifications (rappels, récapitulatifs du carnet) vers le téléphone du patient. Ces prestataires sont situés aux États-Unis ; pour Expo et Firebase, le transfert est encadré par les clauses contractuelles types de la Commission européenne, prévues dans leurs conditions.",
           ],
           [
             "Stripe : paiement de l'abonnement du praticien. Stripe ne reçoit aucune donnée de santé. En Europe, le contrat est conclu avec sa société irlandaise ; les transferts vers les États-Unis sont encadrés par le Data Privacy Framework et, à défaut, par les clauses contractuelles types.",
@@ -618,7 +618,7 @@ export const fr = {
             "Dans l'application web, le praticien peut poser des questions à un assistant IA sur l'utilisation d'Orekio. L'assistant s'appuie sur un modèle d'Anthropic, qui agit comme sous-traitant. Il est réservé aux praticiens : l'application du patient n'en comporte pas.",
           ],
           [
-            "Orekio n'envoie de lui-même à l'IA aucune donnée de ses patients : ni nom, ni saisies, ni scores, ni notes. Quand le praticien demande une information sur un patient, c'est Orekio qui la lit et l'affiche ; elle ne part jamais vers le modèle. Le modèle reçoit le guide d'utilisation, le catalogue des modules et des champs, le nom de l'écran ouvert, le module affiché, le fait qu'une fiche est ouverte (sans dire laquelle), la date du jour, et les questions de la conversation. Un second modèle d'Anthropic contrôle la question et la réponse avant l'affichage. Les noms des patients et des invités qu'Orekio reconnaît, et toute adresse e-mail, sont retirés des questions avant l'envoi. Le reste part tel qu'il est écrit : une situation clinique décrite en toutes lettres, ou un nom seul écrit en minuscules, mal orthographié ou absent de la liste, n'est pas reconnu. Il est demandé au praticien de ne pas écrire de données de patient dans ses questions.",
+            "Orekio n'envoie de lui-même à l'IA aucune donnée des patients : ni nom, ni saisies, ni scores, ni notes. Quand le praticien demande une information sur un patient, c'est Orekio qui la lit et l'affiche ; elle ne part jamais vers le modèle. Le modèle reçoit le guide d'utilisation, le catalogue des modules et des champs, le nom de l'écran ouvert, le module affiché, le fait qu'une fiche est ouverte (sans dire laquelle), la date du jour, et les questions de la conversation. Un second modèle d'Anthropic contrôle la question et toute réponse libre avant l'affichage. Les noms des patients et des invités qu'Orekio reconnaît, et toute adresse e-mail, sont retirés des questions avant l'envoi. Le reste part tel qu'il est écrit : une situation clinique décrite en toutes lettres, ou un nom seul écrit en minuscules, mal orthographié ou absent de la liste, n'est pas reconnu. Il est demandé au praticien de ne pas écrire de données de patient dans ses questions, hormis le nom complet ou l'alias pour préparer un geste.",
           ],
           [
             "Anthropic est situé aux États-Unis. Le transfert est encadré par les clauses contractuelles types de la Commission européenne, intégrées à son contrat de sous-traitance. Anthropic a confirmé appliquer à Orekio la conservation zéro : les requêtes et les réponses ne sont pas conservées une fois la réponse rendue, et ne servent pas à entraîner ses modèles. Anthropic prévoit deux exceptions : une obligation légale, et la lutte contre les abus, pour laquelle un contenu signalé peut être gardé jusqu'à deux ans et le résultat de ses contrôles de sécurité est conservé.",
@@ -664,7 +664,7 @@ export const fr = {
         heading: "2. Accès au service",
         lines: [
           [
-            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée pendant la bêta, puis exigée avant sa première invitation. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
+            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée pendant la bêta, puis exigée avant sa première invitation, ou à la connexion d'un compte abonné ou qui a des patients. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
           ],
           [
             "Le praticien accède au service sur abonnement (voir la page ",
@@ -733,7 +733,7 @@ export const fr = {
             "Aucune action préparée par l'assistant n'est enregistrée sans que le praticien clique sur « Confirmer ». Le praticien reste responsable des actions qu'il confirme.",
           ],
           [
-            "Le praticien s'engage à ne décrire dans l'assistant aucune situation clinique ni aucune donnée de santé. Pour préparer un geste, il peut nommer un patient : Orekio retire de la question le nom qu'il reconnaît.",
+            "Le praticien s'engage à ne décrire dans l'assistant aucune situation clinique ni aucune donnée de santé. Pour préparer un geste, il peut désigner un patient par son nom complet ou son alias, qu'Orekio retire de la question.",
           ],
           [
             "Le nombre de questions est limité. Pendant la bêta, l'assistant peut être suspendu à tout moment.",
