@@ -375,7 +375,7 @@ export const en: Dictionary = {
       },
       {
         label: "Founders",
-        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team. If you have not subscribed by the end of the ${OFFERS.founders.freeMonths} months, the rate stays reserved for ${OFFERS.founders.graceDays} days, then it is lost for good. It applies to a single practitioner: adding a seat moves the subscription to the public rate.`,
+        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate kept for life from the first payment, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team. If you have not subscribed by the end of the ${OFFERS.founders.freeMonths} months, the rate stays reserved for ${OFFERS.founders.graceDays} days, then it is lost for good. It applies to a single practitioner: adding a seat moves the subscription to the public rate.`,
       },
     ],
     included: {
@@ -753,7 +753,7 @@ export const en: Dictionary = {
             ".",
           ],
           [
-            "Founders offer: the first 100 practitioners to sign up, on Zelai or Mendi, get 2 free months without a bank card. A seat is taken when the email address is first confirmed, while seats remain. At the end of these 2 months, without a subscription, the account becomes read-only. The Founders rate stays reserved for 30 more days; after that date without a subscription, it is lost for good and the seat is released, with no effect on the data. This rate applies to a single-seat subscription: adding a seat moves the subscription to the public rate, for good.",
+            "Founders offer: the first 100 practitioners to sign up, on Zelai or Mendi, get 2 free months without a bank card. A seat is taken when the email address is first confirmed, while seats remain. At the end of these 2 months, without a subscription, the account becomes read-only. The Founders rate stays reserved for 30 more days; after that date without a subscription, it is lost for good, with no effect on the data. A lost seat is not reassigned. From the first payment, the rate is kept for life, including after cancellation. This rate applies to a single-seat subscription: adding a seat moves the subscription to the public rate, for good.",
           ],
           [
             "At the end of the trial, after cancellation or a final payment failure, the practitioner's account becomes read-only: the data is kept intact, they can read and export it, and they can reactivate their subscription. This freeze lasts 90 days for an account that never paid, and 3 years for a former subscriber. The practitioner is notified before it ends.",
