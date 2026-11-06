@@ -388,6 +388,10 @@ export const fr = {
         label: "Fondateurs",
         text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif acquis à vie dès le premier paiement, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe. Sans abonnement à la fin des ${OFFERS.founders.freeMonths} mois, le tarif reste réservé ${OFFERS.founders.graceDays} jours, puis il est perdu définitivement. Il vaut pour un seul praticien : ajouter un siège fait passer au tarif public.`,
       },
+      {
+        label: "Parrainage",
+        text: "Un mois offert à vous et à la personne que vous parrainez, en crédit, dès son premier paiement. Autant de crédits que de personnes parrainées, cumulables avec le tarif Fondateurs et le paiement annuel.",
+      },
     ],
     included: {
       title: "Inclus dans toutes les offres",
@@ -769,6 +773,9 @@ export const fr = {
           ],
           [
             "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement, sans effet sur les données. Une place perdue n'est pas réattribuée. Dès le premier paiement, le tarif reste acquis à vie, y compris après une résiliation. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
+          ],
+          [
+            "Parrainage : un praticien en essai ou abonné dispose d'un code de parrainage à partager. Lorsqu'un praticien s'inscrit avec ce code, le parrain et le filleul reçoivent chacun un crédit équivalent à un mois de leur offre, au premier paiement du filleul. Ce crédit se déduit des paiements suivants. Il n'expire pas, reste sur le compte en cas de résiliation et sert au retour du praticien ; il n'est jamais versé en argent. Le code se saisit jusqu'au premier paiement. Un filleul ne crédite qu'une fois, et deux praticiens ne peuvent pas se parrainer mutuellement. Le parrain voit le nombre de personnes parrainées et de crédits, jamais leur identité.",
           ],
           [
             "Au terme du gel, les suivis du praticien sont effacés ; son compte reste, et un nouvel abonnement lui rend l'accès. Un patient suivi par un autre praticien perd sa relation avec celui-ci et les modules que lui seul suivait, avec leurs saisies ; un patient qui n'a plus aucun praticien est effacé. Un patient dont tous les praticiens sont gelés en est prévenu dans l'application dans les 30 jours qui précèdent, et peut exporter ses données.",
