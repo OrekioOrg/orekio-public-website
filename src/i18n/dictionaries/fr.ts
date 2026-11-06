@@ -10,6 +10,7 @@ export interface PricingPlan {
   period: string;
   priceExclVat: string;
   features: string[];
+  note: { label: string; text: string };
 }
 
 const email: Segment = {
@@ -104,7 +105,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      `${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai.`,
+      `${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
     ctaSectionButton: "Essayer gratuitement",
     apps: {
       title: "Deux applications, un même espace",
@@ -338,9 +339,9 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. ${OFFERS.freeMonths} mois gratuit.`,
+      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. Fondateurs, les ${OFFERS.founders.seats} premiers inscrits : ${eur(OFFERS.founders.zelai.month)} et ${eur(OFFERS.founders.mendi.month)} TTC par mois à vie, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
     metaDescriptionProvisional:
-      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, ${OFFERS.freeMonths} mois gratuit.`,
+      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, et une offre Fondateurs pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
     eyebrow: "Tarifs",
     plans: [
       {
@@ -353,6 +354,10 @@ export const fr = {
           `Jusqu'à ${OFFERS.zelai.maxPatients} patients suivis`,
           "Tous les modules et échelles",
         ],
+        note: {
+          label: "Fondateurs :",
+          text: `${eur(OFFERS.founders.zelai.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.zelai.month))} HT), ${OFFERS.founders.seats} places`,
+        },
       },
       {
         name: "Mendi",
@@ -364,16 +369,24 @@ export const fr = {
           "Patients suivis illimités",
           "Tous les modules et échelles",
         ],
+        note: {
+          label: "Fondateurs :",
+          text: `${eur(OFFERS.founders.mendi.month)} TTC / mois à vie (${eur(exclVat(OFFERS.founders.mendi.month))} HT), ${OFFERS.founders.seats} places`,
+        },
       },
     ] as PricingPlan[],
     details: [
       {
         label: "Essai",
-        text: `${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire. Ensuite, ${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
       },
       {
         label: "Zelai et Mendi",
         text: `Le même produit : seul le nombre de patients suivis change, et un suivi mis en pause libère sa place. Sans engagement, résiliables à tout moment. Ou à l'année, un mois offert : ${eur(OFFERS.zelai.year)} TTC pour Zelai, ${eur(OFFERS.mendi.year)} TTC pour Mendi. Zelai signifie « prairie » en basque, Mendi « montagne ».`,
+      },
+      {
+        label: "Fondateurs",
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe. Sans abonnement à la fin des ${OFFERS.founders.freeMonths} mois, le tarif reste réservé ${OFFERS.founders.graceDays} jours, puis il est perdu définitivement. Il vaut pour un seul praticien : ajouter un siège fait passer au tarif public.`,
       },
     ],
     included: {
@@ -753,6 +766,9 @@ export const fr = {
           ],
           [
             "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
+          ],
+          [
+            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement et la place est libérée, sans effet sur les données. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
           ],
           [
             "Au terme du gel, les suivis du praticien sont effacés ; son compte reste, et un nouvel abonnement lui rend l'accès. Un patient suivi par un autre praticien perd sa relation avec celui-ci et les modules que lui seul suivait, avec leurs saisies ; un patient qui n'a plus aucun praticien est effacé. Un patient dont tous les praticiens sont gelés en est prévenu dans l'application dans les 30 jours qui précèdent, et peut exporter ses données.",
