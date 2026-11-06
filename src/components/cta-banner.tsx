@@ -1,4 +1,4 @@
-import { APP_URL } from "@/site";
+import { SIGNUP_URL } from "@/site";
 
 interface CtaBannerProps {
   title: string;
@@ -35,7 +35,7 @@ export function CtaBanner({
           {description}
         </p>
         <a
-          href={APP_URL}
+          href={SIGNUP_URL}
           className={`mt-8 inline-block rounded-lg px-6 py-3 text-[15px] font-medium transition-opacity hover:opacity-90 ${
             light ? "bg-primary text-on-primary" : "bg-accent text-ink"
           }`}

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { CtaBanner } from "@/components/cta-banner";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
 import { softwareApplicationSchema } from "@/structured-data";
-import { APP_URL, pathTo } from "@/site";
+import { pathTo, SIGNUP_URL } from "@/site";
 
 export default async function Home({
   params,
@@ -45,7 +45,7 @@ export default async function Home({
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <a
-              href={APP_URL}
+              href={SIGNUP_URL}
               className="rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
             >
               {dict.ctaSubscribe}

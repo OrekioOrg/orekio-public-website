@@ -25,8 +25,13 @@ export const COMPANY = {
 // Official profiles of the brand elsewhere (LinkedIn, Instagram, app
 // stores…). Emitted as the Organization's `sameAs`, which is how Google
 // links them to the Orekio knowledge panel. Add each URL as it goes live.
-// The app itself: every sign-up call to action on the site leads here.
 export const APP_URL = "https://orekio.app";
+
+// Every sign-up call to action on the site leads to the app's sign-up funnel.
+// The funnel's first step reads the chosen offer from `?offre=<key>`, which
+// only the plan cards send. The app sends a signed-in practitioner to their
+// space, and the funnel's header links to the login page.
+export const SIGNUP_URL = `${APP_URL}/inscription/offre`;
 
 export const SOCIAL_PROFILES: readonly string[] = [APP_URL];
 

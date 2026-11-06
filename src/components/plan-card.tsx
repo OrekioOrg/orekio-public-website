@@ -1,7 +1,7 @@
 import { Bagel_Fat_One } from "next/font/google";
 import { BlurredPrices } from "@/components/blurred-prices";
 import type { PricingPlan } from "@/i18n/dictionaries/fr";
-import { APP_URL } from "@/site";
+import { SIGNUP_URL } from "@/site";
 
 // Chargee ici plutot que dans le layout : seule la page Tarifs l'utilise.
 const bagelFatOne = Bagel_Fat_One({
@@ -124,7 +124,7 @@ export function PlanCard({
         {/* mt-auto : les boutons s'alignent en bas des deux cartes. */}
         <div className="mt-auto pt-5">
           <a
-            href={`${APP_URL}/inscription/offre?offre=${theme.offer}`}
+            href={`${SIGNUP_URL}?offre=${theme.offer}`}
             className={`flex min-h-11 items-center justify-center rounded-full text-center text-[15px] font-semibold transition-opacity hover:opacity-90 ${theme.cta}`}
           >
             {ctaLabel}
