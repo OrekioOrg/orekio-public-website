@@ -375,7 +375,7 @@ export const en: Dictionary = {
       },
       {
         label: "Founders",
-        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team.`,
+        text: `For the first ${OFFERS.founders.seats} sign-ups, on both Zelai and Mendi. Rate guaranteed as long as the subscription stays active, monthly or yearly (${eur(OFFERS.founders.zelai.year)} incl. VAT for Zelai, ${eur(OFFERS.founders.mendi.year)} incl. VAT for Mendi), with a direct channel to the team. If you have not subscribed by the end of the ${OFFERS.founders.freeMonths} months, the rate stays reserved for ${OFFERS.founders.graceDays} days, then it is lost for good. It applies to a single practitioner: adding a seat moves the subscription to the public rate.`,
       },
     ],
     included: {
@@ -412,7 +412,7 @@ export const en: Dictionary = {
     boxText:
       "Orekio is designed as a digital logbook, not as a medical device. The app only displays: a raw figure, a neutral history, a score without interpretation. No threshold, no signal, no comparison to a norm. The clinical reading belongs to you.",
     paragraph4:
-      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Certified health data hosting (HDS) is planned before commercial opening.",
+      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Today, the application's hosting is not certified for health data (HDS); the move to a certified host is being prepared.",
   },
 
   contact: {
@@ -479,7 +479,7 @@ export const en: Dictionary = {
         lines: [
           ["Website: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."],
           [
-            "Application and health data, during the beta: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). Before commercial launch: OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, a certified Health Data Hosting (HDS) provider within the meaning of Article L.1111-8 of the French Public Health Code (see the ",
+            "Application and health data: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). This hosting is not certified as Health Data Hosting (HDS) within the meaning of Article L.1111-8 of the French Public Health Code; the move to a certified host is being prepared (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
@@ -569,10 +569,10 @@ export const en: Dictionary = {
         heading: "Hosting",
         lines: [
           [
-            "During the beta, the database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
+            "The database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
           ],
           [
-            "Before commercial launch, the application and its data will be hosted by OVHcloud, in France, on an offering certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code.",
+            "This hosting is not certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The move to a certified host is being prepared; this page will give its name and date.",
           ],
         ] as Segment[][],
       },
@@ -655,7 +655,7 @@ export const en: Dictionary = {
         heading: "2. Access to the service",
         lines: [
           [
-            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered during the beta, then required before their first invitation, or at sign-in for an account that is subscribed or has patients. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
+            "Practitioners create their own account. They declare their professional title, accept these Terms and confirm their email address. Two-factor authentication is offered to them. They warrant that they lawfully practise the declared profession; Orekio may ask for proof.",
           ],
           [
             "Practitioners access the service by subscription (see the ",
@@ -727,7 +727,7 @@ export const en: Dictionary = {
             "The practitioner agrees not to describe in the assistant any clinical situation or any health data. To prepare an action, they may refer to a patient by full name or alias, which Orekio removes from the question.",
           ],
           [
-            "The number of questions is limited. During the beta, the assistant may be suspended at any time.",
+            "The number of questions is limited. The assistant may be suspended at any time.",
           ],
           [
             "The processing of data related to the assistant is described in the ",
@@ -751,6 +751,9 @@ export const en: Dictionary = {
             "Practitioners can cancel their subscription at any time from the app, effective at the end of the paid period. They can ask for their account to be closed by writing to ",
             email,
             ".",
+          ],
+          [
+            "Founders offer: the first 100 practitioners to sign up, on Zelai or Mendi, get 2 free months without a bank card. A seat is taken when the email address is first confirmed, while seats remain. At the end of these 2 months, without a subscription, the account becomes read-only. The Founders rate stays reserved for 30 more days; after that date without a subscription, it is lost for good and the seat is released, with no effect on the data. This rate applies to a single-seat subscription: adding a seat moves the subscription to the public rate, for good.",
           ],
           [
             "At the end of the trial, after cancellation or a final payment failure, the practitioner's account becomes read-only: the data is kept intact, they can read and export it, and they can reactivate their subscription. This freeze lasts 90 days for an account that never paid, and 3 years for a former subscriber. The practitioner is notified before it ends.",

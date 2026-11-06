@@ -386,7 +386,7 @@ export const fr = {
       },
       {
         label: "Fondateurs",
-        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe.`,
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe. Sans abonnement à la fin des ${OFFERS.founders.freeMonths} mois, le tarif reste réservé ${OFFERS.founders.graceDays} jours, puis il est perdu définitivement. Il vaut pour un seul praticien : ajouter un siège fait passer au tarif public.`,
       },
     ],
     included: {
@@ -423,7 +423,7 @@ export const fr = {
     boxText:
       "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
     paragraph4:
-      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Un hébergement certifié données de santé (HDS) est prévu avant l'ouverture commerciale.",
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Aujourd'hui, l'hébergement de l'application n'est pas certifié données de santé (HDS) ; le passage à un hébergeur certifié est en préparation.",
   },
 
   contact: {
@@ -491,7 +491,7 @@ export const fr = {
         lines: [
           ["Site internet : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."],
           [
-            "Application et données de santé, pendant la bêta : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Avant la commercialisation : OVH SAS (OVHcloud), 2 rue Kellermann, 59100 Roubaix, France, hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique (voir la page ",
+            "Application et données de santé : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique ; le passage à un hébergeur certifié est en préparation (voir la page ",
             { href: "/fr/a-propos", text: "À propos" },
             ").",
           ],
@@ -581,10 +581,10 @@ export const fr = {
         heading: "Hébergement",
         lines: [
           [
-            "Pendant la bêta, la base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
+            "La base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
           ],
           [
-            "Avant la commercialisation, l'application et ses données seront hébergées chez OVHcloud, en France, sur une offre certifiée Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique.",
+            "Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. Le passage à un hébergeur certifié est en préparation ; cette page dira son nom et sa date.",
           ],
         ] as Segment[][],
       },
@@ -667,7 +667,7 @@ export const fr = {
         heading: "2. Accès au service",
         lines: [
           [
-            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée pendant la bêta, puis exigée avant sa première invitation, ou à la connexion d'un compte abonné ou qui a des patients. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
+            "Le praticien crée son compte lui-même. Il déclare son titre professionnel, accepte les présentes CGU et confirme son adresse e-mail. La double authentification lui est proposée. Il garantit exercer légalement la profession déclarée ; Orekio peut lui en demander la preuve.",
           ],
           [
             "Le praticien accède au service sur abonnement (voir la page ",
@@ -739,7 +739,7 @@ export const fr = {
             "Le praticien s'engage à ne décrire dans l'assistant aucune situation clinique ni aucune donnée de santé. Pour préparer un geste, il peut désigner un patient par son nom complet ou son alias, qu'Orekio retire de la question.",
           ],
           [
-            "Le nombre de questions est limité. Pendant la bêta, l'assistant peut être suspendu à tout moment.",
+            "Le nombre de questions est limité. L'assistant peut être suspendu à tout moment.",
           ],
           [
             "Le traitement des données lié à l'assistant est décrit dans la ",
@@ -766,6 +766,9 @@ export const fr = {
           ],
           [
             "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
+          ],
+          [
+            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement et la place est libérée, sans effet sur les données. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
           ],
           [
             "Au terme du gel, les suivis du praticien sont effacés ; son compte reste, et un nouvel abonnement lui rend l'accès. Un patient suivi par un autre praticien perd sa relation avec celui-ci et les modules que lui seul suivait, avec leurs saisies ; un patient qui n'a plus aucun praticien est effacé. Un patient dont tous les praticiens sont gelés en est prévenu dans l'application dans les 30 jours qui précèdent, et peut exporter ses données.",

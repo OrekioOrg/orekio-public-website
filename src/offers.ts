@@ -13,6 +13,8 @@ export const OFFERS = {
   founders: {
     seats: 100,
     freeMonths: 2,
+    /** Le tarif reste réservé ce nombre de jours après les mois gratuits (`FOUNDERS_TARIFF_GRACE_DAYS` dans l'app). */
+    graceDays: 30,
     zelai: { month: 1999, year: 21989 },
     mendi: { month: 2999, year: 32989 },
   },

@@ -7,9 +7,9 @@ import { basePath } from "@/base-path";
 import { locales, hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import {
-  APP_URL,
   BING_SITE_VERIFICATION,
   GOOGLE_SITE_VERIFICATION,
+  SIGNUP_URL,
   SITE_NAME,
   SITE_URL,
   pathTo,
@@ -160,14 +160,14 @@ export default async function RootLayout({
               <LanguageSwitcher current={lang} />
               {/* L'appel unique du site : la création de compte, sur l'application. */}
               <a
-                href={APP_URL}
+                href={SIGNUP_URL}
                 className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 md:inline-block"
               >
                 {dict.nav.subscribe}
               </a>
               <MobileMenu
                 navLinks={navLinks}
-                subscribeHref={APP_URL}
+                subscribeHref={SIGNUP_URL}
                 subscribeLabel={dict.nav.subscribe}
                 openLabel={dict.nav.openMenu}
                 closeLabel={dict.nav.closeMenu}
