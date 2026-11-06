@@ -386,7 +386,7 @@ export const fr = {
       },
       {
         label: "Fondateurs",
-        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif garanti tant que l'abonnement reste actif, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe. Sans abonnement à la fin des ${OFFERS.founders.freeMonths} mois, le tarif reste réservé ${OFFERS.founders.graceDays} jours, puis il est perdu définitivement. Il vaut pour un seul praticien : ajouter un siège fait passer au tarif public.`,
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, sur Zelai comme sur Mendi. Tarif acquis à vie dès le premier paiement, au mois ou à l'année (${eur(OFFERS.founders.zelai.year)} TTC pour Zelai, ${eur(OFFERS.founders.mendi.year)} TTC pour Mendi), avec un canal direct avec l'équipe. Sans abonnement à la fin des ${OFFERS.founders.freeMonths} mois, le tarif reste réservé ${OFFERS.founders.graceDays} jours, puis il est perdu définitivement. Il vaut pour un seul praticien : ajouter un siège fait passer au tarif public.`,
       },
     ],
     included: {
@@ -768,7 +768,7 @@ export const fr = {
             "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
           ],
           [
-            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement et la place est libérée, sans effet sur les données. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
+            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement, sans effet sur les données. Une place perdue n'est pas réattribuée. Dès le premier paiement, le tarif reste acquis à vie, y compris après une résiliation. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
           ],
           [
             "Au terme du gel, les suivis du praticien sont effacés ; son compte reste, et un nouvel abonnement lui rend l'accès. Un patient suivi par un autre praticien perd sa relation avec celui-ci et les modules que lui seul suivait, avec leurs saisies ; un patient qui n'a plus aucun praticien est effacé. Un patient dont tous les praticiens sont gelés en est prévenu dans l'application dans les 30 jours qui précèdent, et peut exporter ses données.",
