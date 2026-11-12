@@ -258,13 +258,14 @@ export default async function FonctionnalitesPage({
         </div>
       </section>
 
-      {/* Autour des modules : trois colonnes avec un filet, plus de cartes. */}
+      {/* Autour des modules : quatre blocs à filet sur deux colonnes, pour
+          qu'aucun ne reste seul sur sa rangée. */}
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <h2 className="text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
             {dict.around.title}
           </h2>
-          <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
             {dict.around.cards.map((card) => (
               <div key={card.title} className="border-t border-outline pt-5">
                 <h3 className="text-[17px] font-medium text-on-surface-strong">
