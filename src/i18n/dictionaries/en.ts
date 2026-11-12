@@ -113,6 +113,16 @@ export const en: Dictionary = {
         },
       ],
     },
+    notebook: {
+      eyebrow: "Consultation notebook",
+      title: "The link between two consultations.",
+      text: "At the end of the appointment, you leave your patient a summary: the key points of what you discussed, and your instructions. They reread it at home, as often as they need. Between appointments, they write down their questions so as not to forget them. You find them at the top of their record, and you go through them together. It is not a messaging tool: what they write waits for the next appointment.",
+      link: "See the notebook in detail",
+      practitionerAlt:
+        "A fictional patient's record: at the top, their consultation notebook, with their questions for the appointment and the latest summary.",
+      patientAlt:
+        "The consultation notebook on the patient's phone: the summary of an appointment and the instructions given that day.",
+    },
   },
 
   features: {
@@ -235,7 +245,7 @@ export const en: Dictionary = {
     patientSide: {
       eyebrow: "Patient side",
       title: "The work goes on between appointments.",
-      description: "Two screens from the patient app, with sample data.",
+      description: "Their space and their reminders, with sample data.",
       items: [
         {
           src: "accueil-patient.png",
@@ -261,8 +271,8 @@ export const en: Dictionary = {
           height: 1000,
           eyebrow: "Before the consultation",
           title: "What the patient has entered, at a glance.",
-          text: "The modules used over the last four weeks, day by day, and the questionnaires received but not yet viewed.",
-          alt: "A fictional patient's overview: his modules and the days he entered something.",
+          text: "The questions in their notebook, the modules used over the last four weeks, day by day, and the questionnaires received but not yet viewed.",
+          alt: "A fictional patient's overview: his consultation notebook, then his modules and the days he entered something.",
         },
         {
           src: "praticien-armoire.png",
@@ -298,14 +308,39 @@ export const en: Dictionary = {
         },
       ],
     },
+    notebook: {
+      eyebrow: "Consultation notebook",
+      title: "A two-voice notebook, from one appointment to the next.",
+      description:
+        "Every patient gets one automatically, with nothing to set up. It is not a messaging tool: nothing calls on you between appointments, and the app tells your patient so.",
+      writing: {
+        src: "praticien-carnet-redaction.png",
+        height: 1000,
+        eyebrow: "At the end of the appointment",
+        title: "You write the summary.",
+        text: "A few lines on what you agreed. An instruction can be attached to a specific tool: it appears on that tool's card, in the patient's app.",
+        alt: "Writing a summary for a fictional patient, with an instruction attached to one of his tools.",
+      },
+      patientSteps: [
+        {
+          src: "carnet-recapitulatif.png",
+          eyebrow: "At home",
+          title: "They reread it whenever they need to.",
+          text: "A notification lets them know. They find each dated summary, with the instructions given that day and direct access to the tools concerned.",
+          alt: "The consultation notebook on the patient's phone: the summary of an appointment and the instructions given that day.",
+        },
+        {
+          src: "carnet-questions.png",
+          eyebrow: "Between appointments",
+          title: "They note their questions as they come up.",
+          text: "They write them in their notebook, or from the tool they relate to. At the next appointment, you find them at the top of their record and tick the ones you have discussed.",
+          alt: "The \"My questions\" tab of the notebook: the questions noted for the next appointment, one of them linked to a tool.",
+        },
+      ],
+    },
     around: {
       title: "And around the modules",
       cards: [
-        {
-          title: "Consultation notebook",
-          description:
-            "The key points of the appointment and your instructions, to reread at home. They jot down their questions as the days go by, and you find them before the next appointment.",
-        },
         {
           title: "Reminders",
           description:
