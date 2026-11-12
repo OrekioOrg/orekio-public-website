@@ -53,12 +53,12 @@ export const fr = {
     title: "Votre suivi continue entre deux rendez-vous.",
     lead: "Construisez un plan de soins personnalisé pour votre patient, en débloquant un à un les modules adaptés à ses besoins.",
     description:
-      "Exercices à pratiquer chez soi, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous confiez les outils, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
+      "Les outils couramment utilisés en psychiatrie et santé mentale, appuyés sur la littérature scientifique : chaque module cite ses sources. Exercices de TCC, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous les confiez, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Essayer gratuitement",
     ctaFeatures: "Voir les outils",
     section2Title: "Le travail continue à la maison.",
     section2Description:
-      "Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Votre patient s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. La lecture clinique reste vôtre.",
+      "En quelques minutes de consultation, il est difficile de retracer plusieurs semaines, pour votre patient comme pour vous. Entre deux rendez-vous, il s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. Ces éléments ne remplacent pas ce qu'il vous rapporte : ils l'étayent. La lecture clinique reste vôtre. Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes.",
     highlights: [
       {
         title: "S'exercer",
@@ -110,7 +110,7 @@ export const fr = {
     apps: {
       title: "Deux applications, un même espace",
       description:
-        "Vous travaillez depuis votre ordinateur, votre patient depuis son téléphone. Un seul abonnement, le vôtre : l'application est gratuite pour vos patients.",
+        "Orekio n'est pas une application d'autosoins : c'est un outil partagé, dans lequel vous et votre patient travaillez ensemble. Vous depuis votre ordinateur, lui depuis son téléphone. Un seul abonnement, le vôtre : l'application est gratuite pour vos patients.",
       cards: [
         {
           title: "Votre espace praticien, sur le web",
@@ -120,7 +120,7 @@ export const fr = {
         {
           title: "L'application de votre patient, sur son téléphone",
           description:
-            "Il y retrouve les outils que vous avez ouverts et les remplit au fil des jours, même sans connexion. Sur votre invitation, gratuitement.",
+            "Il y retrouve les outils que vous avez ouverts et les remplit au fil des jours, même sans connexion. Il peut voir son évolution et devient acteur de ses soins. Sur votre invitation, gratuitement.",
         },
       ],
     },
@@ -133,7 +133,7 @@ export const fr = {
     eyebrow: "Fonctionnalités",
     heading: "Ce que vous pouvez confier à votre patient.",
     description:
-      "Vous ouvrez chaque outil depuis votre espace web, au fil des consultations et à votre rythme ; votre patient le retrouve sur son téléphone. Les outils marqués « dès l'ouverture » sont disponibles au lancement. Les autres, déjà construits, s'ouvrent au fil des mois. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
+      "Vous ouvrez chaque outil depuis votre espace web, au fil des consultations, selon la situation clinique et le moment du suivi de chaque patient ; votre patient le retrouve sur son téléphone. Les outils marqués « dès l'ouverture » sont disponibles au lancement. Les autres, déjà construits, s'ouvrent au fil des mois. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
     openBadge: "dès l'ouverture",
     categories: [
       {
@@ -312,6 +312,11 @@ export const fr = {
     around: {
       title: "Et autour des modules",
       cards: [
+        {
+          title: "Carnet de consultation",
+          description:
+            "L'essentiel du rendez-vous et vos consignes, à relire chez lui. Il y note ses questions au fil des jours, vous les retrouvez avant le rendez-vous suivant.",
+        },
         {
           title: "Rappels",
           description:

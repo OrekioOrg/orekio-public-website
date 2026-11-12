@@ -43,12 +43,12 @@ export const en: Dictionary = {
     title: "Your follow-up continues between appointments.",
     lead: "Build a personalised care plan for your patient by unlocking, one by one, the modules suited to their needs.",
     description:
-      "Exercises to practise at home, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand over the tools, your patient uses them day to day, and you go over them together in consultation.",
+      "The tools commonly used in psychiatry and mental health, grounded in the scientific literature: every module cites its sources. CBT exercises, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand them over, your patient uses them day to day, and you go over them together in consultation.",
     ctaSubscribe: "Try it free",
     ctaFeatures: "See the tools",
     section2Title: "The work continues at home.",
     section2Description:
-      "Orekio is built for psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners. Your patient practises, reads, answers, writes. You find everything in your space, dated and exactly as they wrote it. The clinical reading remains yours.",
+      "In a few minutes of consultation, it is hard to retrace several weeks, for your patient as for you. Between appointments, they practise, read, answer, write. You find everything in your space, dated and exactly as they wrote it. It does not replace what they tell you: it supports it. The clinical reading remains yours. Orekio is built for psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners.",
     highlights: [
       {
         title: "Practise",
@@ -99,7 +99,7 @@ export const en: Dictionary = {
     apps: {
       title: "Two apps, one shared space",
       description:
-        "You work from your computer, your patient from their phone. One subscription, yours: the app is free for your patients.",
+        "Orekio is not a self-help app: it is a shared tool, in which you and your patient work together. You from your computer, your patient from their phone. One subscription, yours: the app is free for your patients.",
       cards: [
         {
           title: "Your practitioner space, on the web",
@@ -109,7 +109,7 @@ export const en: Dictionary = {
         {
           title: "Your patient's app, on their phone",
           description:
-            "They find the tools you have opened and fill them in day by day, even offline. By your invitation, free of charge.",
+            "They find the tools you have opened and fill them in day by day, even offline. They can see how things evolve and take an active part in their care. By your invitation, free of charge.",
         },
       ],
     },
@@ -122,7 +122,7 @@ export const en: Dictionary = {
     eyebrow: "Features",
     heading: "What you can hand over to your patient.",
     description:
-      "You open each tool from your web space, consultation after consultation, at your own pace; your patient finds it on their phone. Tools marked \"from day one\" are available at launch. The others, already built, open over the coming months. Every module displays raw data: Orekio shows it, you interpret it.",
+      "You open each tool from your web space, consultation after consultation, according to each patient's clinical situation and the stage of their care; your patient finds it on their phone. Tools marked \"from day one\" are available at launch. The others, already built, open over the coming months. Every module displays raw data: Orekio shows it, you interpret it.",
     openBadge: "from day one",
     categories: [
       {
@@ -301,6 +301,11 @@ export const en: Dictionary = {
     around: {
       title: "And around the modules",
       cards: [
+        {
+          title: "Consultation notebook",
+          description:
+            "The key points of the appointment and your instructions, to reread at home. They jot down their questions as the days go by, and you find them before the next appointment.",
+        },
         {
           title: "Reminders",
           description:
