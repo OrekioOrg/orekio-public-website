@@ -160,10 +160,64 @@ export default async function FonctionnalitesPage({
         </div>
       </section>
 
+      {/* Le carnet de consultation, entre les deux côtés puisqu'il les relie :
+          ce que le praticien rédige (un écran web), puis ce que le patient en
+          fait (deux écrans du téléphone). L'ancre sert le lien de l'accueil. */}
+      <section id="carnet" className="bg-surface-container-low">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
+            {dict.notebook.eyebrow}
+          </p>
+          <h2 className="mt-4 max-w-2xl text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
+            {dict.notebook.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-[16px] font-light leading-relaxed text-on-surface">
+            {dict.notebook.description}
+          </p>
+          <div className="mt-16 grid items-center gap-8 md:grid-cols-12 md:gap-12">
+            <div className="md:col-span-4">
+              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
+                01 · {dict.notebook.writing.eyebrow}
+              </p>
+              <h3 className="mt-3 text-[22px] font-medium leading-snug text-on-surface-strong">
+                {dict.notebook.writing.title}
+              </h3>
+              <p className="mt-3 text-[15px] font-light leading-relaxed text-on-surface-variant">
+                {dict.notebook.writing.text}
+              </p>
+            </div>
+            <div className="md:col-span-8">
+              <BrowserFrame
+                src={dict.notebook.writing.src}
+                alt={dict.notebook.writing.alt}
+                intrinsic={[1600, dict.notebook.writing.height]}
+              />
+            </div>
+          </div>
+          {/* Les étapes 02 et 03 suivent l'étape 01 écrite au-dessus. */}
+          <ol start={2} className="mx-auto mt-20 grid max-w-3xl gap-12 sm:grid-cols-2 sm:gap-8">
+            {dict.notebook.patientSteps.map((step, i) => (
+              <li key={step.src} className="flex flex-col items-center text-center">
+                <PhoneFrame src={step.src} alt={step.alt} width={236} intrinsic={[720, 1468]} />
+                <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
+                  {String(i + 2).padStart(2, "0")} · {step.eyebrow}
+                </p>
+                <h3 className="mt-3 max-w-[30ch] text-[18px] font-medium text-on-surface-strong">
+                  {step.title}
+                </h3>
+                <p className="mt-2 max-w-[34ch] text-[15px] font-light leading-relaxed text-on-surface-variant">
+                  {step.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Côté praticien : cinq écrans dans l'ordre d'une consultation. La liste
           des patients n'y figure pas : sans le produit autour, elle ne montre
-          que des noms. */}
-      <section className="bg-surface-container-low">
+          que des noms. Fond clair : le carnet, juste au-dessus, prend le fond teinté. */}
+      <section>
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
             {dict.practitionerSide.eyebrow}
@@ -205,21 +259,23 @@ export default async function FonctionnalitesPage({
       </section>
 
       {/* Autour des modules : trois colonnes avec un filet, plus de cartes. */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <h2 className="text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
-          {dict.around.title}
-        </h2>
-        <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {dict.around.cards.map((card) => (
-            <div key={card.title} className="border-t border-outline pt-5">
-              <h3 className="text-[17px] font-medium text-on-surface-strong">
-                {card.title}
-              </h3>
-              <p className="mt-2 text-[15px] font-light leading-relaxed text-on-surface-variant">
-                {card.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-surface-container-low">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <h2 className="text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
+            {dict.around.title}
+          </h2>
+          <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {dict.around.cards.map((card) => (
+              <div key={card.title} className="border-t border-outline pt-5">
+                <h3 className="text-[17px] font-medium text-on-surface-strong">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[15px] font-light leading-relaxed text-on-surface-variant">
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -124,6 +124,16 @@ export const fr = {
         },
       ],
     },
+    notebook: {
+      eyebrow: "Carnet de consultation",
+      title: "Le lien entre deux consultations.",
+      text: "À la fin du rendez-vous, vous laissez un récapitulatif à votre patient : l'essentiel de ce que vous vous êtes dit, et vos consignes. Il le relit chez lui, aussi souvent qu'il en a besoin. Entre deux rendez-vous, il y note ses questions pour ne pas les oublier. Vous les retrouvez en tête de sa fiche, et vous les reprenez ensemble. Ce n'est pas une messagerie : ce qu'il écrit attend le rendez-vous suivant.",
+      link: "Voir le carnet en détail",
+      practitionerAlt:
+        "La fiche d'un patient fictif : en tête, son carnet de consultation, avec ses questions pour le rendez-vous et le dernier récapitulatif.",
+      patientAlt:
+        "Le carnet de consultation sur le téléphone du patient : le récapitulatif d'un rendez-vous et les consignes posées ce jour.",
+    },
   },
 
   features: {
@@ -246,7 +256,7 @@ export const fr = {
     patientSide: {
       eyebrow: "Côté patient",
       title: "Le travail se poursuit entre deux rendez-vous.",
-      description: "Deux écrans de l'application patient, avec des données d'exemple.",
+      description: "Son espace et ses rappels, avec des données d'exemple.",
       items: [
         {
           src: "accueil-patient.png",
@@ -272,8 +282,8 @@ export const fr = {
           height: 1000,
           eyebrow: "Avant la consultation",
           title: "Ce que le patient a noté, d'un coup d'œil.",
-          text: "Les modules utilisés sur les quatre dernières semaines, jour par jour, et les questionnaires reçus pas encore consultés.",
-          alt: "La vue d'ensemble d'un patient fictif : ses modules et les jours où il a noté quelque chose.",
+          text: "Les questions de son carnet, les modules utilisés sur les quatre dernières semaines, jour par jour, et les questionnaires reçus pas encore consultés.",
+          alt: "La vue d'ensemble d'un patient fictif : son carnet de consultation, puis ses modules et les jours où il a noté quelque chose.",
         },
         {
           src: "praticien-armoire.png",
@@ -309,14 +319,39 @@ export const fr = {
         },
       ],
     },
+    notebook: {
+      eyebrow: "Carnet de consultation",
+      title: "Un carnet à deux voix, d'un rendez-vous à l'autre.",
+      description:
+        "Chaque patient le reçoit d'office, sans réglage. Ce n'est pas une messagerie : rien ne vous sollicite entre deux rendez-vous, et l'application le dit à votre patient.",
+      writing: {
+        src: "praticien-carnet-redaction.png",
+        height: 1000,
+        eyebrow: "En fin de rendez-vous",
+        title: "Vous rédigez le récapitulatif.",
+        text: "Quelques lignes sur ce que vous avez convenu. Une consigne peut se poser sur un outil précis : elle s'affiche sur sa carte, dans l'application du patient.",
+        alt: "La rédaction d'un récapitulatif pour un patient fictif, avec une consigne posée sur l'un de ses outils.",
+      },
+      patientSteps: [
+        {
+          src: "carnet-recapitulatif.png",
+          eyebrow: "Chez lui",
+          title: "Il le relit quand il en a besoin.",
+          text: "Il est prévenu par une notification. Il retrouve chaque récapitulatif daté, avec les consignes du jour et un accès direct aux outils concernés.",
+          alt: "Le carnet de consultation sur le téléphone du patient : le récapitulatif d'un rendez-vous et les consignes posées ce jour.",
+        },
+        {
+          src: "carnet-questions.png",
+          eyebrow: "Entre deux rendez-vous",
+          title: "Il note ses questions au moment où elles se posent.",
+          text: "Il les écrit dans son carnet, ou depuis l'outil qu'elles concernent. Au rendez-vous suivant, vous les retrouvez en tête de sa fiche et vous cochez celles que vous avez abordées.",
+          alt: "L'onglet « Mes questions » du carnet : les questions notées pour le prochain rendez-vous, l'une rattachée à un outil.",
+        },
+      ],
+    },
     around: {
       title: "Et autour des modules",
       cards: [
-        {
-          title: "Carnet de consultation",
-          description:
-            "L'essentiel du rendez-vous et vos consignes, à relire chez lui. Il y note ses questions au fil des jours, vous les retrouvez avant le rendez-vous suivant.",
-        },
         {
           title: "Rappels",
           description:

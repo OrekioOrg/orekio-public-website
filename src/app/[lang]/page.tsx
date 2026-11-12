@@ -135,9 +135,51 @@ export default async function Home({
         </div>
       </section>
 
+      {/* Le carnet de consultation, juste après les deux applications : c'est ce
+          qui les relie. Les deux faces côte à côte, le téléphone en premier
+          (miroir de la section précédente) ; le détail est sur Fonctionnalités. */}
+      <section className="bg-surface-container-low">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
+            {dict.notebook.eyebrow}
+          </p>
+          <h2 className="mt-4 max-w-2xl text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
+            {dict.notebook.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-[16px] font-light leading-relaxed text-on-surface">
+            {dict.notebook.text}
+          </p>
+          <div className="mt-12 grid items-center gap-12 md:grid-cols-12 md:gap-10">
+            <div className="flex justify-center md:col-span-4">
+              <PhoneFrame
+                src="carnet-recapitulatif.png"
+                alt={dict.notebook.patientAlt}
+                width={236}
+                intrinsic={[720, 1468]}
+              />
+            </div>
+            <div className="md:col-span-8">
+              <BrowserFrame
+                src="praticien-vue-ensemble.png"
+                alt={dict.notebook.practitionerAlt}
+                intrinsic={[1600, 1000]}
+              />
+            </div>
+          </div>
+          <p className="mt-10">
+            <Link
+              href={`${pathTo(lang, "features")}#carnet`}
+              className="text-[15px] font-medium text-secondary underline"
+            >
+              {dict.notebook.link}
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* Les cinq familles en index éditorial, une ligne par famille : plus de
           grille de cartes, donc plus de cinquième carte seule sur sa rangée. */}
-      <section className="bg-surface-container-low">
+      <section>
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <h2 className="max-w-2xl text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
             {dict.section2Title}
@@ -174,8 +216,9 @@ export default async function Home({
         </div>
       </section>
 
-      {/* La phrase qui fonde le statut du produit, sortie du paragraphe. */}
-      <section className="mx-auto max-w-4xl px-6 py-20 text-center md:py-24">
+      {/* La phrase qui fonde le statut du produit, sortie du paragraphe. Même
+          fond que la section des familles qui la précède : un filet les sépare. */}
+      <section className="mx-auto max-w-4xl border-t border-outline px-6 py-20 text-center md:py-24">
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
           {dict.manifesto.eyebrow}
         </p>
