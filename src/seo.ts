@@ -15,7 +15,7 @@ export const OG_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Orekio, l'armoire thérapeutique numérique pour le suivi entre les consultations",
+  alt: "Orekio : votre accompagnement en santé mentale, entre les consultations",
 };
 
 interface ArticleMeta {
