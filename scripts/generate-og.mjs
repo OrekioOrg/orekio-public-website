@@ -34,7 +34,7 @@ const res = new ImageResponse(
       ]),
       box({ display: "flex", flexDirection: "column", gap: 28 }, [
         box({ fontSize: 62, fontWeight: 600, lineHeight: 1.12, maxWidth: 980 },
-          "Votre suivi continue entre deux rendez-vous."),
+          "Votre accompagnement en santé mentale, entre les consultations."),
         box({ fontSize: 28, color: "#cfeae7", maxWidth: 940 },
           "Un carnet de bord numérique : Orekio affiche, le praticien interprète."),
       ]),
