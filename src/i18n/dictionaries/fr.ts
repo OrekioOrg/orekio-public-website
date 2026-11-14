@@ -50,7 +50,7 @@ export const fr = {
 
   home: {
     eyebrow: "Votre armoire thérapeutique numérique",
-    title: "Votre accompagnement en santé mentale, entre les consultations.",
+    title: "Votre accompagnement en santé mentale entre les consultations.",
     lead: "Construisez un plan de soins personnalisé pour votre patient, en débloquant un à un les modules adaptés à ses besoins.",
     description:
       "Les outils couramment utilisés en psychiatrie et santé mentale, appuyés sur la littérature scientifique : chaque module cite ses sources. Exercices de TCC, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous les confiez, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
