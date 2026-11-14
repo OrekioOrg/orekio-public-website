@@ -40,7 +40,7 @@ export const en: Dictionary = {
 
   home: {
     eyebrow: "Your digital therapeutic toolkit",
-    title: "Your follow-up continues between appointments.",
+    title: "Your mental health support, between appointments.",
     lead: "Build a personalised care plan for your patient by unlocking, one by one, the modules suited to their needs.",
     description:
       "The tools commonly used in psychiatry and mental health, grounded in the scientific literature: every module cites its sources. CBT exercises, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand them over, your patient uses them day to day, and you go over them together in consultation.",
