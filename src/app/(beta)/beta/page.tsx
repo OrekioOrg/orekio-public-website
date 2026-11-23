@@ -23,8 +23,8 @@ const FEEDBACK = "/beta/avis";
 const ANDROID_TESTING = "https://play.google.com/apps/testing/com.orekio.app";
 const ANDROID_STORE =
   "https://play.google.com/store/apps/details?id=com.orekio.app";
-const TESTFLIGHT_APP = "https://apps.apple.com/app/testflight/id899247664";
-const TESTFLIGHT_JOIN = "https://testflight.apple.com/join/y6bPGjd6";
+// Publiée sur l'App Store : TestFlight n'est plus utilisé. Sans `/fr/`, Apple répond 404.
+const IOS_STORE = "https://apps.apple.com/fr/app/id6810257578";
 
 const phones = [
   {
@@ -63,7 +63,7 @@ async function qrSvg(url: string) {
 export default async function BetaPage() {
   const [androidQr, iphoneQr] = await Promise.all([
     qrSvg(ANDROID_TESTING),
-    qrSvg(TESTFLIGHT_JOIN),
+    qrSvg(IOS_STORE),
   ]);
 
   return (
@@ -213,18 +213,10 @@ export default async function BetaPage() {
               </Platform>
 
               <Platform name="iPhone" icon={<AppleIcon />} qr={iphoneQr}>
-                <SubStep n={1} title="Installer TestFlight">
-                  <InlineLink href={TESTFLIGHT_APP}>
-                    TestFlight sur l’App Store
+                <SubStep n={1} title="Installer">
+                  <InlineLink href={IOS_STORE}>
+                    Installer Orekio depuis l’App Store
                   </InlineLink>
-                </SubStep>
-                <SubStep n={2} title="Rejoindre">
-                  <InlineLink href={TESTFLIGHT_JOIN}>
-                    Ouvrir l’invitation TestFlight
-                  </InlineLink>
-                </SubStep>
-                <SubStep n={3} title="Installer">
-                  Touchez «&nbsp;Accepter&nbsp;», puis «&nbsp;Installer&nbsp;».
                 </SubStep>
               </Platform>
             </div>
