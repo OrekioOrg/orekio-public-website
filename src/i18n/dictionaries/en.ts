@@ -616,10 +616,16 @@ export const en: Dictionary = {
     heading: "Privacy policy",
     sections: [
       {
-        heading: "Data controller",
+        heading: "Who is responsible for the data",
         lines: [
           [
-            "Orekio, as data controller, carries out the data processing described below. For any question, contact: ",
+            "For patient data (identity, entries, practitioner notes, consultation notebook), the practitioner is the data controller: they decide to open a follow-up and which tools to provide. Orekio acts as their processor, within the meaning of Article 28 of the GDPR: it processes this data on their behalf and on their instructions.",
+          ],
+          [
+            "For the practitioner's account and subscription, requests sent to the team and the orekio.fr website, Orekio is the data controller.",
+          ],
+          [
+            "For any question, contact: ",
             email,
             ".",
           ],
@@ -748,6 +754,11 @@ export const en: Dictionary = {
       {
         heading: "Your rights",
         lines: [
+          [
+            "Patients exercise their rights over their follow-up data with their practitioner. They can also export and delete it themselves from the app (see the ",
+            { href: "/en/account-deletion", text: "Account deletion" },
+            " page). Orekio helps the practitioner respond.",
+          ],
           [
             "Under the GDPR, you have the right to access, rectify, erase, restrict, object to, and port your data, as well as the right to withdraw your consent at any time. To exercise these rights, contact ",
             email,

@@ -267,6 +267,18 @@ export const faqFr: FaqCopy = {
           ],
         },
         {
+          id: "data-roles",
+          question: "Qui est responsable des données de mes patients au sens du RGPD ?",
+          answer: [
+            ["Vous. Pour les données de suivi, le praticien est responsable de traitement et Orekio son sous-traitant : il les traite pour votre compte et sur vos instructions."],
+            [
+              "Orekio est responsable de traitement pour votre compte et votre abonnement. ",
+              { href: "/fr/confidentialite", text: "Lire la politique de confidentialité" },
+              ".",
+            ],
+          ],
+        },
+        {
           id: "who-can-read",
           question: "Qui voit les saisies d'un patient ?",
           answer: [
