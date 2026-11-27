@@ -49,7 +49,7 @@ export const en: Dictionary = {
     ctaDemo: "Book a demo",
     ctaFeatures: "See the tools",
     reassurance: [
-      `${OFFERS.founders.freeMonths} months free, no card, for the first ${OFFERS.founders.seats}`,
+      `${OFFERS.founders.freeMonths} months free for the first ${OFFERS.founders.seats}`,
       "Free app for patients",
       "HDS-certified hosting in preparation",
     ],
@@ -137,7 +137,7 @@ export const en: Dictionary = {
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
-      `${OFFERS.founders.freeMonths} months free with no credit card and a founders' rate, reserved for the first ${OFFERS.founders.seats} sign-ups.`,
+      `${OFFERS.founders.freeMonths} months free and a founders' rate, reserved for the first ${OFFERS.founders.seats} sign-ups.`,
     ctaSectionButton: "Try it free",
     notebook: {
       eyebrow: "Consultation notebook",
@@ -393,9 +393,9 @@ export const en: Dictionary = {
   pricing: {
     pageTitle: "Pricing",
     metaDescription:
-      `Zelai: ${eur(OFFERS.zelai.month)} per month incl. VAT, up to ${OFFERS.zelai.maxPatients} patients. Mendi: ${eur(OFFERS.mendi.month)} per month incl. VAT, unlimited patients. Founders, the first ${OFFERS.founders.seats} sign-ups: ${eur(OFFERS.founders.zelai.month)} and ${eur(OFFERS.founders.mendi.month)} per month incl. VAT for life, ${OFFERS.founders.freeMonths} months free with no credit card.`,
+      `Zelai: ${eur(OFFERS.zelai.month)} per month incl. VAT, up to ${OFFERS.zelai.maxPatients} patients. Mendi: ${eur(OFFERS.mendi.month)} per month incl. VAT, unlimited patients. Founders, the first ${OFFERS.founders.seats} sign-ups: ${eur(OFFERS.founders.zelai.month)} and ${eur(OFFERS.founders.mendi.month)} per month incl. VAT for life, ${OFFERS.founders.freeMonths} months free.`,
     metaDescriptionProvisional:
-      `Two plans with identical content, Zelai up to ${OFFERS.zelai.maxPatients} patients and Mendi unlimited, plus a Founders offer for the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card.`,
+      `Two plans with identical content, Zelai up to ${OFFERS.zelai.maxPatients} patients and Mendi unlimited, plus a Founders offer for the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free.`,
     eyebrow: "Pricing",
     plans: [
       {
@@ -432,7 +432,7 @@ export const en: Dictionary = {
     details: [
       {
         label: "Trial",
-        text: `For the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free with no credit card. After that, ${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.`,
+        text: `For the first ${OFFERS.founders.seats} sign-ups, ${OFFERS.founders.freeMonths} months free. After that, ${OFFERS.freeMonths} month free, with a card saved at sign-up and no charge during the trial. If you do not continue, your account goes read-only for 90 days, time to export, then your patient data is deleted. We let you know 15 days ahead.`,
       },
       {
         label: "Zelai and Mendi",
@@ -502,7 +502,7 @@ export const en: Dictionary = {
       { value: "organisation", label: "Organisation" },
       { value: "other", label: "Other" },
     ],
-    message: "Message (optional), no patient data",
+    message: "Message",
     submit: "Book a demo",
     sending: "Sending, up to a minute…",
     sentTitle: "Request sent.",
@@ -980,7 +980,7 @@ export const en: Dictionary = {
             ".",
           ],
           [
-            "Founders offer: the first 100 practitioners to sign up, on Zelai or Mendi, get 2 free months without a bank card. A seat is taken when the email address is first confirmed, while seats remain. At the end of these 2 months, without a subscription, the account becomes read-only. The Founders rate stays reserved for 30 more days; after that date without a subscription, it is lost for good, with no effect on the data. A lost seat is not reassigned. From the first payment, the rate is kept for life, including after cancellation. This rate applies to a single-seat subscription: adding a seat moves the subscription to the public rate, for good.",
+            "Founders offer: the first 100 practitioners to sign up, on Zelai or Mendi, get 2 free months. A seat is taken when the email address is first confirmed, while seats remain. At the end of these 2 months, without a subscription, the account becomes read-only. The Founders rate stays reserved for 30 more days; after that date without a subscription, it is lost for good, with no effect on the data. A lost seat is not reassigned. From the first payment, the rate is kept for life, including after cancellation. This rate applies to a single-seat subscription: adding a seat moves the subscription to the public rate, for good.",
           ],
           [
             "Referral: a practitioner on a trial or subscription has a referral code to share. When a practitioner signs up with this code, the referrer and the referred practitioner each receive a credit worth one month of their own plan, upon the referred practitioner's first payment. This credit comes off subsequent payments. It does not expire, stays on the account after cancellation and applies when the practitioner returns; it is never paid out in cash. The code can be entered until the first payment. A referred practitioner earns credit only once, and two practitioners cannot refer each other. The referrer sees the number of people referred and of credits, never their identity.",

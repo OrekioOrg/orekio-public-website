@@ -346,7 +346,7 @@ export const faqEn: FaqCopy = {
           id: "free-trial",
           question: "Is there a free trial?",
           answer: [
-            [`Yes. The first ${founders.seats} sign-ups get ${founders.freeMonths} months free, with no credit card.`],
+            [`Yes. The first ${founders.seats} sign-ups get ${founders.freeMonths} months free.`],
             [`After that, the trial lasts ${OFFERS.freeMonths} month: the card is saved at sign-up, with no charge during the trial.`],
           ],
         },

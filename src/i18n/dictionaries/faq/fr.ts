@@ -346,7 +346,7 @@ export const faqFr: FaqCopy = {
           id: "free-trial",
           question: "Y a-t-il un essai gratuit ?",
           answer: [
-            [`Oui. Les ${founders.seats} premiers inscrits ont ${founders.freeMonths} mois gratuits, sans carte bancaire.`],
+            [`Oui. Les ${founders.seats} premiers inscrits ont ${founders.freeMonths} mois gratuits.`],
             [`Ensuite, l'essai dure ${OFFERS.freeMonths} mois : la carte est enregistrée à l'inscription, sans débit pendant l'essai.`],
           ],
         },

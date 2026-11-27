@@ -59,7 +59,7 @@ export const fr = {
     ctaDemo: "Demander une démo",
     ctaFeatures: "Voir les outils",
     reassurance: [
-      `${OFFERS.founders.freeMonths} mois gratuits sans carte pour les ${OFFERS.founders.seats} premiers`,
+      `${OFFERS.founders.freeMonths} mois gratuits pour les ${OFFERS.founders.seats} premiers`,
       "Application gratuite pour le patient",
       "Hébergement certifié HDS en préparation",
     ],
@@ -147,7 +147,7 @@ export const fr = {
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
-      `${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
+      `${OFFERS.founders.freeMonths} mois gratuits et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
     ctaSectionButton: "Essayer gratuitement",
     notebook: {
       eyebrow: "Carnet de consultation",
@@ -403,9 +403,9 @@ export const fr = {
   pricing: {
     pageTitle: "Tarifs",
     metaDescription:
-      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. Fondateurs, les ${OFFERS.founders.seats} premiers inscrits : ${eur(OFFERS.founders.zelai.month)} et ${eur(OFFERS.founders.mendi.month)} TTC par mois à vie, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
+      `Zelai : ${eur(OFFERS.zelai.month)} TTC par mois, jusqu'à ${OFFERS.zelai.maxPatients} patients. Mendi : ${eur(OFFERS.mendi.month)} TTC par mois, patients illimités. Fondateurs, les ${OFFERS.founders.seats} premiers inscrits : ${eur(OFFERS.founders.zelai.month)} et ${eur(OFFERS.founders.mendi.month)} TTC par mois à vie, ${OFFERS.founders.freeMonths} mois gratuits.`,
     metaDescriptionProvisional:
-      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, et une offre Fondateurs pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire.`,
+      `Deux offres au contenu identique, Zelai jusqu'à ${OFFERS.zelai.maxPatients} patients et Mendi illimité, et une offre Fondateurs pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits.`,
     eyebrow: "Tarifs",
     plans: [
       {
@@ -442,7 +442,7 @@ export const fr = {
     details: [
       {
         label: "Essai",
-        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire. Ensuite, ${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
+        text: `Pour les ${OFFERS.founders.seats} premiers inscrits, ${OFFERS.founders.freeMonths} mois gratuits. Ensuite, ${OFFERS.freeMonths} mois gratuit, carte enregistrée à l'inscription, sans débit pendant l'essai. Si vous ne poursuivez pas, votre compte passe en lecture seule pendant 90 jours, le temps d'exporter, puis vos données patients sont supprimées. Nous vous prévenons 15 jours avant.`,
       },
       {
         label: "Zelai et Mendi",
@@ -512,7 +512,7 @@ export const fr = {
       { value: "organisation", label: "Structure" },
       { value: "other", label: "Autre" },
     ],
-    message: "Message (facultatif), sans donnée de patient",
+    message: "Message",
     submit: "Demander une démo",
     sending: "Envoi en cours, jusqu'à une minute…",
     sentTitle: "Demande envoyée.",
@@ -994,7 +994,7 @@ export const fr = {
             "À la fin de l'essai, après une résiliation ou un impayé définitif, le compte du praticien passe en lecture seule : les données sont conservées intactes, il peut les lire et les exporter, et il peut réactiver son abonnement. Ce gel dure 90 jours pour un compte qui n'a jamais payé, 3 ans pour un ancien abonné. Le praticien est prévenu avant son terme.",
           ],
           [
-            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits sans carte bancaire. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement, sans effet sur les données. Une place perdue n'est pas réattribuée. Dès le premier paiement, le tarif reste acquis à vie, y compris après une résiliation. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
+            "Offre Fondateurs : les 100 premiers praticiens inscrits, sur Zelai ou Mendi, disposent de 2 mois gratuits. Une place est prise à la première confirmation de l'adresse e-mail, dans la limite des places restantes. À la fin de ces 2 mois, sans abonnement, le compte passe en lecture seule. Le tarif Fondateurs reste réservé 30 jours de plus ; passé cette date sans abonnement, il est perdu définitivement, sans effet sur les données. Une place perdue n'est pas réattribuée. Dès le premier paiement, le tarif reste acquis à vie, y compris après une résiliation. Ce tarif vaut pour un abonnement à un seul siège : ajouter un siège fait passer au tarif public, définitivement.",
           ],
           [
             "Parrainage : un praticien en essai ou abonné dispose d'un code de parrainage à partager. Lorsqu'un praticien s'inscrit avec ce code, le parrain et le filleul reçoivent chacun un crédit équivalent à un mois de leur offre, au premier paiement du filleul. Ce crédit se déduit des paiements suivants. Il n'expire pas, reste sur le compte en cas de résiliation et sert au retour du praticien ; il n'est jamais versé en argent. Le code se saisit jusqu'au premier paiement. Un filleul ne crédite qu'une fois, et deux praticiens ne peuvent pas se parrainer mutuellement. Le parrain voit le nombre de personnes parrainées et de crédits, jamais leur identité.",
