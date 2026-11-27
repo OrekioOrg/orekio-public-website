@@ -71,7 +71,7 @@ export const fr = {
     },
     how: {
       eyebrow: "Comment ça marche",
-      title: "Quatre temps, d'une consultation à l'autre.",
+      title: "Trois temps, d'une consultation à l'autre.",
       description:
         "Pour les psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Orekio n'est pas une application d'autosoins : c'est un outil partagé, avec un seul abonnement, le vôtre.",
       videoTitle: "Orekio en une minute",
@@ -79,12 +79,8 @@ export const fr = {
         "Les outils que vous choisissez, ce que votre patient en fait entre deux consultations, et ce que vous retrouvez pour en reparler ensemble.",
       steps: [
         {
-          title: "Vous invitez votre patient",
-          text: "Son adresse e-mail suffit. Il choisit son mot de passe et installe l'application, gratuite pour lui.",
-        },
-        {
           title: "Vous ouvrez les outils",
-          text: "Un à un, selon sa situation et le moment du suivi. Vous voyez l'écran qu'il aura avant de l'ouvrir.",
+          text: "Un à un, selon la situation de votre patient et le moment du suivi. Vous voyez l'écran qu'il aura avant de l'ouvrir.",
         },
         {
           title: "Il s'en sert chez lui",

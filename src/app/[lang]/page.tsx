@@ -87,7 +87,7 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Le parcours en quatre temps, dans l'ordre où il se vit. La vidéo, quand
+      {/* Le parcours en trois temps, dans l'ordre où il se vit. La vidéo, quand
           elle est branchée (src/integrations.ts), le précède. */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
@@ -100,7 +100,7 @@ export default async function Home({
           {dict.how.description}
         </p>
         <DemoVideo lang={lang} title={dict.how.videoTitle} className="mt-12" />
-        <ol className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-3">
           {dict.how.steps.map((step, i) => (
             <li key={step.title} className="border-t border-outline pt-5">
               <span

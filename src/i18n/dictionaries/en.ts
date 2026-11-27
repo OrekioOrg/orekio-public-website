@@ -61,7 +61,7 @@ export const en: Dictionary = {
     },
     how: {
       eyebrow: "How it works",
-      title: "Four steps, from one consultation to the next.",
+      title: "Three steps, from one consultation to the next.",
       description:
         "For psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners. Orekio is not a self-help app: it is a shared tool, with a single subscription, yours.",
       videoTitle: "Orekio in one minute",
@@ -69,12 +69,8 @@ export const en: Dictionary = {
         "The tools you choose, what your patient does with them between appointments, and what you find to go over together.",
       steps: [
         {
-          title: "You invite your patient",
-          text: "Their email address is enough. They choose a password and install the app, free for them.",
-        },
-        {
           title: "You open the tools",
-          text: "One by one, according to their situation and the stage of their care. You see their screen before opening it.",
+          text: "One by one, according to your patient's situation and the stage of their care. You see their screen before opening it.",
         },
         {
           title: "They use them at home",
