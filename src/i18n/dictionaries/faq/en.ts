@@ -267,18 +267,6 @@ export const faqEn: FaqCopy = {
           ],
         },
         {
-          id: "data-roles",
-          question: "Under the GDPR, who is responsible for my patients' data?",
-          answer: [
-            ["You are. For follow-up data, the practitioner is the data controller and Orekio their processor: it processes the data on your behalf and on your instructions."],
-            [
-              "Orekio is the data controller for your account and subscription. ",
-              { href: "/en/privacy", text: "Read the privacy policy" },
-              ".",
-            ],
-          ],
-        },
-        {
           id: "who-can-read",
           question: "Who sees a patient's entries?",
           answer: [

@@ -628,16 +628,10 @@ export const fr = {
     heading: "Politique de confidentialité",
     sections: [
       {
-        heading: "Qui est responsable des données",
+        heading: "Responsable de traitement",
         lines: [
           [
-            "Pour les données des patients (identité, saisies, notes du praticien, carnet de consultation), le praticien est responsable de traitement : il décide d'ouvrir un suivi et quels outils confier. Orekio agit comme son sous-traitant, au sens de l'article 28 du RGPD : il traite ces données pour son compte et sur ses instructions.",
-          ],
-          [
-            "Pour le compte et l'abonnement du praticien, les demandes adressées à l'équipe et le site orekio.fr, Orekio est responsable de traitement.",
-          ],
-          [
-            "Pour toute question, contactez : ",
+            "Orekio, en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : ",
             email,
             ".",
           ],
@@ -766,11 +760,6 @@ export const fr = {
       {
         heading: "Vos droits",
         lines: [
-          [
-            "Un patient exerce ses droits sur ses données de suivi auprès de son praticien. Il peut aussi les exporter et les supprimer lui-même depuis l'application (voir la page ",
-            { href: "/fr/account-deletion", text: "Suppression de compte" },
-            "). Orekio assiste le praticien dans ses réponses.",
-          ],
           [
             "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données, ainsi que du droit de retirer votre consentement à tout moment. Pour exercer ces droits, contactez ",
             email,
