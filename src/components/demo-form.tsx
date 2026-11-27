@@ -1,30 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { DEMO_FORM } from "@/integrations";
 import type { DemoFormCopy } from "@/i18n/dictionaries/fr";
 
 type Status = "idle" | "sending" | "sent" | "error" | "tooMany";
 
-// Bornes du contrat de l'API (`DemoRequestBody`, OrekioOrg/Orekio).
+// Borne du contrat de l'API (`DemoRequestBody`, OrekioOrg/Orekio).
 const NAME_MAX = 120;
-const MESSAGE_MAX = 1000;
 // L'hébergement de l'API s'endort sans trafic : sa première réponse peut prendre
 // 50 secondes.
 const SEND_TIMEOUT_MS = 75_000;
 
 const FIELD =
-  "mt-1.5 w-full rounded-lg border border-outline bg-surface px-4 py-3 text-[16px] text-on-surface-strong focus:border-primary";
-const LABEL = "block text-[15px] font-medium text-on-surface-strong";
+  "h-12 w-full rounded-lg border border-transparent bg-surface px-4 text-[16px] text-on-surface-strong placeholder:text-on-surface-variant focus:border-accent";
 
-export function DemoForm({
-  copy,
-  privacyHref,
-}: {
-  copy: DemoFormCopy;
-  privacyHref: string;
-}) {
+/** La demande de démonstration, en trois champs, posée sur le vert profond. */
+export function DemoForm({ copy }: { copy: DemoFormCopy }) {
   const [status, setStatus] = useState<Status>("idle");
   const [sentTo, setSentTo] = useState("");
   // Faux dans le HTML exporté : le bouton ne s'active qu'une fois le script là,
@@ -35,11 +27,13 @@ export function DemoForm({
     () => false,
   );
 
-  // Réveille l'API dès l'arrivée sur la page, le temps que le formulaire se
-  // remplisse. La réponse ne sert à rien : un échec se verra à l'envoi.
+  // Réveille l'API au premier geste dans le formulaire, le temps de le remplir :
+  // pas à chaque visite de l'accueil. La réponse ne sert à rien.
+  const [touched, setTouched] = useState(false);
   useEffect(() => {
+    if (!touched) return;
     fetch(new URL("/healthz", DEMO_FORM.endpoint), { mode: "no-cors" }).catch(() => {});
-  }, []);
+  }, [touched]);
 
   async function send(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,7 +49,6 @@ export function DemoForm({
           name: read("name"),
           email,
           profession: read("profession"),
-          message: read("message"),
           website: read("website"),
         }),
         signal: AbortSignal.timeout(SEND_TIMEOUT_MS),
@@ -63,6 +56,7 @@ export function DemoForm({
       if (response.ok) {
         setSentTo(email);
         setStatus("sent");
+        window.umami?.track("demo-envoyee");
       } else {
         setStatus(response.status === 429 ? "tooMany" : "error");
       }
@@ -74,7 +68,7 @@ export function DemoForm({
   const mailto = (
     <a
       href={`mailto:${DEMO_FORM.email}?subject=${encodeURIComponent(copy.mailSubject)}`}
-      className="text-secondary underline"
+      className="underline"
     >
       {DEMO_FORM.email}
     </a>
@@ -83,10 +77,8 @@ export function DemoForm({
   if (status === "sent") {
     return (
       <div role="status">
-        <h2 className="text-[20px] font-medium text-on-surface-strong">
-          {copy.sentTitle}
-        </h2>
-        <p className="mt-2 text-[16px] leading-relaxed text-on-surface">
+        <h3 className="text-[22px] font-medium">{copy.sentTitle}</h3>
+        <p className="mt-2 text-[16px] font-light leading-relaxed text-on-ink/80">
           {copy.sentText.replace("{email}", sentTo)}
         </p>
       </div>
@@ -94,14 +86,19 @@ export function DemoForm({
   }
 
   return (
-    <form method="post" onSubmit={send} className="space-y-5">
-      <h2 className="text-[20px] font-medium text-on-surface-strong">{copy.title}</h2>
-      <label className={LABEL}>
-        {copy.name}
-        <input name="name" required maxLength={NAME_MAX} autoComplete="name" className={FIELD} />
-      </label>
-      <label className={LABEL}>
-        {copy.email}
+    <form method="post" onSubmit={send} onFocus={() => setTouched(true)} className="relative">
+      <h3 className="text-[22px] font-medium">{copy.title}</h3>
+      <p className="mt-1 text-[15px] font-light text-on-ink/75">{copy.subtitle}</p>
+      <div className="mt-5 space-y-3">
+        <input
+          name="name"
+          required
+          maxLength={NAME_MAX}
+          autoComplete="name"
+          aria-label={copy.name}
+          placeholder={copy.name}
+          className={FIELD}
+        />
         <input
           name="email"
           type="email"
@@ -109,14 +106,19 @@ export function DemoForm({
           maxLength={320}
           pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           autoComplete="email"
+          aria-label={copy.email}
+          placeholder={copy.email}
           className={FIELD}
         />
-      </label>
-      <label className={LABEL}>
-        {copy.profession}
-        <select name="profession" required defaultValue="" className={FIELD}>
+        <select
+          name="profession"
+          required
+          defaultValue=""
+          aria-label={copy.profession}
+          className={`${FIELD} invalid:text-on-surface-variant`}
+        >
           <option value="" disabled>
-            {copy.professionPlaceholder}
+            {copy.profession}
           </option>
           {copy.professions.map((profession) => (
             <option key={profession.value} value={profession.value}>
@@ -124,32 +126,22 @@ export function DemoForm({
             </option>
           ))}
         </select>
-      </label>
-      <label className={LABEL}>
-        {copy.message}
-        <textarea name="message" rows={4} maxLength={MESSAGE_MAX} className={FIELD} />
-      </label>
-      {/* Champ piège : hors écran et hors tabulation, seul un robot le remplit. */}
-      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label>
-          Website
-          <input name="website" tabIndex={-1} autoComplete="off" />
-        </label>
+        {/* Champ piège : hors écran et hors tabulation, seul un robot le remplit. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label>
+            Website
+            <input name="website" tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
+        <button
+          type="submit"
+          disabled={!ready || status === "sending"}
+          className="h-12 w-full rounded-lg bg-accent px-6 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
+        >
+          {status === "sending" ? copy.sending : copy.submit}
+        </button>
       </div>
-      <p className="text-[14px] leading-relaxed text-on-surface-variant">
-        {copy.warning}{" "}
-        <Link href={privacyHref} className="text-secondary underline">
-          {copy.privacyLink}
-        </Link>
-      </p>
-      <button
-        type="submit"
-        disabled={!ready || status === "sending"}
-        className="rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90 disabled:opacity-60"
-      >
-        {status === "sending" ? copy.sending : copy.submit}
-      </button>
-      <p role="alert" className="text-[15px] leading-relaxed text-on-surface-strong">
+      <p role="alert" className="mt-3 text-[15px] leading-relaxed empty:mt-0">
         {status === "error" || status === "tooMany" ? (
           <>
             {status === "tooMany" ? copy.tooMany : copy.error} {mailto}
@@ -157,7 +149,7 @@ export function DemoForm({
         ) : null}
       </p>
       <noscript>
-        <p className="text-[15px] text-on-surface">
+        <p className="mt-3 text-[15px]">
           {copy.noScript} {mailto}
         </p>
       </noscript>

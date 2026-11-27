@@ -3,10 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
 import { basePath } from "@/base-path";
-import { legacyRedirects, pathTo, routes, type RouteKey } from "@/site";
+import { demoHref, legacyRedirects, pathTo, routes, type RouteKey } from "@/site";
 import * as about from "@/views/about";
 import * as assistant from "@/views/assistant";
-import * as demo from "@/views/demo";
 import * as faq from "@/views/faq";
 import * as features from "@/views/features";
 import * as legalNotice from "@/views/legal-notice";
@@ -29,7 +28,6 @@ const views: Partial<Record<RouteKey, View>> = {
   pricing,
   about,
   faq,
-  demo,
   legalNotice,
   privacy,
   terms,
@@ -43,10 +41,14 @@ function slugOf(key: RouteKey, lang: Locale): string {
 
 type Match = { view: View } | { redirectTo: string };
 
+// La page de démonstration a rejoint l'accueil : son adresse y mène.
+const FORMER_DEMO_PAGE = "demo";
+
 function resolve(lang: Locale, page: string): Match | null {
   for (const key of Object.keys(views) as RouteKey[]) {
     if (slugOf(key, lang) === page) return { view: views[key]! };
   }
+  if (page === FORMER_DEMO_PAGE) return { redirectTo: demoHref(lang) };
   const target = legacyRedirects[lang]?.[page];
   return target ? { redirectTo: pathTo(lang, target) } : null;
 }
@@ -57,6 +59,7 @@ export function generateStaticParams() {
     for (const key of Object.keys(views) as RouteKey[]) {
       params.push({ lang, page: slugOf(key, lang) });
     }
+    params.push({ lang, page: FORMER_DEMO_PAGE });
     for (const page of Object.keys(legacyRedirects[lang] ?? {})) {
       params.push({ lang, page });
     }
@@ -76,7 +79,7 @@ export async function generateMetadata({
   if ("redirectTo" in match) {
     // L'ancienne adresse ne s'indexe pas : toute son autorite va a la nouvelle.
     return {
-      alternates: { canonical: match.redirectTo },
+      alternates: { canonical: match.redirectTo.split("#")[0] },
       robots: { index: false, follow: true },
     };
   }

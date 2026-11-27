@@ -43,7 +43,6 @@ export const en: Dictionary = {
   },
 
   home: {
-    eyebrow: "Your digital therapeutic toolkit",
     title: "Your mental health support between appointments.",
     lead: "Open the tools that fit your patient's situation. They use them at home, and you go over them together in consultation.",
     ctaSubscribe: "Try it free",
@@ -139,7 +138,12 @@ export const en: Dictionary = {
           text: "Orekio is moving to a certified Health Data Host. The current hosting is not certified yet.",
         },
       ],
-      link: "Every answer in the FAQ",
+    },
+    faq: {
+      eyebrow: "Frequently asked questions",
+      title: "The essentials before you try.",
+      more: "Do you have more questions?",
+      link: "See the full FAQ",
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
@@ -494,45 +498,28 @@ export const en: Dictionary = {
   },
 
   demo: {
-    pageTitle: "Book a demo",
-    metaDescription:
-      "A demo of Orekio based on your practice: the practitioner space, the patient app, your questions.",
-    eyebrow: "Demo",
-    heading: "See Orekio before you try it.",
-    intro: "A demonstration based on your practice. Leave us your details: we get back to you to set up a call.",
-    pointsTitle: "What we show you",
-    points: [
-      "Your practitioner space: inviting a patient, opening tools, reading their entries.",
-      "The app as your patient sees it.",
-      "Your questions: data, hosting, pricing.",
+    title: "Or see it in a demo first",
+    subtitle: "We write to you to set up a call.",
+    name: "Name",
+    email: "Work email",
+    profession: "Profession",
+    professions: [
+      { value: "psychologist", label: "Psychologist" },
+      { value: "psychiatrist", label: "Psychiatrist" },
+      { value: "advanced_practice_nurse", label: "Advanced practice nurse" },
+      { value: "nurse", label: "Nurse" },
+      { value: "general_practitioner", label: "General practitioner" },
+      { value: "organisation", label: "Organisation" },
+      { value: "other", label: "Other" },
     ],
-    form: {
-      title: "Request a demo",
-      name: "Name",
-      email: "Work email address",
-      profession: "Profession",
-      professionPlaceholder: "Choose your profession",
-      professions: [
-        { value: "psychologist", label: "Psychologist" },
-        { value: "psychiatrist", label: "Psychiatrist" },
-        { value: "advanced_practice_nurse", label: "Advanced practice nurse" },
-        { value: "nurse", label: "Nurse" },
-        { value: "general_practitioner", label: "General practitioner" },
-        { value: "organisation", label: "Organisation" },
-        { value: "other", label: "Other" },
-      ],
-      message: "When you are available, your questions (optional)",
-      warning: "Do not include any patient data.",
-      privacyLink: "What we do with this information",
-      submit: "Send the request",
-      sending: "Sending, up to a minute…",
-      sentTitle: "Request sent.",
-      sentText: "We will write to {email} to set up a call.",
-      error: "The request did not go through. Write to us at",
-      tooMany: "Too many requests from your connection. Try again later or write to us at",
-      noScript: "This form needs JavaScript. Write to us at",
-      mailSubject: "Demo request",
-    },
+    submit: "Book a demo",
+    sending: "Sending, up to a minute…",
+    sentTitle: "Request sent.",
+    sentText: "We will write to {email} to set up a call.",
+    error: "The request did not go through. Write to us at",
+    tooMany: "Too many requests from your connection. Try again later or write to us at",
+    noScript: "This form needs JavaScript. Write to us at",
+    mailSubject: "Demo request",
   },
 
   contact: {
@@ -601,7 +588,7 @@ export const en: Dictionary = {
         lines: [
           ["Website: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."],
           [
-            "Application and health data: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). This hosting is not certified as Health Data Hosting (HDS) within the meaning of Article L.1111-8 of the French Public Health Code; the move to a certified host is being prepared (see the ",
+            "Application and health data: Supabase (database, Amazon Web Services, Paris) and Render (server, Frankfurt). This hosting is not certified as Health Data Hosting (HDS) within the meaning of Article L.1111-8 of the French Public Health Code; the move of the database to OVHcloud (PostgreSQL, HDS certified) is being prepared (see the ",
             { href: "/en/about", text: "About" },
             " page).",
           ],
@@ -700,7 +687,7 @@ export const en: Dictionary = {
             "The database is hosted by Supabase in a data centre in Paris (Amazon Web Services, eu-west-3 region), and the application server by Render, in Frankfurt.",
           ],
           [
-            "This hosting is not certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The move to a certified host is being prepared; this page will give its name and date.",
+            "This hosting is not certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The database will move to OVHcloud, on HDS-certified PostgreSQL; this page will give the date of the move.",
           ],
         ] as Segment[][],
       },
@@ -753,7 +740,7 @@ export const en: Dictionary = {
               heading: "Website audience measurement",
               lines: [
                 [
-                  `The orekio.fr website measures its traffic with ${ANALYTICS.provider}, without cookies. ${ANALYTICS.hosting.en} This measurement covers the website only, never the application or patient data.`,
+                  `The orekio.fr website measures its traffic and the clicks on its sign-up and demo buttons with ${ANALYTICS.provider}, without cookies. ${ANALYTICS.hosting.en} This measurement covers the website only, never the application or patient data.`,
                 ],
               ] as Segment[][],
             },
@@ -763,7 +750,7 @@ export const en: Dictionary = {
         heading: "Demo requests",
         lines: [
           [
-            "The demo form on this website collects your name, email address, profession and message. Our server sends them to the team by email, through Resend, without storing them in the application database. They are used only to get back to you, at your request, and are kept for no more than 3 years after our last exchange. Do not include any patient data.",
+            "The demo form on this website collects your name, email address and profession. Our server sends them to the team by email, through Resend, without storing them in the application database. They are used only to get back to you, at your request, and are kept for no more than 3 years after our last exchange. Do not include any patient data.",
           ],
         ] as Segment[][],
       },

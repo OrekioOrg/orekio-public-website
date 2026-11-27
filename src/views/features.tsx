@@ -4,7 +4,7 @@ import Link from "next/link";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
-import { pathTo, routes } from "@/site";
+import { demoHref, pathTo, routes } from "@/site";
 import { CtaBanner } from "@/components/cta-banner";
 import { ModuleGallery } from "@/components/module-gallery";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
@@ -284,7 +284,7 @@ export default async function FonctionnalitesPage({
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
-        demo={{ href: pathTo(lang, "demo"), label: cta.ctaDemo }}
+        demo={{ href: demoHref(lang), label: cta.ctaDemo }}
       />
     </>
   );

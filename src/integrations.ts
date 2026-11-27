@@ -13,7 +13,19 @@ export const ANALYTICS: {
   /** Où les statistiques sont hébergées, en une phrase par langue. */
   hosting: Record<Locale, string>;
   script: { src: string; [attribute: `data-${string}`]: string };
-} | null = null;
+} | null = {
+  provider: "Umami Cloud",
+  hosting: {
+    fr: "Les serveurs d'Umami Cloud se trouvent dans l'Union européenne et aux États-Unis.",
+    en: "Umami Cloud servers are located in the European Union and the United States.",
+  },
+  script: {
+    src: "https://cloud.umami.is/script.js",
+    "data-website-id": "336b77db-4764-404a-a54e-2ba4f75d5ab9",
+    // Le site publié seul : ni les postes de développement, ni les copies.
+    "data-domains": "orekio.fr,www.orekio.fr",
+  },
+};
 
 /**
  * La demande de démonstration : la route de l'API de l'application qui l'envoie par

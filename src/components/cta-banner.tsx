@@ -41,6 +41,7 @@ export function CtaBanner({
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href={SIGNUP_URL}
+            data-umami-event="inscription"
             className={`rounded-lg px-6 py-3 text-[15px] font-medium transition-opacity hover:opacity-90 ${
               light ? "bg-primary text-on-primary" : "bg-accent text-ink"
             }`}

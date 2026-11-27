@@ -53,7 +53,6 @@ export const fr = {
   },
 
   home: {
-    eyebrow: "Votre armoire thérapeutique numérique",
     title: "Votre accompagnement en santé mentale entre les consultations.",
     lead: "Ouvrez à votre patient les outils adaptés à sa situation. Il s'en sert chez lui, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Essayer gratuitement",
@@ -150,7 +149,12 @@ export const fr = {
           text: "Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé. L'hébergement actuel n'est pas encore certifié.",
         },
       ],
-      link: "Toutes les réponses dans la FAQ",
+    },
+    faq: {
+      eyebrow: "Questions fréquentes",
+      title: "L'essentiel avant d'essayer.",
+      more: "Vous avez d'autres questions ?",
+      link: "Voir toute la FAQ",
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
@@ -505,45 +509,28 @@ export const fr = {
   },
 
   demo: {
-    pageTitle: "Demander une démo",
-    metaDescription:
-      "Une démonstration d'Orekio à partir de votre pratique : l'espace praticien, l'application patient, vos questions.",
-    eyebrow: "Démonstration",
-    heading: "Voir Orekio avant de l'essayer.",
-    intro: "Une démonstration à partir de votre pratique. Laissez-nous vos coordonnées : nous vous recontactons pour organiser un appel.",
-    pointsTitle: "Ce que nous vous montrons",
-    points: [
-      "Votre espace praticien : inviter un patient, ouvrir des outils, relire ses saisies.",
-      "L'application telle que votre patient la voit.",
-      "Vos questions : données, hébergement, tarifs.",
+    title: "Ou voyez-le d'abord en démonstration",
+    subtitle: "Nous vous écrivons pour organiser un appel.",
+    name: "Nom",
+    email: "E-mail professionnel",
+    profession: "Métier",
+    professions: [
+      { value: "psychologist", label: "Psychologue" },
+      { value: "psychiatrist", label: "Psychiatre" },
+      { value: "advanced_practice_nurse", label: "Infirmier en pratique avancée" },
+      { value: "nurse", label: "Infirmier" },
+      { value: "general_practitioner", label: "Médecin généraliste" },
+      { value: "organisation", label: "Structure" },
+      { value: "other", label: "Autre" },
     ],
-    form: {
-      title: "Demander une démonstration",
-      name: "Nom",
-      email: "Adresse e-mail professionnelle",
-      profession: "Métier",
-      professionPlaceholder: "Choisissez votre métier",
-      professions: [
-        { value: "psychologist", label: "Psychologue" },
-        { value: "psychiatrist", label: "Psychiatre" },
-        { value: "advanced_practice_nurse", label: "Infirmier en pratique avancée" },
-        { value: "nurse", label: "Infirmier" },
-        { value: "general_practitioner", label: "Médecin généraliste" },
-        { value: "organisation", label: "Structure" },
-        { value: "other", label: "Autre" },
-      ],
-      message: "Vos disponibilités, vos questions (facultatif)",
-      warning: "N'écrivez aucune donnée de patient.",
-      privacyLink: "Ce que nous faisons de ces informations",
-      submit: "Envoyer la demande",
-      sending: "Envoi en cours, jusqu'à une minute…",
-      sentTitle: "Demande envoyée.",
-      sentText: "Nous vous écrivons à {email} pour organiser un appel.",
-      error: "L'envoi n'a pas abouti. Écrivez-nous à",
-      tooMany: "Trop de demandes depuis votre connexion. Réessayez plus tard ou écrivez-nous à",
-      noScript: "Le formulaire demande JavaScript. Écrivez-nous à",
-      mailSubject: "Demande de démonstration",
-    },
+    submit: "Demander une démo",
+    sending: "Envoi en cours, jusqu'à une minute…",
+    sentTitle: "Demande envoyée.",
+    sentText: "Nous vous écrivons à {email} pour organiser un appel.",
+    error: "L'envoi n'a pas abouti. Écrivez-nous à",
+    tooMany: "Trop de demandes depuis votre connexion. Réessayez plus tard ou écrivez-nous à",
+    noScript: "Le formulaire demande JavaScript. Écrivez-nous à",
+    mailSubject: "Demande de démonstration",
   },
 
   contact: {
@@ -613,7 +600,7 @@ export const fr = {
         lines: [
           ["Site internet : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."],
           [
-            "Application et données de santé : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique ; le passage à un hébergeur certifié est en préparation (voir la page ",
+            "Application et données de santé : Supabase (base de données, Amazon Web Services, Paris) et Render (serveur, Francfort). Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique ; le passage de la base de données chez OVHcloud (PostgreSQL, certifié HDS) est en préparation (voir la page ",
             { href: "/fr/a-propos", text: "À propos" },
             ").",
           ],
@@ -712,7 +699,7 @@ export const fr = {
             "La base de données est hébergée chez Supabase, dans un centre de données situé à Paris (Amazon Web Services, région eu-west-3), et le serveur de l'application chez Render, à Francfort.",
           ],
           [
-            "Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. Le passage à un hébergeur certifié est en préparation ; cette page dira son nom et sa date.",
+            "Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. La base de données passera chez OVHcloud, sur PostgreSQL certifié HDS ; cette page dira la date du passage.",
           ],
         ] as Segment[][],
       },
@@ -765,7 +752,7 @@ export const fr = {
               heading: "Mesure d'audience du site",
               lines: [
                 [
-                  `Le site orekio.fr mesure sa fréquentation avec ${ANALYTICS.provider}, sans cookie. ${ANALYTICS.hosting.fr} Cette mesure ne concerne que le site, jamais l'application ni les données des patients.`,
+                  `Le site orekio.fr mesure sa fréquentation et les clics sur ses boutons d'inscription et de démonstration avec ${ANALYTICS.provider}, sans cookie. ${ANALYTICS.hosting.fr} Cette mesure ne concerne que le site, jamais l'application ni les données des patients.`,
                 ],
               ] as Segment[][],
             },
@@ -775,7 +762,7 @@ export const fr = {
         heading: "Demande de démonstration",
         lines: [
           [
-            "Le formulaire de démonstration du site recueille votre nom, votre adresse e-mail, votre métier et votre message. Notre serveur les envoie par e-mail à l'équipe, par l'intermédiaire de Resend, sans les enregistrer dans la base de l'application. Ils servent uniquement à vous recontacter, à votre demande, et sont conservés au plus 3 ans après notre dernier échange. N'y écrivez aucune donnée de patient.",
+            "Le formulaire de démonstration du site recueille votre nom, votre adresse e-mail et votre métier. Notre serveur les envoie par e-mail à l'équipe, par l'intermédiaire de Resend, sans les enregistrer dans la base de l'application. Ils servent uniquement à vous recontacter, à votre demande, et sont conservés au plus 3 ans après notre dernier échange. N'y écrivez aucune donnée de patient.",
           ],
         ] as Segment[][],
       },
@@ -1008,4 +995,4 @@ export const fr = {
 };
 
 export type Dictionary = typeof fr;
-export type DemoFormCopy = Dictionary["demo"]["form"];
+export type DemoFormCopy = Dictionary["demo"];

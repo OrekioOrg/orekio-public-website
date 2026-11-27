@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SegmentText } from "@/components/segment-text";
+import { FaqItem } from "@/components/faq-item";
 import type { FaqCopy, FaqQuestion } from "@/i18n/dictionaries/faq/types";
 
 /** Minuscules, sans accents, apostrophes unifiées : « hebergement » trouve « Hébergement ». */
@@ -120,33 +120,12 @@ export function FaqList({ copy }: { copy: FaqCopy }) {
               </h2>
               <div className="mt-4 border-t border-outline">
                 {section.items.map(({ question, shown }) => (
-                  <details
+                  <FaqItem
                     key={question.id}
-                    id={question.id}
+                    question={question}
+                    anchor={question.id}
                     hidden={!shown}
-                    className="group scroll-mt-6 border-b border-outline"
-                  >
-                    <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
-                      <h3 className="text-[17px] font-medium text-on-surface-strong">
-                        {question.question}
-                      </h3>
-                      <span
-                        aria-hidden="true"
-                        className="shrink-0 text-[22px] font-light leading-none text-secondary transition-transform group-open:rotate-45"
-                      >
-                        +
-                      </span>
-                    </summary>
-                    <div className="space-y-3 pb-5 pr-8 text-[16px] font-light leading-relaxed text-on-surface">
-                      {question.answer.map((line, lineIndex) => (
-                        <p key={lineIndex}>
-                          {line.map((segment, segmentIndex) => (
-                            <SegmentText key={segmentIndex} segment={segment} />
-                          ))}
-                        </p>
-                      ))}
-                    </div>
-                  </details>
+                  />
                 ))}
               </div>
             </section>
