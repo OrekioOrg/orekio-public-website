@@ -11,6 +11,7 @@ import * as features from "@/views/features";
 import * as legalNotice from "@/views/legal-notice";
 import * as pricing from "@/views/pricing";
 import * as privacy from "@/views/privacy";
+import * as security from "@/views/security";
 import * as terms from "@/views/terms";
 
 // Pages dont l'adresse change d'une langue a l'autre (/fr/tarifs, /en/pricing).
@@ -30,6 +31,7 @@ const views: Partial<Record<RouteKey, View>> = {
   faq,
   legalNotice,
   privacy,
+  security,
   terms,
 };
 

@@ -235,6 +235,14 @@ export default async function Home({
             </div>
           ))}
         </div>
+        <p className="mt-10 text-center">
+          <Link
+            href={pathTo(lang, "security")}
+            className="text-[15px] font-medium text-secondary underline"
+          >
+            {dict.trust.link}
+          </Link>
+        </p>
       </section>
 
       {/* Les questions qui reviennent le plus avant d'essayer, puis la FAQ entière. */}

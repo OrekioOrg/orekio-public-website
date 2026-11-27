@@ -138,6 +138,7 @@ export const en: Dictionary = {
           text: "Orekio is moving to a certified Health Data Host. The current hosting is not certified yet.",
         },
       ],
+      link: "Data and security in detail",
     },
     faq: {
       eyebrow: "Frequently asked questions",
@@ -520,6 +521,102 @@ export const en: Dictionary = {
     tooMany: "Too many requests from your connection. Try again later or write to us at",
     noScript: "This form needs JavaScript. Write to us at",
     mailSubject: "Demo request",
+  },
+
+  security: {
+    pageTitle: "Data and security",
+    metaDescription:
+      "Who sees your patients' data, how it is protected, where it is hosted and how long it is kept.",
+    eyebrow: "Data and security",
+    heading: "Where your patients' data goes.",
+    intro:
+      "Who sees it, how it is protected, where it is and how long it stays.",
+    access: {
+      title: "Who sees what",
+      items: [
+        {
+          title: "You",
+          text: "The entries of the modules you opened to your patient, as long as they share them. They are displayed exactly as the patient made them.",
+        },
+        {
+          title: "Your patient",
+          text: "They stop or resume sharing whenever they wish. The safety plan, the consultation notebook and what you write remain visible.",
+        },
+        {
+          title: "No sale, no advertising",
+          text: "Orekio sells no data, shows no advertising and does not send the AI assistant any of your patients' data of its own accord.",
+        },
+      ],
+    },
+    protection: {
+      title: "How it is protected",
+      items: [
+        {
+          title: "Your sign-in",
+          text: "A password, completed by two-factor authentication: a 6-digit code given by your phone.",
+        },
+        {
+          title: "Rights checked by the database",
+          text: "Access is controlled in the database itself, not only on screen.",
+        },
+        {
+          title: "Encrypted exchanges",
+          text: "The applications talk to the server over HTTPS.",
+        },
+        {
+          title: "On the patient's phone",
+          text: "The local database is encrypted, and its key kept in the phone's secure storage.",
+        },
+        {
+          title: "An access log",
+          text: "Views, changes, exports and erasures are recorded, without their content.",
+        },
+        {
+          title: "Export at any time",
+          text: "You export your account, your patient their data. Your export stays open in read-only mode.",
+        },
+      ],
+    },
+    hosting: {
+      title: "Hosting",
+      today: {
+        label: "Today",
+        text: "The database is in Paris, the application server in Frankfurt. This hosting is not certified as a Health Data Host (HDS).",
+      },
+      next: {
+        label: "In preparation",
+        text: "The database is moving to OVHcloud, on PostgreSQL with HDS-certified hosting.",
+      },
+      providers: [
+        "Some providers also operate outside the European Union, notably for notifications, payment and the AI assistant. The list and safeguards are in the ",
+        { href: "/en/privacy", text: "privacy policy" },
+        ".",
+      ] as Segment[],
+    },
+    retention: {
+      title: "How long",
+      rows: [
+        {
+          data: "Entries, notes and notebook",
+          duration: "Kept as long as the patient signs in. Data older than 5 years is deleted if they have not signed in for a year.",
+        },
+        {
+          data: "After your subscription",
+          duration: "Read-only account: 90 days if you never paid, 3 years if you were a subscriber. Your follow-ups are then erased, after notice.",
+        },
+        { data: "Access log", duration: "10 years." },
+        { data: "Notification logs", duration: "1 year." },
+        { data: "Expired invitations", duration: "30 days." },
+      ],
+    },
+    rights: [
+      "Patients can export and delete their data from their app. To exercise a right or ask a question, write to ",
+      email,
+      ". A complaint can be lodged with the ",
+      { href: "https://www.cnil.fr", text: "CNIL", external: true },
+      ".",
+    ] as Segment[],
+    faqLink: "Frequently asked questions about data",
   },
 
   contact: {
