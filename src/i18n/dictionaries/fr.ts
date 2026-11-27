@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { ANALYTICS, DEMO_BOOKING } from "../../integrations";
 import { OFFERS, VAT_PERCENT, eurFr as eur, exclVat } from "../../offers";
 import { assistantFr } from "./assistant/fr";
 import { faqFr } from "./faq/fr";
@@ -54,14 +55,53 @@ export const fr = {
   home: {
     eyebrow: "Votre armoire thérapeutique numérique",
     title: "Votre accompagnement en santé mentale entre les consultations.",
-    lead: "Construisez un plan de soins personnalisé pour votre patient, en débloquant un à un les modules adaptés à ses besoins.",
-    description:
-      "Les outils couramment utilisés en psychiatrie et santé mentale, appuyés sur la littérature scientifique : chaque module cite ses sources. Exercices de TCC, fiches de psychoéducation, agenda du sommeil, questionnaires, rappel du traitement, plan de sécurité : vous les confiez, votre patient s'en sert au quotidien, et vous en reparlez ensemble en consultation.",
+    lead: "Ouvrez à votre patient les outils adaptés à sa situation. Il s'en sert chez lui, et vous en reparlez ensemble en consultation.",
     ctaSubscribe: "Essayer gratuitement",
+    ctaDemo: "Demander une démo",
     ctaFeatures: "Voir les outils",
+    reassurance: [
+      `${OFFERS.founders.freeMonths} mois gratuits sans carte pour les ${OFFERS.founders.seats} premiers`,
+      "Application gratuite pour le patient",
+      "Hébergement certifié HDS en préparation",
+    ],
+    screensCaption:
+      "L'espace praticien et l'application patient, avec des données d'exemple",
+    screens: {
+      practitioner:
+        "L'espace praticien : le suivi quotidien d'une patiente fictive sur un an, une courbe par indicateur, en valeurs brutes.",
+      patientHome:
+        "L'accueil de l'application patient : ce qui est prévu aujourd'hui, puis les outils ouverts par le praticien, rangés par thème.",
+    },
+    how: {
+      eyebrow: "Comment ça marche",
+      title: "Quatre temps, d'une consultation à l'autre.",
+      description:
+        "Pour les psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes. Orekio n'est pas une application d'autosoins : c'est un outil partagé, avec un seul abonnement, le vôtre.",
+      videoTitle: "Orekio en une minute",
+      videoDescription:
+        "Les outils que vous choisissez, ce que votre patient en fait entre deux consultations, et ce que vous retrouvez pour en reparler ensemble.",
+      steps: [
+        {
+          title: "Vous invitez votre patient",
+          text: "Son adresse e-mail suffit. Il choisit son mot de passe et installe l'application, gratuite pour lui.",
+        },
+        {
+          title: "Vous ouvrez les outils",
+          text: "Un à un, selon sa situation et le moment du suivi. Vous voyez l'écran qu'il aura avant de l'ouvrir.",
+        },
+        {
+          title: "Il s'en sert chez lui",
+          text: "Au fil des jours, même sans connexion. Il y note aussi ses questions pour le prochain rendez-vous.",
+        },
+        {
+          title: "Vous en reparlez ensemble",
+          text: "Ses saisies vous attendent, datées et telles qu'il les a faites. Orekio affiche, vous interprétez.",
+        },
+      ],
+    },
     section2Title: "Le travail continue à la maison.",
     section2Description:
-      "En quelques minutes de consultation, il est difficile de retracer plusieurs semaines, pour votre patient comme pour vous. Entre deux rendez-vous, il s'exerce, lit, répond, note. Vous retrouvez tout dans votre espace, daté et tel qu'il l'a écrit. Ces éléments ne remplacent pas ce qu'il vous rapporte : ils l'étayent. La lecture clinique reste vôtre. Orekio s'adresse aux psychologues, psychiatres, infirmiers en pratique avancée, infirmiers et médecins généralistes.",
+      "Entre deux rendez-vous, votre patient s'exerce, lit, répond, note. Les outils sont ceux que la psychiatrie et la psychologie emploient couramment, et chaque module cite ses sources.",
     highlights: [
       {
         title: "S'exercer",
@@ -91,42 +131,31 @@ export const fr = {
     ],
     highlightsNote:
       "Sept modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
-    screensCaption: "L'application patient, avec des données d'exemple",
-    screens: {
-      sleep:
-        "L'agenda du sommeil : la dernière nuit sur un cadran de 24 heures, puis les dix nuits précédentes.",
-      tracking: "Le suivi quotidien : la saisie du jour, un curseur par indicateur.",
-      breathing: "La respiration en cohérence cardiaque : la boule qui guide l'inspiration.",
-      practitioner:
-        "L'espace praticien : le suivi quotidien d'une patiente fictive sur un an, une courbe par indicateur, en valeurs brutes.",
-      patientHome:
-        "L'accueil de l'application patient : ce qui est prévu aujourd'hui, puis les outils ouverts par le praticien, rangés par thème.",
-    },
     manifesto: {
       eyebrow: "Ce qu'Orekio ne fera jamais",
       text: "Les données sont affichées telles quelles. Leur interprétation, comme toute décision clinique, relève du praticien.",
     },
-    ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
+    trust: {
+      items: [
+        {
+          title: "Le patient garde la main",
+          text: "Il peut arrêter le partage de ses saisies, les exporter ou les effacer.",
+        },
+        {
+          title: "Aucune vente, aucune publicité",
+          text: "Orekio ne vend aucune donnée et n'affiche aucune publicité.",
+        },
+        {
+          title: "Hébergement HDS en préparation",
+          text: "Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé. L'hébergement actuel n'est pas encore certifié.",
+        },
+      ],
+      link: "Toutes les réponses dans la FAQ",
+    },
+    ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:
       `${OFFERS.founders.freeMonths} mois gratuits sans carte bancaire et un tarif fondateurs, réservés aux ${OFFERS.founders.seats} premiers inscrits.`,
     ctaSectionButton: "Essayer gratuitement",
-    apps: {
-      title: "Deux applications, un même espace",
-      description:
-        "Orekio n'est pas une application d'autosoins : c'est un outil partagé, dans lequel vous et votre patient travaillez ensemble. Vous depuis votre ordinateur, lui depuis son téléphone. Un seul abonnement, le vôtre : l'application est gratuite pour vos patients.",
-      cards: [
-        {
-          title: "Votre espace praticien, sur le web",
-          description:
-            "Vous invitez vos patients, vous ouvrez l'accès aux outils un à un. Leurs saisies vous reviennent mises en page pour la consultation : courbes, historiques, scores, données. Lisible en un coup d'œil, sans rien interpréter à votre place. Rien à installer.",
-        },
-        {
-          title: "L'application de votre patient, sur son téléphone",
-          description:
-            "Il y retrouve les outils que vous avez ouverts et les remplit au fil des jours, même sans connexion. Il peut voir son évolution et devient acteur de ses soins. Sur votre invitation, gratuitement.",
-        },
-      ],
-    },
     notebook: {
       eyebrow: "Carnet de consultation",
       title: "Le lien entre deux consultations.",
@@ -472,7 +501,29 @@ export const fr = {
     boxText:
       "Orekio est conçu comme un carnet de bord numérique, et non comme un dispositif médical. L'application se limite à afficher : un chiffre brut, un historique neutre, un score sans interprétation. Aucun seuil, aucun signal, aucune comparaison à une norme. La lecture clinique vous appartient.",
     paragraph4:
-      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Aujourd'hui, l'hébergement de l'application n'est pas certifié données de santé (HDS) ; le passage à un hébergeur certifié est en préparation.",
+      "Les saisies de vos patients sont des données de santé au sens de l'article 9 du RGPD. Le patient peut arrêter leur partage, et demander l'export ou l'effacement de ses données à tout moment. Orekio passe sur un hébergement certifié données de santé (HDS) : le passage est en préparation, et l'hébergement actuel n'est pas encore certifié.",
+  },
+
+  demo: {
+    pageTitle: "Demander une démo",
+    metaDescription:
+      "Une démonstration d'Orekio à partir de votre pratique : l'espace praticien, l'application patient, vos questions.",
+    eyebrow: "Démonstration",
+    heading: "Voir Orekio avant de l'essayer.",
+    intro: "Une démonstration à partir de votre pratique, avec l'équipe qui conçoit Orekio.",
+    pointsTitle: "Ce que nous vous montrons",
+    points: [
+      "Votre espace praticien : inviter un patient, ouvrir des outils, relire ses saisies.",
+      "L'application telle que votre patient la voit.",
+      "Vos questions : données, hébergement, tarifs.",
+    ],
+    bookText: "Choisissez le créneau qui vous convient.",
+    bookButton: "Choisir un créneau",
+    emailText: "Écrivez-nous votre métier et vos disponibilités : nous répondons personnellement.",
+    emailButton: "Demander une démo par e-mail",
+    mailSubject: "Demande de démonstration",
+    mailBody: "Bonjour,\n\nMon métier :\nMes disponibilités :\n",
+    warning: "N'écrivez aucune donnée de patient dans votre demande.",
   },
 
   contact: {
@@ -577,10 +628,16 @@ export const fr = {
     heading: "Politique de confidentialité",
     sections: [
       {
-        heading: "Responsable de traitement",
+        heading: "Qui est responsable des données",
         lines: [
           [
-            "Orekio, en tant que responsable de traitement, met en œuvre les traitements de données décrits ci-dessous. Pour toute question, contactez : ",
+            "Pour les données des patients (identité, saisies, notes du praticien, carnet de consultation), le praticien est responsable de traitement : il décide d'ouvrir un suivi et quels outils confier. Orekio agit comme son sous-traitant, au sens de l'article 28 du RGPD : il traite ces données pour son compte et sur ses instructions.",
+          ],
+          [
+            "Pour le compte et l'abonnement du praticien, les demandes adressées à l'équipe et le site orekio.fr, Orekio est responsable de traitement.",
+          ],
+          [
+            "Pour toute question, contactez : ",
             email,
             ".",
           ],
@@ -682,9 +739,38 @@ export const fr = {
           ],
         ] as Segment[][],
       },
+      ...(ANALYTICS
+        ? [
+            {
+              heading: "Mesure d'audience du site",
+              lines: [
+                [
+                  `Le site orekio.fr mesure sa fréquentation avec ${ANALYTICS.provider}, sans cookie. ${ANALYTICS.hosting.fr} Cette mesure ne concerne que le site, jamais l'application ni les données des patients.`,
+                ],
+              ] as Segment[][],
+            },
+          ]
+        : []),
+      ...(DEMO_BOOKING
+        ? [
+            {
+              heading: "Réservation d'une démonstration",
+              lines: [
+                [
+                  `La réservation d'une démonstration passe par ${DEMO_BOOKING.provider}, qui reçoit les informations que vous saisissez pour fixer le rendez-vous. N'y écrivez aucune donnée de patient.`,
+                ],
+              ] as Segment[][],
+            },
+          ]
+        : []),
       {
         heading: "Vos droits",
         lines: [
+          [
+            "Un patient exerce ses droits sur ses données de suivi auprès de son praticien. Il peut aussi les exporter et les supprimer lui-même depuis l'application (voir la page ",
+            { href: "/fr/account-deletion", text: "Suppression de compte" },
+            "). Orekio assiste le praticien dans ses réponses.",
+          ],
           [
             "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données, ainsi que du droit de retirer votre consentement à tout moment. Pour exercer ces droits, contactez ",
             email,

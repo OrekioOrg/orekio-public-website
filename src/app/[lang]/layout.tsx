@@ -3,9 +3,11 @@ import { Outfit, IBM_Plex_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { basePath } from "@/base-path";
 import { locales, hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { ANALYTICS } from "@/integrations";
 import {
   BING_SITE_VERIFICATION,
   GOOGLE_SITE_VERIFICATION,
@@ -222,6 +224,9 @@ export default async function RootLayout({
             </div>
           </div>
         </footer>
+        {ANALYTICS ? (
+          <Script {...ANALYTICS.script} strategy="afterInteractive" />
+        ) : null}
       </body>
     </html>
   );

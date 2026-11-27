@@ -74,6 +74,7 @@ export const routes = {
   about: { fr: "/a-propos", en: "/about" },
   blog: { fr: "/blog", en: "/blog" },
   faq: { fr: "/faq", en: "/faq" },
+  demo: { fr: "/demo", en: "/demo" },
   contact: { fr: "/contact", en: "/contact" },
   legalNotice: { fr: "/mentions-legales", en: "/legal-notice" },
   privacy: { fr: "/confidentialite", en: "/privacy" },

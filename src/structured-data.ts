@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { HOME_VIDEO } from "@/integrations";
 import type { FaqCopy } from "@/i18n/dictionaries/faq/types";
 import {
   COMPANY,
@@ -193,5 +194,23 @@ export function faqPageSchema(lang: Locale, url: string, faq: FaqCopy) {
         },
       })),
     ),
+  };
+}
+
+/** La vidéo de présentation, quand la langue en a une. */
+export function videoSchema(lang: Locale, dict: Dictionary) {
+  const video = HOME_VIDEO[lang];
+  if (!video) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: dict.home.how.videoTitle,
+    description: dict.home.how.videoDescription,
+    thumbnailUrl: `${SITE_URL}${video.poster}`,
+    contentUrl: `${SITE_URL}${video.src}`,
+    uploadDate: video.uploadDate,
+    duration: video.duration,
+    inLanguage: lang,
+    publisher: { "@id": ORG_ID },
   };
 }

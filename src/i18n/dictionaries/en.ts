@@ -1,4 +1,5 @@
 import type { Segment } from "../segment";
+import { ANALYTICS, DEMO_BOOKING } from "../../integrations";
 import { OFFERS, VAT_PERCENT, eurEn as eur, exclVat } from "../../offers";
 import { assistantEn } from "./assistant/en";
 import { faqEn } from "./faq/en";
@@ -44,14 +45,52 @@ export const en: Dictionary = {
   home: {
     eyebrow: "Your digital therapeutic toolkit",
     title: "Your mental health support between appointments.",
-    lead: "Build a personalised care plan for your patient by unlocking, one by one, the modules suited to their needs.",
-    description:
-      "The tools commonly used in psychiatry and mental health, grounded in the scientific literature: every module cites its sources. CBT exercises, psychoeducation sheets, sleep diary, questionnaires, medication reminders, safety plan: you hand them over, your patient uses them day to day, and you go over them together in consultation.",
+    lead: "Open the tools that fit your patient's situation. They use them at home, and you go over them together in consultation.",
     ctaSubscribe: "Try it free",
+    ctaDemo: "Book a demo",
     ctaFeatures: "See the tools",
+    reassurance: [
+      `${OFFERS.founders.freeMonths} months free, no card, for the first ${OFFERS.founders.seats}`,
+      "Free app for patients",
+      "HDS-certified hosting in preparation",
+    ],
+    screensCaption: "The practitioner space and the patient app, with sample data",
+    screens: {
+      practitioner:
+        "The practitioner space: a fictional patient's daily log over a year, one curve per indicator, as raw values.",
+      patientHome:
+        "The patient app's home screen: what is planned today, then the tools the practitioner has opened, grouped by theme.",
+    },
+    how: {
+      eyebrow: "How it works",
+      title: "Four steps, from one consultation to the next.",
+      description:
+        "For psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners. Orekio is not a self-help app: it is a shared tool, with a single subscription, yours.",
+      videoTitle: "Orekio in one minute",
+      videoDescription:
+        "The tools you choose, what your patient does with them between appointments, and what you find to go over together.",
+      steps: [
+        {
+          title: "You invite your patient",
+          text: "Their email address is enough. They choose a password and install the app, free for them.",
+        },
+        {
+          title: "You open the tools",
+          text: "One by one, according to their situation and the stage of their care. You see their screen before opening it.",
+        },
+        {
+          title: "They use them at home",
+          text: "Day after day, even offline. They also note down their questions for the next appointment.",
+        },
+        {
+          title: "You go over them together",
+          text: "Their entries wait for you, dated and exactly as they made them. Orekio shows, you interpret.",
+        },
+      ],
+    },
     section2Title: "The work continues at home.",
     section2Description:
-      "In a few minutes of consultation, it is hard to retrace several weeks, for your patient as for you. Between appointments, they practise, read, answer, write. You find everything in your space, dated and exactly as they wrote it. It does not replace what they tell you: it supports it. The clinical reading remains yours. Orekio is built for psychologists, psychiatrists, advanced practice nurses, nurses and general practitioners.",
+      "Between appointments, your patient practises, reads, answers, writes. The tools are the ones psychiatry and psychology use every day, and each module cites its sources.",
     highlights: [
       {
         title: "Practise",
@@ -81,41 +120,31 @@ export const en: Dictionary = {
     ],
     highlightsNote:
       "Seven modules from day one, some thirty already built, opening over the coming months.",
-    screensCaption: "The patient app, with sample data",
-    screens: {
-      sleep: "The sleep diary: last night on a 24-hour dial, then the ten nights before.",
-      tracking: "Daily log: today's entry, one slider per indicator.",
-      breathing: "Cardiac coherence breathing: the circle that guides each breath in.",
-      practitioner:
-        "The practitioner space: a fictional patient's daily log over a year, one curve per indicator, as raw values.",
-      patientHome:
-        "The patient app's home screen: what is planned today, then the tools the practitioner has opened, grouped by theme.",
-    },
     manifesto: {
       eyebrow: "What Orekio will never do",
       text: "Data is displayed as entered. Its interpretation, like any clinical decision, rests with the practitioner.",
+    },
+    trust: {
+      items: [
+        {
+          title: "The patient stays in control",
+          text: "They can stop sharing their entries, export them or erase them.",
+        },
+        {
+          title: "No data sale, no advertising",
+          text: "Orekio sells no data and shows no advertising.",
+        },
+        {
+          title: "HDS hosting in preparation",
+          text: "Orekio is moving to a certified Health Data Host. The current hosting is not certified yet.",
+        },
+      ],
+      link: "Every answer in the FAQ",
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
       `${OFFERS.founders.freeMonths} months free with no credit card and a founders' rate, reserved for the first ${OFFERS.founders.seats} sign-ups.`,
     ctaSectionButton: "Try it free",
-    apps: {
-      title: "Two apps, one shared space",
-      description:
-        "Orekio is not a self-help app: it is a shared tool, in which you and your patient work together. You from your computer, your patient from their phone. One subscription, yours: the app is free for your patients.",
-      cards: [
-        {
-          title: "Your practitioner space, on the web",
-          description:
-            "You invite your patients and open access to the tools one by one. Their entries come back to you laid out for the consultation: curves, histories, scores, data. Readable at a glance, with nothing interpreted for you. Nothing to install.",
-        },
-        {
-          title: "Your patient's app, on their phone",
-          description:
-            "They find the tools you have opened and fill them in day by day, even offline. They can see how things evolve and take an active part in their care. By your invitation, free of charge.",
-        },
-      ],
-    },
     notebook: {
       eyebrow: "Consultation notebook",
       title: "The link between two consultations.",
@@ -461,7 +490,29 @@ export const en: Dictionary = {
     boxText:
       "Orekio is designed as a digital logbook, not as a medical device. The app only displays: a raw figure, a neutral history, a score without interpretation. No threshold, no signal, no comparison to a norm. The clinical reading belongs to you.",
     paragraph4:
-      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Today, the application's hosting is not certified for health data (HDS); the move to a certified host is being prepared.",
+      "Your patients' entries are health data within the meaning of Article 9 of the GDPR. The patient can stop sharing them, and can request the export or erasure of their data at any time. Orekio is moving to hosting certified for health data (HDS): the move is being prepared, and the current hosting is not certified yet.",
+  },
+
+  demo: {
+    pageTitle: "Book a demo",
+    metaDescription:
+      "A demo of Orekio based on your practice: the practitioner space, the patient app, your questions.",
+    eyebrow: "Demo",
+    heading: "See Orekio before you try it.",
+    intro: "A demonstration based on your practice, with the team that builds Orekio.",
+    pointsTitle: "What we show you",
+    points: [
+      "Your practitioner space: inviting a patient, opening tools, reading their entries.",
+      "The app as your patient sees it.",
+      "Your questions: data, hosting, pricing.",
+    ],
+    bookText: "Choose the time slot that suits you.",
+    bookButton: "Choose a time slot",
+    emailText: "Tell us your profession and when you are available: we answer personally.",
+    emailButton: "Request a demo by email",
+    mailSubject: "Demo request",
+    mailBody: "Hello,\n\nMy profession:\nWhen I am available:\n",
+    warning: "Do not include any patient data in your request.",
   },
 
   contact: {
@@ -565,10 +616,16 @@ export const en: Dictionary = {
     heading: "Privacy policy",
     sections: [
       {
-        heading: "Data controller",
+        heading: "Who is responsible for the data",
         lines: [
           [
-            "Orekio, as data controller, carries out the data processing described below. For any question, contact: ",
+            "For patient data (identity, entries, practitioner notes, consultation notebook), the practitioner is the data controller: they decide to open a follow-up and which tools to provide. Orekio acts as their processor, within the meaning of Article 28 of the GDPR: it processes this data on their behalf and on their instructions.",
+          ],
+          [
+            "For the practitioner's account and subscription, requests sent to the team and the orekio.fr website, Orekio is the data controller.",
+          ],
+          [
+            "For any question, contact: ",
             email,
             ".",
           ],
@@ -670,9 +727,38 @@ export const en: Dictionary = {
           ],
         ] as Segment[][],
       },
+      ...(ANALYTICS
+        ? [
+            {
+              heading: "Website audience measurement",
+              lines: [
+                [
+                  `The orekio.fr website measures its traffic with ${ANALYTICS.provider}, without cookies. ${ANALYTICS.hosting.en} This measurement covers the website only, never the application or patient data.`,
+                ],
+              ] as Segment[][],
+            },
+          ]
+        : []),
+      ...(DEMO_BOOKING
+        ? [
+            {
+              heading: "Booking a demo",
+              lines: [
+                [
+                  `Demo bookings go through ${DEMO_BOOKING.provider}, which receives the information you enter to set the appointment. Do not include any patient data.`,
+                ],
+              ] as Segment[][],
+            },
+          ]
+        : []),
       {
         heading: "Your rights",
         lines: [
+          [
+            "Patients exercise their rights over their follow-up data with their practitioner. They can also export and delete it themselves from the app (see the ",
+            { href: "/en/account-deletion", text: "Account deletion" },
+            " page). Orekio helps the practitioner respond.",
+          ],
           [
             "Under the GDPR, you have the right to access, rectify, erase, restrict, object to, and port your data, as well as the right to withdraw your consent at any time. To exercise these rights, contact ",
             email,
