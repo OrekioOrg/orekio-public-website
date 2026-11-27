@@ -123,10 +123,6 @@ export const en: Dictionary = {
           text: "They can stop sharing their entries, export them or erase them.",
         },
         {
-          title: "No data sale, no advertising",
-          text: "Orekio sells no data and shows no advertising.",
-        },
-        {
           title: "HDS hosting in preparation",
           text: "Orekio is moving to a certified Health Data Host. The current hosting is not certified yet.",
         },

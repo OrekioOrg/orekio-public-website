@@ -133,10 +133,6 @@ export const fr = {
           text: "Il peut arrêter le partage de ses saisies, les exporter ou les effacer.",
         },
         {
-          title: "Aucune vente, aucune publicité",
-          text: "Orekio ne vend aucune donnée et n'affiche aucune publicité.",
-        },
-        {
           title: "Hébergement HDS en préparation",
           text: "Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé. L'hébergement actuel n'est pas encore certifié.",
         },

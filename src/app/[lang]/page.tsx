@@ -217,7 +217,7 @@ export default async function Home({
             {dict.manifesto.text}
           </p>
         </div>
-        <div className="mt-16 grid gap-x-10 gap-y-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-x-10 gap-y-8 md:grid-cols-2">
           {dict.trust.items.map((item) => (
             <div key={item.title} className="border-t border-outline pt-5">
               <h3 className="text-[17px] font-medium text-on-surface-strong">
