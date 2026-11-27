@@ -112,8 +112,6 @@ export const en: Dictionary = {
           "Safety plan, distress tolerance, grounding, breathing. Tools for hard moments, prepared together, within reach.",
       },
     ],
-    highlightsNote:
-      "Seven modules from day one, some thirty already built, opening over the coming months.",
     manifesto: {
       eyebrow: "What Orekio will never do",
       text: "Data is displayed as entered. Its interpretation, like any clinical decision, rests with the practitioner.",

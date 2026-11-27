@@ -195,9 +195,6 @@ export default async function Home({
               </li>
             ))}
           </ul>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-on-surface-variant">
-            {dict.highlightsNote}
-          </p>
           <p className="mt-6">
             <Link
               href={pathTo(lang, "features")}

@@ -122,8 +122,6 @@ export const fr = {
           "Plan de sécurité, tolérance à la détresse, ancrage, respiration. Les outils des moments difficiles, préparés ensemble, à portée de main.",
       },
     ],
-    highlightsNote:
-      "Sept modules dès l'ouverture, une trentaine construits, ouverts au fil des mois.",
     manifesto: {
       eyebrow: "Ce qu'Orekio ne fera jamais",
       text: "Les données sont affichées telles quelles. Leur interprétation, comme toute décision clinique, relève du praticien.",
