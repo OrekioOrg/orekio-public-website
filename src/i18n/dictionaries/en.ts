@@ -505,6 +505,7 @@ export const en: Dictionary = {
       { value: "organisation", label: "Organisation" },
       { value: "other", label: "Other" },
     ],
+    message: "Message (optional), no patient data",
     submit: "Book a demo",
     sending: "Sending, up to a minute…",
     sentTitle: "Request sent.",
@@ -743,7 +744,7 @@ export const en: Dictionary = {
         heading: "Demo requests",
         lines: [
           [
-            "The demo form on this website collects your name, email address and profession. Our server sends them to the team by email, through Resend, without storing them in the application database. They are used only to get back to you, at your request, and are kept for no more than 3 years after our last exchange. Do not include any patient data.",
+            "The demo form on this website collects your name, email address, profession and, if you write one, your message. Our server sends them to the team by email, through Resend, without storing them in the application database. They are used only to get back to you, at your request, and are kept for no more than 3 years after our last exchange. Do not include any patient data.",
           ],
         ] as Segment[][],
       },

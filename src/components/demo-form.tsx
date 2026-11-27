@@ -6,16 +6,18 @@ import type { DemoFormCopy } from "@/i18n/dictionaries/fr";
 
 type Status = "idle" | "sending" | "sent" | "error" | "tooMany";
 
-// Borne du contrat de l'API (`DemoRequestBody`, OrekioOrg/Orekio).
+// Bornes du contrat de l'API (`DemoRequestBody`, OrekioOrg/Orekio).
 const NAME_MAX = 120;
+const MESSAGE_MAX = 1000;
 // L'hébergement de l'API s'endort sans trafic : sa première réponse peut prendre
 // 50 secondes.
 const SEND_TIMEOUT_MS = 75_000;
 
-const FIELD =
-  "h-12 w-full rounded-lg border border-transparent bg-surface px-4 text-[16px] text-on-surface-strong placeholder:text-on-surface-variant focus:border-accent";
+const FIELD_BASE =
+  "w-full rounded-lg border border-transparent bg-surface px-4 text-[16px] text-on-surface-strong placeholder:text-on-surface-variant focus:border-accent";
+const FIELD = `h-12 ${FIELD_BASE}`;
 
-/** La demande de démonstration, en trois champs, posée sur le vert profond. */
+/** La demande de démonstration, posée sur le vert profond. */
 export function DemoForm({ copy }: { copy: DemoFormCopy }) {
   const [status, setStatus] = useState<Status>("idle");
   const [sentTo, setSentTo] = useState("");
@@ -49,6 +51,7 @@ export function DemoForm({ copy }: { copy: DemoFormCopy }) {
           name: read("name"),
           email,
           profession: read("profession"),
+          message: read("message"),
           website: read("website"),
         }),
         signal: AbortSignal.timeout(SEND_TIMEOUT_MS),
@@ -126,6 +129,14 @@ export function DemoForm({ copy }: { copy: DemoFormCopy }) {
             </option>
           ))}
         </select>
+        <textarea
+          name="message"
+          rows={3}
+          maxLength={MESSAGE_MAX}
+          aria-label={copy.message}
+          placeholder={copy.message}
+          className={`block py-3 ${FIELD_BASE}`}
+        />
         {/* Champ piège : hors écran et hors tabulation, seul un robot le remplit. */}
         <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
           <label>
@@ -136,7 +147,7 @@ export function DemoForm({ copy }: { copy: DemoFormCopy }) {
         <button
           type="submit"
           disabled={!ready || status === "sending"}
-          className="h-12 w-full rounded-lg bg-accent px-6 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="h-12 w-full rounded-lg bg-accent px-6 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           {status === "sending" ? copy.sending : copy.submit}
         </button>

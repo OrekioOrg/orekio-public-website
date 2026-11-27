@@ -515,6 +515,7 @@ export const fr = {
       { value: "organisation", label: "Structure" },
       { value: "other", label: "Autre" },
     ],
+    message: "Message (facultatif), sans donnée de patient",
     submit: "Demander une démo",
     sending: "Envoi en cours, jusqu'à une minute…",
     sentTitle: "Demande envoyée.",
@@ -754,7 +755,7 @@ export const fr = {
         heading: "Demande de démonstration",
         lines: [
           [
-            "Le formulaire de démonstration du site recueille votre nom, votre adresse e-mail et votre métier. Notre serveur les envoie par e-mail à l'équipe, par l'intermédiaire de Resend, sans les enregistrer dans la base de l'application. Ils servent uniquement à vous recontacter, à votre demande, et sont conservés au plus 3 ans après notre dernier échange. N'y écrivez aucune donnée de patient.",
+            "Le formulaire de démonstration du site recueille votre nom, votre adresse e-mail, votre métier et, si vous en écrivez un, votre message. Notre serveur les envoie par e-mail à l'équipe, par l'intermédiaire de Resend, sans les enregistrer dans la base de l'application. Ils servent uniquement à vous recontacter, à votre demande, et sont conservés au plus 3 ans après notre dernier échange. N'y écrivez aucune donnée de patient.",
           ],
         ] as Segment[][],
       },
