@@ -1,5 +1,5 @@
 import type { Segment } from "../segment";
-import { ANALYTICS, DEMO_BOOKING } from "../../integrations";
+import { ANALYTICS } from "../../integrations";
 import { OFFERS, VAT_PERCENT, eurEn as eur, exclVat } from "../../offers";
 import { assistantEn } from "./assistant/en";
 import { faqEn } from "./faq/en";
@@ -499,20 +499,40 @@ export const en: Dictionary = {
       "A demo of Orekio based on your practice: the practitioner space, the patient app, your questions.",
     eyebrow: "Demo",
     heading: "See Orekio before you try it.",
-    intro: "A demonstration based on your practice, with the team that builds Orekio.",
+    intro: "A demonstration based on your practice. Leave us your details: we get back to you to set up a call.",
     pointsTitle: "What we show you",
     points: [
       "Your practitioner space: inviting a patient, opening tools, reading their entries.",
       "The app as your patient sees it.",
       "Your questions: data, hosting, pricing.",
     ],
-    bookText: "Choose the time slot that suits you.",
-    bookButton: "Choose a time slot",
-    emailText: "Tell us your profession and when you are available: we answer personally.",
-    emailButton: "Request a demo by email",
-    mailSubject: "Demo request",
-    mailBody: "Hello,\n\nMy profession:\nWhen I am available:\n",
-    warning: "Do not include any patient data in your request.",
+    form: {
+      title: "Request a demo",
+      name: "Name",
+      email: "Work email address",
+      profession: "Profession",
+      professionPlaceholder: "Choose your profession",
+      professions: [
+        { value: "psychologist", label: "Psychologist" },
+        { value: "psychiatrist", label: "Psychiatrist" },
+        { value: "advanced_practice_nurse", label: "Advanced practice nurse" },
+        { value: "nurse", label: "Nurse" },
+        { value: "general_practitioner", label: "General practitioner" },
+        { value: "organisation", label: "Organisation" },
+        { value: "other", label: "Other" },
+      ],
+      message: "When you are available, your questions (optional)",
+      warning: "Do not include any patient data.",
+      privacyLink: "What we do with this information",
+      submit: "Send the request",
+      sending: "Sending, up to a minute…",
+      sentTitle: "Request sent.",
+      sentText: "We will write to {email} to set up a call.",
+      error: "The request did not go through. Write to us at",
+      tooMany: "Too many requests from your connection. Try again later or write to us at",
+      noScript: "This form needs JavaScript. Write to us at",
+      mailSubject: "Demo request",
+    },
   },
 
   contact: {
@@ -691,7 +711,7 @@ export const en: Dictionary = {
             "Render: application server (Frankfurt).",
           ],
           [
-            "Resend: sending emails (invitations, password reset, account status, support requests and reported questions), from the European Union.",
+            "Resend: sending emails (invitations, password reset, account status, support and demo requests, and reported questions), from the European Union.",
           ],
           [
             "Expo and Google Firebase, and Apple for iPhones: delivering notifications (reminders, notebook summaries) to the patient's phone. These providers are based in the United States; for Expo and Firebase, the transfer is governed by the European Commission's standard contractual clauses, set out in their terms.",
@@ -733,18 +753,14 @@ export const en: Dictionary = {
             },
           ]
         : []),
-      ...(DEMO_BOOKING
-        ? [
-            {
-              heading: "Booking a demo",
-              lines: [
-                [
-                  `Demo bookings go through ${DEMO_BOOKING.provider}, which receives the information you enter to set the appointment. Do not include any patient data.`,
-                ],
-              ] as Segment[][],
-            },
-          ]
-        : []),
+      {
+        heading: "Demo requests",
+        lines: [
+          [
+            "The demo form on this website collects your name, email address, profession and message. Our server sends them to the team by email, through Resend, without storing them in the application database. They are used only to get back to you, at your request, and are kept for no more than 3 years after our last exchange. Do not include any patient data.",
+          ],
+        ] as Segment[][],
+      },
       {
         heading: "Your rights",
         lines: [

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { DemoForm } from "@/components/demo-form";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
-import { DEMO_BOOKING } from "@/integrations";
 import { pageMetadata } from "@/seo";
-import { routes } from "@/site";
+import { pathTo, routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -22,9 +22,6 @@ export async function generateMetadata({
   });
 }
 
-const BUTTON =
-  "mt-6 inline-block rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90";
-
 export default async function DemoPage({
   params,
 }: {
@@ -32,8 +29,7 @@ export default async function DemoPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { demo: dict, contact } = getDictionary(lang);
-  const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(dict.mailSubject)}&body=${encodeURIComponent(dict.mailBody)}`;
+  const dict = getDictionary(lang).demo;
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
@@ -61,24 +57,8 @@ export default async function DemoPage({
         ))}
       </ul>
 
-      {/* Avec un outil de réservation, on choisit un créneau ; sinon, un e-mail
-          déjà rempli. */}
-      <div className="mt-10 rounded-lg border border-outline bg-surface-container-low p-6">
-        <p className="text-[16px] leading-relaxed text-on-surface">
-          {DEMO_BOOKING ? dict.bookText : dict.emailText}
-        </p>
-        {DEMO_BOOKING ? (
-          <a href={DEMO_BOOKING.url} className={BUTTON}>
-            {dict.bookButton}
-          </a>
-        ) : (
-          <a href={mailto} className={BUTTON}>
-            {dict.emailButton}
-          </a>
-        )}
-        <p className="mt-4 text-[14px] leading-relaxed text-on-surface-variant">
-          {dict.warning}
-        </p>
+      <div className="relative mt-10 rounded-lg border border-outline bg-surface-container-low p-6">
+        <DemoForm copy={dict.form} privacyHref={pathTo(lang, "privacy")} />
       </div>
     </div>
   );
