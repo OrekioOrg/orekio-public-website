@@ -89,10 +89,9 @@ export const faqFr: FaqCopy = {
           id: "tools",
           question: "Quels outils puis-je confier à mon patient ?",
           answer: [
-            ["Dès l'ouverture, sept modules : agenda du sommeil, suivi quotidien, colonnes de Beck, activation comportementale, nommer ce que je ressens, plan de sécurité et respiration. S'y ajoute le questionnaire PHQ-9."],
+            ["Vous disposez d'une bibliothèque d'outils qui couvre un large éventail de situations. Selon le diagnostic et le moment du suivi, vous choisissez par exemple l'agenda du sommeil pour une insomnie, les colonnes de Beck ou l'activation comportementale pour une dépression, l'exposition graduée pour un trouble anxieux, le journal de craving pour une addiction, ou le plan de sécurité pour les moments de crise."],
             [
-              "Une trentaine de modules sont construits et s'ouvrent au fil des mois. ",
-              { href: "/fr/fonctionnalites", text: "Voir les outils" },
+              { href: "/fr/fonctionnalites", text: "Voir la liste des outils" },
               ".",
             ],
           ],

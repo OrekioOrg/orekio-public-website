@@ -81,8 +81,8 @@ export default async function FonctionnalitesPage({
         </div>
       </section>
 
-      {/* Les cinq familles en index, une ligne par famille : la liste complète,
-          ouverts et à venir. Plus de cinquième carte seule sur sa rangée. */}
+      {/* Les cinq familles en index, une ligne par famille : la liste complète.
+          Plus de cinquième carte seule sur sa rangée. */}
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <ul className="border-t border-outline">
@@ -114,17 +114,7 @@ export default async function FonctionnalitesPage({
                       className="flex items-start gap-2 text-[15px] text-on-surface"
                     >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                      <span>
-                        {module.name}
-                        {/* Sept modules et le PHQ-9 sont ouverts au lancement, revus de
-                            bout en bout ; le reste est construit mais s'ouvre au fil
-                            des mois. Le drapeau vit sur le module lui-meme. */}
-                        {module.fromDayOne ? (
-                          <span className="ml-2 inline-block whitespace-nowrap rounded-full bg-primary-container px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.05em] text-primary">
-                            {dict.openBadge}
-                          </span>
-                        ) : null}
-                      </span>
+                      <span>{module.name}</span>
                     </li>
                   ))}
                 </ul>

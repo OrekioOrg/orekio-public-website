@@ -89,10 +89,9 @@ export const faqEn: FaqCopy = {
           id: "tools",
           question: "Which tools can I give my patient?",
           answer: [
-            ["From day one, seven modules: sleep diary, daily tracking, Beck's thought records, behavioural activation, naming what I feel, safety plan and breathing. The PHQ-9 questionnaire comes with them."],
+            ["You have a library of tools covering a wide range of situations. According to the diagnosis and the stage of care, you choose for instance the sleep diary for insomnia, Beck's thought records or behavioural activation for depression, graded exposure for an anxiety disorder, the craving journal for an addiction, or the safety plan for moments of crisis."],
             [
-              "Some thirty modules are built and open month after month. ",
-              { href: "/en/features", text: "See the tools" },
+              { href: "/en/features", text: "See the list of tools" },
               ".",
             ],
           ],

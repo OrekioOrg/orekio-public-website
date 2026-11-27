@@ -38,15 +38,12 @@ export function HomeFaq({ dict, href }: { dict: Dictionary; href: string }) {
           <FaqItem key={question.id} question={question} />
         ))}
       </div>
-      <div className="mt-10 text-center">
-        <p className="text-[15px] text-on-surface-variant">{copy.more}</p>
-        <Link
-          href={href}
-          className="mt-4 inline-block rounded-lg border border-outline bg-surface px-6 py-3 text-[15px] font-medium text-on-surface-strong transition-colors hover:bg-primary-container"
-        >
+      <p className="mt-10 text-center text-[15px] text-on-surface-variant">
+        {copy.more}{" "}
+        <Link href={href} className="font-medium text-secondary hover:underline">
           {copy.link}
         </Link>
-      </div>
+      </p>
     </section>
   );
 }

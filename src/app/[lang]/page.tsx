@@ -86,11 +86,8 @@ export default async function Home({
           </div>
         </div>
       </section>
-      <p className="mx-auto max-w-6xl px-6 pt-5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-on-surface-variant">
-        {dict.screensCaption}
-      </p>
 
-      {/* Le parcours en quatre temps, dans l'ordre où il se vit. La vidéo, quand
+      {/* Le parcours en trois temps, dans l'ordre où il se vit. La vidéo, quand
           elle est branchée (src/integrations.ts), le précède. */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-secondary">
@@ -103,7 +100,7 @@ export default async function Home({
           {dict.how.description}
         </p>
         <DemoVideo lang={lang} title={dict.how.videoTitle} className="mt-12" />
-        <ol className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-3">
           {dict.how.steps.map((step, i) => (
             <li key={step.title} className="border-t border-outline pt-5">
               <span
@@ -198,9 +195,6 @@ export default async function Home({
               </li>
             ))}
           </ul>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-on-surface-variant">
-            {dict.highlightsNote}
-          </p>
           <p className="mt-6">
             <Link
               href={pathTo(lang, "features")}
@@ -223,7 +217,7 @@ export default async function Home({
             {dict.manifesto.text}
           </p>
         </div>
-        <div className="mt-16 grid gap-x-10 gap-y-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-x-10 gap-y-8 md:grid-cols-2">
           {dict.trust.items.map((item) => (
             <div key={item.title} className="border-t border-outline pt-5">
               <h3 className="text-[17px] font-medium text-on-surface-strong">
