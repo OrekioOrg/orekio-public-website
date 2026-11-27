@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
+import { pathTo } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -28,7 +30,7 @@ export default async function ContactPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = getDictionary(lang).contact;
+  const { contact: dict, home } = getDictionary(lang);
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
@@ -44,12 +46,20 @@ export default async function ContactPage({
         ))}
       </p>
 
-      <a
-        href={`mailto:${dict.email}`}
-        className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
-      >
-        {dict.email}
-      </a>
+      <div className="mt-8 flex flex-wrap gap-4">
+        <a
+          href={`mailto:${dict.email}`}
+          className="rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
+        >
+          {dict.email}
+        </a>
+        <Link
+          href={pathTo(lang, "demo")}
+          className="rounded-lg border border-outline px-6 py-3 text-[15px] font-medium text-on-surface-strong transition-colors hover:bg-primary-container"
+        >
+          {home.ctaDemo}
+        </Link>
+      </div>
     </div>
   );
 }

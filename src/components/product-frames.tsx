@@ -55,11 +55,13 @@ export function BrowserFrame({
   src,
   alt,
   intrinsic,
+  priority = false,
   className = "",
 }: {
   src: string;
   alt: string;
   intrinsic: [number, number];
+  priority?: boolean;
   className?: string;
 }) {
   return (
@@ -76,6 +78,7 @@ export function BrowserFrame({
         alt={alt}
         width={intrinsic[0]}
         height={intrinsic[1]}
+        priority={priority}
         className="block h-auto w-full"
       />
     </div>

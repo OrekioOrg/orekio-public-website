@@ -258,11 +258,11 @@ export const faqEn: FaqCopy = {
           id: "hds",
           question: "Is the hosting HDS certified?",
           answer: [
-            ["No, not today. The current hosting is not certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code."],
+            ["It will be: Orekio is moving to a certified Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The current hosting is not certified yet."],
             [
-              "The move to a certified host is being prepared; the ",
+              "The ",
               { href: "/en/privacy", text: "privacy policy" },
-              " will give its name and date.",
+              " will give the host's name and the date of the move.",
             ],
           ],
         },

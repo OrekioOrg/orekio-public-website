@@ -247,6 +247,7 @@ export default async function AssistantPage({
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
+        demo={{ href: pathTo(lang, "demo"), label: cta.ctaDemo }}
       />
     </>
   );

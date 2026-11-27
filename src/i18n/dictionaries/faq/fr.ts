@@ -258,11 +258,11 @@ export const faqFr: FaqCopy = {
           id: "hds",
           question: "L'hébergement est-il certifié HDS ?",
           answer: [
-            ["Non, pas aujourd'hui. L'hébergement actuel n'est pas certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique."],
+            ["Il le sera : Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. L'hébergement actuel n'est pas encore certifié."],
             [
-              "Le passage à un hébergeur certifié est en préparation ; la ",
+              "La ",
               { href: "/fr/confidentialite", text: "politique de confidentialité" },
-              " dira son nom et sa date.",
+              " dira le nom de l'hébergeur et la date du passage.",
             ],
           ],
         },
