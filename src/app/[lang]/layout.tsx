@@ -134,6 +134,7 @@ export default async function RootLayout({
   ];
 
   const legalLinks = [
+    { href: pathTo(lang, "security"), label: dict.security.pageTitle },
     { href: pathTo(lang, "legalNotice"), label: dict.footer.legalNotice },
     { href: pathTo(lang, "privacy"), label: dict.footer.privacy },
     { href: pathTo(lang, "terms"), label: dict.footer.terms },

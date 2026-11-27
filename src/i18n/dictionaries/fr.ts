@@ -137,6 +137,7 @@ export const fr = {
           text: "Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé. L'hébergement actuel n'est pas encore certifié.",
         },
       ],
+      link: "Données et sécurité en détail",
     },
     faq: {
       eyebrow: "Questions fréquentes",
@@ -520,6 +521,102 @@ export const fr = {
     tooMany: "Trop de demandes depuis votre connexion. Réessayez plus tard ou écrivez-nous à",
     noScript: "Le formulaire demande JavaScript. Écrivez-nous à",
     mailSubject: "Demande de démonstration",
+  },
+
+  security: {
+    pageTitle: "Données et sécurité",
+    metaDescription:
+      "Qui voit les données de vos patients, comment elles sont protégées, où elles sont hébergées et combien de temps elles sont gardées.",
+    eyebrow: "Données et sécurité",
+    heading: "Où vont les données de vos patients.",
+    intro:
+      "Qui les voit, comment elles sont protégées, où elles se trouvent et combien de temps elles restent.",
+    access: {
+      title: "Qui voit quoi",
+      items: [
+        {
+          title: "Vous",
+          text: "Les saisies des modules que vous avez ouverts à votre patient, tant qu'il les partage. Elles sont affichées telles qu'il les a faites.",
+        },
+        {
+          title: "Votre patient",
+          text: "Il arrête ou rétablit le partage quand il le souhaite. Le plan de sécurité, le carnet de consultation et ce que vous écrivez restent visibles.",
+        },
+        {
+          title: "Ni vente, ni publicité",
+          text: "Orekio ne vend aucune donnée, n'affiche aucune publicité et n'envoie de lui-même à l'assistant IA aucune donnée de vos patients.",
+        },
+      ],
+    },
+    protection: {
+      title: "Comment elles sont protégées",
+      items: [
+        {
+          title: "Votre connexion",
+          text: "Un mot de passe, complété par la double authentification : un code à 6 chiffres donné par votre téléphone.",
+        },
+        {
+          title: "Des droits vérifiés par la base",
+          text: "L'accès est contrôlé dans la base de données elle-même, et pas seulement à l'écran.",
+        },
+        {
+          title: "Des échanges chiffrés",
+          text: "Les applications communiquent avec le serveur en HTTPS.",
+        },
+        {
+          title: "Sur le téléphone du patient",
+          text: "La base locale est chiffrée, et sa clé gardée dans le coffre sécurisé du téléphone.",
+        },
+        {
+          title: "Un journal des accès",
+          text: "Consultations, modifications, exports et effacements sont tracés, sans leur contenu.",
+        },
+        {
+          title: "Export à tout moment",
+          text: "Vous exportez votre compte, votre patient ses données. Votre export reste ouvert en lecture seule.",
+        },
+      ],
+    },
+    hosting: {
+      title: "Hébergement",
+      today: {
+        label: "Aujourd'hui",
+        text: "La base de données est à Paris, le serveur de l'application à Francfort. Cet hébergement n'est pas certifié Hébergeur de Données de Santé (HDS).",
+      },
+      next: {
+        label: "En préparation",
+        text: "La base de données passe chez OVHcloud, sur PostgreSQL avec un hébergement certifié HDS.",
+      },
+      providers: [
+        "Des prestataires interviennent aussi hors de l'Union européenne, notamment pour les notifications, le paiement et l'assistant IA. Leur liste et les garanties figurent dans la ",
+        { href: "/fr/confidentialite", text: "politique de confidentialité" },
+        ".",
+      ] as Segment[],
+    },
+    retention: {
+      title: "Combien de temps",
+      rows: [
+        {
+          data: "Saisies, notes et carnet",
+          duration: "Conservés tant que le patient se connecte. Une donnée de plus de 5 ans est supprimée s'il ne s'est pas connecté depuis un an.",
+        },
+        {
+          data: "Après votre abonnement",
+          duration: "Compte en lecture seule : 90 jours si vous n'avez jamais payé, 3 ans si vous avez été abonné. Vos suivis sont ensuite effacés, après un préavis.",
+        },
+        { data: "Journal des accès", duration: "10 ans." },
+        { data: "Journaux des notifications", duration: "1 an." },
+        { data: "Invitations expirées", duration: "30 jours." },
+      ],
+    },
+    rights: [
+      "Un patient peut exporter et supprimer ses données depuis son application. Pour exercer un droit ou poser une question, écrivez à ",
+      email,
+      ". Une réclamation peut être adressée à la ",
+      { href: "https://www.cnil.fr", text: "CNIL", external: true },
+      ".",
+    ] as Segment[],
+    faqLink: "Les questions fréquentes sur les données",
   },
 
   contact: {
