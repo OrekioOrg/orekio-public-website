@@ -1,5 +1,5 @@
 import type { Segment } from "../segment";
-import { ANALYTICS, DEMO_BOOKING } from "../../integrations";
+import { ANALYTICS } from "../../integrations";
 import { OFFERS, VAT_PERCENT, eurFr as eur, exclVat } from "../../offers";
 import { assistantFr } from "./assistant/fr";
 import { faqFr } from "./faq/fr";
@@ -510,20 +510,40 @@ export const fr = {
       "Une démonstration d'Orekio à partir de votre pratique : l'espace praticien, l'application patient, vos questions.",
     eyebrow: "Démonstration",
     heading: "Voir Orekio avant de l'essayer.",
-    intro: "Une démonstration à partir de votre pratique, avec l'équipe qui conçoit Orekio.",
+    intro: "Une démonstration à partir de votre pratique. Laissez-nous vos coordonnées : nous vous recontactons pour organiser un appel.",
     pointsTitle: "Ce que nous vous montrons",
     points: [
       "Votre espace praticien : inviter un patient, ouvrir des outils, relire ses saisies.",
       "L'application telle que votre patient la voit.",
       "Vos questions : données, hébergement, tarifs.",
     ],
-    bookText: "Choisissez le créneau qui vous convient.",
-    bookButton: "Choisir un créneau",
-    emailText: "Écrivez-nous votre métier et vos disponibilités : nous répondons personnellement.",
-    emailButton: "Demander une démo par e-mail",
-    mailSubject: "Demande de démonstration",
-    mailBody: "Bonjour,\n\nMon métier :\nMes disponibilités :\n",
-    warning: "N'écrivez aucune donnée de patient dans votre demande.",
+    form: {
+      title: "Demander une démonstration",
+      name: "Nom",
+      email: "Adresse e-mail professionnelle",
+      profession: "Métier",
+      professionPlaceholder: "Choisissez votre métier",
+      professions: [
+        { value: "psychologist", label: "Psychologue" },
+        { value: "psychiatrist", label: "Psychiatre" },
+        { value: "advanced_practice_nurse", label: "Infirmier en pratique avancée" },
+        { value: "nurse", label: "Infirmier" },
+        { value: "general_practitioner", label: "Médecin généraliste" },
+        { value: "organisation", label: "Structure" },
+        { value: "other", label: "Autre" },
+      ],
+      message: "Vos disponibilités, vos questions (facultatif)",
+      warning: "N'écrivez aucune donnée de patient.",
+      privacyLink: "Ce que nous faisons de ces informations",
+      submit: "Envoyer la demande",
+      sending: "Envoi en cours…",
+      sentTitle: "Demande envoyée.",
+      sentText: "Nous vous écrivons à {email} pour organiser un appel.",
+      error: "L'envoi n'a pas abouti. Écrivez-nous à",
+      tooMany: "Trop de demandes depuis votre connexion. Réessayez plus tard ou écrivez-nous à",
+      noScript: "Le formulaire demande JavaScript. Écrivez-nous à",
+      mailSubject: "Demande de démonstration",
+    },
   },
 
   contact: {
@@ -703,7 +723,7 @@ export const fr = {
             "Render : serveur de l'application (Francfort).",
           ],
           [
-            "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte, demandes de support et questions signalées), depuis l'Union européenne.",
+            "Resend : envoi des e-mails (invitations, réinitialisation du mot de passe, état du compte, demandes de support, de démonstration et questions signalées), depuis l'Union européenne.",
           ],
           [
             "Expo et Google Firebase, et Apple pour les iPhone : acheminement des notifications (rappels, récapitulatifs du carnet) vers le téléphone du patient. Ces prestataires sont situés aux États-Unis ; pour Expo et Firebase, le transfert est encadré par les clauses contractuelles types de la Commission européenne, prévues dans leurs conditions.",
@@ -745,18 +765,14 @@ export const fr = {
             },
           ]
         : []),
-      ...(DEMO_BOOKING
-        ? [
-            {
-              heading: "Réservation d'une démonstration",
-              lines: [
-                [
-                  `La réservation d'une démonstration passe par ${DEMO_BOOKING.provider}, qui reçoit les informations que vous saisissez pour fixer le rendez-vous. N'y écrivez aucune donnée de patient.`,
-                ],
-              ] as Segment[][],
-            },
-          ]
-        : []),
+      {
+        heading: "Demande de démonstration",
+        lines: [
+          [
+            "Le formulaire de démonstration du site recueille votre nom, votre adresse e-mail, votre métier et votre message. Notre serveur les envoie par e-mail à l'équipe, par l'intermédiaire de Resend, sans les enregistrer dans la base de l'application. Ils servent uniquement à vous recontacter, à votre demande, et sont conservés au plus 3 ans après notre dernier échange. N'y écrivez aucune donnée de patient.",
+          ],
+        ] as Segment[][],
+      },
       {
         heading: "Vos droits",
         lines: [
@@ -981,3 +997,4 @@ export const fr = {
 };
 
 export type Dictionary = typeof fr;
+export type DemoFormCopy = Dictionary["demo"]["form"];

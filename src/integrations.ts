@@ -15,8 +15,15 @@ export const ANALYTICS: {
   script: { src: string; [attribute: `data-${string}`]: string };
 } | null = null;
 
-/** La page de réservation d'une démonstration. Sans elle, la demande part par e-mail. */
-export const DEMO_BOOKING: { provider: string; url: string } | null = null;
+/**
+ * La demande de démonstration : la route de l'API de l'application qui l'envoie par
+ * e-mail à l'équipe (OrekioOrg/Orekio, `modules/support/demo.ts`), et l'adresse à
+ * qui écrire quand le formulaire échoue.
+ */
+export const DEMO_FORM = {
+  endpoint: "https://orekio-api.onrender.com/v1/support/demo",
+  email: "contact@orekio.fr",
+} as const;
 
 /**
  * La vidéo de l'accueil, par langue : une langue sans vidéo n'en montre pas.
