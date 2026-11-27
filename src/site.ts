@@ -74,7 +74,6 @@ export const routes = {
   about: { fr: "/a-propos", en: "/about" },
   blog: { fr: "/blog", en: "/blog" },
   faq: { fr: "/faq", en: "/faq" },
-  demo: { fr: "/demo", en: "/demo" },
   contact: { fr: "/contact", en: "/contact" },
   legalNotice: { fr: "/mentions-legales", en: "/legal-notice" },
   privacy: { fr: "/confidentialite", en: "/privacy" },
@@ -87,6 +86,11 @@ export type RouteKey = keyof typeof routes;
 /** Locale-prefixed path to a route, e.g. ("en", "pricing") → "/en/pricing". */
 export function pathTo(lang: Locale, key: RouteKey): string {
   return `/${lang}${routes[key][lang]}`;
+}
+
+/** La demande de démonstration, au bas de l'accueil. */
+export function demoHref(lang: Locale): string {
+  return `${pathTo(lang, "home")}#demo`;
 }
 
 // Pages served but kept out of the sitemap and marked noindex (none today).

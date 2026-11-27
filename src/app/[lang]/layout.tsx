@@ -143,6 +143,8 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
+      // Next coupe le défilement doux le temps d'un changement de page.
+      data-scroll-behavior="smooth"
       className={`${outfit.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -164,6 +166,7 @@ export default async function RootLayout({
               {/* L'appel unique du site : la création de compte, sur l'application. */}
               <a
                 href={SIGNUP_URL}
+                data-umami-event="inscription"
                 className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 lg:inline-block"
               >
                 {dict.nav.subscribe}

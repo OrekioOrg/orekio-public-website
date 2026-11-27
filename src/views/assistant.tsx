@@ -9,7 +9,7 @@ import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { SectionCopy } from "@/i18n/dictionaries/assistant/types";
 import { pageMetadata } from "@/seo";
-import { pathTo, routes } from "@/site";
+import { demoHref, pathTo, routes } from "@/site";
 
 const TILE_WIDTH = {
   wide: "md:col-span-2",
@@ -247,7 +247,7 @@ export default async function AssistantPage({
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
-        demo={{ href: pathTo(lang, "demo"), label: cta.ctaDemo }}
+        demo={{ href: demoHref(lang), label: cta.ctaDemo }}
       />
     </>
   );

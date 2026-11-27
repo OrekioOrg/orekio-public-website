@@ -251,18 +251,23 @@ export const faqEn: FaqCopy = {
           id: "hosting",
           question: "Where is the data hosted?",
           answer: [
-            ["Hosting is shared between two providers: Supabase for the database, in Paris (Amazon Web Services), and Render for the application server, in Frankfurt."],
+            ["Today, the database is in Paris and the application server in Frankfurt. The database is moving to OVHcloud, in France, on PostgreSQL with certified health data hosting: the move is being prepared."],
+            [
+              "Current providers are listed in the ",
+              { href: "/en/privacy", text: "privacy policy" },
+              ".",
+            ],
           ],
         },
         {
           id: "hds",
           question: "Is the hosting HDS certified?",
           answer: [
-            ["It will be: Orekio is moving to a certified Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The current hosting is not certified yet."],
+            ["It will be: the database is moving to OVHcloud, on PostgreSQL, certified as a Health Data Host (HDS) within the meaning of article L.1111-8 of the French Public Health Code. The current hosting is not certified yet."],
             [
               "The ",
               { href: "/en/privacy", text: "privacy policy" },
-              " will give the host's name and the date of the move.",
+              " will give the date of the move.",
             ],
           ],
         },

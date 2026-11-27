@@ -4,7 +4,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { DemoVideo } from "@/components/demo-video";
-import { CtaBanner } from "@/components/cta-banner";
+import { DemoForm } from "@/components/demo-form";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
 import { softwareApplicationSchema, videoSchema } from "@/structured-data";
 import { pathTo, SIGNUP_URL } from "@/site";
@@ -33,30 +33,27 @@ export default async function Home({
           écran. */}
       <section className="bg-ink">
         <div className="mx-auto max-w-6xl px-6 pt-14 text-center md:pt-16">
-          {/* Sur l'accueil, le surtitre porte le concept (l'armoire) : il prend
-              la taille d'un enonce, pas celle d'un libelle de section. */}
-          <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-accent md:text-[13px]">
-            {dict.eyebrow}
-          </p>
-          <h1 className="mx-auto mt-5 max-w-5xl text-balance text-[34px] font-medium leading-[1.1] tracking-[-0.02em] text-on-ink md:text-[52px]">
+          <h1 className="text-balance text-[34px] font-medium leading-[1.1] tracking-[-0.02em] text-on-ink md:text-[52px]">
             {dict.title}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-balance text-[18px] font-light leading-relaxed text-on-ink md:text-[20px]">
+          <p className="text-balance text-[18px] font-light leading-relaxed text-on-ink md:text-[20px]">
             {dict.lead}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href={SIGNUP_URL}
-              className="rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
+              data-umami-event="inscription"
+              className="rounded-lg bg-accent px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
             >
               {dict.ctaSubscribe}
             </a>
-            <Link
-              href={pathTo(lang, "demo")}
+            <a
+              href="#demo"
+              data-umami-event="demo"
               className="rounded-lg border border-on-ink/25 px-6 py-3 text-[15px] font-medium text-on-ink transition-colors hover:bg-on-ink/10"
             >
               {dict.ctaDemo}
-            </Link>
+            </a>
           </div>
           <ul className="mt-6 flex flex-col items-center gap-y-1.5 text-[14px] text-on-ink/75 md:flex-row md:flex-wrap md:justify-center md:gap-x-7">
             {dict.reassurance.map((item) => (
@@ -247,13 +244,30 @@ export default async function Home({
         </p>
       </section>
 
-      <CtaBanner
-        title={dict.ctaSectionTitle}
-        description={dict.ctaSectionDescription}
-        buttonLabel={dict.ctaSectionButton}
-        demo={{ href: pathTo(lang, "demo"), label: dict.ctaDemo }}
-        tone="light"
-      />
+      {/* La fin de page : essayer, ou demander une démonstration sans quitter
+          l'accueil. Les liens « démo » du site mènent ici. */}
+      <section id="demo" className="bg-surface-container-low">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+          <div>
+            <h2 className="text-[28px] font-medium leading-tight text-on-surface-strong md:text-[32px]">
+              {dict.ctaSectionTitle}
+            </h2>
+            <p className="mt-4 max-w-md text-[16px] font-light leading-relaxed text-on-surface">
+              {dict.ctaSectionDescription}
+            </p>
+            <a
+              href={SIGNUP_URL}
+              data-umami-event="inscription"
+              className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-[15px] font-medium text-on-primary transition-opacity hover:opacity-90"
+            >
+              {dict.ctaSectionButton}
+            </a>
+          </div>
+          <div className="rounded-[10px] bg-ink p-6 text-on-ink md:p-8">
+            <DemoForm copy={fullDict.demo} />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

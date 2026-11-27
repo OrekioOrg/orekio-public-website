@@ -137,6 +137,7 @@ export function PlanCard({
         <div className="mt-auto pt-5">
           <a
             href={`${SIGNUP_URL}?offre=${theme.offer}`}
+            data-umami-event="inscription"
             className={`flex min-h-11 items-center justify-center rounded-full text-center text-[15px] font-semibold transition-opacity hover:opacity-90 ${theme.cta}`}
           >
             {ctaLabel}

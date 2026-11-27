@@ -5,7 +5,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SegmentText } from "@/components/segment-text";
 import { pageMetadata } from "@/seo";
-import { pathTo } from "@/site";
+import { demoHref } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -54,7 +54,7 @@ export default async function ContactPage({
           {dict.email}
         </a>
         <Link
-          href={pathTo(lang, "demo")}
+          href={demoHref(lang)}
           className="rounded-lg border border-outline px-6 py-3 text-[15px] font-medium text-on-surface-strong transition-colors hover:bg-primary-container"
         >
           {home.ctaDemo}

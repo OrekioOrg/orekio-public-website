@@ -7,7 +7,7 @@ import { SegmentText } from "@/components/segment-text";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
-import { absoluteUrl, pathTo, routes } from "@/site";
+import { absoluteUrl, demoHref, routes } from "@/site";
 import { faqPageSchema } from "@/structured-data";
 
 export async function generateMetadata({
@@ -73,7 +73,7 @@ export default async function FaqPage({
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
-        demo={{ href: pathTo(lang, "demo"), label: cta.ctaDemo }}
+        demo={{ href: demoHref(lang), label: cta.ctaDemo }}
       />
     </>
   );

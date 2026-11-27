@@ -74,6 +74,12 @@
   --font-mono: var(--font-mono);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--color-surface);
   color: var(--color-on-surface);

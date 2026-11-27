@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/seo";
-import { pathTo, routes } from "@/site";
+import { demoHref, routes } from "@/site";
 import { CtaBanner } from "@/components/cta-banner";
 
 export async function generateMetadata({
@@ -68,7 +68,7 @@ export default async function AProposPage({
         title={cta.ctaSectionTitle}
         description={cta.ctaSectionDescription}
         buttonLabel={cta.ctaSectionButton}
-        demo={{ href: pathTo(lang, "demo"), label: cta.ctaDemo }}
+        demo={{ href: demoHref(lang), label: cta.ctaDemo }}
       />
     </>
   );

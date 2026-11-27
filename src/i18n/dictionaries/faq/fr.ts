@@ -251,18 +251,23 @@ export const faqFr: FaqCopy = {
           id: "hosting",
           question: "Où sont hébergées les données ?",
           answer: [
-            ["L'hébergement est assuré par deux prestataires : Supabase pour la base de données, à Paris (Amazon Web Services), et Render pour le serveur de l'application, à Francfort."],
+            ["Aujourd'hui, la base de données est à Paris et le serveur de l'application à Francfort. La base passe chez OVHcloud, en France, sur PostgreSQL avec un hébergement certifié données de santé : le passage est en préparation."],
+            [
+              "Les prestataires actuels sont listés dans la ",
+              { href: "/fr/confidentialite", text: "politique de confidentialité" },
+              ".",
+            ],
           ],
         },
         {
           id: "hds",
           question: "L'hébergement est-il certifié HDS ?",
           answer: [
-            ["Il le sera : Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. L'hébergement actuel n'est pas encore certifié."],
+            ["Il le sera : la base de données passe chez OVHcloud, sur PostgreSQL, avec une certification Hébergeur de Données de Santé (HDS) au sens de l'article L.1111-8 du Code de la santé publique. L'hébergement actuel n'est pas encore certifié."],
             [
               "La ",
               { href: "/fr/confidentialite", text: "politique de confidentialité" },
-              " dira le nom de l'hébergeur et la date du passage.",
+              " dira la date du passage.",
             ],
           ],
         },
