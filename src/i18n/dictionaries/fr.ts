@@ -149,7 +149,12 @@ export const fr = {
           text: "Orekio passe sur un hébergeur certifié Hébergeur de Données de Santé. L'hébergement actuel n'est pas encore certifié.",
         },
       ],
-      link: "Toutes les réponses dans la FAQ",
+    },
+    faq: {
+      eyebrow: "Questions fréquentes",
+      title: "L'essentiel avant d'essayer.",
+      more: "Vous avez d'autres questions ?",
+      link: "Voir toute la FAQ",
     },
     ctaSectionTitle: "Prêt à essayer Orekio avec vos patients ?",
     ctaSectionDescription:

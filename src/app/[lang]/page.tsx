@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { DemoVideo } from "@/components/demo-video";
 import { DemoForm } from "@/components/demo-form";
+import { HomeFaq } from "@/components/home-faq";
 import { BrowserFrame, PhoneFrame } from "@/components/product-frames";
 import { softwareApplicationSchema, videoSchema } from "@/structured-data";
 import { pathTo, SIGNUP_URL } from "@/site";
@@ -234,15 +235,10 @@ export default async function Home({
             </div>
           ))}
         </div>
-        <p className="mt-10 text-center">
-          <Link
-            href={pathTo(lang, "faq")}
-            className="text-[15px] font-medium text-secondary underline"
-          >
-            {dict.trust.link}
-          </Link>
-        </p>
       </section>
+
+      {/* Les questions qui reviennent le plus avant d'essayer, puis la FAQ entière. */}
+      <HomeFaq dict={fullDict} href={pathTo(lang, "faq")} />
 
       {/* La fin de page : essayer, ou demander une démonstration sans quitter
           l'accueil. Les liens « démo » du site mènent ici. */}

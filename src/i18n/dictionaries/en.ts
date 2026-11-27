@@ -138,7 +138,12 @@ export const en: Dictionary = {
           text: "Orekio is moving to a certified Health Data Host. The current hosting is not certified yet.",
         },
       ],
-      link: "Every answer in the FAQ",
+    },
+    faq: {
+      eyebrow: "Frequently asked questions",
+      title: "The essentials before you try.",
+      more: "Do you have more questions?",
+      link: "See the full FAQ",
     },
     ctaSectionTitle: "Ready to try Orekio with your patients?",
     ctaSectionDescription:
