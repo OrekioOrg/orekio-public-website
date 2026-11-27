@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { DEMO_FORM } from "@/integrations";
 import type { DemoFormCopy } from "@/i18n/dictionaries/fr";
 
@@ -10,7 +10,9 @@ type Status = "idle" | "sending" | "sent" | "error" | "tooMany";
 // Bornes du contrat de l'API (`DemoRequestBody`, OrekioOrg/Orekio).
 const NAME_MAX = 120;
 const MESSAGE_MAX = 1000;
-const SEND_TIMEOUT_MS = 30_000;
+// L'hébergement de l'API s'endort sans trafic : sa première réponse peut prendre
+// 50 secondes.
+const SEND_TIMEOUT_MS = 75_000;
 
 const FIELD =
   "mt-1.5 w-full rounded-lg border border-outline bg-surface px-4 py-3 text-[16px] text-on-surface-strong focus:border-primary";
@@ -32,6 +34,12 @@ export function DemoForm({
     () => true,
     () => false,
   );
+
+  // Réveille l'API dès l'arrivée sur la page, le temps que le formulaire se
+  // remplisse. La réponse ne sert à rien : un échec se verra à l'envoi.
+  useEffect(() => {
+    fetch(new URL("/healthz", DEMO_FORM.endpoint), { mode: "no-cors" }).catch(() => {});
+  }, []);
 
   async function send(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

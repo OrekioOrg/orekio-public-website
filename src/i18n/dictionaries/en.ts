@@ -525,7 +525,7 @@ export const en: Dictionary = {
       warning: "Do not include any patient data.",
       privacyLink: "What we do with this information",
       submit: "Send the request",
-      sending: "Sending…",
+      sending: "Sending, up to a minute…",
       sentTitle: "Request sent.",
       sentText: "We will write to {email} to set up a call.",
       error: "The request did not go through. Write to us at",

@@ -536,7 +536,7 @@ export const fr = {
       warning: "N'écrivez aucune donnée de patient.",
       privacyLink: "Ce que nous faisons de ces informations",
       submit: "Envoyer la demande",
-      sending: "Envoi en cours…",
+      sending: "Envoi en cours, jusqu'à une minute…",
       sentTitle: "Demande envoyée.",
       sentText: "Nous vous écrivons à {email} pour organiser un appel.",
       error: "L'envoi n'a pas abouti. Écrivez-nous à",
