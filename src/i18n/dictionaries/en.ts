@@ -492,7 +492,6 @@ export const en: Dictionary = {
 
   demo: {
     title: "Book your demo",
-    subtitle: "We write to you to set up a call.",
     name: "Name",
     email: "Work email",
     profession: "Profession",

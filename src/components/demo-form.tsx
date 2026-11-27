@@ -91,7 +91,6 @@ export function DemoForm({ copy }: { copy: DemoFormCopy }) {
   return (
     <form method="post" onSubmit={send} onFocus={() => setTouched(true)} className="relative">
       <h3 className="text-[22px] font-medium">{copy.title}</h3>
-      <p className="mt-1 text-[15px] font-light text-on-ink/75">{copy.subtitle}</p>
       <div className="mt-5 space-y-3">
         <input
           name="name"

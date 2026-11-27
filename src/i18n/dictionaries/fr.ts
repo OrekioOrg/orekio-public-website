@@ -502,7 +502,6 @@ export const fr = {
 
   demo: {
     title: "Réservez votre démo",
-    subtitle: "Nous vous écrivons pour organiser un appel.",
     name: "Nom",
     email: "E-mail professionnel",
     profession: "Métier",
