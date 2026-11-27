@@ -86,9 +86,6 @@ export default async function Home({
           </div>
         </div>
       </section>
-      <p className="mx-auto max-w-6xl px-6 pt-5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-on-surface-variant">
-        {dict.screensCaption}
-      </p>
 
       {/* Le parcours en quatre temps, dans l'ordre où il se vit. La vidéo, quand
           elle est branchée (src/integrations.ts), le précède. */}

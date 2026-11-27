@@ -53,7 +53,6 @@ export const en: Dictionary = {
       "Free app for patients",
       "HDS-certified hosting in preparation",
     ],
-    screensCaption: "The practitioner space and the patient app, with sample data",
     screens: {
       practitioner:
         "The practitioner space: a fictional patient's daily log over a year, one curve per indicator, as raw values.",

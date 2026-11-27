@@ -63,8 +63,6 @@ export const fr = {
       "Application gratuite pour le patient",
       "Hébergement certifié HDS en préparation",
     ],
-    screensCaption:
-      "L'espace praticien et l'application patient, avec des données d'exemple",
     screens: {
       practitioner:
         "L'espace praticien : le suivi quotidien d'une patiente fictive sur un an, une courbe par indicateur, en valeurs brutes.",
