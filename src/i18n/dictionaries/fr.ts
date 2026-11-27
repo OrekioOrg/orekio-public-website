@@ -27,7 +27,7 @@ export const fr = {
   meta: {
     title: "Orekio, l'accompagnement thérapeutique entre les rendez-vous",
     description:
-      "Votre armoire thérapeutique numérique, entre les consultations : agenda du sommeil, PHQ-9, plan de sécurité, sept modules dès l'ouverture et une trentaine en chemin. Un carnet de bord numérique : Orekio affiche, le praticien interprète.",
+      "Votre armoire thérapeutique numérique, entre les consultations : agenda du sommeil, PHQ-9, plan de sécurité, et une bibliothèque d'outils à choisir pour chaque patient. Un carnet de bord numérique : Orekio affiche, le praticien interprète.",
   },
 
   nav: {
@@ -167,67 +167,66 @@ export const fr = {
   features: {
     pageTitle: "Fonctionnalités",
     metaDescription:
-      "Sept modules dès l'ouverture, une trentaine en chemin : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
+      "Une bibliothèque d'outils à choisir selon le diagnostic : agenda du sommeil, PHQ-9, plan de sécurité, nommer ce que je ressens, colonnes de Beck, et plus.",
     eyebrow: "Fonctionnalités",
     heading: "Ce que vous pouvez confier à votre patient.",
     description:
-      "Vous ouvrez chaque outil depuis votre espace web, au fil des consultations, selon la situation clinique et le moment du suivi de chaque patient ; votre patient le retrouve sur son téléphone. Les outils marqués « dès l'ouverture » sont disponibles au lancement. Les autres, déjà construits, s'ouvrent au fil des mois. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
-    openBadge: "dès l'ouverture",
+      "Vous disposez d'une bibliothèque d'outils. Selon le diagnostic et le moment du suivi, vous ouvrez à chaque patient ceux qui lui correspondent, depuis votre espace web ; il les retrouve sur son téléphone. Chaque module affiche des données brutes : Orekio les restitue, vous les interprétez.",
     categories: [
       {
         title: "S'exercer",
         tagline: "Le travail de fond, entre deux rendez-vous.",
         modules: [
-          { name: "Colonnes de Beck", fromDayOne: true },
-          { name: "Exposition graduée", fromDayOne: false },
-          { name: "Activation comportementale", fromDayOne: true },
-          { name: "Retraitement par imagerie mentale", fromDayOne: false },
-          { name: "Balance décisionnelle", fromDayOne: false },
+          { name: "Colonnes de Beck" },
+          { name: "Exposition graduée" },
+          { name: "Activation comportementale" },
+          { name: "Retraitement par imagerie mentale" },
+          { name: "Balance décisionnelle" },
         ],
       },
       {
         title: "Observer",
         tagline: "Ce qui s'est passé, jour après jour, tel qu'il l'a noté.",
         modules: [
-          { name: "Agenda du sommeil", fromDayOne: true },
-          { name: "Suivi quotidien", fromDayOne: true },
-          { name: "Rythmes et régularité", fromDayOne: false },
-          { name: "Prise du traitement", fromDayOne: false },
-          { name: "Effets indésirables", fromDayOne: false },
-          { name: "Journal de craving", fromDayOne: false },
+          { name: "Agenda du sommeil" },
+          { name: "Suivi quotidien" },
+          { name: "Rythmes et régularité" },
+          { name: "Prise du traitement" },
+          { name: "Effets indésirables" },
+          { name: "Journal de craving" },
         ],
       },
       {
         title: "Comprendre",
         tagline: "Ce que vous lui expliquez en consultation, à relire chez lui.",
         modules: [
-          { name: "Fiches de psychoéducation", fromDayOne: false },
-          { name: "Nommer ce que je ressens", fromDayOne: true },
+          { name: "Fiches de psychoéducation" },
+          { name: "Nommer ce que je ressens" },
         ],
       },
       {
         title: "Répondre",
         tagline: "Un score, jamais une interprétation.",
         modules: [
-          { name: "PHQ-9", fromDayOne: true },
+          { name: "PHQ-9" },
         ],
       },
       {
         title: "Tenir",
         tagline: "Les outils des moments difficiles, préparés ensemble, à portée de main.",
         modules: [
-          { name: "Plan de sécurité", fromDayOne: true },
-          { name: "Tolérance à la détresse", fromDayOne: false },
-          { name: "Ancrage", fromDayOne: false },
-          { name: "Respiration", fromDayOne: true },
+          { name: "Plan de sécurité" },
+          { name: "Tolérance à la détresse" },
+          { name: "Ancrage" },
+          { name: "Respiration" },
         ],
       },
     ],
     gallery: {
-      eyebrow: "Dès l'ouverture",
+      eyebrow: "Aperçu",
       title: "Ce que votre patient voit sur son téléphone.",
       description:
-        "Un écran par outil, avec des données d'exemple. La liste s'allonge à chaque nouvel outil ouvert.",
+        "Un écran par outil, avec des données d'exemple.",
       previous: "Écran précédent",
       next: "Écran suivant",
       items: [
@@ -490,7 +489,7 @@ export const fr = {
     paragraph1:
       "Tout praticien connaît la scène. Une feuille d'exercice remise en fin de rendez-vous, un agenda du sommeil photocopié, un questionnaire à rapporter. Au rendez-vous suivant, la feuille est restée dans un tiroir, ou revient à moitié remplie, et l'on reconstruit de mémoire ce qui s'est passé. Orekio est parti de là : mettre sur le téléphone du patient les outils courants de la psychiatrie et de la psychologie. Il les utilise entre deux rendez-vous, et vous les relisez avec lui au rendez-vous suivant, en libéral comme à l'hôpital.",
     paragraph2:
-      "Vous invitez votre patient par email, puis vous ouvrez l'accès aux outils un à un, selon les besoins de la consultation : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et une trentaine d'autres modules. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste vôtre.",
+      "Vous invitez votre patient par email, puis vous ouvrez l'accès aux outils un à un, selon les besoins de la consultation : agenda du sommeil, colonnes de Beck, PHQ-9, plan de sécurité, et bien d'autres. Il les utilise depuis son téléphone, même sans connexion. Ce qu'il saisit vous attend pour le prochain rendez-vous, tel quel. Orekio restitue, la lecture clinique reste vôtre.",
     paragraph3:
       "Orekio est conçu par deux personnes : un infirmier en pratique avancée en psychiatrie, qui porte les choix cliniques, et un développeur, qui porte le produit. Orekio ne vend aucune donnée et n'affiche aucune publicité.",
     boxTitle: "Un carnet de bord, pas un dispositif médical",

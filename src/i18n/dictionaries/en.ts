@@ -17,7 +17,7 @@ export const en: Dictionary = {
   meta: {
     title: "Orekio, therapeutic support between appointments",
     description:
-      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, seven modules at launch and around thirty on the way. A digital logbook: Orekio displays, the practitioner interprets.",
+      "Your digital therapeutic toolkit, between appointments: sleep diary, PHQ-9, safety plan, and a library of tools to choose for each patient. A digital logbook: Orekio displays, the practitioner interprets.",
   },
 
   nav: {
@@ -157,67 +157,66 @@ export const en: Dictionary = {
   features: {
     pageTitle: "Features",
     metaDescription:
-      "Seven modules at launch, around thirty on the way: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
+      "A library of tools to choose from according to the diagnosis: sleep diary, PHQ-9, safety plan, naming what I feel, Beck's thought records, and more.",
     eyebrow: "Features",
     heading: "What you can hand over to your patient.",
     description:
-      "You open each tool from your web space, consultation after consultation, according to each patient's clinical situation and the stage of their care; your patient finds it on their phone. Tools marked \"from day one\" are available at launch. The others, already built, open over the coming months. Every module displays raw data: Orekio shows it, you interpret it.",
-    openBadge: "from day one",
+      "You have a library of tools. According to the diagnosis and the stage of care, you open for each patient the ones that suit them, from your web space; they find them on their phone. Every module displays raw data: Orekio shows it, you interpret it.",
     categories: [
       {
         title: "Practise",
         tagline: "The in-depth work, between appointments.",
         modules: [
-          { name: "Beck's thought records", fromDayOne: true },
-          { name: "Graded exposure", fromDayOne: false },
-          { name: "Behavioural activation", fromDayOne: true },
-          { name: "Mental imagery reprocessing", fromDayOne: false },
-          { name: "Decisional balance", fromDayOne: false },
+          { name: "Beck's thought records" },
+          { name: "Graded exposure" },
+          { name: "Behavioural activation" },
+          { name: "Mental imagery reprocessing" },
+          { name: "Decisional balance" },
         ],
       },
       {
         title: "Observe",
         tagline: "What happened, day after day, as they noted it.",
         modules: [
-          { name: "Sleep diary", fromDayOne: true },
-          { name: "Daily log", fromDayOne: true },
-          { name: "Rhythms and regularity", fromDayOne: false },
-          { name: "Medication intake", fromDayOne: false },
-          { name: "Side effects", fromDayOne: false },
-          { name: "Craving journal", fromDayOne: false },
+          { name: "Sleep diary" },
+          { name: "Daily log" },
+          { name: "Rhythms and regularity" },
+          { name: "Medication intake" },
+          { name: "Side effects" },
+          { name: "Craving journal" },
         ],
       },
       {
         title: "Understand",
         tagline: "What you explain in consultation, to reread at home.",
         modules: [
-          { name: "Psychoeducation sheets", fromDayOne: false },
-          { name: "Naming what I feel", fromDayOne: true },
+          { name: "Psychoeducation sheets" },
+          { name: "Naming what I feel" },
         ],
       },
       {
         title: "Answer",
         tagline: "A score, never an interpretation.",
         modules: [
-          { name: "PHQ-9", fromDayOne: true },
+          { name: "PHQ-9" },
         ],
       },
       {
         title: "Hold on",
         tagline: "Tools for hard moments, prepared together, within reach.",
         modules: [
-          { name: "Safety plan", fromDayOne: true },
-          { name: "Distress tolerance", fromDayOne: false },
-          { name: "Grounding", fromDayOne: false },
-          { name: "Breathing", fromDayOne: true },
+          { name: "Safety plan" },
+          { name: "Distress tolerance" },
+          { name: "Grounding" },
+          { name: "Breathing" },
         ],
       },
     ],
     gallery: {
-      eyebrow: "From day one",
+      eyebrow: "A preview",
       title: "What your patient sees on their phone.",
       description:
-        "One screen per tool, with sample data. The list grows with every new tool that opens.",
+        "One screen per tool, with sample data.",
       previous: "Previous screen",
       next: "Next screen",
       items: [
@@ -480,7 +479,7 @@ export const en: Dictionary = {
     paragraph1:
       "Every practitioner knows the scene. An exercise sheet handed over at the end of an appointment, a photocopied sleep diary, a questionnaire to bring back. At the next appointment, the sheet stayed in a drawer, or comes back half filled in, and what happened is rebuilt from memory. Orekio started there: putting the everyday tools of psychiatry and psychology on the patient's phone. They use them between two appointments, and you go over them together at the next appointment, in private practice as in hospital.",
     paragraph2:
-      "You invite your patient by email, then open access to the tools one by one, as the consultation requires: sleep diary, Beck's thought records, PHQ-9, safety plan, and some thirty other modules. They use them from their phone, even offline. What they write waits for you at the next appointment, as it is. Orekio shows it, the clinical reading remains yours.",
+      "You invite your patient by email, then open access to the tools one by one, as the consultation requires: sleep diary, Beck's thought records, PHQ-9, safety plan, and many more. They use them from their phone, even offline. What they write waits for you at the next appointment, as it is. Orekio shows it, the clinical reading remains yours.",
     paragraph3:
       "Orekio is built by two people: an advanced practice nurse in psychiatry, who makes the clinical choices, and a developer, who builds the product. Orekio sells no data and shows no advertising.",
     boxTitle: "A logbook, not a medical device",
