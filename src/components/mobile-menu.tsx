@@ -24,7 +24,7 @@ export function MobileMenu({
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
@@ -88,13 +88,14 @@ export function MobileMenu({
               </Link>
             );
           })}
-          <Link
+          <a
             href={subscribeHref}
+            data-umami-event="inscription"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-lg bg-accent px-4 py-3 text-center text-[15px] font-medium text-ink transition-opacity hover:opacity-90"
           >
             {subscribeLabel}
-          </Link>
+          </a>
         </nav>
       )}
     </div>

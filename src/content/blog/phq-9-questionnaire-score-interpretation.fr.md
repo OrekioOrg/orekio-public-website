@@ -3,7 +3,7 @@ title: "Le PHQ-9 : questionnaire, score et lecture clinique"
 description: "Ce qu'est le PHQ-9, comment il se cote, ce que ses seuils indiquent, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "l'équipe Orekio"
+author: "L’équipe Orekio"
 tags: ["PHQ-9", "échelles cliniques", "dépression"]
 draft: false
 cover: "/blog/phq-9-questionnaire-score-interpretation.png"
@@ -38,7 +38,7 @@ Concrètement, le PHQ-9 dans Orekio rend une donnée disponible, et la vigilance
 
 ## En pratique
 
-Une première passation, dès le début de la prise en charge, donne une ligne de base. Beaucoup de praticiens le font repasser toutes les deux à quatre semaines, pendant un traitement ou une psychothérapie, comme support chiffré que le patient et vous regardez ensemble. C'est vous qui fixez le rythme, en consultation ; Orekio se contente d'afficher les passations les unes sous les autres. Le GAD-7 et l'[agenda du sommeil](/fr/blog/agenda-du-sommeil-entre-deux-rendez-vous) sont souvent utilisés en complément.
+Une première passation, dès le début de la prise en charge, donne une ligne de base. Beaucoup de praticiens le font repasser toutes les deux à quatre semaines, pendant un traitement ou une psychothérapie, comme support chiffré que le patient et vous regardez ensemble. C'est vous qui fixez le rythme, en consultation ; Orekio se contente d'afficher les passations les unes sous les autres.
 
 ## Sources
 

@@ -89,8 +89,6 @@ export default async function BlogIndexPage({
                   <time dateTime={article.date}>
                     {formatDate(article.date, lang)}
                   </time>
-                  {" · "}
-                  {article.readingMinutes} {dict.readingTime}
                 </p>
                 <h2 className="mt-2 text-[20px] font-medium text-on-surface-strong">
                   <Link

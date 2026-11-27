@@ -4,6 +4,7 @@ import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LegalPage } from "@/components/legal-page";
 import { pageMetadata } from "@/seo";
+import { routes } from "@/site";
 
 export async function generateMetadata({
   params,
@@ -12,23 +13,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const dict = getDictionary(lang).cgu;
+  const dict = getDictionary(lang).confidentialite;
   return pageMetadata({
     lang,
-    suffix: "/cgu",
+    suffix: routes.privacy,
     title: dict.pageTitle,
     description: dict.metaDescription,
-    // Placeholder draft (bracketed content); flip to indexable once finalised.
-    index: false,
   });
 }
 
-export default async function CguPage({
+export default async function ConfidentialitePage({
   params,
 }: {
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  return <LegalPage dict={getDictionary(lang).cgu} />;
+  return <LegalPage dict={getDictionary(lang).confidentialite} />;
 }

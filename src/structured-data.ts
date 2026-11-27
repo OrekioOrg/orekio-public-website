@@ -1,11 +1,31 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SITE_NAME, SITE_URL, absoluteUrl } from "@/site";
+import { HOME_VIDEO } from "@/integrations";
+import type { FaqCopy } from "@/i18n/dictionaries/faq/types";
+import {
+  COMPANY,
+  PRICES_FINAL,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_PROFILES,
+  absoluteUrl,
+  pathTo,
+} from "@/site";
 
 // Stable @id anchors so the graph nodes can reference each other and be
 // merged by search engines across pages.
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const APP_ID = `${SITE_URL}/#app`;
+
+// Google wants a raster logo (min 112×112) for the knowledge panel; the
+// SVG brand mark isn't reliably picked up. This is app/icon.png.
+const LOGO = {
+  "@type": "ImageObject",
+  url: `${SITE_URL}/icon.png`,
+  width: 512,
+  height: 512,
+};
 
 export function organizationSchema(dict: Dictionary) {
   return {
@@ -13,11 +33,19 @@ export function organizationSchema(dict: Dictionary) {
     "@type": "Organization",
     "@id": ORG_ID,
     name: SITE_NAME,
+    legalName: COMPANY.legalName,
     url: SITE_URL,
-    logo: `${SITE_URL}/brand/orekio-symbole.svg`,
+    logo: LOGO,
+    image: `${SITE_URL}/og.png`,
     description: dict.meta.description,
     email: "contact@orekio.app",
-    sameAs: ["https://orekio.app"],
+    address: { "@type": "PostalAddress", ...COMPANY.address },
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "SIREN",
+      value: COMPANY.siren,
+    },
+    sameAs: SOCIAL_PROFILES,
   };
 }
 
@@ -39,29 +67,49 @@ export function websiteSchema(lang: Locale, dict: Dictionary) {
  * Orekio is a product, with its category, platform and pricing tiers.
  */
 export function softwareApplicationSchema(lang: Locale, dict: Dictionary) {
+  const pricingUrl = `${SITE_URL}${pathTo(lang, "pricing")}`;
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": APP_ID,
     name: SITE_NAME,
     url: absoluteUrl(lang),
+    image: `${SITE_URL}/og.png`,
     applicationCategory: "HealthApplication",
     operatingSystem: "iOS, Android, Web",
+    inLanguage: lang,
     description: dict.meta.description,
     publisher: { "@id": ORG_ID },
-    offers: dict.pricing.plans.map((plan) => ({
+    // Pas d'offres chiffrees tant que les prix ne sont pas definitifs.
+    ...(PRICES_FINAL ? { offers: offers(dict, pricingUrl) } : {}),
+  };
+}
+
+function offers(dict: Dictionary, pricingUrl: string) {
+  return dict.pricing.plans.map((plan) => {
+    // "29,99 €" → 29.99 per month, VAT included; "Gratuit"/"Free" → 0.
+    const amount =
+      /\d+(?:[.,]\d+)?/.exec(plan.price)?.[0].replace(",", ".") ?? "0";
+    return {
       "@type": "Offer",
       name: plan.name,
-      description: plan.description,
-      ...(plan.price === "Gratuit" || plan.price === "Free"
-        ? { price: "0", priceCurrency: "EUR" }
-        : plan.price.includes("€")
-          ? {
-              price: plan.price.replace(/[^0-9.,]/g, "").replace(",", "."),
+      description: plan.features.join(", "),
+      url: pricingUrl,
+      price: amount,
+      priceCurrency: "EUR",
+      ...(amount !== "0"
+        ? {
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: amount,
               priceCurrency: "EUR",
-            }
-          : {}),
-    })),
-  };
+              unitCode: "MON",
+              valueAddedTaxIncluded: true,
+            },
+          }
+        : {}),
+    };
+  });
 }
 
 /** BlogPosting node for a single article. */
@@ -72,6 +120,7 @@ export function blogPostingSchema(input: {
   datePublished: string;
   dateModified?: string;
   authorName?: string;
+  authorUrl?: string;
   image?: string;
   inLanguage: string;
 }) {
@@ -87,7 +136,15 @@ export function blogPostingSchema(input: {
     dateModified: input.dateModified ?? input.datePublished,
     inLanguage: input.inLanguage,
     image: input.image ? [`${SITE_URL}${input.image}`] : [`${SITE_URL}/og.png`],
-    author: { "@type": "Person", name: input.authorName ?? SITE_NAME },
+    // Without a personal profile the byline is the team, i.e. the organisation.
+    author: input.authorUrl
+      ? {
+          "@type": "Person",
+          name: input.authorName ?? SITE_NAME,
+          url: input.authorUrl,
+          sameAs: [input.authorUrl],
+        }
+      : { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
   };
 }
@@ -108,5 +165,52 @@ export function breadcrumbSchema(
       name: crumb.name,
       item: crumb.url,
     })),
+  };
+}
+
+/**
+ * FAQPage : les questions et réponses en texte brut, pour les moteurs et les
+ * assistants qui répondent à partir des pages.
+ */
+export function faqPageSchema(lang: Locale, url: string, faq: FaqCopy) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: lang,
+    publisher: { "@id": ORG_ID },
+    mainEntity: faq.sections.flatMap((section) =>
+      section.questions.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer
+            .map((line) =>
+              line.map((s) => (typeof s === "string" ? s : s.text)).join(""),
+            )
+            .join(" "),
+        },
+      })),
+    ),
+  };
+}
+
+/** La vidéo de présentation, quand la langue en a une. */
+export function videoSchema(lang: Locale, dict: Dictionary) {
+  const video = HOME_VIDEO[lang];
+  if (!video) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: dict.home.how.videoTitle,
+    description: dict.home.how.videoDescription,
+    thumbnailUrl: `${SITE_URL}${video.poster}`,
+    contentUrl: `${SITE_URL}${video.src}`,
+    uploadDate: video.uploadDate,
+    duration: video.duration,
+    inLanguage: lang,
+    publisher: { "@id": ORG_ID },
   };
 }

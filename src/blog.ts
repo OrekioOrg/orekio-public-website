@@ -21,6 +21,8 @@ export interface ArticleFrontmatter {
   /** ISO date of the last meaningful edit, if any. */
   updated?: string;
   author?: string;
+  /** Public profile of the author (LinkedIn), linked from the byline. */
+  authorUrl?: string;
   tags?: string[];
   /** Absolute-from-root path to a 1200×630 cover, e.g. /blog/foo.png. */
   cover?: string;
@@ -33,8 +35,6 @@ export interface Article extends ArticleFrontmatter {
   lang: Locale;
   /** Rendered HTML body. */
   html: string;
-  /** Plain-text reading time in minutes (rounded up, min 1). */
-  readingMinutes: number;
 }
 
 interface ParsedFile {
@@ -75,13 +75,11 @@ function readAll(): ParsedFile[] {
 }
 
 function toArticle({ slug, lang, data, content }: ParsedFile): Article {
-  const words = content.split(/\s+/).filter(Boolean).length;
   return {
     ...data,
     slug,
     lang,
     html: marked.parse(content, { async: false }) as string,
-    readingMinutes: Math.max(1, Math.round(words / 200)),
   };
 }
 

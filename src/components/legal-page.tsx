@@ -4,15 +4,16 @@ import { SegmentText } from "./segment-text";
 export interface LegalPageDict {
   eyebrow: string;
   heading: string;
-  noticeBox: string;
+  /** Optional notice shown above the sections. */
+  noticeBox?: string;
   sections: {
     heading: string;
     lines: Segment[][];
   }[];
 }
 
-// Shared layout for the three placeholder legal pages (mentions légales,
-// confidentialité, CGU): eyebrow, heading, a "draft" notice box, then a
+// Shared layout for the legal pages (mentions légales, confidentialité, CGU):
+// eyebrow, heading, an optional notice box, then a
 // list of sections whose paragraphs may contain inline links.
 export function LegalPage({ dict }: { dict: LegalPageDict }) {
   return (
@@ -24,11 +25,13 @@ export function LegalPage({ dict }: { dict: LegalPageDict }) {
         {dict.heading}
       </h1>
 
-      <div className="mt-6 rounded-lg border border-outline bg-surface-container-low p-6">
-        <p className="text-[15px] leading-relaxed text-on-surface-variant">
-          {dict.noticeBox}
-        </p>
-      </div>
+      {dict.noticeBox ? (
+        <div className="mt-6 rounded-lg border border-outline bg-surface-container-low p-6">
+          <p className="text-[15px] leading-relaxed text-on-surface-variant">
+            {dict.noticeBox}
+          </p>
+        </div>
+      ) : null}
 
       <div className="mt-10 space-y-8 text-[16px] leading-relaxed text-on-surface">
         {dict.sections.map((section) => (

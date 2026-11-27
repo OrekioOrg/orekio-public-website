@@ -1,11 +1,12 @@
 import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { SIGNUP_URL } from "@/site";
 
 interface CtaBannerProps {
-  lang: Locale;
   title: string;
   description: string;
   buttonLabel: string;
+  /** Le second appel, en retrait : la démonstration. */
+  demo: { href: string; label: string };
   /**
    * `ink` : aplat vert profond (défaut). `light` : fond clair, pour une page
    * dont la section de rupture vert profond est déjà prise ailleurs (la charte
@@ -17,10 +18,10 @@ interface CtaBannerProps {
 // Bandeau d'appel de fin de page, partage par l'accueil et Fonctionnalites :
 // un seul rendu, pour qu'il reste identique des deux cotes.
 export function CtaBanner({
-  lang,
   title,
   description,
   buttonLabel,
+  demo,
   tone = "ink",
 }: CtaBannerProps) {
   const light = tone === "light";
@@ -37,14 +38,27 @@ export function CtaBanner({
         >
           {description}
         </p>
-        <Link
-          href={`/${lang}/contact`}
-          className={`mt-8 inline-block rounded-lg px-6 py-3 text-[15px] font-medium transition-opacity hover:opacity-90 ${
-            light ? "bg-primary text-on-primary" : "bg-accent text-ink"
-          }`}
-        >
-          {buttonLabel}
-        </Link>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href={SIGNUP_URL}
+            data-umami-event="inscription"
+            className={`rounded-lg px-6 py-3 text-[15px] font-medium transition-opacity hover:opacity-90 ${
+              light ? "bg-primary text-on-primary" : "bg-accent text-ink"
+            }`}
+          >
+            {buttonLabel}
+          </a>
+          <Link
+            href={demo.href}
+            className={`rounded-lg border px-6 py-3 text-[15px] font-medium transition-colors ${
+              light
+                ? "border-outline bg-surface text-on-surface-strong hover:bg-primary-container"
+                : "border-on-ink/25 text-on-ink hover:bg-on-ink/10"
+            }`}
+          >
+            {demo.label}
+          </Link>
+        </div>
       </div>
     </section>
   );

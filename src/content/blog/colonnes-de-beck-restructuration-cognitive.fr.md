@@ -3,7 +3,7 @@ title: "Les colonnes de Beck : le relevé de pensées en TCC"
 description: "Repérer et mettre à l'épreuve les pensées automatiques. Les formats, comment les remplir, et ce qu'Orekio en fait : afficher, sans conclure."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "l'équipe Orekio"
+author: "L’équipe Orekio"
 tags: ["colonnes de Beck", "restructuration cognitive", "TCC"]
 draft: false
 cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"
@@ -35,7 +35,7 @@ Orekio n'analyse pas le contenu, ne compte rien et ne repère aucune distorsion 
 
 ## En pratique
 
-Deux à quatre relevés par semaine suffisent souvent au début. L'objectif tient à la régularité plutôt qu'au volume, et surtout à la relecture commune en rendez-vous, où le patient et vous examinez ensemble une ou deux situations en détail. Les échelles [PHQ-9](/fr/blog/phq-9-questionnaire-score-interpretation) et GAD-7 servent parfois de repère chiffré en parallèle.
+Deux à quatre relevés par semaine suffisent souvent au début. L'objectif tient à la régularité plutôt qu'au volume, et surtout à la relecture commune en rendez-vous, où le patient et vous examinez ensemble une ou deux situations en détail.
 
 ## Sources
 

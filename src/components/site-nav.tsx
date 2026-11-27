@@ -20,7 +20,7 @@ export function isCurrent(pathname: string | null, href: string): boolean {
 export function SiteNav({ links }: { links: NavLink[] }) {
   const pathname = usePathname();
   return (
-    <nav className="hidden gap-8 md:flex">
+    <nav className="hidden gap-8 lg:flex">
       {links.map((link) => {
         const current = isCurrent(pathname, link.href);
         return (

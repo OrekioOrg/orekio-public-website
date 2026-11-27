@@ -3,7 +3,7 @@ title: "Beck's thought records: the thought record in CBT"
 description: "Spotting and testing automatic thoughts. The formats, how to fill them in, and what Orekio does with them: display, without concluding."
 date: "2026-09-08"
 updated: "2026-09-16"
-author: "the Orekio team"
+author: "The Orekio team"
 tags: ["Beck's thought records", "cognitive restructuring", "CBT"]
 draft: false
 cover: "/blog/colonnes-de-beck-restructuration-cognitive.png"
@@ -31,11 +31,11 @@ The record is filled in as close as possible to the moment the emotion occurred;
 
 In Orekio, Beck's thought records are a module you open, usually after some initial work on emotions (for example with [Naming what I feel](/en/blog/nommer-ce-que-je-ressens)). The patient fills in their records from their phone, between two appointments, in five steps: situation, emotion, automatic thought, arguments, alternative thought. You then find them in full, record by record, with the date, and you can reread two of them side by side.
 
-Orekio does not analyse the content, counts nothing and spots no distortion in your place. Spotting distortions and rereading happen in consultation. This is consistent with its status as a digital logbook, not a medical device (see [About](/en/a-propos)).
+Orekio does not analyse the content, counts nothing and spots no distortion in your place. Spotting distortions and rereading happen in consultation. This is consistent with its status as a digital logbook, not a medical device (see [About](/en/about)).
 
 ## In practice
 
-Two to four records a week are often enough at first. The goal is regularity rather than volume, and above all the shared rereading at the appointment, where the patient and you examine one or two situations in detail together. The [PHQ-9](/en/blog/phq-9-questionnaire-score-interpretation) and GAD-7 scales sometimes serve as a numerical marker alongside.
+Two to four records a week are often enough at first. The goal is regularity rather than volume, and above all the shared rereading at the appointment, where the patient and you examine one or two situations in detail together.
 
 ## Sources
 

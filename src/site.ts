@@ -9,6 +9,32 @@ export const SITE_URL = "https://orekio.fr";
 
 export const SITE_NAME = "Orekio";
 
+// The publishing company, as registered (Kbis). Feeds the Organization
+// JSON-LD so search engines tie the brand to the legal entity.
+export const COMPANY = {
+  legalName: "OREKIO",
+  siren: "130344369",
+  address: {
+    streetAddress: "101 rue Gabriel Péri, bâtiment C",
+    postalCode: "94270",
+    addressLocality: "Le Kremlin-Bicêtre",
+    addressCountry: "FR",
+  },
+} as const;
+
+// Official profiles of the brand elsewhere (LinkedIn, Instagram, app
+// stores…). Emitted as the Organization's `sameAs`, which is how Google
+// links them to the Orekio knowledge panel. Add each URL as it goes live.
+export const APP_URL = "https://orekio.app";
+
+// Every sign-up call to action on the site leads to the app's sign-up funnel.
+// The funnel's first step reads the chosen offer from `?offre=<key>`, which
+// only the plan cards send. The app sends a signed-in practitioner to their
+// space, and the funnel's header links to the login page.
+export const SIGNUP_URL = `${APP_URL}/inscription/offre`;
+
+export const SOCIAL_PROFILES: readonly string[] = [APP_URL];
+
 // Search-engine ownership-verification tokens. Paste the value from the
 // "HTML tag" verification method (just the content="..." part, not the
 // whole <meta> tag). Leave empty to emit nothing.
@@ -32,36 +58,70 @@ export const ogLocaleByLocale: Record<Locale, string> = {
   en: "en_US",
 };
 
-// Every indexable route below the locale segment, as the path suffix that
-// follows "/<lang>". "" is the locale home page. Slugs are French for both
-// locales by design (e.g. /en/fonctionnalites). Keep this list in sync with
-// the app/[lang] route folders, the sitemap is generated from it.
-export const routeSuffixes = [
-  "",
-  "/fonctionnalites",
-  "/tarifs",
-  "/a-propos",
-  "/blog",
-  "/contact",
-  "/mentions-legales",
-  "/confidentialite",
-  "/cgu",
-  "/account-deletion",
-] as const;
+// Prix definitifs. A faux, la page Tarifs floute les montants et ils sortent
+// des metadonnees.
+export const PRICES_FINAL = true;
 
-export type RouteSuffix = (typeof routeSuffixes)[number];
+// Every route below the locale segment, as the path suffix that follows
+// "/<lang>" in each locale. "" is the locale home page. Pages whose slug
+// differs per locale are served by app/[lang]/[page] (see src/views); the
+// sitemap, nav and language switcher are all generated from this table.
+export const routes = {
+  home: { fr: "", en: "" },
+  features: { fr: "/fonctionnalites", en: "/features" },
+  assistant: { fr: "/assistant", en: "/assistant" },
+  pricing: { fr: "/tarifs", en: "/pricing" },
+  about: { fr: "/a-propos", en: "/about" },
+  blog: { fr: "/blog", en: "/blog" },
+  faq: { fr: "/faq", en: "/faq" },
+  contact: { fr: "/contact", en: "/contact" },
+  security: { fr: "/donnees-et-securite", en: "/data-and-security" },
+  legalNotice: { fr: "/mentions-legales", en: "/legal-notice" },
+  privacy: { fr: "/confidentialite", en: "/privacy" },
+  terms: { fr: "/cgu", en: "/terms" },
+  accountDeletion: { fr: "/account-deletion", en: "/account-deletion" },
+} as const satisfies Record<string, Record<Locale, string>>;
 
-// Placeholder legal drafts: served (linked in the footer) but kept out of
-// the sitemap and marked noindex until the real text is in place.
-export const noindexSuffixes: readonly string[] = [
-  "/mentions-legales",
-  "/confidentialite",
-  "/cgu",
-];
+export type RouteKey = keyof typeof routes;
 
-export const indexableRouteSuffixes = routeSuffixes.filter(
-  (s) => !noindexSuffixes.includes(s),
+/** Locale-prefixed path to a route, e.g. ("en", "pricing") → "/en/pricing". */
+export function pathTo(lang: Locale, key: RouteKey): string {
+  return `/${lang}${routes[key][lang]}`;
+}
+
+/** La demande de démonstration, au bas de l'accueil. */
+export function demoHref(lang: Locale): string {
+  return `${pathTo(lang, "home")}#demo`;
+}
+
+// Pages served but kept out of the sitemap and marked noindex (none today).
+export const noindexRoutes: readonly RouteKey[] = [];
+
+export const indexableRoutes = (Object.keys(routes) as RouteKey[]).filter(
+  (k) => !noindexRoutes.includes(k),
 );
+
+// English pages used to live at their French slugs (/en/tarifs…). Each old
+// address is still generated as a redirect stub (app/[lang]/[page]).
+export const legacyRedirects: Readonly<
+  Partial<Record<Locale, Record<string, RouteKey>>>
+> = {
+  en: {
+    fonctionnalites: "features",
+    tarifs: "pricing",
+    "a-propos": "about",
+    "mentions-legales": "legalNotice",
+    confidentialite: "privacy",
+    cgu: "terms",
+  },
+};
+
+/** A path suffix shared by every locale, or one per locale. */
+export type LocalizedSuffix = string | Readonly<Record<Locale, string>>;
+
+export function suffixFor(suffix: LocalizedSuffix, lang: Locale): string {
+  return typeof suffix === "string" ? suffix : suffix[lang];
+}
 
 /** Absolute URL for a locale + route suffix, e.g. ("en", "/tarifs"). */
 export function absoluteUrl(lang: Locale, suffix: string = ""): string {
@@ -73,14 +133,17 @@ export function absoluteUrl(lang: Locale, suffix: string = ""): string {
  * per locale and an x-default. Relative paths compose with `metadataBase`
  * (set in the root layout).
  */
-export function alternatesFor(lang: Locale, suffix: string = "") {
+export function alternatesFor(
+  lang: Locale,
+  suffix: LocalizedSuffix = "",
+) {
   const languages: Record<string, string> = {};
   for (const locale of locales) {
-    languages[hreflangByLocale[locale]] = `/${locale}${suffix}`;
+    languages[hreflangByLocale[locale]] = `/${locale}${suffixFor(suffix, locale)}`;
   }
-  languages["x-default"] = `/${defaultLocale}${suffix}`;
+  languages["x-default"] = `/${defaultLocale}${suffixFor(suffix, defaultLocale)}`;
   return {
-    canonical: `/${lang}${suffix}`,
+    canonical: `/${lang}${suffixFor(suffix, lang)}`,
     languages,
   };
 }
