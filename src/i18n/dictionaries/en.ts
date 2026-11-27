@@ -492,6 +492,8 @@ export const en: Dictionary = {
 
   demo: {
     title: "Book your demo",
+    subtitle:
+      "In one call, see how you open a tool, what your patient sees on their phone and what you find before you meet again. Bring your questions.",
     name: "Name",
     email: "Work email",
     profession: "Profession",

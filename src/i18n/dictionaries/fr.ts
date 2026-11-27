@@ -502,6 +502,8 @@ export const fr = {
 
   demo: {
     title: "Réservez votre démo",
+    subtitle:
+      "Le temps d'un appel, découvrez comment ouvrir un outil, ce que votre patient voit sur son téléphone et ce que vous retrouvez avant de le revoir. Venez avec vos questions.",
     name: "Nom",
     email: "E-mail professionnel",
     profession: "Métier",
