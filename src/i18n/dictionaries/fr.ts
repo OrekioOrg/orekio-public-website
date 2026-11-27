@@ -223,7 +223,7 @@ export const fr = {
       eyebrow: "Aperçu",
       title: "Ce que votre patient voit sur son téléphone.",
       description:
-        "Un écran par outil, avec des données d'exemple.",
+        "Un écran par outil.",
       previous: "Écran précédent",
       next: "Écran suivant",
       items: [
@@ -280,7 +280,7 @@ export const fr = {
     patientSide: {
       eyebrow: "Côté patient",
       title: "Le travail se poursuit entre deux rendez-vous.",
-      description: "Son espace et ses rappels, avec des données d'exemple.",
+      description: "Son espace et ses rappels.",
       items: [
         {
           src: "accueil-patient.png",
