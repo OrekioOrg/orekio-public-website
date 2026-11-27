@@ -1,6 +1,7 @@
 import type { Segment } from "../segment";
 import { OFFERS, VAT_PERCENT, eurFr as eur, exclVat } from "../../offers";
 import { assistantFr } from "./assistant/fr";
+import { faqFr } from "./faq/fr";
 
 /** Une carte de la page Tarifs. `note` : l'encart propre à l'offre. */
 export interface PricingPlan {
@@ -21,6 +22,7 @@ const email: Segment = {
 
 export const fr = {
   assistantPage: assistantFr,
+  faqPage: faqFr,
   meta: {
     title: "Orekio, l'accompagnement thérapeutique entre les rendez-vous",
     description:
@@ -32,6 +34,7 @@ export const fr = {
     pricing: "Tarifs",
     about: "À propos",
     blog: "Blog",
+    faq: "FAQ",
     contact: "Contact",
     subscribe: "Créer un compte",
     openMenu: "Ouvrir le menu",
@@ -447,7 +450,9 @@ export const fr = {
     footerNote: [
       `Prix TTC, TVA de ${VAT_PERCENT} % incluse. Vous représentez une structure ? `,
       { href: "/fr/contact", text: "Écrivez-nous" },
-      " : nous vous rappelons sous 7 jours ouvrés.",
+      " : nous vous rappelons sous 7 jours ouvrés. Les autres questions sur les offres sont dans la ",
+      { href: "/fr/faq#section-pricing", text: "FAQ" },
+      ".",
     ] as Segment[],
   },
 
@@ -479,6 +484,8 @@ export const fr = {
     description: [
       "Écrivez-nous en une ligne : votre métier, et ce que vous attendez d'Orekio. Nous répondons personnellement. Pour commencer tout de suite, le compte se crée sur ",
       { href: "https://orekio.app", text: "orekio.app", external: true },
+      ". Beaucoup de réponses sont déjà dans la ",
+      { href: "/fr/faq", text: "FAQ" },
       ".",
     ] as Segment[],
     email: "contact@orekio.app",

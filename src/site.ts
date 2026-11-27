@@ -73,6 +73,7 @@ export const routes = {
   pricing: { fr: "/tarifs", en: "/pricing" },
   about: { fr: "/a-propos", en: "/about" },
   blog: { fr: "/blog", en: "/blog" },
+  faq: { fr: "/faq", en: "/faq" },
   contact: { fr: "/contact", en: "/contact" },
   legalNotice: { fr: "/mentions-legales", en: "/legal-notice" },
   privacy: { fr: "/confidentialite", en: "/privacy" },
