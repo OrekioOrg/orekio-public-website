@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { FaqCopy } from "@/i18n/dictionaries/faq/types";
 import {
   COMPANY,
   PRICES_FINAL,
@@ -163,5 +164,34 @@ export function breadcrumbSchema(
       name: crumb.name,
       item: crumb.url,
     })),
+  };
+}
+
+/**
+ * FAQPage : les questions et réponses en texte brut, pour les moteurs et les
+ * assistants qui répondent à partir des pages.
+ */
+export function faqPageSchema(lang: Locale, url: string, faq: FaqCopy) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: lang,
+    publisher: { "@id": ORG_ID },
+    mainEntity: faq.sections.flatMap((section) =>
+      section.questions.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer
+            .map((line) =>
+              line.map((s) => (typeof s === "string" ? s : s.text)).join(""),
+            )
+            .join(" "),
+        },
+      })),
+    ),
   };
 }

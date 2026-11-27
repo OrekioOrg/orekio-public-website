@@ -127,6 +127,7 @@ export default async function RootLayout({
     { href: pathTo(lang, "pricing"), label: dict.nav.pricing },
     { href: pathTo(lang, "about"), label: dict.nav.about },
     { href: `/${lang}/blog`, label: dict.nav.blog },
+    { href: pathTo(lang, "faq"), label: dict.nav.faq },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
 
@@ -161,7 +162,7 @@ export default async function RootLayout({
               {/* L'appel unique du site : la création de compte, sur l'application. */}
               <a
                 href={SIGNUP_URL}
-                className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 md:inline-block"
+                className="hidden rounded-lg bg-accent px-4 py-2 text-[15px] font-medium text-ink transition-opacity hover:opacity-90 lg:inline-block"
               >
                 {dict.nav.subscribe}
               </a>

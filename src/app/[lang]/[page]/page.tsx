@@ -6,6 +6,7 @@ import { basePath } from "@/base-path";
 import { legacyRedirects, pathTo, routes, type RouteKey } from "@/site";
 import * as about from "@/views/about";
 import * as assistant from "@/views/assistant";
+import * as faq from "@/views/faq";
 import * as features from "@/views/features";
 import * as legalNotice from "@/views/legal-notice";
 import * as pricing from "@/views/pricing";
@@ -26,6 +27,7 @@ const views: Partial<Record<RouteKey, View>> = {
   assistant,
   pricing,
   about,
+  faq,
   legalNotice,
   privacy,
   terms,

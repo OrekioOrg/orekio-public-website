@@ -1,6 +1,7 @@
 import type { Segment } from "../segment";
 import { OFFERS, VAT_PERCENT, eurEn as eur, exclVat } from "../../offers";
 import { assistantEn } from "./assistant/en";
+import { faqEn } from "./faq/en";
 import type { Dictionary } from "./fr";
 
 const email: Segment = {
@@ -11,6 +12,7 @@ const email: Segment = {
 
 export const en: Dictionary = {
   assistantPage: assistantEn,
+  faqPage: faqEn,
   meta: {
     title: "Orekio, therapeutic support between appointments",
     description:
@@ -22,6 +24,7 @@ export const en: Dictionary = {
     pricing: "Pricing",
     about: "About",
     blog: "Blog",
+    faq: "FAQ",
     contact: "Contact",
     subscribe: "Sign up",
     openMenu: "Open menu",
@@ -436,7 +439,9 @@ export const en: Dictionary = {
     footerNote: [
       `Prices include VAT (${VAT_PERCENT}%). Do you represent an organisation? `,
       { href: "/en/contact", text: "Write to us" },
-      ": we call you back within 7 working days.",
+      ": we call you back within 7 working days. Other questions about the plans are in the ",
+      { href: "/en/faq#section-pricing", text: "FAQ" },
+      ".",
     ] as Segment[],
   },
 
@@ -467,6 +472,8 @@ export const en: Dictionary = {
     description: [
       "Write to us in one line: your profession, and what you expect from Orekio. We answer personally. To start right away, sign up on ",
       { href: "https://orekio.app", text: "orekio.app", external: true },
+      ". Many answers are already in the ",
+      { href: "/en/faq", text: "FAQ" },
       ".",
     ] as Segment[],
     email: "contact@orekio.app",
